@@ -28,9 +28,11 @@ class MonsterCombatant(Combatant):
         return [Attack(dmg)]
 
     def defense(self, attack: Attack) -> None:
-        dmg = attack.dmg
-        for atk_type in attack.types:
-            dmg *= self.monster.weaknesses[atk_type]
+
+        dmg_factor = self.monster.calculate_dmg_factor(attack)
+
+        dmg = round(attack.dmg*dmg_factor)
+
         dmg -= self.monster.armor
 
         if dmg > 0:
