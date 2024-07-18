@@ -4,7 +4,9 @@
     "title": "the",
     "name": "BLANK",
     "information": "",
-    "death_message": "",
+    "death_messages": [
+      ""
+    ],
     "hp_max": 10,
     "dmg" : 10,
     "crt": 1,
@@ -17,8 +19,10 @@
       "MAGICAL": 1.0,
       "FIRE": 1.0,
       "FROST": 1.0,
-      "CURSE": 1.0
-
+      "CURSE": 1.0,
+      "HOLY": 1.0,
+      "LIGHT": 1.0,
+      "DARKNESS": 1.0
     },
     "flags": ["blood_possessed"]
   },
@@ -26,7 +30,9 @@
     "title": "the",
     "name": "last guardian",
     "information": "This gigantic beast seems to protect the bar. It is really, really big, and has a huge health pool. You want to really kill this one quick.",
-    "death_message": "It kills you in an indescribable way. You are dead.",
+    "death_messages": [
+      "It kills you in an indescribable way. You are dead."
+    ],
     "hp_max": 250,
     "dmg" : 12,
     "crt": 1,
@@ -41,7 +47,9 @@
     "title": "the",
     "name": "one-eyed goblin geezer",
     "information": "This old, one-eyed Goblin has his best days behind him. Killing him should be no problem. But just think of his remaining family... Do you really want to kill the grandpa of 23 goblin children?",
-    "death_message": "You somehow made it. You got defeated by an old cripple of goblin. I would give you an medal, but unfortunately you got eaten by 23 hungry goblin children. You are dead.",
+    "death_messages": [
+      "You somehow did it. You got defeated by an old cripple of goblin. I would give you an medal, but unfortunately you got eaten by 23 hungry goblin children. You are dead."
+    ],
     "hp_max": 12,
     "dmg" : 14,
     "crt": 1,
@@ -56,7 +64,7 @@
     "title": "the",
     "name": "really fat cat",
     "information": "Wow, this cat is REALLY fat. Shes slow, but quite tanky because of her fat belly . Maybe you should try fire?",
-    "death_message": "The cat *mistakes* you for a sofa, and completely scratches your skin of. You are dead.",
+    "death_messages": ["The cat *mistakes* you for a sofa, and completely scratches your skin of. You are dead."],
     "hp_max": 16,
     "dmg" : 3,
     "crt": 1,
@@ -69,41 +77,54 @@
   },
   "demon_baby": {
     "title": "the",
-    "name": "Possessed Suckling",
+    "name": "Devilish Suckling",
     "information": "This is a baby, possessed by the devil. It doesnt have much health, but explodes when you bring it in contact with fire. So be careful!",
-    "death_message": "",
-    "hp_max": 10,
-    "dmg" : 10,
+    "death_messages": [
+      "It thinks you are his Mother! How cute! Except it killed all 243 mothers before. And so you. You are dead."
+    ],
+    "hp_max": 11,
+    "dmg" : 5,
     "crt": 1,
     "armor": 0,
     "weaknesses": {
-      "PHYSICAL": 1.0,
-      "SLASHING": 1.0,
-      "BASHING": 1.0,
-      "PIERCING": 1.0,
-      "MAGICAL": 1.0,
-      "FIRE": 50.0,
-      "FROST": 1.0,
-      "CURSE": 1.0
-
+      "FIRE": 50.0
     },
     "flags": ["demon", "child", "fire_explode"]
+  },
+  "pigeon": {
+    "title": "the",
+    "name": "pigeon of doom",
+    "information": "This pigeon is really annoying. In fact, it is so annoying that you just want to kill it. Which is pretty easy, because its an goddamn pigeon.",
+    "death_messages": [
+      "It picks out your eyes, and while stumbling around blindly, you fall with your head into your weapon. You are dead."
+    ],
+    "hp_max": 4,
+    "dmg" : 5,
+    "crt": 1.5,
+    "armor": 0,
+    "weaknesses": {
+
+    },
+    "flags": ["animal", "flying", "blood_possessed"]
+  },
+  "villager": {
+    "title": "the",
+    "name": "blood-lusting village",
+    "information": "A villager, corrupted by the evening of bloodlust. He has a flail, along with a rusty sickle.",
+    "death_messages": [
+      "He flails your bones to dust. While they are still in your body. You are dead.",
+      "He cuts your throat with his sickle, and lustfully drinks your blood directly out of you carotid artery. You are dead."
+    ],
+    "hp_max": 10,
+    "dmg" : 4,
+    "crt": 1,
+    "armor": 1,
+    "weaknesses": {
+    },
+    "flags": ["humanoid","blood_possessed"]
   }
 }
 
 
 
-                        mnstrtp = "devil-possessed baby"
-                        title = "the "
-                        titleBig = "The "
-                        information =
-                        death_message = "It thinks you are his Mother! How cute! Except it killed all 243 mothers before. And so you. You are dead."
-                        hpemax = 11
-                        dmge = 5
-                        ecrt = 0
-                        armore = 0
-                        fireweakness = 50
-                        mnstrchoosen = True
-                        typ = "demon"
-                        bloodpossessed = False
-                        lootlist = ["w-0-classic","o-5-classic"]
+

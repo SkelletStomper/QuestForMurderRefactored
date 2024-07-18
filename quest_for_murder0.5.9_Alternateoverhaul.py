@@ -925,41 +925,7 @@ while not gamefinished:
                         typ = "demon"
                         bloodpossessed = False
                         lootlist = ["w-0-classic","o-5-classic"]
-                    elif monty == 4:
-                        mnstrtp = "pidgeon of doom"
-                        title = "the "
-                        titleBig = "The "
-                        information = "This pidgeon is really annoying. In fact, it is so annoying that you just want to kill it. Which is pretty easy, because its an goddamn pidgeon."
-                        death_message = "It picks out your eyes, and while stumbling around blindly, you fall with your head into your weapon. You are dead."
-                        hpemax = 4
-                        dmge = 5
-                        ecrt = 5
-                        armore = 0
-                        fireweakness = 9
-                        psnchance = 2
-                        psndur = 1
-                        mnstrchoosen = True
-                        typ = "animal"
-                        bloodpossessed = True
-                        lootlist = ["w-0-classic"]
-                    elif monty == 5:
-                        mnstrtp = "bloodlusting villager"
-                        title = "the "
-                        titleBig = "The "
-                        information = "A villager, corrupted by the evening of bloodlust. He has a flail, along with a rusty sickle."
-                        randomnumb = random.randint(1,2)
-                        if randomnumb == 1:
-                            death_message = "He flails your bones to dust. While they are still in your body. You are dead."
-                        else:
-                            death_message = "He cuts your throat with his sickle, and lustfully drinks your blood directly out of you caritod artery. You are dead."
-                        hpemax = 10
-                        dmge = 4
-                        armore = 1
-                        fireweakness = 12
-                        mnstrchoosen = True
-                        typ = "human"
-                        bloodpossessed = True
-                        lootlist = ["w-0-classic","w-7-classic","w-8-classic","a-3-classic"]
+
             elif stage == 2:
                 if stagename == "great grasslands":
                     if monty == 1:

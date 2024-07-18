@@ -1,18 +1,71 @@
+
 {
+  "blank_flag": {
+    "description": "",
+    "weaknesses": {
+      "PHYSICAL": 1.0,
+      "SLASHING": 1.0,
+      "BASHING": 1.0,
+      "PIERCING": 1.0,
+      "MAGICAL": 1.0,
+      "FIRE": 1.0,
+      "FROST": 1.0,
+      "CURSE": 1.0,
+      "HOLY": 1.0,
+      "LIGHT": 1.0,
+      "DARKNESS": 1.0
+    }
+
+  },
   "blood_possessed": {
-    "description": "This monster is possessed by the curse of blood. It will attack anything not struck by it."
+    "description": "This monster is possessed by the curse of blood. It will attack anything not struck by it.",
+    "weaknesses": {
+      "PHYSICAL": 0.95,
+      "MAGICAL": 1.05,
+
+      "CURSE": 0.8,
+      "HOLY": 1.2,
+      "LIGHT": 1.1,
+      "DARKNESS": 0.9
+    }
   },
   "demon": {
-    "description": "Related to hell-dwellers."
+    "description": "Related to hell-dwellers.",
+    "weaknesses": {
+      "PHYSICAL": 0.9,
+      "FIRE": 0.9,
+      "FROST": 0.9,
+      "CURSE": 0.5,
+      "HOLY": 1.5,
+      "LIGHT": 1.3,
+      "DARKNESS": 0.1
+
+    }
   },
   "humanoid": {
-    "description": "Either a human, or close enough to it."
+    "description": "Either a human, or close enough to it.",
+    "weaknesses": {
+      "CURSE": 1.1,
+      "HOLY": 0.9,
+      "LIGHT": 0.9,
+      "DARKNESS": 1.1
+    }
   },
   "goblin": {
-    "description": "Greedy little creatures who strive to def"
+    "description": "Greedy little creatures who strive to defile the lands, and gather the spoils.",
+    "weaknesses": {
+      "CURSE": 0.9,
+      "HOLY": 1.1,
+      "LIGHT": 1.1,
+      "DARKNESS": 0.9
+    }
   },
   "animal": {
-    "description": "Some sort of non-Humanoid animal."
+    "description": "Some sort of non-Humanoid animal.",
+    "weaknesses": {
+      "FIRE": 1.1,
+      "FROST": 0.9
+    }
   },
   "feline": {
     "description": "Cats. These might be tempting, but not safe to cuddle."
@@ -30,7 +83,10 @@
   },
   "fire_explode": {
     "description": "Explodes when put into contact with fire!"
+  },
+  "flying": {
+    "description": "This monster is fly!"
+
+
   }
-
-
 }

@@ -11,6 +11,12 @@ class AttackType(Enum):
     FROST = 'FROST'
     CURSE = 'CURSE'
 
+    HOLY = 'HOLY'
+
+    LIGHT = 'LIGHT'
+    DARKNESS = 'DARKNESS'
+
+
 
 
 class Attack:

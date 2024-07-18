@@ -6,31 +6,31 @@ class Item:
 
 
 class Weapon(Item):
-    def __init__(self, inDict):
-        Item.__init__(inDict["name"], inDict["weight"])
-        self.damage = inDict["damage"]
-        self.type = inDict["type"]
-        self.attribute = inDict["attribute"]
+    def __init__(self, in_dict):
+        Item.__init__(in_dict["name"], in_dict["weight"])
+        self.damage = in_dict["damage"]
+        self.type = in_dict["type"]
+        self.attribute = in_dict["attribute"]
 
 
 class Offhand(Item):
-    def __init__(self, inDict):
-        Item.__init__(inDict["name"], inDict["weight"])
-        self.damage = inDict["damage"]
-        self.armor = inDict["armor"]
-        self.heal = inDict["heal"]
-        self.type = inDict["type"]
-        self.attribute = inDict["attribute"]
+    def __init__(self, in_dict):
+        Item.__init__(in_dict["name"], in_dict["weight"])
+        self.damage = in_dict["damage"]
+        self.armor = in_dict["armor"]
+        self.heal = in_dict["heal"]
+        self.type = in_dict["type"]
+        self.attribute = in_dict["attribute"]
 
 
 class Armor(Item):
-    def __init__(self, inDict):
-        Item.__init__(inDict["name"], inDict["weight"])
-        self.armor = inDict["armor"]
+    def __init__(self, in_dict):
+        Item.__init__(in_dict["name"], in_dict["weight"])
+        self.armor = in_dict["armor"]
 
 class Ability(Item):
-    def __init__(self, inDict):
-        Item.__init__(inDict["name"])
-        self.duration = inDict["duration"]
-        self.reload = inDict["reload"]
-        self.description = inDict["description"]
+    def __init__(self, in_dict):
+        Item.__init__(name = in_dict["name"])
+        self.duration = in_dict["duration"]
+        self.reload = in_dict["reload"]
+        self.description = in_dict["description"]
