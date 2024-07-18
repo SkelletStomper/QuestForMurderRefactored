@@ -1,0 +1,36 @@
+{
+  "blood_possessed": {
+    "description": "This monster is possessed by the curse of blood. It will attack anything not struck by it."
+  },
+  "demon": {
+    "description": "Related to hell-dwellers."
+  },
+  "humanoid": {
+    "description": "Either a human, or close enough to it."
+  },
+  "goblin": {
+    "description": "Greedy little creatures who strive to def"
+  },
+  "animal": {
+    "description": "Some sort of non-Humanoid animal."
+  },
+  "feline": {
+    "description": "Cats. These might be tempting, but not safe to cuddle."
+  },
+  "canine": {
+    "description": "Man's best friend... once upon a time."
+  },
+
+
+  "child": {
+    "description": "A young specimen, not yet matured."
+  },
+  "elder": {
+    "description": "Old and wise with years."
+  },
+  "fire_explode": {
+    "description": "Explodes when put into contact with fire!"
+  }
+
+
+}
