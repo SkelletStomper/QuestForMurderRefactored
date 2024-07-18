@@ -39,7 +39,7 @@ class MonsterCombatant(Combatant):
             self.hp -=dmg
             print(f"{self.monster.title.capitalize()} {self.monster.name} got hit for {dmg} damage!")
         else:
-            print("The Hit doesn't do any damage!")
+            print("The hit doesn't do any damage!")
 
     @property
     def is_alive(self) -> bool:
