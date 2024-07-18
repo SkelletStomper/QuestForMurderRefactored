@@ -1,3 +1,5 @@
-from monster import *
+from flag import FlagProvider
+
+
 
 

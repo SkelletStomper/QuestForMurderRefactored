@@ -1,4 +1,5 @@
-from attacks import AttackType
+from attack import AttackType, Attack
+from flag import Flag
 
 class Monster:
     def __init__(self, in_dict: dict):
@@ -12,4 +13,8 @@ class Monster:
         self.armor: int = in_dict["armor"]
         self.weaknesses: dict[AttackType, float] = in_dict["weaknesses"]
         self.typ: str = in_dict["typ"]
-        self.flags: list[str] = in_dict["flags"]
+        self.flags: list[Flag] = in_dict["flags"]
+
+
+    def calculate_dmg_factor(self, attack: Attack) -> float:
+        pass

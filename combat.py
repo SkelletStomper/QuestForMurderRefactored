@@ -1,6 +1,6 @@
 from monster import Monster
 
-from attacks import Attack, AttackType
+from attack import Attack, AttackType
 
 
 class Combatant:
