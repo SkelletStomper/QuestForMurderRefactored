@@ -3,8 +3,8 @@ import json
 
 
 class Flag:
-    def __init__(self, in_dict: dict):
-
+    def __init__(self, name: str, in_dict: dict):
+        self.name = name
         self.description: str = in_dict["description"]
 
         raw_weaknesses = {}
@@ -19,7 +19,7 @@ class FlagProvider:
         with open("./json/flags.json", "r") as f:
           json_dict = json.load(f)
 
-        self.flags = {flag_name :Flag(flag_data) for flag_name, flag_data in json_dict.items()}
+        self.flags = {flag_name :Flag(flag_name, flag_data) for flag_name, flag_data in json_dict.items()}
         print(self.flags)
 
     def __getitem__(self, value) -> Flag:

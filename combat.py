@@ -1,6 +1,6 @@
 from monster import Monster
 
-from attack import Attack, AttackType
+from attack import Attack
 
 
 class Combatant:
@@ -23,7 +23,7 @@ class MonsterCombatant(Combatant):
         self.hp = self.monster.hp_max
 
     def get_attacks(self) -> list[Attack]:
-        print(f"{self.monster.title} {self.monster.name} attacks you!")
+        print(f"{self.monster.title.capitalize()} {self.monster.name} attacks!")
         dmg = round(self.monster.dmg * self.monster.crit_modifier)
         return [Attack(dmg)]
 
@@ -37,20 +37,23 @@ class MonsterCombatant(Combatant):
 
         if dmg > 0:
             self.hp -=dmg
-            print(f"{self.monster.title} {self.monster.name} got hit for {dmg} damage!")
+            print(f"{self.monster.title.capitalize()} {self.monster.name} got hit for {dmg} damage!")
         else:
             print("The Hit doesn't do any damage!")
 
     @property
     def is_alive(self) -> bool:
-        return self.hp <= 0
+        return self.hp > 0
+
+    def status_message(self):
+        print(f"{self.monster.title.capitalize()} {self.monster.name} has {self.hp} hit points left!")
 
 
 
 
 
-class Combat:
-    def __init__(self, combatant1: Combatant, combatant2: Combatant) -> None:
+class MonsterCombat:
+    def __init__(self, combatant1: MonsterCombatant, combatant2: MonsterCombatant) -> None:
         self.combatant1 = combatant1
         self.combatant2 = combatant2
 
@@ -61,10 +64,12 @@ class Combat:
                 self.combatant2.defense(attack)
                 if not self.combatant2.is_alive:
                     continue
+            self.combatant1.status_message()
 
             for attack in self.combatant2.get_attacks():
                 self.combatant1.defense(attack)
                 if not self.combatant1.is_alive:
                     continue
+            self.combatant1.status_message()
 
 

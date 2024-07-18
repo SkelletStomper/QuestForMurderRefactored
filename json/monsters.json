@@ -51,7 +51,7 @@
       "You somehow did it. You got defeated by an old cripple of goblin. I would give you an medal, but unfortunately you got eaten by 23 hungry goblin children. You are dead."
     ],
     "hp_max": 12,
-    "dmg" : 14,
+    "dmg" : 4,
     "crt": 1,
     "armor": 0,
     "weaknesses": {
