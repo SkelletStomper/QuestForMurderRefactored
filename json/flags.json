@@ -73,6 +73,14 @@
   "canine": {
     "description": "Man's best friend... once upon a time."
   },
+  "insect": {
+    "description": "Insects, squirming bugs and various others. Naturally strong against forces of holy and evil.",
+    "weaknesses": {
+      "CURSE": 0.7,
+      "HOLY": 0.7
+    }
+
+  },
 
 
   "child": {

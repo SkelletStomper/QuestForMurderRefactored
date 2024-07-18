@@ -122,6 +122,118 @@
     "weaknesses": {
     },
     "flags": ["humanoid","blood_possessed"]
+  },
+  "goblin2": {
+    "title": "the",
+    "name": "two-eyed goblin",
+    "information": "This goblin is a bit tougher than the last one. He will maybe not be that that easy to kill. He also has a butter knife and leather armor!",
+    "death_messages": [
+      "He cuts your head off. You will may ask how he does that with a butter knife? Well, it takes lots of time and is a lot of Pain, but this doesn't matter to you. You are dead."
+    ],
+    "hp_max": 15,
+    "dmg" : 6,
+    "crt": 1,
+    "armor": 2,
+    "weaknesses": {
+    },
+    "flags": ["goblin"]
+  },
+  "snake1": {
+    "title": "the",
+    "name": "poisonous snake",
+    "information": "This is an poisonous snake. I think that's nuff said.",
+    "death_messages": [
+      "It tries to strangle you, and you try to bite it. It is poisonous, so you die. You are dead."
+    ],
+    "hp_max": 12,
+    "dmg" : 3,
+    "crt": 1,
+    "armor": 0,
+    "weaknesses": {
+    },
+    "flags": ["animal", "poisonous", "blood_possessed"]
+  },
+  "paperman!": {
+    "title": "",
+    "name": "paper-man!",
+    "information": "This is a superhero, completely out of paper. His arms are really sharp, so watch out you dont get hit! What can I say except fire?",
+    "death_messages": [
+      "It cuts you several times, till you die of wound infection. You are dead.",
+      "Paper cuts are nasty, and hurt like hell. The pain kills you. You are dead."
+    ],
+    "hp_max": 16,
+    "dmg" : 6,
+    "crt": 5,
+    "armor": -2,
+    "weaknesses": {
+      "FIRE": 420.0
+    },
+    "flags": []
+  },
+  "fat_lady": {
+    "title": "the",
+    "name": "really fat old lady",
+    "information": "Now this is probably the owner of the really fat cat. I think they are fitting very well. So same as the cat. Her name is Agnes, btw.",
+    "death_messages": [
+      "She sits down on you, and you get squished. Yeah, she is REALLY fat. You are dead."
+    ],
+    "hp_max": 25,
+    "dmg" : 4,
+    "crt": 0.9,
+    "armor": 4,
+    "weaknesses": {
+      "FIRE": 1.2
+    },
+    "flags": ["humanoid", "elder", "blood_possessed"]
+  },
+  "child_soldier": {
+    "title": "the",
+    "name": "Child Soldier",
+    "information": "Well, it is a Child. With an AK-47. Its heavy-armored with kevlar, but has a terrible precision. That should be easy, right?",
+    "death_messages": [
+      "It finally manages to shot you in the head. You are dead."
+    ],
+    "hp_max": 10,
+    "dmg" : 10,
+    "crt": -4,
+    "armor": 3,
+    "weaknesses": {
+
+    },
+    "flags": ["humanoid", "child", "blood_possessed"]
+  },
+  "rat":  {
+    "title": "the",
+    "name": "giant rat",
+    "information": "This is a rat. It is bigger than other rats. Way bigger. Also it is venomous from disease, so beware.",
+    "death_messages": [
+      "Rats eat almost everything, and they also eat dead humans. If they are not dead, they usually not eat them. But at this size, kt can just kill it's prey. And so it did. You are dead."
+    ],
+    "hp_max": 21,
+    "dmg" : 4,
+    "crt": 1,
+    "armor": 0,
+    "weaknesses": {
+      "FIRE": 1.35
+    },
+    "flags": ["animal","poisonous","blood_possessed"]
+  },
+  "moth": {
+    "title": "the",
+    "name": "silvermoth",
+    "information": "A large moth, as big as your head. Fragile, but hard to hit. It is drawn to the flame like a moth is drawn to the flame.",
+    "death_messages": [
+      "It bites you very often, and while one bite does just hurt, many bites kill you. You are dead."
+    ],
+    "hp_max": 10,
+    "dmg" : 6,
+    "crt": 1,
+    "armor": 0,
+    "weaknesses": {
+
+      "FIRE": 1.5
+    },
+    "flags": ["animal","insect","blood_possessed"]
   }
 }
 
