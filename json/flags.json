@@ -94,7 +94,8 @@
   },
   "flying": {
     "description": "This monster is fly!"
-
-
+  },
+  "poisonous": {
+    "description": "This monster is not good to eat!"
   }
 }

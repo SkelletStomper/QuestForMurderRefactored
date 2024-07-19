@@ -21,12 +21,14 @@ class AttackType(Enum):
 
 
 class Attack:
-    def __init__(self, dmg: int, types: list[AttackType] = None):
+    def __init__(self, dmg: int, accuracy: int = 0, crt: float = 1.0, types: list[AttackType] = None):
         if types is None:
             types = [AttackType.PHYSICAL]
 
 
         self.dmg = dmg
+        self.crt = crt
+        self.accuracy = accuracy
         self.types = types
 
 

@@ -3,6 +3,19 @@ from monster import Monster
 from attack import Attack
 
 
+def attack_dodged(accuracy: int, dodge:int) -> bool:
+    from dice import d
+    dice_dodge = d(8)
+    if dice_dodge == 1:
+        return False
+    if dice_dodge == 8:
+        return True
+
+    dice_accuracy = d(6)
+
+    return (accuracy + dice_accuracy) <  (dodge + dice_dodge - 1)
+
+
 class Combatant:
     def get_attacks(self) -> list[Attack]:
         # Abstract Method
@@ -24,18 +37,28 @@ class MonsterCombatant(Combatant):
 
     def get_attacks(self) -> list[Attack]:
         print(f"{self.monster.title.capitalize()} {self.monster.name} attacks!")
-        dmg = round(self.monster.dmg * self.monster.crit_modifier)
-        return [Attack(dmg)]
+        dmg = self.monster.dmg
+        return [Attack(
+            dmg=dmg,
+            accuracy=self.monster.accuracy,
+            crt=self.monster.crit_modifier
+        )]
 
     def defense(self, attack: Attack) -> None:
+        accuracy = attack.accuracy
+        dodge = self.monster.dodge
+
+
+        if attack_dodged(accuracy, dodge):
+            print(f"{self.monster.title.capitalize()} {self.monster.name} dodged the Attack!")
+            return
 
         dmg_factor = self.monster.calculate_dmg_factor(attack)
-
         dmg = round(attack.dmg*dmg_factor)
-
         dmg -= self.monster.armor
 
         if dmg > 0:
+            dmg = round(dmg*attack.crt)
             self.hp -=dmg
             print(f"{self.monster.title.capitalize()} {self.monster.name} got hit for {dmg} damage!")
         else:
