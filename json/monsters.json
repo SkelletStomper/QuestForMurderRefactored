@@ -1,15 +1,16 @@
 
 {
-  "blank_monster": {
+  "": {
     "title": "the",
-    "name": "BLANK",
+    "name": "",
+    "pronouns": "",
     "information": "",
     "death_messages": [
       ""
     ],
-    "hp_max": 10,
-    "dmg" : 10,
-    "crt": 1,
+    "hp_max": 0,
+    "dmg" : 0,
+    "crt": 1.0,
     "accuracy": 0,
     "dodge": 0,
     "armor": 0,
@@ -31,6 +32,7 @@
   "village_guardian": {
     "title": "the",
     "name": "last guardian",
+    "pronouns": "3rd_it",
     "information": "This gigantic beast seems to protect the bar. It is really, really big, and has a huge health pool. You want to really kill this one quick.",
     "death_messages": [
       "It kills you in an indescribable way. You are dead."
@@ -50,6 +52,7 @@
   "goblin1": {
     "title": "the",
     "name": "one-eyed goblin geezer",
+    "pronouns": "3rd_he",
     "information": "This old, one-eyed Goblin has his best days behind him. Killing him should be no problem. But just think of his remaining family... Do you really want to kill the grandpa of 23 goblin children?",
     "death_messages": [
       "You somehow did it. You got defeated by an old cripple of goblin. I would give you an medal, but unfortunately you got eaten by 23 hungry goblin children. You are dead."
@@ -69,6 +72,7 @@
   "fat_cat": {
     "title": "the",
     "name": "really fat cat",
+    "pronouns": "3rd_she",
     "information": "Wow, this cat is REALLY fat. Shes slow, but quite tanky because of her fat belly . Maybe you should try fire?",
     "death_messages": ["The cat *mistakes* you for a sofa, and completely scratches your skin of. You are dead."],
     "hp_max": 16,
@@ -86,9 +90,10 @@
   "demon_baby": {
     "title": "the",
     "name": "Devilish Suckling",
+    "pronouns": "3rd_it",
     "information": "This is a baby, possessed by the devil. It doesnt have much health, but explodes when you bring it in contact with fire. So be careful!",
     "death_messages": [
-      "It thinks you are his Mother! How cute! Except it killed all 243 mothers before. And so you. You are dead."
+      "It thinks you are its Mother! How cute! Except it killed all 243 mothers before. And so you. You are dead."
     ],
     "hp_max": 11,
     "dmg" : 5,
@@ -104,6 +109,7 @@
   "pigeon": {
     "title": "the",
     "name": "pigeon of doom",
+    "pronouns": "3rd_it",
     "information": "This pigeon is really annoying. In fact, it is so annoying that you just want to kill it. Which is pretty easy, because its an goddamn pigeon.",
     "death_messages": [
       "It picks out your eyes, and while stumbling around blindly, you fall with your head into your weapon. You are dead."
@@ -122,6 +128,7 @@
   "villager": {
     "title": "the",
     "name": "blood-lusting village",
+    "pronouns": "3rd_he",
     "information": "A villager, corrupted by the evening of bloodlust. He has a flail, along with a rusty sickle.",
     "death_messages": [
       "He flails your bones to dust. While they are still in your body. You are dead.",
@@ -140,6 +147,7 @@
   "goblin2": {
     "title": "the",
     "name": "two-eyed goblin",
+    "pronouns": "3rd_he",
     "information": "This goblin is a bit tougher than the last one. He will maybe not be that that easy to kill. He also has a butter knife and leather armor!",
     "death_messages": [
       "He cuts your head off. You will may ask how he does that with a butter knife? Well, it takes lots of time and is a lot of Pain, but this doesn't matter to you. You are dead."
@@ -157,6 +165,7 @@
   "snake1": {
     "title": "the",
     "name": "poisonous snake",
+    "pronouns": "3rd_it",
     "information": "This is an poisonous snake. I think that's nuff said.",
     "death_messages": [
       "It tries to strangle you, and you try to bite it. It is poisonous, so you die. You are dead."
@@ -174,9 +183,10 @@
   "paperman!": {
     "title": "",
     "name": "paper-man!",
-    "information": "This is a superhero, completely out of paper. His arms are really sharp, so watch out you dont get hit! What can I say except fire?",
+    "pronouns": "3rd_they",
+    "information": "This is a superhero, completely out of paper. Their arms are really sharp, so watch out you dont get hit! What can I say except fire?",
     "death_messages": [
-      "It cuts you several times, till you die of wound infection. You are dead.",
+      "They cut you several times, till you die of wound infection. You are dead.",
       "Paper cuts are nasty, and hurt like hell. The pain kills you. You are dead."
     ],
     "hp_max": 16,
@@ -193,6 +203,7 @@
   "fat_lady": {
     "title": "the",
     "name": "really fat old lady",
+    "pronouns": "3rd_she",
     "information": "Now this is probably the owner of the really fat cat. I think they are fitting very well. So same as the cat. Her name is Agnes, btw.",
     "death_messages": [
       "She sits down on you, and you get squished. Yeah, she is REALLY fat. You are dead."
@@ -211,6 +222,7 @@
   "child_soldier": {
     "title": "the",
     "name": "Child Soldier",
+    "pronouns": "3rd_it",
     "information": "Well, it is a Child. With an AK-47. Its heavy-armored with kevlar, but has a terrible precision. That should be easy, right?",
     "death_messages": [
       "It finally manages to shot you in the head. You are dead."
@@ -229,9 +241,10 @@
   "rat":  {
     "title": "the",
     "name": "giant rat",
+    "pronouns": "3rd_it",
     "information": "This is a rat. It is bigger than other rats. Way bigger. Also it is venomous from disease, so beware.",
     "death_messages": [
-      "Rats eat almost everything, and they also eat dead humans. If they are not dead, they usually not eat them. But at this size, kt can just kill it's prey. And so it did. You are dead."
+      "Rats eat almost everything, and they also eat dead humans. If they are not dead, they usually not eat them. But at this size, it can just kill its prey. And so it did. You are dead."
     ],
     "hp_max": 21,
     "dmg" : 4,
@@ -247,6 +260,7 @@
   "moth": {
     "title": "the",
     "name": "silvermoth",
+    "pronouns": "3rd_it",
     "information": "A large moth, as big as your head. Fragile, but hard to hit. It is drawn to the flame like a moth is drawn to the flame.",
     "death_messages": [
       "It bites you very often, and while one bite does just hurt, many bites kill you. You are dead."

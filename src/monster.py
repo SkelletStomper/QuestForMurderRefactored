@@ -33,7 +33,7 @@ class Monster:
 class MonsterProvider:
     def __init__(self):
 
-        with open("./json/monsters.json", "r") as f:
+        with open("../json/monsters.json", "r") as f:
             json_dict = json.load(f)
 
         self.monsters = {monster_name: Monster(monster_data) for monster_name, monster_data in json_dict.items()}

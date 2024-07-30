@@ -1,0 +1,378 @@
+weaponname = ["bare fist","longsword","curved dagger","mace","spoon","spear","heavy warhammer","rusty knife","flail","paperblade","broken AK-47","pitchfork","giant curved sword","pizza cutter","greatsword of the demonslayer","goblinslayers short sword","slaughtering axe","mancutter","chainsaw"]
+weapondmg = [0,3,2,2,0,3,5,1,2,2,1,3,5,1,8,3,4,5,6]
+weaponamr = [0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0]
+weaponweight = [0,3,1,2,0,3,7,1,3,0,3,2,6,1,10,2,3,3,3]
+weaponclass = ["fist","sword","dagger","mace","joke","spear","mace","dagger","mace","sword","mace","spear","sword","joke","greatsword","sword","axe","scythe","sword"]
+weaponstartattribute = ["none","none","none","blessed","mirror","none","heavy","rusty","none","inflamable","none","firy","none","none","demon-slaying","goblin-slaying","animal-slaying","human-slaying","none"]
+
+offhandname = ["bare fist","knight shield","curved dagger","baked beans","tower shield","head of the devil-possessed baby","energy drink"]
+offhanddmg = [0,0,2,0,0,0,1]
+offhandamr = [0,2,0,0,3,0,0]
+offhandheal = [0,0,0,3,0,0,3]
+offhandweight = [0,2,1,1,4,1,1]
+offhandclass = ["fist","shield","dagger","trinket","shield","joke","trinket"]
+offhandstartattribute = ["none","none","none","none","none","inflamable","none"]  
+
+armorname = ["normal clothing","plate armor","smooth leather armor","dirty rags","scale cloth","light army protection","ninja suit"]
+armoramr = [0,3,1,0,1,2,1]
+armorweight = [0,4,1,0,0,1,0]
+armorstartattribute = ["none","heavy","none","stenching","none","none","evasive"]
+
+
+
+
+
+
+
+#weapon list
+        if weaponid == 0:
+            weaponname = "bare fist"
+            weapondmg = 0
+            weaponamr = 0
+            weaponweight = 0
+            weaponclass = "fist"
+            weaponattribute = "none"
+        elif weaponid == 1:
+            weaponname = "longsword"
+            weapondmg = 3
+            weaponamr = 0
+            weaponweight = 3
+            weaponclass = "sword"
+            weaponattribute = "none"
+        elif weaponid == 2:
+            weaponname = "curved dagger"
+            weapondmg = 2
+            weaponamr = 0
+            weaponweight = 1
+            weaponclass = "dagger"
+            weaponattribute = "none"
+        elif weaponid == 3:
+            weaponname = "mace"
+            weapondmg = 2
+            weaponamr = 0
+            weaponweight = 2
+            weaponclass = "mace"
+            weaponattribute = "blessed"
+        elif weaponid == 4:
+            weaponname = "spoon"
+            weapondmg = 0
+            weaponamr = 0
+            weaponweight = 0
+            weaponclass = "joke"
+            weaponattribute = "mirror"
+        elif weaponid == 5:
+            weaponname = "spear"
+            weapondmg = 3
+            weaponamr = 0
+            weaponweight = 3
+            weaponclass = "spear"
+            weaponattribute = "none"
+
+	weaponid: 6
+	weaponname: heavy warhammer
+	weapondmg: 5
+	weaponamr = 1
+	weaponweight = 7
+	weaponclass = greatmace
+	weaponattribute = heavy
+
+	weaponid: 7
+	weaponname: rusty knife
+	weapondmg: 1
+	weaponamr = 0
+	weaponweight = 1
+	weaponclass = dagger
+	weaponattribute = rusty
+
+	weaponid: 8
+	weaponname: flail
+	weapondmg: 2
+	weaponamr = 0
+	weaponweight = 2
+	weaponclass = mace
+	weaponattribute = none
+
+	weaponid: 9
+	weaponname: paperblade
+	weapondmg: 2
+	weaponamr = 0
+	weaponweight = 0
+	weaponclass = sword
+	weaponattribute = inflamable
+
+	weaponid: 10
+	weaponname: broken AK-47
+	weapondmg: 1
+	weaponamr = 0
+	weaponweight = 3
+	weaponclass = mace
+	weaponattribute = none
+
+	weaponid: 11
+	weaponname: pitchfork
+	weapondmg: 3
+	weaponamr = 0
+	weaponweight = 2
+	weaponclass = spear
+	weaponattribute = firy
+
+	weaponid: 12
+	weaponname: giant curved sword
+	weapondmg: 5
+	weaponamr = 0
+	weaponweight = 6
+	weaponclass = sword
+	weaponattribute = heavy
+
+	weaponid: 13
+	weaponname: pizza cutter
+	weapondmg: 1
+	weaponamr = 0
+	weaponweight = 1
+	weaponclass = joke
+	weaponattribute = none
+
+	weaponid: 14
+	weaponname: demonslayer greatsword
+	weapondmg: 8
+	weaponamr = 1
+	weaponweight = 11
+	weaponclass = greatsword
+	weaponattribute = demon-slaying
+
+	weaponid: 15
+	weaponname: short sword of the goblinslayer
+	weapondmg: 3
+	weaponamr = 0
+	weaponweight = 2
+	weaponclass = sword
+	weaponattribute = goblin-slaying
+
+	weaponid: 16
+	weaponname: slaughtering axe
+	weapondmg: 4
+	weaponamr = 0
+	weaponweight = 3
+	weaponclass = axe
+	weaponattribute = animal-slaying
+
+	weaponid: 17
+	weaponname: mancutter
+	weapondmg: 5
+	weaponamr = 0
+	weaponweight = 3
+	weaponclass = scythe
+	weaponattribute = human-slaying
+
+	weaponid: 18
+	weaponname: chainsaw
+	weapondmg: 5
+	weaponamr = 0
+	weaponweight = 4
+	weaponclass = sword
+	weaponattribute = none
+
+	weaponid: 19
+	weaponname: guardian claw
+	weapondmg: 5
+	weaponamr = 0
+	weaponweight = 2
+	weaponclass = sword
+	weaponattribute = none
+
+	weaponid: 20
+	weaponname: long stick
+	weapondmg: 2
+	weaponamr = 0
+	weaponweight = 1
+	weaponclass = staff
+	weaponattribute = none
+
+	weaponid: 21
+	weaponname: pickaxe
+	weapondmg: 3
+	weaponamr = 0
+	weaponweight = 2
+	weaponclass = axe
+	weaponattribute = rocksplitting
+
+	weaponid: 22
+	weaponname: gigantic gold bar
+	weapondmg: 5
+	weaponamr = 1
+	weaponweight = 12
+	weaponclass = mace
+	weaponattribute = golden
+
+	weaponid: 23
+	weaponname: whip
+	weapondmg: 1
+	weaponamr = 0
+	weaponweight = 1
+	weaponclass = whip
+	weaponattribute = none
+
+	weaponid: 24
+	weaponname: improvised spear
+	weapondmg: 1
+	weaponamr = 0
+	weaponweight = 2
+	weaponclass = spear
+	weaponattribute = rusty
+
+
+
+
+	offhand list
+        if offhandid == 0:
+            offhandname = "bare fist"
+            offhanddmg = 0
+            offhandamr = 0
+            offhandheal = 0
+            offhandweight = 0
+            offhandclass = "fist"
+            offhandattribute = "none"
+        elif offhandid == 1:
+            offhandname = "knight shield"
+            offhanddmg = 0
+            offhandamr = 2
+            offhandheal = 0
+            offhandweight = 2
+            offhandclass = "shield"
+            offhandattribute = "none"
+        elif offhandid == 2:
+            offhandname = "curved dagger"
+            offhanddmg = 2
+            offhandamr = 0
+            offhandheal = 0
+            offhandweight = 1
+            offhandclass = "dagger"
+            offhandattribute = "none"
+
+	offhandid: 3
+	offhandname: baked beans
+	offhanddmg: 0
+	offhandamr = 0
+	offhandheal = 3
+	offhandweight = 1
+	offhandclass = trinket
+	offhandattribute = none
+
+	offhandid: 4
+	offhandname: tower shield
+	offhanddmg: 0
+	offhandamr = 3
+	offhandheal = 0
+	offhandweight = 4
+	offhandclass = shield
+	offhandattribute = none
+
+	offhandid: 5
+	offhandname: head of the devil-possessed baby
+	offhanddmg: 0
+	offhandamr = 0
+	offhandheal = 0
+	offhandweight = 1
+	offhandclass = joke
+	offhandattribute = inflamable
+
+	offhandid: 6
+	offhandname: energy drink
+	offhanddmg: 1
+	offhandamr = 0
+	offhandheal = 3
+	offhandweight = 1
+	offhandclass = trinket
+	offhandattribute = none
+
+	offhandid: 7
+	offhandname: the Lie
+	offhanddmg: 0
+	offhandamr = 0
+	offhandheal = 7
+	offhandweight = 2
+	offhandclass = trinket
+	offhandattribute = delicious and moist	
+
+	offhandid: 8
+	offhandname: penicillin
+	offhanddmg: 0
+	offhandamr = 0
+	offhandheal = 1
+	offhandweight = 1
+	offhandclass = trinket
+	offhandattribute = antidot
+
+        armor list
+        if armorid == 0:
+            armorname = "normal clothing"
+            armoramr = 0
+            armorweight = 0
+            armorattribute = "none"
+        elif armorid == 1:
+            armorname = "plate armor"
+            armoramr = 3
+            armorweight = 4
+            armorattribute = "heavy"
+        elif armorid == 2:
+            armorname = "smooth leather armor"
+            armoramr = 1
+            armorweight = 1
+            armorattribute = "none"
+	elif armorid == 3:
+            armorname = "dirty rags"
+            armoramr = 0
+            armorweight = 0
+            armorattribute = "stenching"
+
+	armorid = 4
+        armorname = scale cloth
+        armoramr = 1
+        armorweight = 0
+        armorattribute = none
+
+	armorid = 5
+        armorname = light army protection
+        armoramr = 2
+        armorweight = 1
+        armorattribute = none
+
+	armorid = 6
+        armorname = ninja suit
+        armoramr = 1
+        armorweight = 0
+        armorattribute = evasive
+
+	armorid = 7
+        armorname = guardian hide armor
+        armoramr = 4
+        armorweight = 2
+        armorattribute = none
+
+	armorid = 8
+        armorname = overseer clothing
+        armoramr = 1
+        armorweight = 2
+        armorattribute = luxorious
+
+	armorid = 9
+        armorname = dance suit
+        armoramr = 0
+        armorweight = 1
+        armorattribute = evasive
+
+	armorid = 10
+	armorname = city guard armor
+	armoramr = 2
+	armorweight = 3
+	armorattribute = none
+
+
+
+
+
+
+
+
+
+

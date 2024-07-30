@@ -97,5 +97,8 @@
   },
   "poisonous": {
     "description": "This monster is not good to eat!"
+  },
+  "plural":{
+    "description": "This entity comes in multiples, be it physically or mentally. Affects combat and addressing."
   }
 }
