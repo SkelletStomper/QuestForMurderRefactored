@@ -1,4 +1,5 @@
-from attack import WeaknessSet
+from src.combat.attack import WeaknessSet
+
 import json
 
 
@@ -21,7 +22,7 @@ class Flag:
 class FlagProvider:
     def __init__(self):
 
-        with open("../json/flags.json", "r") as f:
+        with open("data/flags.json", "r") as f:
             json_dict = json.load(f)
 
         self.flags = {flag_name: Flag(flag_name, flag_data) for flag_name, flag_data in json_dict.items()}

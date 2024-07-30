@@ -1,4 +1,5 @@
-from attack import AttackType
+from src.combat.combat import AttackType
+
 
 class Item:
     def __init__(self, name, weight=0):

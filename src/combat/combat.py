@@ -1,10 +1,10 @@
-from monster import Monster
+from src.entities.monster import Monster
 
-from attack import Attack
+from src.combat.attack import Attack
 
 
-def attack_dodged(accuracy: int, dodge:int) -> bool:
-    from dice import d
+def attack_dodged(accuracy: int, dodge: int) -> bool:
+    from src.util.dice import d
     dice_dodge = d(8)
     if dice_dodge == 1:
         return False
@@ -13,7 +13,7 @@ def attack_dodged(accuracy: int, dodge:int) -> bool:
 
     dice_accuracy = d(6)
 
-    return (accuracy + dice_accuracy) <  (dodge + dice_dodge - 1)
+    return (accuracy + dice_accuracy) < (dodge + dice_dodge - 1)
 
 
 class Combatant:
@@ -25,10 +25,10 @@ class Combatant:
         # Abstract Method
         pass
 
-
     def is_alive(self) -> bool:
         # Abstract Method
         pass
+
 
 class MonsterCombatant(Combatant):
     def __init__(self, monster: Monster) -> None:
@@ -48,7 +48,6 @@ class MonsterCombatant(Combatant):
         accuracy = attack.accuracy
         dodge = self.monster.dodge
 
-
         if attack_dodged(accuracy, dodge):
             print(f"{self.monster.title.capitalize()} {self.monster.name} dodged the Attack!")
             return
@@ -59,7 +58,7 @@ class MonsterCombatant(Combatant):
 
         if dmg > 0:
             dmg = round(dmg*attack.crt)
-            self.hp -=dmg
+            self.hp -= dmg
             print(f"{self.monster.title.capitalize()} {self.monster.name} got hit for {dmg} damage!")
         else:
             print("The hit doesn't do any damage!")
@@ -72,14 +71,10 @@ class MonsterCombatant(Combatant):
         print(f"{self.monster.title.capitalize()} {self.monster.name} has {self.hp} hit points left!")
 
 
-
-
-
 class MonsterCombat:
     def __init__(self, combatant1: MonsterCombatant, combatant2: MonsterCombatant) -> None:
         self.combatant1 = combatant1
         self.combatant2 = combatant2
-
 
     def combat(self) -> None:
         while self.combatant1.is_alive and self.combatant2.is_alive:
@@ -94,5 +89,3 @@ class MonsterCombat:
                 if not self.combatant1.is_alive:
                     continue
             self.combatant1.status_message()
-
-

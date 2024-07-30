@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class AttackType(Enum):
     PHYSICAL = 'PHYSICAL'
     SLASHING = 'SLASHING'
@@ -17,14 +18,10 @@ class AttackType(Enum):
     DARKNESS = 'DARKNESS'
 
 
-
-
-
 class Attack:
     def __init__(self, dmg: int, accuracy: int = 0, crt: float = 1.0, types: list[AttackType] = None):
         if types is None:
             types = [AttackType.PHYSICAL]
-
 
         self.dmg = dmg
         self.crt = crt

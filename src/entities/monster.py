@@ -1,6 +1,8 @@
-from attack import Attack, WeaknessSet
-from flag import flagProvider
+from src.combat.attack import Attack, WeaknessSet
+from src.flag import flagProvider as fp
+
 import json
+
 
 class Monster:
     def __init__(self, in_dict: dict):
@@ -14,11 +16,9 @@ class Monster:
         self.accuracy: int = in_dict["accuracy"]
         self.dodge: int = in_dict["dodge"]
         self.armor: int = in_dict["armor"]
-        self.weaknesses  = WeaknessSet(in_dict["weaknesses"])
+        self.weaknesses = WeaknessSet(in_dict["weaknesses"])
 
-
-        self.flags = [flagProvider[flag_name] for flag_name in in_dict["flags"]]
-
+        self.flags = [fp[flag_name] for flag_name in in_dict["flags"]]
 
     def calculate_dmg_factor(self, attack: Attack) -> float:
         dmg_factor = 1.0
@@ -32,8 +32,7 @@ class Monster:
 
 class MonsterProvider:
     def __init__(self):
-
-        with open("../json/monsters.json", "r") as f:
+        with open("data/monsters.json", "r") as f:
             json_dict = json.load(f)
 
         self.monsters = {monster_name: Monster(monster_data) for monster_name, monster_data in json_dict.items()}
@@ -41,5 +40,6 @@ class MonsterProvider:
 
     def __getitem__(self, value) -> Monster:
         return self.monsters[value]
+
 
 monsterProvider = MonsterProvider()
