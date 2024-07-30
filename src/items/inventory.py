@@ -4,6 +4,7 @@ class EquipEffects:
     def __init__(self):
         self.armor = 0
 
+
 class EquipSlot:
     def __init__(self) -> None:
         self._item = None
@@ -27,8 +28,17 @@ class EquipSlot:
     def apply_bonus(self, equip_effects: EquipEffects) -> EquipEffects:
         pass
 
-class WeaponSlot(EquipSlot):
 
+class WeaponSlot(EquipSlot):
+    pass
+
+
+class OffhandSlot(EquipSlot):
+    pass
+
+
+class ArmorSlot(EquipSlot):
+    pass
 
 
 
