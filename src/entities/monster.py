@@ -38,8 +38,8 @@ class MonsterProvider:
         self.monsters = {monster_name: Monster(monster_data) for monster_name, monster_data in json_dict.items()}
         print(self.monsters)
 
-    def __getitem__(self, value) -> Monster:
+    def __getitem__(self, value: str) -> Monster:
         return self.monsters[value]
 
 
-monsterProvider = MonsterProvider()
+monster_provider = MonsterProvider()

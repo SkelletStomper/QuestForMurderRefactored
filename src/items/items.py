@@ -1,4 +1,4 @@
-from src.combat.combat import AttackType
+from src.combat.attack import AttackType
 
 
 class Item:
@@ -29,6 +29,7 @@ class Armor(Item):
     def __init__(self, in_dict):
         super().__init__(in_dict["name"], in_dict["weight"])
         self.armor = in_dict["armor"]
+
 
 class Ability(Item):
     def __init__(self, in_dict):

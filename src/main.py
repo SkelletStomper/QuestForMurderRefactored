@@ -1,9 +1,9 @@
-from src.entities.monster import monsterProvider
+from src.entities.monster import monster_provider as mp
 
 from src.combat.combat import MonsterCombat, MonsterCombatant
 
-m1 = monsterProvider["goblin1"]
-m2 = monsterProvider["fat_cat"]
+m1 = mp["goblin1"]
+m2 = mp["fat_cat"]
 
 combat = MonsterCombat(MonsterCombatant(m1), MonsterCombatant(m2))
 
