@@ -1,34 +1,46 @@
+from enum import Enum
+
 from src.combat.attack import AttackType
 
 
 class Item:
-    def __init__(self, name, weight=0):
-        self.name = name
-        self.weight = weight
+    def __init__(self, in_dict: dict):
+        self.name = in_dict["name"]
+        self.description = in_dict["description"]
+        self.weight = in_dict["weight"]
 
 
 class Weapon(Item):
-    def __init__(self, in_dict):
-        super().__init__(in_dict["name"], in_dict["weight"])
+    def __init__(self, in_dict: dict):
+        super().__init__(in_dict)
         self.damage: int = in_dict["damage"]
         self.types: list[AttackType] = in_dict["types"]
         self.attribute = in_dict["attribute"]
 
 
 class Offhand(Item):
-    def __init__(self, in_dict):
-        super().__init__(in_dict["name"], in_dict["weight"])
-        self.damage = in_dict["damage"]
-        self.armor = in_dict["armor"]
-        self.heal = in_dict["heal"]
+    def __init__(self, in_dict: dict):
+        super().__init__(in_dict)
+        self.damage: int = in_dict["damage"]
+        self.armor: int = in_dict["armor"]
+        self.heal: int = in_dict["heal"]
         self.types: list[AttackType] = in_dict["types"]
         self.attribute = in_dict["attribute"]
 
 
+class ArmorType(Enum):
+    CHEST = "CHEST"
+    HEAD = "HEAD"
+    HANDS = "HANDS"
+    LEGS = "LEGS"
+    FEET = "FEET"
+
+
 class Armor(Item):
-    def __init__(self, in_dict):
-        super().__init__(in_dict["name"], in_dict["weight"])
-        self.armor = in_dict["armor"]
+    def __init__(self, in_dict: dict):
+        super().__init__(in_dict)
+        self.type: ArmorType = ArmorType(["type"])
+        self.armor: int = in_dict["armor"]
 
 
 class Ability(Item):

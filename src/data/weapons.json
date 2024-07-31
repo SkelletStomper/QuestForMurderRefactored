@@ -1,0 +1,137 @@
+{
+  "": {
+    "name": "",
+    "description": "",
+    "weight": 0,
+    "attacks": {
+      "attack1": {
+        "name": "",
+        "description": "",
+        "text": "",
+
+        "dmg": 0,
+        "accuracy": 0,
+        "crt": 1.0,
+        "types": []
+      },
+      "attack2": {
+        "name": "",
+        "description": "",
+        "text": "",
+
+        "dmg": 0,
+        "accuracy": 0,
+        "crt": 1.0,
+        "types": []
+      }
+    }
+  },
+  "fist": {
+    "name": "Bare Fists",
+    "description": "Your fists. Sometimes, the easiest solution just works. You might still want to look out for something better.",
+    "weight": 0,
+    "attacks": {
+      "attack1": {
+        "name": "Quick Jab",
+        "description": "Throw a light jab at your opponent. Not terribly effective, but quick and accurate.",
+        "text": "",
+
+        "dmg": 2,
+        "accuracy": 2,
+        "crt": 1.0,
+        "types": ["PHYSICAL", "BASHING"]
+      },
+      "attack2": {
+        "name": "Heavy Uppercut",
+        "description": "This punch packs a serious punch! However, you have to be close to your opponent, which makes it hard to hit.",
+        "text": "",
+
+        "dmg": 5,
+        "accuracy": -3,
+        "crt": 1.3,
+        "types": ["PHYSICAL", "BASHING"]
+      }
+    }
+  },
+  "default_dagger": {
+    "name": "Dusty Dagger",
+    "description": "A double-edged knife with a pointed tip made to pierce armor. A rogues first weapon. Even though it has seen better days, it is still lethal in the right hands.",
+    "weight": 3,
+    "attacks": {
+      "attack1": {
+        "name": "Rapid Slash",
+        "description": "Slash at your opponent. Will do good against weaker, unarmored targets.",
+        "text": "",
+
+        "dmg": 3,
+        "accuracy": 1,
+        "crt": 1.3,
+        "types": ["PHYSICAL", "SLASHING"]
+      },
+      "attack2": {
+        "name": "Stab the Weak Spot",
+        "description": "Try to find a vulnerability in the opponents posture or armor, and stab right into it. Finicky to land, but deals good damage.",
+        "text": "",
+
+        "dmg": 6,
+        "accuracy": -4,
+        "crt": 1.5,
+        "types": ["PHYSICAL", "PIERCING"]
+      }
+    }
+  },
+  "default_mace": {
+    "name": "Rusty Mace",
+    "description": "A heavy iron ball attached to an equally iron handle wrapped in leather. The iron parts have already begun to rust, but it is still not to be trifled with.  It is very top-heavy, and therefore a little unwieldy.",
+    "weight": 11,
+    "attacks": {
+      "attack1": {
+        "name": "Smash",
+        "description": "A simple strike at your opponent - perfect if simple is all you need. As maces tend to be, it is good at transferring damage through armor.",
+        "text": "",
+
+        "dmg": 8,
+        "accuracy": -2,
+        "crt": 0.6,
+        "types": ["PHYSICAL", "BASHING"]
+      },
+      "attack2": {
+        "name": "Another Smash",
+        "description": "There is only so much you can do with this mace...",
+        "text": "",
+
+        "dmg": 8,
+        "accuracy": -2,
+        "crt": 0.6,
+        "types": ["PHYSICAL", "BASHING"]
+      }
+    }
+  },
+   "default_pyro_tome": {
+    "name": "Pyromancy for Dummies",
+    "description": "A piece of almost crude literature detailing the most basic two pyromancy spells.",
+    "weight": 1,
+    "attacks": {
+      "attack1": {
+        "name": "Singeing Burst",
+        "description": "Ignite the air in front of you. Extremely efficient at hitting your opponent, not so much at actually hurting them.",
+        "text": "",
+
+        "dmg": 2,
+        "accuracy": 5,
+        "crt": 1.0,
+        "types": ["MAGICAL", "FIRE"]
+      },
+      "attack2": {
+        "name": "Fireball",
+        "description": "Form a sphere of fire and hurl it at your opponent. A lot more condensed and potent than the burst.",
+        "text": "",
+
+        "dmg": 5,
+        "accuracy": 0,
+        "crt": 1.0,
+        "types": ["MAGICAL", "FIRE"]
+      }
+    }
+  }
+}

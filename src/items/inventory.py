@@ -1,11 +1,11 @@
 from src.combat.attack import Attack
-from src.items.items import Item, Weapon, Armor
+from src.items.items import Item, Weapon, Armor, ArmorType
+
 
 class EquipEffects:
     def __init__(self):
         self.armor = 0
-
-        self.granted_attacks: list[Attack] = 0
+        self.granted_attacks: list[Attack] = []
 
 
 class EquipSlot:
@@ -16,7 +16,7 @@ class EquipSlot:
         return self._item is None
 
     def is_equipable(self, item: Item) -> bool:
-        pass
+        pass  # abstract
 
     def equip(self, item: Item) -> None:
         if self._item is not None:
@@ -29,7 +29,7 @@ class EquipSlot:
         return item
 
     def apply_bonus(self, equip_effects: EquipEffects) -> EquipEffects:
-        pass
+        pass  # abstract
 
 
 class WeaponSlot(EquipSlot):
@@ -48,14 +48,17 @@ class WeaponSlot(EquipSlot):
         return equip_effects
 
 
-
 class OffhandSlot(EquipSlot):
     pass
 
 
 class ArmorSlot(EquipSlot):
+    def __init__(self, armor_type: ArmorType):
+        super().__init__()
+        self.type = armor_type
+
     def is_equipable(self, item: Item) -> bool:
-        return isinstance(item, Armor)
+        return isinstance(item, Armor) and item.type == self.type
 
     def apply_bonus(self, equip_effects: EquipEffects) -> EquipEffects:
         armor: Armor = self._item
@@ -67,7 +70,14 @@ class ArmorSlot(EquipSlot):
 
 class Inventory:
     def __init__(self):
-        self.equip_slots = []
+        self.equip_slots = [
+            WeaponSlot(),
+            ArmorSlot(ArmorType.HEAD),
+            ArmorSlot(ArmorType.CHEST),
+            ArmorSlot(ArmorType.LEGS),
+            ArmorSlot(ArmorType.HANDS),
+            ArmorSlot(ArmorType.FEET),
+        ]
 
         self.item_capacity = 20
 
