@@ -38,13 +38,12 @@ class WeaponSlot(EquipSlot):
 
     def apply_bonus(self, equip_effects: EquipEffects) -> EquipEffects:
         weapon: Weapon = self._item
-        attack = Attack(
-            dmg=weapon.damage,
-            accuracy=0,
-            crt=1.0,
-            types=weapon.types
-        )
-        equip_effects.granted_attacks.append(attack)
+        attacks = [
+            weapon.attacks["attack1"].generate_attack(),
+            weapon.attacks["attack2"].generate_attack()
+        ]
+
+        equip_effects.granted_attacks += attacks
         return equip_effects
 
 

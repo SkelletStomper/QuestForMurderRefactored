@@ -45,7 +45,6 @@ class Offhand(Item):
         self.types: list[AttackType] = in_dict["types"]
 
 
-
 class ArmorType(Enum):
     CHEST = "CHEST"
     HEAD = "HEAD"
