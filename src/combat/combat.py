@@ -40,12 +40,12 @@ class MonsterCombatant(Combatant):
         dmg = self.monster.dmg
         return [Attack(
             dmg=dmg,
-            accuracy=self.monster.accuracy,
+            accuracy=self.monster.acc,
             crt=self.monster.crit_modifier
         )]
 
     def defense(self, attack: Attack) -> None:
-        accuracy = attack.accuracy
+        accuracy = attack.acc
         dodge = self.monster.dodge
 
         if attack_dodged(accuracy, dodge):

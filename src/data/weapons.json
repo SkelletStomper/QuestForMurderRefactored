@@ -10,7 +10,7 @@
         "text": "",
 
         "dmg": 0,
-        "accuracy": 0,
+        "acc": 0,
         "crt": 1.0,
         "types": []
       },
@@ -20,7 +20,7 @@
         "text": "",
 
         "dmg": 0,
-        "accuracy": 0,
+        "acc": 0,
         "crt": 1.0,
         "types": []
       }
@@ -37,7 +37,7 @@
         "text": "",
 
         "dmg": 2,
-        "accuracy": 2,
+        "acc": 2,
         "crt": 1.0,
         "types": ["PHYSICAL", "BASHING"]
       },
@@ -47,7 +47,7 @@
         "text": "",
 
         "dmg": 5,
-        "accuracy": -3,
+        "acc": -3,
         "crt": 1.3,
         "types": ["PHYSICAL", "BASHING"]
       }
@@ -64,7 +64,7 @@
         "text": "",
 
         "dmg": 3,
-        "accuracy": 1,
+        "acc": 1,
         "crt": 1.3,
         "types": ["PHYSICAL", "SLASHING"]
       },
@@ -74,7 +74,7 @@
         "text": "",
 
         "dmg": 6,
-        "accuracy": -4,
+        "acc": -4,
         "crt": 1.5,
         "types": ["PHYSICAL", "PIERCING"]
       }
@@ -91,7 +91,7 @@
         "text": "",
 
         "dmg": 8,
-        "accuracy": -2,
+        "acc": -2,
         "crt": 0.6,
         "types": ["PHYSICAL", "BASHING"]
       },
@@ -101,7 +101,7 @@
         "text": "",
 
         "dmg": 8,
-        "accuracy": -2,
+        "acc": -2,
         "crt": 0.6,
         "types": ["PHYSICAL", "BASHING"]
       }
@@ -118,7 +118,7 @@
         "text": "",
 
         "dmg": 2,
-        "accuracy": 5,
+        "acc": 5,
         "crt": 1.0,
         "types": ["MAGICAL", "FIRE"]
       },
@@ -128,7 +128,7 @@
         "text": "",
 
         "dmg": 5,
-        "accuracy": 0,
+        "acc": 0,
         "crt": 1.0,
         "types": ["MAGICAL", "FIRE"]
       }

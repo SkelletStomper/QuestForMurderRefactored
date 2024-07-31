@@ -11,7 +11,7 @@
     "hp_max": 0,
     "dmg" : 0,
     "crt": 1.0,
-    "accuracy": 0,
+    "acc": 0,
     "dodge": 0,
     "armor": 0,
     "weaknesses": {
@@ -40,7 +40,7 @@
     "hp_max": 250,
     "dmg" : 12,
     "crt": 1,
-    "accuracy": 5,
+    "acc": 5,
     "dodge": -3,
     "armor": 4,
     "weaknesses": {
@@ -60,7 +60,7 @@
     "hp_max": 12,
     "dmg" : 4,
     "crt": 1,
-    "accuracy": 0,
+    "acc": 0,
     "dodge": 0,
     "armor": 0,
     "weaknesses": {
@@ -78,7 +78,7 @@
     "hp_max": 16,
     "dmg" : 3,
     "crt": 1,
-    "accuracy": 0,
+    "acc": 0,
     "dodge": -2,
     "armor": 2,
     "weaknesses": {
@@ -98,7 +98,7 @@
     "hp_max": 11,
     "dmg" : 5,
     "crt": 1,
-    "accuracy": 0,
+    "acc": 0,
     "dodge": 0,
     "armor": 0,
     "weaknesses": {
@@ -117,7 +117,7 @@
     "hp_max": 4,
     "dmg" : 5,
     "crt": 1.5,
-    "accuracy": 2,
+    "acc": 2,
     "dodge": 3,
     "armor": 0,
     "weaknesses": {
@@ -137,7 +137,7 @@
     "hp_max": 10,
     "dmg" : 4,
     "crt": 1,
-    "accuracy": 0,
+    "acc": 0,
     "dodge": 0,
     "armor": 1,
     "weaknesses": {
@@ -155,7 +155,7 @@
     "hp_max": 15,
     "dmg" : 6,
     "crt": 1,
-    "accuracy": 1,
+    "acc": 1,
     "dodge": 1,
     "armor": 2,
     "weaknesses": {
@@ -173,7 +173,7 @@
     "hp_max": 12,
     "dmg" : 3,
     "crt": 1,
-    "accuracy": 0,
+    "acc": 0,
     "dodge": 2,
     "armor": 0,
     "weaknesses": {
@@ -192,7 +192,7 @@
     "hp_max": 16,
     "dmg" : 6,
     "crt": 5,
-    "accuracy": 1,
+    "acc": 1,
     "dodge": 3,
     "armor": -2,
     "weaknesses": {
@@ -211,7 +211,7 @@
     "hp_max": 25,
     "dmg" : 4,
     "crt": 0.9,
-    "accuracy": 0,
+    "acc": 0,
     "dodge": -3,
     "armor": 4,
     "weaknesses": {
@@ -230,7 +230,7 @@
     "hp_max": 10,
     "dmg" : 10,
     "crt": 1.2,
-    "accuracy": -4,
+    "acc": -4,
     "dodge": 2,
     "armor": 3,
     "weaknesses": {
@@ -249,7 +249,7 @@
     "hp_max": 21,
     "dmg" : 4,
     "crt": 1,
-    "accuracy": 0,
+    "acc": 0,
     "dodge": 2,
     "armor": 0,
     "weaknesses": {
@@ -268,7 +268,7 @@
     "hp_max": 10,
     "dmg" : 6,
     "crt": 1,
-    "accuracy": 1,
+    "acc": 1,
     "dodge": 3,
     "armor": 0,
     "weaknesses": {

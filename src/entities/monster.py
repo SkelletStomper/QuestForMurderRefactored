@@ -13,7 +13,7 @@ class Monster:
         self.hp_max: int = in_dict["hp_max"]
         self.dmg: int = in_dict["dmg"]
         self.crit_modifier: float = in_dict["crt"]
-        self.accuracy: int = in_dict["accuracy"]
+        self.acc: int = in_dict["acc"]
         self.dodge: int = in_dict["dodge"]
         self.armor: int = in_dict["armor"]
         self.weaknesses = WeaknessSet(in_dict["weaknesses"])
