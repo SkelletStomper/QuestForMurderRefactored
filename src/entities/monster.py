@@ -1,5 +1,7 @@
 from src.combat.attack import Attack, WeaknessSet
-from src.flag import flagProvider as fp
+from src.flag import flag_provider as fp
+from src.localization.localized_entity import LocalizedEntity
+from src.localization.pronouns import pronoun_provider as pp
 
 import json
 
@@ -8,17 +10,19 @@ class Monster:
     def __init__(self, in_dict: dict):
         self.name: str = in_dict["name"]
         self.title: str = in_dict["title"]
+        self.pronouns = pp[in_dict["pronouns"]]
+
         self.info: str = in_dict["information"]
         self.death_messages: list[str] = in_dict["death_messages"]
         self.hp_max: int = in_dict["hp_max"]
         self.dmg: int = in_dict["dmg"]
-        self.crit_modifier: float = in_dict["crt"]
+        self.crt: float = in_dict["crt"]
         self.acc: int = in_dict["acc"]
         self.dodge: int = in_dict["dodge"]
         self.armor: int = in_dict["armor"]
         self.weaknesses = WeaknessSet(in_dict["weaknesses"])
 
-        self.flags = [fp[flag_name] for flag_name in in_dict["flags"]]
+        self.flags = [fp(flag_name) for flag_name in in_dict["flags"]]
 
     def calculate_dmg_factor(self, attack: Attack) -> float:
         dmg_factor = 1.0
@@ -28,6 +32,18 @@ class Monster:
             dmg_factor *= flag.weaknesses.attack_factor(attack)
 
         return dmg_factor
+
+    def get_le(self) -> LocalizedEntity:
+        plural = False
+        if "plural" in self.flags:
+            plural = True
+
+        return LocalizedEntity(
+            name=self.name,
+            title=self.title,
+            plural=plural,
+            pronouns=self.pronouns,
+        )
 
 
 class MonsterProvider:
