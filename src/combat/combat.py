@@ -36,7 +36,8 @@ class MonsterCombatant(Combatant):
         self.hp = self.monster.hp_max
 
     def get_attacks(self) -> list[Attack]:
-        print(f"{self.monster.title.capitalize()} {self.monster.name} attacks!")
+        le = self.monster.get_le()
+        print(f"{le.name} attacks!")
 
         dmg = self.monster.dmg
         text = "{}"
@@ -48,13 +49,17 @@ class MonsterCombatant(Combatant):
 
         )]
 
-    def defense(self, attack: Attack) -> None:
+    def defense(self, attack: Attack) -> bool:
+        """Let the monster defend against the Attack, giving it chance to dodge and applying damage if it.
+        Returns true if the attack does damage, false if not."""
+
+        le = self.monster.get_le()
         accuracy = attack.acc
         dodge = self.monster.dodge
 
         if attack_dodged(accuracy, dodge):
-            print(f"{self.monster.title.capitalize()} {self.monster.name} dodged the Attack!")
-            return
+            print(f"{le.name} dodged the attack!")
+            return False
 
         dmg_factor = self.monster.calculate_dmg_factor(attack)
         dmg = round(attack.dmg*dmg_factor)
@@ -63,16 +68,19 @@ class MonsterCombatant(Combatant):
         if dmg > 0:
             dmg = round(dmg*attack.crt)
             self.hp -= dmg
-            print(f"{self.monster.title.capitalize()} {self.monster.name} got hit for {dmg} damage!")
+            print(f"{le.name} got hit for {dmg} damage!")
+            return True
         else:
-            print("The hit doesn't do any damage!")
+            print(f"The hit doesn't penetrate {le.owns} armor!")
+            return False
 
     @property
     def is_alive(self) -> bool:
         return self.hp > 0
 
     def status_message(self):
-        print(f"{self.monster.title.capitalize()} {self.monster.name} has {self.hp} hit points left!")
+        le = self.monster.get_le()
+        print(f"{le.name.capitalize()} has {self.hp} hit points left!")
 
 
 class MonsterCombat:
