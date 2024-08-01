@@ -34,7 +34,7 @@
       "attack1": {
         "name": "Quick Jab",
         "description": "Throw a light jab at your opponent. Not terribly effective, but quick and accurate.",
-        "text": "{atk.name} throw{s} a light jab at {def.name}, and hit{s} {def.object} in the chest.",
+        "text": "{atk.name} throw{atk.s} a light jab at {def.name}, and hit{atk.s} {def.object} in the chest.",
 
         "dmg": 2,
         "acc": 2,
@@ -61,7 +61,7 @@
       "attack1": {
         "name": "Rapid Slash",
         "description": "Slash at your opponent. Will do good against weaker, unarmored targets.",
-        "text": "{atk.name} slash{es} at {def.name}, flinging a trail of blood through the air!",
+        "text": "{atk.name} slash{atk.es} at {def.name}, flinging a trail of blood through the air!",
 
         "dmg": 3,
         "acc": 1,
@@ -71,7 +71,7 @@
       "attack2": {
         "name": "Stab the Weak Spot",
         "description": "Try to find a vulnerability in the opponents posture or armor, and stab right into it. Finicky to land, but deals good damage.",
-        "text": "{atk.name} find{s} a way with {atk.poss_adjective} blade into {def.name}, hitting {def.object} where it really hurts!",
+        "text": "{atk.name} find{atk.s} a way with {atk.poss_adjective} blade into {def.name}, hitting {def.object} where it really hurts!",
 
         "dmg": 6,
         "acc": -4,
@@ -88,7 +88,7 @@
       "attack1": {
         "name": "Smash",
         "description": "A simple strike at your opponent - perfect if simple is all you need. As maces tend to be, it is good at transferring damage through armor.",
-        "text": "{atk.name} hit{s} {def.name} with {atk.poss_adjective} rusty mace!",
+        "text": "{atk.name} hit{atk.s} {def.name} with {atk.poss_adjective} rusty mace!",
 
         "dmg": 8,
         "acc": -2,
@@ -98,7 +98,7 @@
       "attack2": {
         "name": "Another Smash",
         "description": "There is only so much you can do with this mace...",
-        "text": "{atk.name} clobber{s} {def.name} with {atk.poss_adjective} rusty mace!",
+        "text": "{atk.name} clobber{atk.s} {def.name} with {atk.poss_adjective} rusty mace!",
 
         "dmg": 8,
         "acc": -2,
@@ -125,7 +125,7 @@
       "attack2": {
         "name": "Fireball",
         "description": "Form a sphere of fire and hurl it at your opponent. A lot more condensed and potent than the burst.",
-        "text": "{def.name} receive{s} {atk.owns} fireball straight to the face!",
+        "text": "{def.name} receive{def.s} {atk.owns} fireball straight to the face!",
 
         "dmg": 5,
         "acc": 0, 
