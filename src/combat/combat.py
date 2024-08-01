@@ -1,6 +1,7 @@
 from src.entities.monster import Monster
 
 from src.combat.attack import Attack
+from src.localization.l_string import LString
 
 
 def attack_dodged(accuracy: int, dodge: int) -> bool:
@@ -37,10 +38,10 @@ class MonsterCombatant(Combatant):
 
     def get_attacks(self) -> list[Attack]:
         le = self.monster.get_le()
-        print(f"{le.name} attacks!")
+        print(f"{le.name} attacks!".capitalize())
 
         dmg = self.monster.dmg
-        text = "{}"
+        text = LString("{atk.name} hits {def.name} with a vicious attack!")
         return [Attack(
             dmg=dmg,
             acc=self.monster.acc,
@@ -58,7 +59,7 @@ class MonsterCombatant(Combatant):
         dodge = self.monster.dodge
 
         if attack_dodged(accuracy, dodge):
-            print(f"{le.name} dodged the attack!")
+            print(f"{le.name} dodged the attack!".capitalize())
             return False
 
         dmg_factor = self.monster.calculate_dmg_factor(attack)
@@ -68,7 +69,7 @@ class MonsterCombatant(Combatant):
         if dmg > 0:
             dmg = round(dmg*attack.crt)
             self.hp -= dmg
-            print(f"{le.name} got hit for {dmg} damage!")
+            print(f"{le.name} got hit for {dmg} damage!".capitalize())
             return True
         else:
             print(f"The hit doesn't penetrate {le.owns} armor!")
@@ -89,15 +90,28 @@ class MonsterCombat:
         self.combatant2 = combatant2
 
     def combat(self) -> None:
-        while self.combatant1.is_alive and self.combatant2.is_alive:
-            for attack in self.combatant1.get_attacks():
-                self.combatant2.defense(attack)
-                if not self.combatant2.is_alive:
-                    continue
-            self.combatant1.status_message()
+        c1 = self.combatant1
+        c2 = self.combatant2
 
-            for attack in self.combatant2.get_attacks():
-                self.combatant1.defense(attack)
-                if not self.combatant1.is_alive:
-                    continue
-            self.combatant1.status_message()
+        while c1.is_alive and c2.is_alive:
+            self.calculate_attacks(c1, c2)
+            print("")
+
+            self.calculate_attacks(c2, c1)
+            print("")
+
+    def calculate_attacks(self, attacker: MonsterCombatant, defender: MonsterCombatant) -> None:
+        for attack in attacker.get_attacks():
+            if defender.defense(attack):
+                self.print_attack(attack, attacker, defender)
+            if not defender.is_alive:
+                continue
+        defender.status_message()
+
+    @staticmethod
+    def print_attack(attack: Attack, attacker: MonsterCombatant, defender: MonsterCombatant) -> None:
+        atk_str = attack.atk_str.parse(
+            attacking=attacker.monster.get_le(),
+            defending=defender.monster.get_le()
+        )
+        print(atk_str)

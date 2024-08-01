@@ -32,7 +32,7 @@ class LString:
             defending: LocalizedEntity | None = None,
             ) -> str:
 
-        return self._lstr.format(**locals())
+        return self._lstr.format(**locals()).capitalize()
 
 
 
