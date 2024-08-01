@@ -1,5 +1,6 @@
 {
   "": {
+    "form": 1,
     "subject": "",
     "object": "",
     "poss_adjective": "",
@@ -7,7 +8,8 @@
     "reflexive": "",
     "3rdS": false
   },
-   "1st_singular": {
+  "1st_singular": {
+    "form": 1,
     "subject": "I",
     "object": "me",
     "poss_adjective": "my",
@@ -15,7 +17,8 @@
     "reflexive": "myself",
     "3rdS": false
   },
-   "1st_plural": {
+  "1st_plural": {
+    "form": 1,
     "subject": "we",
     "object": "us",
     "poss_adjective": "our",
@@ -23,7 +26,8 @@
     "reflexive": "ourselves",
     "3rdS": false
   },
-    "2nd_singular": {
+  "2nd_singular": {
+    "form": 2,
     "subject": "you",
     "object": "you",
     "poss_adjective": "your",
@@ -31,7 +35,8 @@
     "reflexive": "yourself",
     "3rdS": false
   },
-    "2nd_plural": {
+  "2nd_plural": {
+    "form": 2,
     "subject": "you",
     "object": "you",
     "poss_adjective": "your",
@@ -39,7 +44,8 @@
     "reflexive": "yourselves",
     "3rdS": false
   },
-   "3rd_he": {
+  "3rd_he": {
+    "form": 3,
     "subject": "he",
     "object": "him",
     "poss_adjective": "his",
@@ -47,7 +53,8 @@
     "reflexive": "himself",
     "3rdS": true
   },
-   "3rd_she": {
+  "3rd_she": {
+    "form": 3,
     "subject": "she",
     "object": "her",
     "poss_adjective": "her",
@@ -55,7 +62,8 @@
     "reflexive": "herself",
     "3rdS": true
   },
-   "3rd_they": {
+  "3rd_they": {
+    "form": 3,
     "subject": "they",
     "object": "them",
     "poss_adjective": "their",
@@ -63,7 +71,8 @@
     "reflexive": "themself",
     "3rdS": false
   },
-   "3rd_it": {
+  "3rd_it": {
+    "form": 3,
     "subject": "it",
     "object": "it",
     "poss_adjective": "its",
@@ -71,7 +80,8 @@
     "reflexive": "itself",
     "3rdS": true
   },
-   "3rd_plural": {
+  "3rd_plural": {
+    "form": 3,
     "subject": "they",
     "object": "them",
     "poss_adjective": "their",

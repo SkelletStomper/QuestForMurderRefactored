@@ -11,12 +11,14 @@ class PronounSet:
     reflexive: Olivia is contempt with herself now that she owns milkers.\n
     """
 
-    def __init__(self, init_dict: dict[str, str]):
-        self.subject = init_dict["subject"]
-        self.object = init_dict["object"]
-        self.poss_adjective = init_dict["poss_adjective"]
-        self.possessive = init_dict["possessive"]
-        self.reflexive = init_dict["reflexive"]
+    def __init__(self, init_dict: dict):
+        self.subject: str = init_dict["subject"]
+        self.object: str = init_dict["object"]
+        self.poss_adjective: str = init_dict["poss_adjective"]
+        self.possessive: str = init_dict["possessive"]
+        self.reflexive: str = init_dict["reflexive"]
+        self.third_s: bool = init_dict["3rdS"]
+        self.form: int = init_dict["form"]
 
 
 class PronounProvider:
@@ -30,8 +32,4 @@ class PronounProvider:
         return self.pronouns[item]
 
 
-
-
-
-
-pronoun_provider = 0
+pronoun_provider = PronounProvider()
