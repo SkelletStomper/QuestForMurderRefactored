@@ -1,5 +1,8 @@
 from src.combat.attack import Attack
-from src.items.items import Item, Weapon, Armor, ArmorType
+from src.items.items import Item
+
+from src.items.armor import Armor, ArmorSlotType
+from src.items.weapon import Weapon
 
 
 class EquipEffects:
@@ -52,7 +55,7 @@ class OffhandSlot(EquipSlot):
 
 
 class ArmorSlot(EquipSlot):
-    def __init__(self, armor_type: ArmorType):
+    def __init__(self, armor_type: ArmorSlotType):
         super().__init__()
         self.type = armor_type
 
@@ -71,11 +74,11 @@ class Inventory:
     def __init__(self):
         self.equip_slots = [
             WeaponSlot(),
-            ArmorSlot(ArmorType.HEAD),
-            ArmorSlot(ArmorType.CHEST),
-            ArmorSlot(ArmorType.LEGS),
-            ArmorSlot(ArmorType.HANDS),
-            ArmorSlot(ArmorType.FEET),
+            ArmorSlot(ArmorSlotType.HEAD),
+            ArmorSlot(ArmorSlotType.CHEST),
+            ArmorSlot(ArmorSlotType.LEGS),
+            ArmorSlot(ArmorSlotType.HANDS),
+            ArmorSlot(ArmorSlotType.FEET),
         ]
 
         self.item_capacity = 20
