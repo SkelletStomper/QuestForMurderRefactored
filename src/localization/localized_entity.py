@@ -28,6 +28,34 @@ class LocalizedEntity:
     def reflexive(self):
         return self._pronouns.reflexive
 
+    @property
+    def s(self):
+        if self._pronouns.third_s:
+            return "s"
+        return ""
+
+    @property
+    def es(self):
+        if self._pronouns.third_s:
+            return "es"
+        return ""
+
+    @property
+    def name(self):
+        if self._title == "":
+            return self._name
+        return f"{self._title} {self._name}"
+
+    @property
+    def owns(self):
+        if self._pronouns.form == 2:
+            return self._pronouns.poss_adjective
+
+        elif self._name.endswith("s"):
+            return self._name + "'"
+        else:
+            return self._name + "'s"
+
 
 
 
