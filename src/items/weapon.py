@@ -1,12 +1,13 @@
 from src.items.items import Item
 from src.combat.attack import Attack, AttackType
+from src.localization.l_string import LString
 
 
 class AttackStencil:
     def __init__(self, in_dict: dict) -> None:
         self.name = in_dict["name"]
         self.description = in_dict["description"]
-        self.text = in_dict["text"]
+        self.text = LString(in_dict["text"])
 
         self.dmg = in_dict["dmg"]
         self.acc = in_dict["acc"]

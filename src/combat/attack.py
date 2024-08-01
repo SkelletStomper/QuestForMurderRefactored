@@ -1,5 +1,7 @@
 from enum import Enum
 
+from src.localization.l_string import LString
+
 
 class AttackType(Enum):
     PHYSICAL = 'PHYSICAL'
@@ -19,7 +21,14 @@ class AttackType(Enum):
 
 
 class Attack:
-    def __init__(self, dmg: int, acc: int = 0, crt: float = 1.0, types: list[AttackType] = None, atk_str=None):
+    def __init__(self,
+                 dmg: int,
+                 acc: int = 0,
+                 crt: float = 1.0,
+                 types: list[AttackType] = None,
+                 atk_str: LString | None = None
+                 ) -> None:
+
         if types is None:
             types = [AttackType.PHYSICAL]
 
@@ -29,12 +38,12 @@ class Attack:
         self.types = types
 
         if atk_str is None:
-            atk_str = "Unspecified attack landed."
+            atk_str = LString("Unspecified attack landed.")
         self.atk_str = atk_str
 
 
 class WeaknessSet:
-    def __init__(self, str_dict: dict[str, float]):
+    def __init__(self, str_dict: dict[str, float]) -> None:
         weaknesses = {attack_type: 1.0 for attack_type in AttackType}
 
         for weakness, factor in str_dict.items():
@@ -42,7 +51,7 @@ class WeaknessSet:
 
         self.weaknesses = weaknesses
 
-    def __getitem__(self, weakness):
+    def __getitem__(self, weakness: AttackType) -> float:
         return self.weaknesses[weakness]
 
     def attack_factor(self, attack: Attack) -> float:

@@ -80,7 +80,7 @@ class MonsterCombatant(Combatant):
 
     def status_message(self):
         le = self.monster.get_le()
-        print(f"{le.name.capitalize()} has {self.hp} hit points left!")
+        print(f"{le.name} has {self.hp} hit points left!".capitalize())
 
 
 class MonsterCombat:
