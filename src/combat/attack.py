@@ -19,7 +19,7 @@ class AttackType(Enum):
 
 
 class Attack:
-    def __init__(self, dmg: int, acc: int = 0, crt: float = 1.0, types: list[AttackType] = None):
+    def __init__(self, dmg: int, acc: int = 0, crt: float = 1.0, types: list[AttackType] = None, atk_str=None):
         if types is None:
             types = [AttackType.PHYSICAL]
 
@@ -27,6 +27,10 @@ class Attack:
         self.crt = crt
         self.acc = acc
         self.types = types
+
+        if atk_str is None:
+            atk_str = "Unspecified attack landed."
+        self.atk_str = atk_str
 
 
 class WeaknessSet:

@@ -18,7 +18,8 @@ class AttackStencil:
             dmg=self.dmg,
             acc=self.acc,
             crt=self.crt,
-            types=self.types
+            types=self.types,
+            atk_str=self.text,
         )
 
 

@@ -37,11 +37,15 @@ class MonsterCombatant(Combatant):
 
     def get_attacks(self) -> list[Attack]:
         print(f"{self.monster.title.capitalize()} {self.monster.name} attacks!")
+
         dmg = self.monster.dmg
+        text = "{}"
         return [Attack(
             dmg=dmg,
-            accuracy=self.monster.acc,
-            crt=self.monster.crit_modifier
+            acc=self.monster.acc,
+            crt=self.monster.crt,
+            atk_str=text,
+
         )]
 
     def defense(self, attack: Attack) -> None:
