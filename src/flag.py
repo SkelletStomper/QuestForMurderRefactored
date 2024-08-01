@@ -54,7 +54,4 @@ class FlagProvider:
         return self[flag_name].get_copy(value)
 
 
-
 flag_provider = FlagProvider()
-
-
