@@ -1,6 +1,6 @@
 from src.data_providers import monster_provider as mp
 
-from src.combat.combat import MonsterCombat, MonsterCombatant
+from src.combat.monster_combat import MonsterCombat, MonsterCombatant
 
 
 m1 = mp["dragon"]
