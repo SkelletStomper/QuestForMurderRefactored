@@ -55,10 +55,11 @@
       }
     }
   },
-  "json_type": "item.weapon",
+
   "default_dagger": {
     "name": "Dusty Dagger",
     "description": "A double-edged knife with a pointed tip made to pierce armor. A rogues first weapon. Even though it has seen better days, it is still lethal in the right hands.",
+    "json_type": "item.weapon",
     "weight": 3,
     "attacks": {
       "attack1": {

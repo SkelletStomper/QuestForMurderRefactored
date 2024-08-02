@@ -21,14 +21,3 @@ class PronounSet:
         self.form: int = init_dict["form"]
 
 
-class PronounProvider:
-    def __init__(self):
-        json_dict = read_json_data("pronouns.json")
-
-        self.pronouns: dict[str, PronounSet] = {pronoun_name: PronounSet(pronoun_data) for pronoun_name, pronoun_data in json_dict.items()}
-
-    def __getitem__(self, item: str) -> PronounSet:
-        return self.pronouns[item]
-
-
-pronoun_provider = PronounProvider()

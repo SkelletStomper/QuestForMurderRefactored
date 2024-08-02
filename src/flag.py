@@ -1,5 +1,5 @@
 from src.combat.attack import WeaknessSet
-from src.util.read_data import read_json_data
+
 from copy import copy
 
 

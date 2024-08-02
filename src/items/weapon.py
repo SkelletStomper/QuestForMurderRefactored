@@ -27,4 +27,4 @@ class AttackStencil:
 class Weapon(Item):
     def __init__(self, in_dict: dict):
         super().__init__(in_dict)
-        self.attacks = {atk_id: AttackStencil(atk_data) for atk_id, atk_data in in_dict["attacks"].keys()}
+        self.attacks = {atk_id: AttackStencil(atk_data) for atk_id, atk_data in in_dict["attacks"].items()}

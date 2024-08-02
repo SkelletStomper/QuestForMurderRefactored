@@ -1,13 +1,12 @@
 from src.combat.attack import Attack, WeaknessSet
-from src.flag import flag_provider as fp
 from src.localization.localized_entity import LocalizedEntity
-from src.localization.pronouns import pronoun_provider as pp
-
-from src.util.read_data import read_json_data
 
 
 class Monster:
     def __init__(self, in_dict: dict):
+        from src.data_providers import pronoun_provider as pp
+        from src.data_providers import flag_provider as fp
+
         self.name: str = in_dict["name"]
         self.title: str = in_dict["title"]
         self.pronouns = pp[in_dict["pronouns"]]
@@ -45,16 +44,3 @@ class Monster:
             pronouns=self.pronouns,
         )
 
-
-class MonsterProvider:
-    def __init__(self):
-        json_dict = read_json_data("monsters.json")
-
-        self.monsters = {monster_name: Monster(monster_data) for monster_name, monster_data in json_dict.items()}
-        print(self.monsters)
-
-    def __getitem__(self, value: str) -> Monster:
-        return self.monsters[value]
-
-
-monster_provider = MonsterProvider()

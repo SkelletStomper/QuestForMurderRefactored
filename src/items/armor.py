@@ -4,6 +4,7 @@ from enum import Enum
 
 
 class ArmorSlotType(Enum):
+    ANY = "ANY"
     CHEST = "CHEST"
     HEAD = "HEAD"
     HANDS = "HANDS"

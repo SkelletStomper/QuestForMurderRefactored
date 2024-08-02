@@ -1,9 +1,10 @@
 from src.flag import Flag
 
+
 class FlagProvider:
-    def __init__(self):
-        json_dict = read_json_data("flags.json")
-        self.flags = {flag_name: Flag(flag_name, flag_data) for flag_name, flag_data in json_dict.items()}
+    def __init__(self, all_flag_data):
+
+        self.flags = {flag_name: Flag(flag_name, flag_data) for flag_name, flag_data in all_flag_data.items()}
         print(self.flags)
 
     def __getitem__(self, value) -> Flag:
@@ -18,5 +19,3 @@ class FlagProvider:
 
         return self[flag_name].get_copy(value)
 
-
-flag_provider = FlagProvider()

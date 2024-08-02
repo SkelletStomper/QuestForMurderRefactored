@@ -1,4 +1,4 @@
-from src.entities.monster import monster_provider as mp
+from src.data_providers import monster_provider as mp
 
 from src.combat.combat import MonsterCombat, MonsterCombatant
 

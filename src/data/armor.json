@@ -1,7 +1,7 @@
 {
   "armor": {
     "json_type": "item.armor",
-    "armor_type": "",
+    "armor_type": "ANY",
     "name": "",
     "description": "",
     "weight": 0,
@@ -44,6 +44,7 @@
     "armor_type": "FEET",
     "name": "Leather Boots",
     "description": "A worn-out pair of leather boots. Even though they never touched your feet before, they fit you perfectly.",
+    "weight": 4,
     "armor": 1
   }
 }
