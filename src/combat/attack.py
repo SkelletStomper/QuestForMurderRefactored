@@ -25,11 +25,18 @@ class WeaknessSet:
         weaknesses = {attack_type: 1.0 for attack_type in AttackType}
 
         for weakness, factor in str_dict.items():
+            if isinstance(factor, int):
+                factor = float(factor)
+            if not isinstance(factor, float):
+                raise TypeError("Weakness factor must be float or int")
+
             weaknesses[AttackType(weakness)] = factor
 
         self.weaknesses = weaknesses
 
-    def __getitem__(self, weakness: AttackType) -> float:
+    def __getitem__(self, weakness: AttackType | str) -> float:
+        if isinstance(weakness, str):
+            weakness = AttackType(weakness)
         return self.weaknesses[weakness]
 
     def attack_factor(self, attack: "Attack") -> float:
