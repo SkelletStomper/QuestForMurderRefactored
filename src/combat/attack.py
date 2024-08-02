@@ -40,24 +40,24 @@ class WeaknessSet:
 
         return factor
 
-    class Attack:
-        def __init__(self,
-                     dmg: int,
-                     acc: int = 0,
-                     crt: float = 1.0,
-                     types: list[AttackType] = None,
-                     atk_str: LString | None = None
-                     ) -> None:
+class Attack:
+    def __init__(self,
+                 dmg: int,
+                 acc: int = 0,
+                 crt: float = 1.0,
+                 types: list[AttackType] = None,
+                 atk_str: LString | None = None
+                 ) -> None:
 
-            if types is None:
-                types = [AttackType.PHYSICAL]
+        if types is None:
+            types = [AttackType.PHYSICAL]
 
-            self.dmg = dmg
-            self.crt = crt
-            self.acc = acc
-            self.types = types
+        self.dmg = dmg
+        self.crt = crt
+        self.acc = acc
+        self.types = types
 
-            if atk_str is None:
-                atk_str = LString("Unspecified attack landed.")
-            self.atk_str = atk_str
+        if atk_str is None:
+            atk_str = LString("Unspecified attack landed.")
+        self.atk_str = atk_str
 
