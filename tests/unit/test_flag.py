@@ -1,5 +1,7 @@
 import pytest
 from unittest.mock import patch, mock_open
+from math import isclose
+
 from src.flag import Flag, FlagProvider
 from src.combat.attack import WeaknessSet
 
@@ -11,7 +13,6 @@ def flag_data() -> dict:
         "name": "test_flag",
         "default_value": 10,
         "description": "A test flag",
-        "weaknesses": {"PHYSICAL": "1.0"}
     }
 
 
@@ -21,7 +22,15 @@ def test_flag_initialization(flag_data):
     assert flag.value == flag_data["default_value"]
     assert flag.value_type == int
     assert flag.description == flag_data["description"]
+
+
+def test_flag_initialization_weaknesses(flag_data):
+    flag_data["weaknesses"] = {"PHYSICAL": 0.5}
+    flag = Flag(flag_data["name"], flag_data)
+
     assert isinstance(flag.weaknesses, WeaknessSet)
+    assert isclose(flag.weaknesses["PHYSICAL"], 0.5)
+    assert isclose(flag.weaknesses["MAGICAL"], 1.0)
 
 
 def test_flag_get_copy(flag_data):
