@@ -1,0 +1,37 @@
+{
+  "armor": {
+    "json_type": "armor",
+    "armor_type": "",
+    "name": "",
+    "description": "",
+    "armor": 0
+  },
+  "leather_chest": {
+    "json_type": "armor",
+    "armor_type": "",
+    "name": "",
+    "description": "",
+    "armor": 0
+  },
+  "leather_cap": {
+    "json_type": "armor",
+    "armor_type": "",
+    "name": "",
+    "description": "",
+    "armor": 0
+  },
+  "leather_gloves": {
+    "json_type": "armor",
+    "armor_type": "",
+    "name": "",
+    "description": "",
+    "armor": 0
+  },
+  "leather_boots": {
+    "json_type": "armor",
+    "armor_type": "",
+    "name": "",
+    "description": "",
+    "armor": 0
+  }
+}

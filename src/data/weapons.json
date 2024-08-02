@@ -1,5 +1,6 @@
 {
-  "": {
+  "weapon": {
+    "json_type": "weapon",
     "name": "",
     "description": "",
     "weight": 0,
@@ -27,6 +28,7 @@
     }
   },
   "fist": {
+    "json_type": "weapon",
     "name": "Bare Fists",
     "description": "Your fists. Sometimes, the easiest solution just works. You might still want to look out for something better.",
     "weight": 0,
@@ -53,6 +55,7 @@
       }
     }
   },
+  "json_type": "weapon",
   "default_dagger": {
     "name": "Dusty Dagger",
     "description": "A double-edged knife with a pointed tip made to pierce armor. A rogues first weapon. Even though it has seen better days, it is still lethal in the right hands.",
@@ -81,6 +84,7 @@
     }
   },
   "default_mace": {
+    "json_type": "weapon",
     "name": "Rusty Mace",
     "description": "A heavy iron ball attached to an equally iron handle wrapped in leather. The iron parts have already begun to rust, but it is still not to be trifled with.  It is very top-heavy, and therefore a little unwieldy.",
     "weight": 11,
@@ -107,7 +111,8 @@
       }
     }
   },
-   "default_pyro_tome": {
+  "default_pyro_tome": {
+    "json_type": "weapon",
     "name": "Pyromancy for Dummies",
     "description": "A piece of almost crude literature detailing the most basic two pyromancy spells.",
     "weight": 1,

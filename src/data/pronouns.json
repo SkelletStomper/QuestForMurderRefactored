@@ -1,5 +1,6 @@
 {
-  "": {
+  "pronouns": {
+    "json_type": "pronouns",
     "form": 1,
     "subject": "",
     "object": "",
@@ -9,6 +10,7 @@
     "3rdS": false
   },
   "1st_singular": {
+    "json_type": "pronouns",
     "form": 1,
     "subject": "I",
     "object": "me",
@@ -18,6 +20,7 @@
     "3rdS": false
   },
   "1st_plural": {
+    "json_type": "pronouns",
     "form": 1,
     "subject": "we",
     "object": "us",
@@ -27,6 +30,7 @@
     "3rdS": false
   },
   "2nd_singular": {
+    "json_type": "pronouns",
     "form": 2,
     "subject": "you",
     "object": "you",
@@ -36,6 +40,7 @@
     "3rdS": false
   },
   "2nd_plural": {
+    "json_type": "pronouns",
     "form": 2,
     "subject": "you",
     "object": "you",
@@ -45,6 +50,7 @@
     "3rdS": false
   },
   "3rd_he": {
+    "json_type": "pronouns",
     "form": 3,
     "subject": "he",
     "object": "him",
@@ -54,6 +60,7 @@
     "3rdS": true
   },
   "3rd_she": {
+    "json_type": "pronouns",
     "form": 3,
     "subject": "she",
     "object": "her",
@@ -63,6 +70,7 @@
     "3rdS": true
   },
   "3rd_they": {
+    "json_type": "pronouns",
     "form": 3,
     "subject": "they",
     "object": "them",
@@ -72,6 +80,7 @@
     "3rdS": false
   },
   "3rd_it": {
+    "json_type": "pronouns",
     "form": 3,
     "subject": "it",
     "object": "it",
@@ -81,6 +90,7 @@
     "3rdS": true
   },
   "3rd_plural": {
+    "json_type": "pronouns",
     "form": 3,
     "subject": "they",
     "object": "them",

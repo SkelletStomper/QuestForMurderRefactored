@@ -1,6 +1,7 @@
 
 {
-  "": {
+  "monster": {
+    "json_type": "monster",
     "title": "the",
     "name": "",
     "pronouns": "",
@@ -30,6 +31,7 @@
     "flags": ["blood_possessed"]
   },
   "village_guardian": {
+    "json_type": "monster",
     "title": "the",
     "name": "last guardian",
     "pronouns": "3rd_it",
@@ -50,6 +52,7 @@
     "flags": ["blood_possessed"]
   },
   "goblin1": {
+    "json_type": "monster",
     "title": "the",
     "name": "one-eyed goblin geezer",
     "pronouns": "3rd_he",
@@ -70,6 +73,7 @@
     "flags": ["goblin", "elder"]
   },
   "fat_cat": {
+    "json_type": "monster",
     "title": "the",
     "name": "really fat cat",
     "pronouns": "3rd_she",
@@ -88,6 +92,7 @@
     "flags": ["blood_possessed", "animal", "feline"]
   },
   "demon_baby": {
+    "json_type": "monster",
     "title": "the",
     "name": "Devilish Suckling",
     "pronouns": "3rd_it",
@@ -107,6 +112,7 @@
     "flags": ["demon", "child", "fire_explode"]
   },
   "pigeon": {
+    "json_type": "monster",
     "title": "the",
     "name": "pigeon of doom",
     "pronouns": "3rd_it",
@@ -126,6 +132,7 @@
     "flags": ["animal", "flying", "blood_possessed"]
   },
   "villager": {
+    "json_type": "monster",
     "title": "the",
     "name": "blood-lusting village",
     "pronouns": "3rd_he",
@@ -145,6 +152,7 @@
     "flags": ["humanoid","blood_possessed"]
   },
   "goblin2": {
+    "json_type": "monster",
     "title": "the",
     "name": "two-eyed goblin",
     "pronouns": "3rd_he",
@@ -163,6 +171,7 @@
     "flags": ["goblin"]
   },
   "snake1": {
+    "json_type": "monster",
     "title": "the",
     "name": "poisonous snake",
     "pronouns": "3rd_it",
@@ -181,6 +190,7 @@
     "flags": ["animal", "poisonous", "blood_possessed"]
   },
   "paperman!": {
+    "json_type": "monster",
     "title": "",
     "name": "paper-man!",
     "pronouns": "3rd_they",
@@ -201,6 +211,7 @@
     "flags": []
   },
   "fat_lady": {
+    "json_type": "monster",
     "title": "the",
     "name": "really fat old lady",
     "pronouns": "3rd_she",
@@ -220,6 +231,7 @@
     "flags": ["humanoid", "elder", "blood_possessed"]
   },
   "child_soldier": {
+    "json_type": "monster",
     "title": "the",
     "name": "Child Soldier",
     "pronouns": "3rd_it",
@@ -239,6 +251,7 @@
     "flags": ["humanoid", "child", "blood_possessed"]
   },
   "rat":  {
+    "json_type": "monster",
     "title": "the",
     "name": "giant rat",
     "pronouns": "3rd_it",
@@ -258,6 +271,7 @@
     "flags": ["animal","poisonous","blood_possessed"]
   },
   "moth": {
+    "json_type": "monster",
     "title": "the",
     "name": "silvermoth",
     "pronouns": "3rd_it",

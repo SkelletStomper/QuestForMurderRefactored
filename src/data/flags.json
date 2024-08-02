@@ -1,6 +1,7 @@
 
 {
-  "blank_flag": {
+  "flag": {
+    "json_type": "flag",
     "description": "",
     "weaknesses": {
       "PHYSICAL": 1.0,
@@ -18,6 +19,7 @@
 
   },
   "blood_possessed": {
+    "json_type": "flag",
     "description": "This monster is possessed by the curse of blood. It will attack anything not struck by it.",
     "weaknesses": {
       "PHYSICAL": 0.95,
@@ -30,6 +32,7 @@
     }
   },
   "demon": {
+    "json_type": "flag",
     "description": "Related to hell-dwellers.",
     "weaknesses": {
       "PHYSICAL": 0.9,
@@ -43,6 +46,7 @@
     }
   },
   "humanoid": {
+    "json_type": "flag",
     "description": "Either a human, or close enough to it.",
     "weaknesses": {
       "CURSE": 1.1,
@@ -52,6 +56,7 @@
     }
   },
   "goblin": {
+    "json_type": "flag",
     "description": "Greedy little creatures who strive to defile the lands, and gather the spoils.",
     "weaknesses": {
       "CURSE": 0.9,
@@ -61,6 +66,7 @@
     }
   },
   "animal": {
+    "json_type": "flag",
     "description": "Some sort of non-Humanoid animal.",
     "weaknesses": {
       "FIRE": 1.1,
@@ -68,12 +74,15 @@
     }
   },
   "feline": {
+    "json_type": "flag",
     "description": "Cats. These might be tempting, but not safe to cuddle."
   },
   "canine": {
+    "json_type": "flag",
     "description": "Man's best friend... once upon a time."
   },
   "insect": {
+    "json_type": "flag",
     "description": "Insects, squirming bugs and various others. Naturally strong against forces of holy and evil.",
     "weaknesses": {
       "CURSE": 0.7,
@@ -84,21 +93,28 @@
 
 
   "child": {
+    "json_type": "flag",
     "description": "A young specimen, not yet matured."
   },
   "elder": {
+    "json_type": "flag",
     "description": "Old and wise with years."
   },
   "fire_explode": {
+    "json_type": "flag",
     "description": "Explodes when put into contact with fire!"
   },
   "flying": {
+    "json_type": "flag",
     "description": "This monster is fly!"
   },
   "poisonous": {
+    "json_type": "flag",
     "description": "This monster is not good to eat!"
   },
   "plural":{
-    "description": "This entity comes in multiples, be it physically or mentally. Affects combat and addressing."
+    "json_type": "flag",
+    "description": "This entity comes in multiples, be it physically or mentally. Affects combat and addressing.",
+    "default_value": 1
   }
 }
