@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch
-from src.localization.pronouns import PronounSet, PronounProvider
+from src.localization.pronouns import PronounSet
 
 
 # Sample JSON data for testing

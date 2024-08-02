@@ -1,5 +1,5 @@
 import pytest
-from src.localization.pronouns import PronounSet, pronoun_provider as pp
+from src.data_providers import pronoun_provider as pp
 from src.localization.localized_entity import LocalizedEntity
 
 
