@@ -1,4 +1,5 @@
 import re
+from typing import Union
 
 from src.localization.localized_entity import LocalizedEntity
 
@@ -12,6 +13,13 @@ class LString:
         self._lstr = lstr
 
         self.les_allowed()
+
+    def __eq__(self, other:  "String"):
+        if isinstance(other, str):
+            return self._lstr == other
+        elif isinstance(other, LString):
+            return self._lstr == other._lstr
+        return False
 
     def les_allowed(self):
         allowed_les = ["attacking", "defending", "player"]
@@ -36,4 +44,4 @@ class LString:
 
 
 
-
+String = Union[str|LString]
