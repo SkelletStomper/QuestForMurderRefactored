@@ -16,7 +16,7 @@ class Flag:
         self.description: str = init_dict["description"]
 
         raw_weaknesses = {}
-        if "weaknesses" in init_dict.values():
+        if "weaknesses" in init_dict.keys():
             raw_weaknesses = init_dict["weaknesses"]
         self.weaknesses = WeaknessSet(raw_weaknesses)
 
