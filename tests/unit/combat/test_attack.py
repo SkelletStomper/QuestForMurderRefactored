@@ -9,7 +9,7 @@ class TestWeaknessSet:
     def test_weakness_set_initialization():
         weaknesses = {
             'PHYSICAL': 1.5,
-            'FIRE': 2.0
+            'FIRE': 2
         }
         ws = WeaknessSet(weaknesses)
 
