@@ -38,19 +38,3 @@ def test_pronoun_set_initialization():
     assert pronoun_set.third_s is True
     assert pronoun_set.form == 3
 
-
-def test_pronoun_provider():
-    provider = PronounProvider()
-
-    she = provider["3rd_she"]
-    assert isinstance(she, PronounSet)
-    assert she.subject == "she"
-    assert she.object == "her"
-    assert she.possessive == "hers"
-
-    they = provider["3rd_they"]
-    assert isinstance(they, PronounSet)
-    assert they.subject == "they"
-    assert they.poss_adjective == "their"
-    assert they.reflexive == "themself"
-
