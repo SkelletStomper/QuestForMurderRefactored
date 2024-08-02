@@ -10,11 +10,19 @@
       ""
     ],
     "hp_max": 0,
-    "dmg" : 0,
-    "crt": 1.0,
-    "acc": 0,
     "dodge": 0,
     "armor": 0,
+    "attacks": {
+      "attack1": {
+        "name": "",
+        "text": "",
+        "dmg" : 0,
+        "crt": 1.0,
+        "acc": 0,
+        "weight": 1,
+        "types": []
+      }
+    },
     "weaknesses": {
       "PHYSICAL": 1.0,
       "SLASHING": 1.0,
@@ -30,6 +38,7 @@
     },
     "flags": ["blood_possessed"]
   },
+
   "village_guardian": {
     "json_type": "monster",
     "title": "the",
@@ -40,17 +49,29 @@
       "It kills you in an indescribable way. You are dead."
     ],
     "hp_max": 250,
-    "dmg" : 12,
-    "crt": 1,
-    "acc": 5,
+
     "dodge": -3,
     "armor": 4,
+
+    "attacks": {
+      "attack1": {
+        "name": "Leg Smash",
+        "text": "",
+        "dmg" : 12,
+        "crt": 1,
+        "acc": 5,
+        "weight": 1,
+        "types": ["PHYSICAL", "BASHING"]
+      }
+    },
+
     "weaknesses": {
       "FIRE": 0.7,
       "PHYSICAL": 0.8
     },
     "flags": ["blood_possessed"]
   },
+
   "goblin1": {
     "json_type": "monster",
     "title": "the",
@@ -61,17 +82,26 @@
       "You somehow did it. You got defeated by an old cripple of goblin. I would give you an medal, but unfortunately you got eaten by 23 hungry goblin children. You are dead."
     ],
     "hp_max": 12,
-    "dmg" : 4,
-    "crt": 1,
-    "acc": 0,
     "dodge": 0,
     "armor": 0,
+    "attacks": {
+      "attack1": {
+        "name": "knuckle sandwich",
+        "text": "",
+        "dmg" : 4,
+        "crt": 1,
+        "acc": 0,
+        "weight": 1,
+        "types": ["PHYSICAL", "BASHING"]
+      }
+    },
     "weaknesses": {
       "CURSE": 1.3
     },
 
     "flags": ["goblin", "elder"]
   },
+
   "fat_cat": {
     "json_type": "monster",
     "title": "the",
@@ -80,17 +110,26 @@
     "information": "Wow, this cat is REALLY fat. Shes slow, but quite tanky because of her fat belly . Maybe you should try fire?",
     "death_messages": ["The cat *mistakes* you for a sofa, and completely scratches your skin of. You are dead."],
     "hp_max": 16,
-    "dmg" : 3,
-    "crt": 1,
-    "acc": 0,
     "dodge": -2,
     "armor": 2,
+    "attacks": {
+      "attack1": {
+        "name": "Paw Strike",
+        "text": "",
+        "dmg" : 3,
+        "crt": 1.0,
+        "acc": 0,
+        "weight": 1,
+        "types": ["PHYSICAL", "SLASHING"]
+      }
+    },
     "weaknesses": {
       "BASHING": 0.8,
       "FIRE": 1.5
     },
     "flags": ["blood_possessed", "animal", "feline"]
   },
+
   "demon_baby": {
     "json_type": "monster",
     "title": "the",
@@ -101,16 +140,34 @@
       "It thinks you are its Mother! How cute! Except it killed all 243 mothers before. And so you. You are dead."
     ],
     "hp_max": 11,
-    "dmg" : 5,
-    "crt": 1,
-    "acc": 0,
     "dodge": 0,
     "armor": 0,
+    "attacks": {
+      "attack1": {
+        "name": "Hex: Weakness",
+        "text": "",
+        "dmg" : 5,
+        "crt": 1.0,
+        "acc": 0,
+        "weight": 1,
+        "types": ["MAGICAL", "CURSE"]
+      },
+      "fire_explode": {
+        "name": "Rapid Combustion",
+        "text": "",
+        "dmg": 15,
+        "crt": 1.0,
+        "acc": 9,
+        "weight": 0,
+        "types": ["MAGICAL", "FIRE"]
+      }
+    },
     "weaknesses": {
       "FIRE": 50.0
     },
     "flags": ["demon", "child", "fire_explode"]
   },
+
   "pigeon": {
     "json_type": "monster",
     "title": "the",
@@ -121,16 +178,25 @@
       "It picks out your eyes, and while stumbling around blindly, you fall with your head into your weapon. You are dead."
     ],
     "hp_max": 4,
-    "dmg" : 5,
-    "crt": 1.5,
-    "acc": 2,
     "dodge": 3,
     "armor": 0,
+    "attacks": {
+      "attack1": {
+        "name": "Eye Peck",
+        "text": "",
+        "dmg" : 3,
+        "crt": 1.5,
+        "acc": 3,
+        "weight": 1,
+        "types": ["PHYSICAL", "PIERCING"]
+      }
+    },
     "weaknesses": {
 
     },
     "flags": ["animal", "flying", "blood_possessed"]
   },
+
   "villager": {
     "json_type": "monster",
     "title": "the",
@@ -142,15 +208,33 @@
       "He cuts your throat with his sickle, and lustfully drinks your blood directly out of you carotid artery. You are dead."
     ],
     "hp_max": 10,
-    "dmg" : 4,
-    "crt": 1,
-    "acc": 0,
     "dodge": 0,
     "armor": 1,
+    "attacks": {
+      "attack1": {
+        "name": "Flail Bash",
+        "text": "",
+        "dmg" : 4,
+        "crt": 1.0,
+        "acc": 0,
+        "weight": 2,
+        "types": ["PHYSICAL", "BASHING"]
+      },
+      "attack2": {
+        "name": "Sickle Strike",
+        "text": "",
+        "dmg" : 3,
+        "crt": 1.0,
+        "acc": 2,
+        "weight": 1,
+        "types": ["PHYSICAL", "SLASHING"]
+      }
+    },
     "weaknesses": {
     },
     "flags": ["humanoid","blood_possessed"]
   },
+
   "goblin2": {
     "json_type": "monster",
     "title": "the",
@@ -161,15 +245,24 @@
       "He cuts your head off. You will may ask how he does that with a butter knife? Well, it takes lots of time and is a lot of Pain, but this doesn't matter to you. You are dead."
     ],
     "hp_max": 15,
-    "dmg" : 6,
-    "crt": 1,
-    "acc": 1,
     "dodge": 1,
     "armor": 2,
+    "attacks": {
+      "attack1": {
+        "name": "butter-up",
+        "text": "",
+        "dmg" : 6,
+        "crt": 1.0,
+        "acc": 1,
+        "weight": 1,
+        "types": ["PHYSICAL", "SLASHING"]
+      }
+    },
     "weaknesses": {
     },
     "flags": ["goblin"]
   },
+
   "snake1": {
     "json_type": "monster",
     "title": "the",
@@ -180,15 +273,24 @@
       "It tries to strangle you, and you try to bite it. It is poisonous, so you die. You are dead."
     ],
     "hp_max": 12,
-    "dmg" : 3,
-    "crt": 1,
-    "acc": 0,
     "dodge": 2,
     "armor": 0,
+    "attacks": {
+      "attack1": {
+        "name": "Snake Bite",
+        "text": "",
+        "dmg" : 4,
+        "crt": 1.0,
+        "acc": 0,
+        "weight": 1,
+        "types": ["PHYSICAL", "PIERCING"]
+      }
+    },
     "weaknesses": {
     },
     "flags": ["animal", "poisonous", "blood_possessed"]
   },
+
   "paperman!": {
     "json_type": "monster",
     "title": "",
@@ -200,16 +302,25 @@
       "Paper cuts are nasty, and hurt like hell. The pain kills you. You are dead."
     ],
     "hp_max": 16,
-    "dmg" : 6,
-    "crt": 5,
-    "acc": 1,
     "dodge": 3,
     "armor": -2,
+    "attacks": {
+      "attack1": {
+        "name": "Papercut",
+        "text": "",
+        "dmg" : 6,
+        "crt": 5.0,
+        "acc": 1,
+        "weight": 1,
+        "types": ["PHYSICAL", "SLASHING"]
+      }
+    },
     "weaknesses": {
       "FIRE": 420.0
     },
     "flags": []
   },
+
   "fat_lady": {
     "json_type": "monster",
     "title": "the",
@@ -220,16 +331,25 @@
       "She sits down on you, and you get squished. Yeah, she is REALLY fat. You are dead."
     ],
     "hp_max": 25,
-    "dmg" : 4,
-    "crt": 0.9,
-    "acc": 0,
     "dodge": -3,
     "armor": 4,
+    "attacks": {
+      "attack1": {
+        "name": "Handbag Batter",
+        "text": "",
+        "dmg" : 4,
+        "crt": 0.9,
+        "acc": 0,
+        "weight": 1,
+        "types": ["PHYSICAL", "BASHING"]
+      }
+    },
     "weaknesses": {
       "FIRE": 1.2
     },
     "flags": ["humanoid", "elder", "blood_possessed"]
   },
+
   "child_soldier": {
     "json_type": "monster",
     "title": "the",
@@ -240,16 +360,35 @@
       "It finally manages to shot you in the head. You are dead."
     ],
     "hp_max": 10,
-    "dmg" : 10,
-    "crt": 1.2,
-    "acc": -4,
     "dodge": 2,
     "armor": 3,
+    "attacks": {
+      "attack1": {
+        "name": "Salvo",
+        "text": "",
+        "dmg" : 5,
+        "crt": 1.3,
+        "acc": -3,
+        "weight": 2,
+        "types": ["PHYSICAL", "PIERCING"],
+        "multi": 3
+      },
+      "attack2": {
+        "name": "Crack Shot",
+        "text": "",
+        "dmg" : 8,
+        "crt": 1.3,
+        "acc": 0,
+        "weight": 1,
+        "types": ["PHYSICAL", "PIERCING"]
+      }
+    },
     "weaknesses": {
 
     },
     "flags": ["humanoid", "child", "blood_possessed"]
   },
+
   "rat":  {
     "json_type": "monster",
     "title": "the",
@@ -265,17 +404,29 @@
     "acc": 0,
     "dodge": 2,
     "armor": 0,
+    "attacks": {
+      "attack1": {
+        "name": "Fecal bite",
+        "text": "",
+        "dmg" : 4,
+        "crt": 1.0,
+        "acc": 0,
+        "weight": 1,
+        "types": ["PHYSICAL", "PIERCING"]
+      }
+    },
     "weaknesses": {
       "FIRE": 1.35
     },
-    "flags": ["animal","poisonous","blood_possessed"]
+    "flags": ["animal", "poisonous", "blood_possessed"]
   },
+
   "moth": {
     "json_type": "monster",
     "title": "the",
     "name": "silvermoth",
     "pronouns": "3rd_it",
-    "information": "A large moth, as big as your head. Fragile, but hard to hit. It is drawn to the flame like a moth is drawn to the flame.",
+    "information": "A large moth, as big as your head. Fragile, but hard to hit. It is drawn to the flame like a moth is drawn to the flame. The silvermoth is considered a holy creature by the ",
     "death_messages": [
       "It bites you very often, and while one bite does just hurt, many bites kill you. You are dead."
     ],
@@ -285,8 +436,28 @@
     "acc": 1,
     "dodge": 3,
     "armor": 0,
+    "attacks": {
+      "attack1": {
+        "name": "Nibble",
+        "text": "",
+        "dmg" : 6,
+        "crt": 1.0,
+        "acc": 1,
+        "weight": 3,
+        "types": ["PHYSICAL", "PIERCING"]
+      },
+      "attack2": {
+        "name": "Silver Scales",
+        "text": "",
+        "dmg" : 2,
+        "crt": 1.0,
+        "acc": 2,
+        "weight": 1,
+        "types": ["MAGICAL", "HOLY"],
+        "multi": 4
+      }
+    },
     "weaknesses": {
-
       "FIRE": 1.5
     },
     "flags": ["animal","insect","blood_possessed"]
