@@ -1,37 +1,49 @@
 {
   "armor": {
-    "json_type": "armor",
+    "json_type": "item.armor",
     "armor_type": "",
     "name": "",
     "description": "",
+    "weight": 0,
     "armor": 0
   },
   "leather_chest": {
-    "json_type": "armor",
-    "armor_type": "",
-    "name": "",
-    "description": "",
-    "armor": 0
+    "json_type": "item.armor",
+    "armor_type": "CHEST",
+    "name": "Leather Jacket",
+    "description": "A large, thick leather jacket. Will provide some protection against minor injuries.",
+    "weight": 10,
+    "armor": 3
   },
   "leather_cap": {
-    "json_type": "armor",
-    "armor_type": "",
-    "name": "",
-    "description": "",
-    "armor": 0
+    "json_type": "item.armor",
+    "armor_type": "HEAD",
+    "name": "Leather Cappy",
+    "description": "A fur-lined Cappy made from tanned leather. Keeps your head warm in the winter, boiling in the summer.",
+    "weight": 3,
+    "armor": 1
+  },
+  "leather_pants": {
+    "json_type": "item.armor",
+    "armor_type": "LEGS",
+    "name": "Leather Pants",
+    "description": "A nice, adorned pair of leather pants. Somehow, they make you feel bavarian...",
+    "weight": 7,
+    "armor": 2
   },
   "leather_gloves": {
-    "json_type": "armor",
-    "armor_type": "",
-    "name": "",
-    "description": "",
-    "armor": 0
+    "json_type": "item.armor",
+    "armor_type": "HANDS",
+    "name": "fingerless leather gloves",
+    "description": "These thin leather gloves are missing their fingertips, encumbering you less when doing tasks.",
+    "weight": 2,
+    "armor": 1
   },
   "leather_boots": {
-    "json_type": "armor",
-    "armor_type": "",
-    "name": "",
-    "description": "",
-    "armor": 0
+    "json_type": "item.armor",
+    "armor_type": "FEET",
+    "name": "Leather Boots",
+    "description": "A worn-out pair of leather boots. Even though they never touched your feet before, they fit you perfectly.",
+    "armor": 1
   }
 }
