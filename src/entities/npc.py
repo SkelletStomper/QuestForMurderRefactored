@@ -1,3 +1,4 @@
+from src.items.inventory import Inventory
 
 
 class NPC:
@@ -8,6 +9,8 @@ class NPC:
 
         self.dodge = 0
         self.accuracy = 0
+
+        self.inventory: Inventory = Inventory()
 
         
 

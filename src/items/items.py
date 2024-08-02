@@ -10,7 +10,6 @@ class Item:
         self.weight = in_dict["weight"]
 
 
-
 class Offhand(Item):
     def __init__(self, in_dict: dict):
         super().__init__(in_dict)
@@ -20,10 +19,14 @@ class Offhand(Item):
         self.types: list[AttackType] = in_dict["types"]
 
 
-
 class Ability(Item):
     def __init__(self, in_dict):
         super().__init__(in_dict["name"])
         self.duration = in_dict["duration"]
         self.reload = in_dict["reload"]
         self.description = in_dict["description"]
+
+
+
+
+

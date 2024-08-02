@@ -47,6 +47,7 @@ class WeaknessSet:
 
         return factor
 
+
 class Attack:
     def __init__(self,
                  dmg: int,

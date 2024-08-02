@@ -37,9 +37,14 @@ class EquipSlot:
 
 class WeaponSlot(EquipSlot):
     def is_equipable(self, item: Item) -> bool:
+        if self._item is not None:
+            return False
         return isinstance(item, Weapon)
 
     def apply_bonus(self, equip_effects: EquipEffects) -> EquipEffects:
+        if self._item is None:
+            return equip_effects
+
         weapon: Weapon = self._item
         attacks = [
             weapon.attacks["attack1"].generate_attack(),
@@ -60,9 +65,14 @@ class ArmorSlot(EquipSlot):
         self.type = armor_type
 
     def is_equipable(self, item: Item) -> bool:
+        if self._item is not None:
+            return False
         return isinstance(item, Armor) and item.type == self.type
 
     def apply_bonus(self, equip_effects: EquipEffects) -> EquipEffects:
+        if self._item is None:
+            return equip_effects
+
         armor: Armor = self._item
 
         equip_effects.armor += armor.armor
@@ -83,6 +93,17 @@ class Inventory:
 
         self.item_capacity = 20
 
+    def calculate_bonus(self) -> EquipEffects:
+        equip_effects = EquipEffects()
+        for equip_slot in self.equip_slots:
+            equip_effects = equip_slot.apply_bonus(equip_effects)
 
+        return equip_effects
 
-
+    def try_equip(self, item: Item) -> bool:
+        """Try to equip the item into a fitting slot, and return success status as bool."""
+        for equip_slot in self.equip_slots:
+            if equip_slot.is_equipable(item):
+                equip_slot.equip(item)
+                return True
+        return False

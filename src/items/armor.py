@@ -12,7 +12,10 @@ class ArmorSlotType(Enum):
 
 
 class Armor(Item):
-    def __init__(self, in_dict: dict):
-        super().__init__(in_dict)
-        self.type: ArmorSlotType = ArmorSlotType(in_dict["type"])
-        self.armor: int = in_dict["armor"]
+    def __init__(self, init_dict: dict):
+        super().__init__(init_dict)
+        self.type: ArmorSlotType = ArmorSlotType(init_dict["armor_type"])
+        self.armor: int = init_dict["armor"]
+
+
+
