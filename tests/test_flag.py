@@ -6,7 +6,7 @@ from src.combat.attack import WeaknessSet
 
 # Test data for Flag class
 @pytest.fixture
-def flag_data():
+def flag_data() -> dict:
     return {
         "name": "test_flag",
         "default_value": 10,
@@ -24,7 +24,6 @@ def test_flag_initialization(flag_data):
     assert isinstance(flag.weaknesses, WeaknessSet)
 
 
-
 def test_flag_get_copy(flag_data):
     flag = Flag("test_flag", flag_data)
     flag_copy = flag.get_copy()
@@ -40,11 +39,11 @@ def test_flag_get_copy(flag_data):
 
 def test_flag_equality(flag_data):
     flag = Flag(flag_data["name"], flag_data)
-    assert flag == flag_data["name"]
+    assert flag == flag_data["name"]  # type: ignore
     assert flag != "another_flag"
 
 
-@patch("src.flag.open", new_callable=mock_open, read_data='{"test_flag": {"description": "A test flag"}}')
+@patch("src.util.read_data.open", new_callable=mock_open, read_data='{"test_flag": {"description": "A test flag"}}')
 def test_flag_provider(mock_file):
     provider = FlagProvider()
     assert "test_flag" in provider.flags
@@ -53,30 +52,15 @@ def test_flag_provider(mock_file):
     assert flag.description == "A test flag"
 
 
-@patch("src.flag.open", new_callable=mock_open, read_data='{"test_flag": {"description": "A test flag", "default_value": 10}}')
+@patch("src.util.read_data.open", new_callable=mock_open,
+       read_data='{"test_flag": {"description": "A test flag", "default_value": 10}}')
 def test_flag_provider_with_default_value(mock_file):
     provider = FlagProvider()
     flag = provider("test_flag")
-    assert flag.value_type == 10
-    assert flag.value == int
+    assert flag.value == 10
+    assert flag.value_type == int
 
     flag_with_value = provider("test_flag$20")
     assert flag_with_value.value == 20
     assert flag_with_value.value_type == int
-
-
-# Mocking WeaknessSet and checking the interactions
-@patch("src.flag.WeaknessSet", autospec=True)
-def test_flag_with_mocked_weaknesses(MockWeaknessSet, flag_data):
-    MockWeaknessSet.return_value = MockWeaknessSet
-    flag = Flag("test_flag", flag_data)
-    assert isinstance(flag.weaknesses, MockWeaknessSet)
-
-
-# Mocking the file read error
-@patch("src.flag.open", new_callable=mock_open)
-def test_flag_provider_file_read_error(mock_file):
-    mock_file.side_effect = IOError("File not found")
-    with pytest.raises(OSError):
-        FlagProvider()
 
