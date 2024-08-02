@@ -1,6 +1,5 @@
 from src.combat.attack import WeaknessSet
-
-import json
+from src.util.read_data import read_json_data
 from copy import copy
 
 
@@ -21,30 +20,27 @@ class Flag:
             raw_weaknesses = init_dict["weaknesses"]
         self.weaknesses = WeaknessSet(raw_weaknesses)
 
-    def get_copy(self, value=None):
+    def get_copy(self, value=None) -> "Flag":
         flag_copy = copy(self)
         if value is not None:
             flag_copy.value = value
 
         return flag_copy
 
-    def __eq__(self, value: str):
+    def __eq__(self, value: str) -> bool:
         return self.name == value
 
 
 class FlagProvider:
     def __init__(self):
-
-        with open("data/flags.json", "r") as f:
-            json_dict = json.load(f)
-
+        json_dict = read_json_data("flags.json")
         self.flags = {flag_name: Flag(flag_name, flag_data) for flag_name, flag_data in json_dict.items()}
         print(self.flags)
 
     def __getitem__(self, value) -> Flag:
         return self.flags[value]
 
-    def __call__(self, flag_str: str):
+    def __call__(self, flag_str: str) -> Flag:
         flag_name = flag_str
         value = None
         if "$" in flag_str:

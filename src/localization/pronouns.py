@@ -1,4 +1,4 @@
-import json
+from src.util.read_data import read_json_data
 
 
 class PronounSet:
@@ -23,8 +23,7 @@ class PronounSet:
 
 class PronounProvider:
     def __init__(self):
-        with open("data/pronouns.json", "r") as f:
-            json_dict = json.load(f)
+        json_dict = read_json_data("pronouns.json")
 
         self.pronouns: dict[str, PronounSet] = {pronoun_name: PronounSet(pronoun_data) for pronoun_name, pronoun_data in json_dict.items()}
 

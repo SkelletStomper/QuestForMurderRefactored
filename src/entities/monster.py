@@ -3,7 +3,7 @@ from src.flag import flag_provider as fp
 from src.localization.localized_entity import LocalizedEntity
 from src.localization.pronouns import pronoun_provider as pp
 
-import json
+from src.util.read_data import read_json_data
 
 
 class Monster:
@@ -48,8 +48,7 @@ class Monster:
 
 class MonsterProvider:
     def __init__(self):
-        with open("data/monsters.json", "r") as f:
-            json_dict = json.load(f)
+        json_dict = read_json_data("monsters.json")
 
         self.monsters = {monster_name: Monster(monster_data) for monster_name, monster_data in json_dict.items()}
         print(self.monsters)
