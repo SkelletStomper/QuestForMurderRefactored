@@ -9,11 +9,28 @@
       "You get eaten by the dragon... hopefully you can have a better life as dragon poop."
     ],
     "hp_max": 100,
-    "dmg" : 20,
-    "crt": 1.0,
-    "acc": -4,
-    "dodge": -4,
+    "dodge": 0,
     "armor": 7,
+    "attacks": {
+      "attack1": {
+        "name": "Bite",
+        "text": "",
+        "dmg" : 10,
+        "crt": 1.0,
+        "acc": 2,
+        "weight": 3,
+        "types": ["PHYSICAL", "PIERCING"]
+      },
+      "attack2": {
+        "name": "Fire Breath",
+        "text": "",
+        "dmg" : 20,
+        "crt": 1.0,
+        "acc": 5,
+        "weight": 1,
+        "types": ["MAGICAL", "FIRE"]
+      }
+    },
     "weaknesses": {
       "PHYSICAL": 1.0,
       "SLASHING": 0.8,

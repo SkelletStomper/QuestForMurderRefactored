@@ -1,8 +1,9 @@
 from src.combat.combat_basics import Combatant, attack_dodged
 from src.combat.attack import Attack
-from src.entities.monster import Monster
+from src.entities.monster import Monster, MonsterAttackStencil
 from src.localization.l_string import LString
 
+import random
 
 class MonsterCombatant(Combatant):
     def __init__(self, monster: Monster) -> None:
@@ -13,15 +14,13 @@ class MonsterCombatant(Combatant):
         le = self.monster.get_le()
         print(f"{le.name} attacks!".capitalize())
 
-        dmg = self.monster.dmg
-        text = LString("{atk.name} hits {def.name} with a vicious attack!")
-        return [Attack(
-            dmg=dmg,
-            acc=self.monster.acc,
-            crt=self.monster.crt,
-            atk_str=text,
+        attack_dict: {MonsterAttackStencil, int} = \
+            {attack: attack.weight for atk_id, attack
+             in self.monster.attacks.items()
+             if atk_id.startswith("attack")}
 
-        )]
+        attack: MonsterAttackStencil = random.choices(list(attack_dict.keys()), list(attack_dict.values()))[0]
+        return attack.generate_attacks()
 
     def defense(self, attack: Attack) -> bool:
         """Let the monster defend against the Attack, giving it chance to dodge and applying damage if it.
