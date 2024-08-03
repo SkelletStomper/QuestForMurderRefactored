@@ -28,7 +28,7 @@ sample_pronouns_data = {
 
 def test_pronoun_set_initialization():
     pronoun_data = sample_pronouns_data["she"]
-    pronoun_set = PronounSet(pronoun_data)
+    pronoun_set = PronounSet("she", pronoun_data)
 
     assert pronoun_set.subject == "she"
     assert pronoun_set.object == "her"

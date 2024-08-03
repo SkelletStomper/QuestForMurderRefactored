@@ -1,9 +1,7 @@
 import pytest
 from unittest.mock import MagicMock, patch
-from src.combat.monster_combat import attack_dodged, MonsterCombatant, MonsterCombat
-from src.combat.attack import Attack
-from src.localization.l_string import LString
-from src.entities.monster import Monster
+
+from src.combat.combat_basics import attack_dodged
 
 
 # Test for attack_dodged function

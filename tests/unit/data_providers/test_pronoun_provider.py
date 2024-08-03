@@ -1,7 +1,6 @@
 from src.data_providers._pronoun_provider import PronounProvider, PronounSet
 
 
-
 def test_pronoun_provider():
     read_data = {
         "3rd_she": {
