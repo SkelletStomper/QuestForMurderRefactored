@@ -56,7 +56,7 @@
     "attacks": {
       "attack1": {
         "name": "Leg Smash",
-        "text": "",
+        "text": "{atk.name} kicks {def.name} with {atk.poss_adjective} massive foreleg!",
         "dmg" : 12,
         "crt": 1,
         "acc": 5,
@@ -87,7 +87,7 @@
     "attacks": {
       "attack1": {
         "name": "knuckle sandwich",
-        "text": "",
+        "text": "With what little power is left in {atk.poss_adjective} old bones, {atk.subject} hit{atk.s} {def.name} in the face!",
         "dmg" : 4,
         "crt": 1,
         "acc": 0,
@@ -115,7 +115,7 @@
     "attacks": {
       "attack1": {
         "name": "Paw Strike",
-        "text": "",
+        "text": "{atk.name} coquettishly slashes at {def.name} with {atk.poss_adjective} paw!",
         "dmg" : 3,
         "crt": 1.0,
         "acc": 0,
@@ -145,7 +145,7 @@
     "attacks": {
       "attack1": {
         "name": "Hex: Weakness",
-        "text": "",
+        "text": "{atk.name} hex{atk.es} {def.name} with a devilish curse!",
         "dmg" : 5,
         "crt": 1.0,
         "acc": 0,
@@ -154,7 +154,7 @@
       },
       "fire_explode": {
         "name": "Rapid Combustion",
-        "text": "",
+        "text": "{atk.name} explode{atk.s} violently upon contact with fire",
         "dmg": 15,
         "crt": 1.0,
         "acc": 9,
@@ -183,7 +183,7 @@
     "attacks": {
       "attack1": {
         "name": "Eye Peck",
-        "text": "",
+        "text": "{atk.name} swiftly swoop{atk.s} in and peck{atk.s} at {def.owns} eyes!",
         "dmg" : 3,
         "crt": 1.5,
         "acc": 3,
@@ -213,7 +213,7 @@
     "attacks": {
       "attack1": {
         "name": "Flail Bash",
-        "text": "",
+        "text": "{atk.name} attack{atk.s} {def.name} with {atk.poss_adjective} flail!",
         "dmg" : 4,
         "crt": 1.0,
         "acc": 0,
@@ -222,7 +222,7 @@
       },
       "attack2": {
         "name": "Sickle Strike",
-        "text": "",
+        "text": "{atk.name} slit{atk.s} {def.owns} throat with {atk.poss_adjective} sickle!",
         "dmg" : 3,
         "crt": 1.0,
         "acc": 2,
@@ -250,7 +250,7 @@
     "attacks": {
       "attack1": {
         "name": "butter-up",
-        "text": "",
+        "text": "{atk.name} grab{atk.s} {def.owns} arm and saws at it with {atk.poss_adjective} butter knife!",
         "dmg" : 6,
         "crt": 1.0,
         "acc": 1,
@@ -278,7 +278,7 @@
     "attacks": {
       "attack1": {
         "name": "Snake Bite",
-        "text": "",
+        "text": "{atk.name} bite{atk.s} {def.name} in the thigh! Luckily for {def.object}, {atk.name} {atk.are} poisonous, not venomous!",
         "dmg" : 4,
         "crt": 1.0,
         "acc": 0,
