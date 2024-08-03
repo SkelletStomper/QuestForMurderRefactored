@@ -1,6 +1,7 @@
 import json
 
 import os
+from pathlib import Path
 from typing import Any
 
 
@@ -33,5 +34,19 @@ def read_json_data(filename: str) -> dict[str, Any]:
 def get_all_filenames() -> list[str]:
     data_path = get_data_folder()
 
-    filenames = os.listdir(data_path)
+    raw_filenames = os.listdir(data_path)
+    filenames = []
+
+    while len(raw_filenames) != 0:
+        filename = raw_filenames[0]
+
+        path = Path(data_path + os.sep + filename)
+        if path.is_dir():
+            for sub_file in os.listdir(data_path + os.sep + filename):
+                raw_filenames.append(filename + os.sep + sub_file)
+        if path.is_file():
+            filenames.append(filename)
+
+        raw_filenames.remove(filename)
+
     return filenames

@@ -14,8 +14,8 @@
     "attacks": {
       "attack1": {
         "name": "Bite",
-        "text": "",
-        "dmg" : 10,
+        "text": "{atk.name} bite{atk.s} a good chunk out of {def.name}!",
+        "dmg" : 15,
         "crt": 1.0,
         "acc": 2,
         "weight": 3,
@@ -23,12 +23,22 @@
       },
       "attack2": {
         "name": "Fire Breath",
-        "text": "",
+        "text": "{atk.name} grills {def.name} in a giant raging inferno!",
         "dmg" : 20,
         "crt": 1.0,
         "acc": 5,
         "weight": 1,
         "types": ["MAGICAL", "FIRE"]
+      },
+      "attack3": {
+        "name": "Double Claw Strike",
+        "text": "{atk.name} swipes {atk.poss_adjective} claws at {def.name} and leaves a bloody trail!",
+        "dmg": 8,
+        "crt": 1.2,
+        "acc": 1,
+        "weight": 1,
+        "types": ["PHYSICAL", "SLASHING"],
+        "multi": 2
       }
     },
     "weaknesses": {
