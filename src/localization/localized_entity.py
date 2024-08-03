@@ -47,6 +47,13 @@ class LocalizedEntity:
         return f"{self._title} {self._name}"
 
     @property
+    def are(self):
+        if self._plural or self._pronouns == "3rd_they":
+            return "are"
+        return "is"
+
+
+    @property
     def owns(self):
         if self._pronouns.form == 2:
             return self._pronouns.poss_adjective
