@@ -52,7 +52,6 @@ class LocalizedEntity:
             return "are"
         return "is"
 
-
     @property
     def owns(self):
         if self._pronouns.form == 2:
