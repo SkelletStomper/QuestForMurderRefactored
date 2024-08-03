@@ -3,7 +3,7 @@ from src.combat.attack import Attack, AttackType
 from src.localization.l_string import LString
 
 
-class AttackStencil:
+class WeaponAttackStencil:
     def __init__(self, in_dict: dict) -> None:
         self.name = in_dict["name"]
         self.description = in_dict["description"]
@@ -27,4 +27,4 @@ class AttackStencil:
 class Weapon(Item):
     def __init__(self, in_dict: dict):
         super().__init__(in_dict)
-        self.attacks = {atk_id: AttackStencil(atk_data) for atk_id, atk_data in in_dict["attacks"].items()}
+        self.attacks = {atk_id: WeaponAttackStencil(atk_data) for atk_id, atk_data in in_dict["attacks"].items()}
