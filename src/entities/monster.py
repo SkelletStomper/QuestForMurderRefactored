@@ -77,4 +77,3 @@ class Monster:
             plural=plural,
             pronouns=self.pronouns,
         )
-

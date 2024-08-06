@@ -61,7 +61,3 @@ class LocalizedEntity:
             return self._name + "'"
         else:
             return self._name + "'s"
-
-
-
-

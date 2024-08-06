@@ -1,5 +1,3 @@
-from src.util.read_data import read_json_data
-
 
 class PronounSet:
     """
@@ -23,4 +21,3 @@ class PronounSet:
 
     def __eq__(self, other):
         return self.id == other
-

@@ -1,9 +1,9 @@
 from src.combat.combat_basics import Combatant, attack_dodged
 from src.combat.attack import Attack
 from src.entities.monster import Monster, MonsterAttackStencil
-from src.localization.l_string import LString
 
 import random
+
 
 class MonsterCombatant(Combatant):
     def __init__(self, monster: Monster) -> None:
@@ -54,4 +54,3 @@ class MonsterCombatant(Combatant):
     def status_message(self):
         le = self.monster.get_le()
         print(f"{le.name} has {self.hp} hit points left!".capitalize())
-

@@ -1,6 +1,5 @@
-from enum import Enum
 
-from src.combat.attack import AttackType, Attack
+from src.combat.attack import AttackType
 
 
 class Item:
@@ -25,8 +24,3 @@ class Ability(Item):
         self.duration = in_dict["duration"]
         self.reload = in_dict["reload"]
         self.description = in_dict["description"]
-
-
-
-
-

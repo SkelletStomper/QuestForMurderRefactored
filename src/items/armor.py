@@ -17,6 +17,3 @@ class Armor(Item):
         super().__init__(init_dict)
         self.type: ArmorSlotType = ArmorSlotType(init_dict["armor_type"])
         self.armor: int = init_dict["armor"]
-
-
-

@@ -68,4 +68,3 @@ class Attack:
         if atk_str is None:
             atk_str = LString("Unspecified attack landed.")
         self.atk_str = atk_str
-

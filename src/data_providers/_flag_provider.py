@@ -18,4 +18,3 @@ class FlagProvider:
             value = self[flag_name].value_type(value)
 
         return self[flag_name].get_copy(value)
-

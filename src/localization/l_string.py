@@ -25,6 +25,10 @@ class LString:
         return False
 
     def les_allowed(self):
+        """
+        Checks for references to only allow references to special localized entities. This is to prevent access of random local variables.
+        """
+
         allowed_les = ["attacking", "defending", "player", ""]
         le_pattern = r"{[a-zA-Z0-9\.\_]*}"
         les_used = re.findall(self._lstr, le_pattern)

@@ -8,4 +8,3 @@ class MonsterProvider:
 
     def __getitem__(self, value: str) -> Monster:
         return self.monsters[value]
-

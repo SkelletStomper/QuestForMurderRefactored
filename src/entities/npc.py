@@ -11,6 +11,3 @@ class NPC:
         self.accuracy = 0
 
         self.inventory: Inventory = Inventory()
-
-        
-

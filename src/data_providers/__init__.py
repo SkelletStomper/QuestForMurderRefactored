@@ -22,8 +22,6 @@ _filenames = get_all_filenames()
 
 _all_data: dict[str, dict] = {}
 
-print(_filenames)
-
 
 for filename in _filenames:
     this_data = read_json_data(filename)
@@ -33,11 +31,9 @@ for filename in _filenames:
             raise KeyError(f"duplicate key {key} in data")
         _all_data[key] = value
 
-print(_all_data)
 
 _pronoun_data = filter_json_type(_all_data, "pronouns")
 pronoun_provider = PronounProvider(_pronoun_data)
-
 
 _flag_data = filter_json_type(_all_data, "flag")
 flag_provider = FlagProvider(_flag_data)
@@ -47,9 +43,3 @@ monster_provider = MonsterProvider(_monster_data)
 
 _item_data = filter_json_type(_all_data, "item")
 item_provider = ItemProvider(_item_data)
-
-print(_pronoun_data)
-print(_flag_data)
-print(_monster_data)
-print(_item_data)
-
