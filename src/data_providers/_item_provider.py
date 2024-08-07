@@ -25,5 +25,7 @@ class ItemProvider:
 
         logger.info("Finished parsing item data")
 
+    def __getitem__(self, item: str) -> Item:
+        return self.items[item]
     def __repr__(self) -> str:
         return "ItemProvider"
