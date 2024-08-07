@@ -3,7 +3,7 @@ from src.items.items import Item
 
 from src.items.armor import Armor, ArmorSlotType
 from src.items.weapon import Weapon
-
+from src.data_providers import item_provider as ip
 
 class EquipEffects:
     def __init__(self):
@@ -39,16 +39,20 @@ class EquipSlot:
 
 
 class WeaponSlot(EquipSlot):
+    def __init__(self) -> None:
+        super().__init__()
+        self.default_weapon_id = "fists"
+
     def is_equipable(self, item: Item) -> bool:
         if self._item is not None:
             return False
         return isinstance(item, Weapon)
 
     def apply_bonus(self, equip_effects: EquipEffects) -> EquipEffects:
-        if self._item is None:
-            return equip_effects
-
         weapon: Weapon = self._item
+        if weapon is None:
+            weapon = ip[self.default_weapon_id]
+
         attacks = [
             weapon.attacks["attack1"].generate_attack(),
             weapon.attacks["attack2"].generate_attack()
@@ -58,7 +62,7 @@ class WeaponSlot(EquipSlot):
         return equip_effects
 
     def __repr__(self) -> str:
-        return f"WeaponSlot(item={self._item})"
+        return f"WeaponSlot(item={self._item}, default_weapon_id={self.default_weapon_id})"
 
 
 class OffhandSlot(EquipSlot):
