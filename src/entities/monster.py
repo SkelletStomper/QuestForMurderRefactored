@@ -3,7 +3,6 @@ from src.localization.localized_entity import LocalizedEntity
 from src.localization.l_string import LString
 
 
-
 class MonsterAttackStencil:
     def __init__(self, in_dict: dict) -> None:
         self.name = in_dict["name"]

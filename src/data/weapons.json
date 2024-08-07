@@ -27,7 +27,7 @@
       }
     }
   },
-  "fist": {
+  "fists": {
     "json_type": "item.weapon",
     "name": "Bare Fists",
     "description": "Your fists. Sometimes, the easiest solution just works. You might still want to look out for something better.",
