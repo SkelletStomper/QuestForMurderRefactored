@@ -46,8 +46,8 @@ class AutoCombat:
     @staticmethod
     def print_attack(attack: Attack, attacker: MonsterCombatant, defender: MonsterCombatant) -> None:
         atk_str = attack.atk_str.parse(
-            attacking=attacker.monster.get_le(),
-            defending=defender.monster.get_le()
+            attacking=attacker.get_le(),
+            defending=defender.get_le()
         )
         print(atk_str)
 
