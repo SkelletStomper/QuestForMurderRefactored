@@ -14,7 +14,6 @@ class LString:
         lstr = lstr.replace("{pl.", "{player.")
 
         self._lstr = lstr
-
         self.les_allowed()
 
     def __eq__(self, other:  "String"):
@@ -48,7 +47,9 @@ class LString:
             defending: LocalizedEntity | None = None,
             ) -> str:
 
-        return self._lstr.format(**locals()).capitalize()
+        result = self._lstr.format(**locals()).capitalize()
+        logger.debug(f"Parsed {self._lstr} to {result}")
+        return result
 
 
 
