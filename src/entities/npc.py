@@ -1,5 +1,6 @@
 from src.items.inventory import Inventory
 from src.localization.localized_entity import LocalizedEntity
+from src.combat.combat_basics import Attack
 
 
 class NPC:
@@ -21,6 +22,18 @@ class NPC:
         self.inventory: Inventory = Inventory()
         self.flags = []
 
+    def calculate_dmg_factor(self, attack: Attack) -> float:
+        """
+        Calculate the damage factor of a given attack against this NPC.
+        Takes into perspective the weaknesses of all Flags.
+        """
+        dmg_factor = 1.0
+
+        for flag in self.flags:
+            dmg_factor *= flag.weaknesses.attack_factor(attack)
+
+        return dmg_factor
+
     def get_le(self) -> LocalizedEntity:
         """
         Get a Localized Entity describing the npc grammatically.
@@ -33,6 +46,8 @@ class NPC:
             plural=plural,
             pronouns=self.pronouns,
         )
+
+
 
     def __repr__(self) -> str:
         return f"NPC(name={self.name}, title={self.title}, pronouns={self.pronouns}, " \

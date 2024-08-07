@@ -2,13 +2,13 @@ from src.combat.attack import Attack
 from src.items.items import Item
 
 from src.items.armor import Armor, ArmorSlotType
-from src.items.weapon import Weapon
+from src.items.weapon import Weapon, WeaponAttackStencil
 from src.data_providers import item_provider as ip
 
 class EquipEffects:
     def __init__(self):
         self.armor = 0
-        self.granted_attacks: list[Attack] = []
+        self.granted_attacks: list[WeaponAttackStencil] = []
 
     def __repr__(self) -> str:
         return f"EquipEffects(armor={self.armor}, granted_attacks={self.granted_attacks})"
@@ -56,8 +56,8 @@ class WeaponSlot(EquipSlot):
             weapon = ip[self.default_weapon_id]
 
         attacks = [
-            weapon.attacks["attack1"].generate_attack(),
-            weapon.attacks["attack2"].generate_attack()
+            weapon.attacks["attack1"],
+            weapon.attacks["attack2"]
         ]
 
         equip_effects.granted_attacks += attacks

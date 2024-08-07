@@ -67,6 +67,9 @@ class MonsterCombatant(Combatant):
             print(f"The hit doesn't penetrate {le.owns} armor!")
             return False
 
+    def get_le(self):
+        return self.monster.get_le()
+
     @property
     def is_alive(self) -> bool:
         return self.hp > 0
