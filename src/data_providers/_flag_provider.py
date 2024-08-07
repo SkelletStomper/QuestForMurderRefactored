@@ -1,10 +1,14 @@
 from src.flag import Flag
 
+import logging
+logger = logging.getLogger(__name__)
+
 
 class FlagProvider:
     def __init__(self, all_flag_data):
-
+        logger.info("Start parsing flag data")
         self.flags = {flag_name: Flag(flag_name, flag_data) for flag_name, flag_data in all_flag_data.items()}
+        logger.info("Finished parsing flag data")
         print(self.flags)
 
     def __getitem__(self, value) -> Flag:

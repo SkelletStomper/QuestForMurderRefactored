@@ -5,6 +5,9 @@ from src.data_providers._flag_provider import FlagProvider
 from src.data_providers._item_provider import ItemProvider
 from src.data_providers._monster_provider import MonsterProvider
 
+import logging
+logger = logging.getLogger(__name__)
+
 
 def filter_json_type(all_data, json_type):
     right_data = {}
@@ -19,7 +22,7 @@ def filter_json_type(all_data, json_type):
 
 
 _filenames = get_all_filenames()
-
+logger.debug(f"Got all filenames: {_filenames}")
 _all_data: dict[str, dict] = {}
 
 
@@ -28,6 +31,7 @@ for filename in _filenames:
 
     for key, value in this_data.items():
         if key in _all_data:
+            logger.error(f"duplicate key {key} in data")
             raise KeyError(f"duplicate key {key} in data")
         _all_data[key] = value
 
