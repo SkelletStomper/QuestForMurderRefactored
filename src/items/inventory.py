@@ -39,9 +39,9 @@ class EquipSlot:
 
 
 class WeaponSlot(EquipSlot):
-    def __init__(self) -> None:
+    def __init__(self, default_weapon_id: str | None = None) -> None:
         super().__init__()
-        self.default_weapon_id = "fists"
+        self.default_weapon_id = default_weapon_id
 
     def is_equipable(self, item: Item) -> bool:
         if self._item is not None:
@@ -51,6 +51,8 @@ class WeaponSlot(EquipSlot):
     def apply_bonus(self, equip_effects: EquipEffects) -> EquipEffects:
         weapon: Weapon = self._item
         if weapon is None:
+            if self.default_weapon_id is None:
+                return equip_effects
             weapon = ip[self.default_weapon_id]
 
         attacks = [
@@ -98,7 +100,7 @@ class ArmorSlot(EquipSlot):
 class Inventory:
     def __init__(self):
         self.equip_slots = [
-            WeaponSlot(),
+            WeaponSlot(default_weapon_id="fists"),
             ArmorSlot(ArmorSlotType.HEAD),
             ArmorSlot(ArmorSlotType.CHEST),
             ArmorSlot(ArmorSlotType.LEGS),
