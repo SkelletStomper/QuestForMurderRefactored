@@ -1,6 +1,7 @@
 from src.combat.combat_basics import Combatant, Attack
 from src.entities.npc import NPC
 from src.combat.combat_basics import attack_dodged
+from src.localization.l_string import capitalize_first
 
 import random
 
@@ -13,8 +14,6 @@ class NPCCombatant(Combatant):
         self.npc = npc
 
     def get_attacks(self) -> list[Attack]:
-        le = self.npc.get_le()
-
         equip_effects = self.npc.inventory.calculate_bonus()
         attack_stencils = equip_effects.granted_attacks
 
@@ -34,7 +33,7 @@ class NPCCombatant(Combatant):
 
         if attack_dodged(accuracy, dodge):
             logger.debug(f"Attack was dodged by {le.name}")
-            print(f"{le.name} dodged the attack!".capitalize())
+            print(capitalize_first(f"{le.name} dodged the attack!"))
             return False
 
         armor = self.npc.armor + equip_effects.armor
@@ -52,7 +51,7 @@ class NPCCombatant(Combatant):
             self.npc.hp -= dmg
             logger.debug(f"HP of {le.name} reduced by {dmg}, from {self.npc.hp+dmg} to {self.npc.hp}")
 
-            print(f"{le.name} got hit for {dmg} damage!".capitalize())
+            print(capitalize_first(f"{le.name} got hit for {dmg} damage!"))
             return True
         else:
             logger.debug(f"Damage <= 0, no damage taken by {le.name}")
@@ -68,7 +67,7 @@ class NPCCombatant(Combatant):
 
     def status_message(self):
         le = self.npc.get_le()
-        print(f"{le.name} has {self.npc.hp} hit points left!".capitalize())
+        print(capitalize_first(f"{le.name} has {self.npc.hp} hit points left!"))
 
     def __repr__(self) -> str:
         return f"NPCCombatant(npc={self.npc}"
