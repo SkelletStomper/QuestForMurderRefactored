@@ -13,7 +13,12 @@ class ArmorSlotType(Enum):
 
 
 class Armor(Item):
-    def __init__(self, init_dict: dict):
+    def __init__(self, init_dict: dict) -> None:
         super().__init__(init_dict)
         self.type: ArmorSlotType = ArmorSlotType(init_dict["armor_type"])
         self.armor: int = init_dict["armor"]
+
+    def __repr__(self) -> str:
+        return f"Armor(name={self.name}, description={self.description}, weight={self.weight}, " \
+               f"type={self.type}, armor={self.armor})"
+

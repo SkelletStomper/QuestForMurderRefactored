@@ -3,6 +3,7 @@ from src.localization.localized_entity import LocalizedEntity
 from src.localization.l_string import LString
 
 
+
 class MonsterAttackStencil:
     def __init__(self, in_dict: dict) -> None:
         self.name = in_dict["name"]
@@ -23,6 +24,9 @@ class MonsterAttackStencil:
             self.multi = 1
 
     def generate_attacks(self) -> [Attack]:
+        """
+        Return a list of Attacks fitted after the Attack Stencil.
+        """
         return [Attack(
             dmg=self.dmg,
             acc=self.acc,
@@ -30,6 +34,10 @@ class MonsterAttackStencil:
             types=self.types,
             atk_str=self.text,
         )]*self.multi
+
+    def __repr__(self) -> str:
+        return f"MonsterAttackStencil(name={self.name}, text={self.text}, dmg={self.dmg}, acc={self.acc}, " \
+               f"crt={self.crt}, types={self.types}, weight={self.weight})"
 
 
 class Monster:
@@ -58,6 +66,10 @@ class Monster:
         self.flags = [fp(flag_name) for flag_name in in_dict["flags"]]
 
     def calculate_dmg_factor(self, attack: Attack) -> float:
+        """
+        Calculate the damage factor of a given attack against this monster.
+        Takes into perspective the own WeaknessSet as well as the weaknesses of all Flags.
+        """
         dmg_factor = 1.0
 
         dmg_factor *= self.weaknesses.attack_factor(attack)
@@ -67,6 +79,9 @@ class Monster:
         return dmg_factor
 
     def get_le(self) -> LocalizedEntity:
+        """
+        Get a Localized Entity describing the monster grammatically.
+        """
         plural = False
         if "plural" in self.flags:
             plural = True
@@ -77,3 +92,8 @@ class Monster:
             plural=plural,
             pronouns=self.pronouns,
         )
+
+    def __repr__(self) -> str:
+        return f"Monster(name={self.name}, title={self.title}, pronouns={self.pronouns}, info={self.info}, " \
+               f"death_messages={self.death_messages}, hp_max={self.hp_max}, dodge={self.dodge}, armor={self.armor}, " \
+               f"attacks={self.attacks}, weaknesses={self.weaknesses}, flags={self.flags})"

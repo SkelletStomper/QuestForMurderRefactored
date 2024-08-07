@@ -74,3 +74,6 @@ class MonsterCombatant(Combatant):
     def status_message(self):
         le = self.monster.get_le()
         print(f"{le.name} has {self.hp} hit points left!".capitalize())
+
+    def __repr__(self) -> str:
+        return f"MonsterCombatant(hp= {self.hp}, monster: {self.monster}"

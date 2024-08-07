@@ -10,3 +10,6 @@ class PronounProvider:
 
     def __getitem__(self, item: str) -> PronounSet:
         return self.pronouns[item]
+
+    def __repr__(self) -> str:
+        return "PronounProvider"

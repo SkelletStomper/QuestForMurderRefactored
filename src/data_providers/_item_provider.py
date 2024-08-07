@@ -16,3 +16,6 @@ class ItemProvider:
                 add_item = Weapon(item)
 
             self.items[item_id] = add_item
+
+    def __repr__(self) -> str:
+        return "ItemProvider"

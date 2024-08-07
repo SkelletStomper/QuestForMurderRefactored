@@ -61,6 +61,9 @@ class WeaknessSet:
         logging.debug(f"Calculated factor {factor} for attack with types {attack.types} with WeaknessSet {self.weaknesses}")
         return factor
 
+    def __repr__(self) -> str:
+        return f"WeaknessSet({self.weaknesses})"
+
 
 class Attack:
     """
@@ -88,3 +91,6 @@ class Attack:
             atk_str = LString("Unspecified attack landed.")
             logger.debug(f"Default-Initializing Attack LString as '{atk_str}'")
         self.atk_str = atk_str
+
+    def __repr__(self) -> str:
+        return f"Attack(dmg={self.dmg}, acc={self.acc}, crt={self.crt}, types={self.types}, atk_str={self.atk_str})"

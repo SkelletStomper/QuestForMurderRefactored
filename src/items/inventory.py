@@ -10,6 +10,9 @@ class EquipEffects:
         self.armor = 0
         self.granted_attacks: list[Attack] = []
 
+    def __repr__(self) -> str:
+        return f"EquipEffects(armor={self.armor}, granted_attacks={self.granted_attacks})"
+
 
 class EquipSlot:
     def __init__(self) -> None:
@@ -54,9 +57,14 @@ class WeaponSlot(EquipSlot):
         equip_effects.granted_attacks += attacks
         return equip_effects
 
+    def __repr__(self) -> str:
+        return f"WeaponSlot(item={self._item})"
+
 
 class OffhandSlot(EquipSlot):
-    pass
+
+    def __repr__(self) -> str:
+        return f"OffhandSlot(item={self._item})"
 
 
 class ArmorSlot(EquipSlot):
@@ -79,6 +87,9 @@ class ArmorSlot(EquipSlot):
 
         return equip_effects
 
+    def __repr__(self) -> str:
+        return f"ArmorSlot(type={self.type}, item={self._item})"
+
 
 class Inventory:
     def __init__(self):
@@ -92,6 +103,7 @@ class Inventory:
         ]
 
         self.item_capacity = 20
+        self.items: list[Item] = []
 
     def calculate_bonus(self) -> EquipEffects:
         equip_effects = EquipEffects()
@@ -107,3 +119,6 @@ class Inventory:
                 equip_slot.equip(item)
                 return True
         return False
+
+    def __repr__(self) -> str:
+        return f"Inventory(item_capacity={self.item_capacity}, equip_slots={self.equip_slots}, items={self.items})"

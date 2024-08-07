@@ -39,3 +39,7 @@ class MonsterCombat:
             defending=defender.monster.get_le()
         )
         print(atk_str)
+
+    def __repr__(self) -> str:
+        return f"MonsterCombat(combatant1={self.combatant1}, combatant2={self.combatant2})"
+
