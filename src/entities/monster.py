@@ -1,3 +1,4 @@
+from src.entities.entity import Entity
 from src.combat.attack import Attack, WeaknessSet, AttackType
 from src.localization.localized_entity import LocalizedEntity
 from src.localization.l_string import LString
@@ -39,21 +40,21 @@ class MonsterAttackStencil:
                f"crt={self.crt}, types={self.types}, weight={self.weight})"
 
 
-class Monster:
+class Monster(Entity):
     def __init__(self, in_dict: dict):
-        from src.data_providers import pronoun_provider as pp
-        from src.data_providers import flag_provider as fp
-
-        self.name: str = in_dict["name"]
-        self.title: str = in_dict["title"]
-        self.pronouns = pp[in_dict["pronouns"]]
+        super().__init__(
+            name=in_dict["name"],
+            title=in_dict["title"],
+            pronouns=in_dict["pronouns"],
+            hp_max=in_dict["hp_max"],
+            dodge=in_dict["dodge"],
+            accuracy=0,
+            armor=in_dict["armor"],
+            flags=in_dict["flags"],
+        )
 
         self.info: str = in_dict["information"]
         self.death_messages: list[str] = in_dict["death_messages"]
-
-        self.hp_max: int = in_dict["hp_max"]
-        self.dodge: int = in_dict["dodge"]
-        self.armor: int = in_dict["armor"]
 
         self.attacks: dict[str, MonsterAttackStencil] = \
             {attack_name: MonsterAttackStencil(attack_data)
@@ -61,8 +62,6 @@ class Monster:
              in in_dict["attacks"].items()}
 
         self.weaknesses = WeaknessSet(in_dict["weaknesses"])
-
-        self.flags = [fp(flag_name) for flag_name in in_dict["flags"]]
 
     def calculate_dmg_factor(self, attack: Attack) -> float:
         """

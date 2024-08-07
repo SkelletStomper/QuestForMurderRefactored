@@ -1,26 +1,33 @@
+from src.entities.entity import Entity
 from src.items.inventory import Inventory
 from src.localization.localized_entity import LocalizedEntity
 from src.combat.combat_basics import Attack
 
 
-class NPC:
-    def __init__(self) -> None:
-        from src.data_providers import pronoun_provider as pp
-        from src.data_providers import flag_provider as fp
+class NPC(Entity):
+    def __init__(self,
+                 name: str,
+                 title: str = "",
+                 pronouns: str = "3rd_they",
+                 hp_max: int = 10,
+                 dodge: int = 0,
+                 accuracy: int = 0,
+                 armor: int = 0,
+                 flags: list[str]|None = None,
+                 ) -> None:
+        super().__init__(
+            name=name,
+            title=title,
+            pronouns=pronouns,
+            hp_max=hp_max,
+            dodge=dodge,
+            accuracy=accuracy,
+            armor=armor,
+            flags=flags,
+        )
 
-        self.name: str = "Mary Jane"
-        self.title: str = ""
-        self.pronouns = pp["3rd_she"]
-
-        self.hp_max = 10
         self.hp = self.hp_max
-
-        self.dodge = 0
-        self.accuracy = 0
-        self.armor = 0
-
         self.inventory: Inventory = Inventory()
-        self.flags = []
 
     def calculate_dmg_factor(self, attack: Attack) -> float:
         """
