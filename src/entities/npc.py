@@ -1,4 +1,5 @@
 from src.items.inventory import Inventory
+from src.localization.localized_entity import LocalizedEntity
 
 
 class NPC:
@@ -19,6 +20,19 @@ class NPC:
 
         self.inventory: Inventory = Inventory()
         self.flags = []
+
+    def get_le(self) -> LocalizedEntity:
+        """
+        Get a Localized Entity describing the npc grammatically.
+        """
+        plural = "plural" in self.flags
+
+        return LocalizedEntity(
+            name=self.name,
+            title=self.title,
+            plural=plural,
+            pronouns=self.pronouns,
+        )
 
     def __repr__(self) -> str:
         return f"NPC(name={self.name}, title={self.title}, pronouns={self.pronouns}, " \
