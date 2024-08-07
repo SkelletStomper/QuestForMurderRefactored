@@ -30,9 +30,9 @@ class WeaponAttackStencil:
 
 
 class Weapon(Item):
-    def __init__(self, in_dict: dict):
-        super().__init__(in_dict)
+    def __init__(self, item_id,  in_dict: dict):
+        super().__init__(item_id, in_dict)
         self.attacks = {atk_id: WeaponAttackStencil(atk_data) for atk_id, atk_data in in_dict["attacks"].items()}
 
     def __repr__(self) -> str:
-        return f"Weapon(name={self.name}, description={self.description}, weight={self.weight}, attacks={self.attacks})"
+        return f"Weapon(id={self.id}, name={self.name}, description={self.description}, weight={self.weight}, attacks={self.attacks})"

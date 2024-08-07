@@ -17,9 +17,9 @@ class ItemProvider:
             item_type = item["json_type"].split(".")[1]
             add_item = None
             if item_type == "armor":
-                add_item = Armor(item)
+                add_item = Armor(item_id, item)
             if item_type == "weapon":
-                add_item = Weapon(item)
+                add_item = Weapon(item_id, item)
 
             self.items[item_id] = add_item
 

@@ -3,13 +3,14 @@ from src.combat.attack import AttackType
 
 
 class Item:
-    def __init__(self, in_dict: dict):
+    def __init__(self, item_id, in_dict: dict):
+        self.id = item_id
         self.name = in_dict["name"]
         self.description = in_dict["description"]
         self.weight = in_dict["weight"]
 
     def __repr__(self) -> str:
-        return f"Item(name={self.name}, description={self.description}, weight={self.weight})"
+        return f"Item(id={self.id}, name={self.name}, description={self.description}, weight={self.weight})"
 
 
 class Offhand(Item):
@@ -21,7 +22,7 @@ class Offhand(Item):
         self.types: list[AttackType] = in_dict["types"]
 
     def __repr__(self) -> str:
-        return f"OffhandItem(name={self.name}, description={self.description}, weight={self.weight})"
+        return f"OffhandItem(id={self.id}, name={self.name}, description={self.description}, weight={self.weight})"
 
 
 class Ability(Item):
@@ -32,4 +33,4 @@ class Ability(Item):
         self.description = in_dict["description"]
 
     def __repr__(self) -> str:
-        return f"Ability(name={self.name}, description={self.description}, weight={self.weight})"
+        return f"Ability(id={self.id}, name={self.name}, description={self.description}, weight={self.weight})"
