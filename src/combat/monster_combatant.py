@@ -54,7 +54,7 @@ class MonsterCombatant(Combatant):
         logger.debug(f"Received Damage Before Crit: round({attack.dmg}*{dmg_factor})- {self.monster.armor} = {dmg}")
 
         if dmg > 0:
-            logger.debug(f"Crit-Adjusted damage: round({dmg}*{attack.crt}) = {dmg.attack.crt}")
+            logger.debug(f"Crit-Adjusted damage: round({dmg}*{attack.crt}) = {dmg * attack.crt}")
             dmg = round(dmg*attack.crt)
 
             self.hp -= dmg
