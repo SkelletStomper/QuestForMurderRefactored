@@ -30,3 +30,6 @@ class Flag:
     def __eq__(self, value: str) -> bool:
         return self.name == value
 
+    def __repr__(self) -> str:
+        return f"Flag(name={self.name}, value={self.value}, value_type={self.value_type}, description={self.description}, " \
+               f"weaknesses= {self.weaknesses})"

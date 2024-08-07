@@ -51,6 +51,8 @@ class LString:
         logger.debug(f"Parsed {self._lstr} to {result}")
         return result
 
+    def __repr__(self) -> str:
+        return f"LString(lstr={self._lstr})"
 
 
-String = Union[str|LString]
+String = Union[str | LString]

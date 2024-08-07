@@ -12,6 +12,9 @@ class Dice:
     def roll(self):
         return random.randint(1, self.sides)
 
+    def __repr__(self) -> str:
+        return f"Dice(sides={self.sides})"
+
 
 class DiceSet:
     def __init__(self, die=None):
@@ -24,3 +27,6 @@ class DiceSet:
 
     def roll(self):
         return sum([dice.roll() for dice in self.die])
+
+    def __repr__(self) -> str:
+        return f"DiceSet(die={self.die})"
