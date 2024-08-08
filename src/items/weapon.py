@@ -1,7 +1,6 @@
 from src.items.items import Item
 from src.base.types import AttackType
 from src.combat.attack import Attack, ConditionalAttackText
-from src.localization.l_string import LString
 
 
 class WeaponAttackStencil:

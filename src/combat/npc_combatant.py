@@ -1,7 +1,7 @@
 from src.combat.combat_basics import Combatant, Attack
 from src.entities.npc import NPC
 from src.combat.combat_basics import attack_dodged
-from src.localization.l_string import capitalize_first
+from src.localization.l_string import capitalize_first, LString
 
 import random
 
@@ -21,7 +21,7 @@ class NPCCombatant(Combatant):
 
         return [executed_attack.generate_attack()]
 
-    def defense(self, attack: Attack) -> bool:
+    def defense(self, attack: Attack) -> LString:
         """Let the NPC defend against the Attack, giving it chance to dodge and applying damage if it.
         Returns true if the attack does damage, false if not."""
 
@@ -33,8 +33,7 @@ class NPCCombatant(Combatant):
 
         if attack_dodged(accuracy, dodge):
             logger.debug(f"Attack was dodged by {le.name}")
-            print(capitalize_first(f"{le.name} dodged the attack!"))
-            return False
+            return attack.atk_str.on_dodge
 
         armor = self.npc.armor + equip_effects.armor
 
@@ -52,11 +51,13 @@ class NPCCombatant(Combatant):
             logger.debug(f"HP of {le.name} reduced by {dmg}, from {self.npc.hp+dmg} to {self.npc.hp}")
 
             print(capitalize_first(f"{le.name} got hit for {dmg} damage!"))
-            return True
+            if self.npc.hp > 0:
+                return attack.atk_str.on_hit
+            else:
+                return attack.atk_str.on_kill
         else:
             logger.debug(f"Damage <= 0, no damage taken by {le.name}")
-            print(f"The hit doesn't penetrate {le.owns} armor!")
-            return False
+            return attack.atk_str.on_armor_save
 
     def get_le(self):
         return self.npc.get_le()

@@ -24,7 +24,13 @@
       "attack2": {
         "name": "",
         "description": "",
-        "text": "",
+        "text": {
+          "wind_up": "",
+          "on_hit": "",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
 
         "dmg": 0,
         "acc": 0,
@@ -61,7 +67,8 @@
           "wind_up": "{atk.name} attempt{atk.s} to hit {def.name} with a salted uppercut!",
           "on_hit": "{atk.owns} punch connects to {def.owns} chin, leaving {def.poss_adjective} ears ringing!",
           "on_kill": "{def.owns} neck snaps under the force of the uppercut!",
-          "on_dodge": "{def.name} bend{def.s} backwards, and the uppercut misses."
+          "on_dodge": "{def.name} bend{def.s} backwards, and the uppercut misses.",
+          "on_armor_save": ""
         },
         "dmg": 5,
         "acc": -3,
@@ -85,7 +92,8 @@
           "wind_up": "{atk.name} slash{atk.es} at {def.name} with {adj.poss_adjective} dagger.",
           "on_hit": "The attack grazes {def.name}, flinging a trail of {def.poss_adjective} {def.blood} through the air!",
           "on_kill": "The attack slashes a deep, fatal wound into {def.name}!",
-          "on_dodge": "The attack misses by a hairs breadth!"
+          "on_dodge": "The attack misses by a hairs breadth!",
+          "on_armor_save": ""
         },
         "dmg": 3,
         "acc": 1,

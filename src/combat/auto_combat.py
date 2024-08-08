@@ -1,4 +1,4 @@
-from src.combat.attack import Attack
+from src.localization.l_string import LString
 from src.combat.monster_combatant import MonsterCombatant
 from src.combat.npc_combatant import NPCCombatant
 
@@ -37,15 +37,16 @@ class AutoCombat:
 
         logger.info(f"Starting attack sequence with {lea.name} attacking {led.name}")
         for attack in attacker.get_attacks():
-            if defender.defense(attack):
-                self.print_attack(attack, attacker, defender)
+            self.print_attack(attack.atk_str.wind_up, attacker, defender)
+            message = defender.defense(attack)
+            self.print_attack(message, attacker, defender)
             if not defender.is_alive:
                 continue
         defender.status_message()
 
     @staticmethod
-    def print_attack(attack: Attack, attacker: MonsterCombatant, defender: MonsterCombatant) -> None:
-        atk_str = attack.atk_str.parse(
+    def print_attack(message: LString, attacker: MonsterCombatant, defender: MonsterCombatant) -> None:
+        atk_str = message.parse(
             attacking=attacker.get_le(),
             defending=defender.get_le()
         )

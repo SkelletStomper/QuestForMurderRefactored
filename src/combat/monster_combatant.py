@@ -1,7 +1,7 @@
 from src.combat.combat_basics import Combatant, attack_dodged
 from src.combat.attack import Attack
 from src.entities.monster import Monster, MonsterAttackStencil
-
+from src.localization.l_string import LString
 import random
 
 import logging
@@ -34,7 +34,7 @@ class MonsterCombatant(Combatant):
         logger.debug(f"Chose following attacks for {le.name}: {attacks}")
         return attacks
 
-    def defense(self, attack: Attack) -> bool:
+    def defense(self, attack: Attack) -> LString:
         """Let the monster defend against the Attack, giving it chance to dodge and applying damage if it.
         Returns true if the attack does damage, false if not."""
 
@@ -44,8 +44,7 @@ class MonsterCombatant(Combatant):
 
         if attack_dodged(accuracy, dodge):
             logger.debug(f"Attack was dodged by {le.name}")
-            print(f"{le.name} dodged the attack!".capitalize())
-            return False
+            return attack.atk_str.on_dodge
 
         dmg_factor = self.monster.calculate_dmg_factor(attack)
         dmg = round(attack.dmg*dmg_factor)
@@ -61,11 +60,13 @@ class MonsterCombatant(Combatant):
             logger.debug(f"HP of {le.name} reduced by {dmg}, from {self.hp+dmg} to {self.hp}")
 
             print(f"{le.name} got hit for {dmg} damage!".capitalize())
-            return True
+            if self.hp > 0:
+                return attack.atk_str.on_hit
+            else:
+                return attack.atk_str.on_kill
         else:
             logger.debug(f"Damage <= 0, no damage taken by {le.name}")
-            print(f"The hit doesn't penetrate {le.owns} armor!")
-            return False
+            return attack.atk_str.on_armor_save
 
     def get_le(self):
         return self.monster.get_le()
