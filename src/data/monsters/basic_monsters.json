@@ -6,16 +6,20 @@
     "name": "",
     "pronouns": "3rd_they",
     "information": "",
-    "death_messages": [
-      ""
-    ],
+    "death_messages": [],
     "hp_max": 0,
     "dodge": 0,
     "armor": 0,
     "attacks": {
       "attack1": {
         "name": "",
-        "text": "",
+        "text": {
+          "wind_up": "",
+          "on_hit": "",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 0,
         "crt": 1.0,
         "acc": 0,
@@ -46,18 +50,24 @@
     "pronouns": "3rd_it",
     "information": "This gigantic beast seems to protect the bar. It is really, really big, and has a huge health pool. You want to really kill this one quick.",
     "death_messages": [
-      "It kills you in an indescribable way. You are dead."
+      "You found an unsurprising end against the village guardian."
     ],
     "hp_max": 250,
-
     "dodge": -3,
     "armor": 4,
 
     "attacks": {
       "attack1": {
         "name": "Leg Smash",
-        "text": "{atk.name} kicks {def.name} with {atk.poss_adjective} massive foreleg!",
-        "dmg" : 12,
+
+        "text": {
+          "wind_up": "{atk.name} flex{atk.es} {atk.poss_adjective} leg in preparation of a nasty kick!",
+          "on_hit": "{atk.name} kicks {def.name} with {atk.poss_adjective} massive foreleg!",
+          "on_kill": "{atk.name} kicks {def.name} with {atk.poss_adjective} massive foreleg, and reduces {def.subject} to a pile of flesh and {def.blood}!",
+          "on_dodge": "{def.name} manage{def.s} to narrowly avoid the kick with a desperate leap!",
+          "on_armor_save": "{def.name} simply tank{def.s} the kick with {def.poss_adjective} massive armor!"
+        },
+        "dmg" : 35,
         "crt": 1,
         "acc": 5,
         "weight": 1,
@@ -87,7 +97,14 @@
     "attacks": {
       "attack1": {
         "name": "knuckle sandwich",
-        "text": "With what little power is left in {atk.poss_adjective} old bones, {atk.subject} hit{atk.s} {def.name} in the face!",
+        "text": {
+          "wind_up": "{atk.name} collect{atk.s} {atk.poss_adjective} powers for a punch!",
+          "on_hit": "With what little power is left in {atk.poss_adjective} old bones, {atk.name} hit{atk.s} {def.name} in the face!",
+          "on_kill": "{atk.name} hit{atk.s} {def.name} in the mouth, and {def.name} choke{def.s} and suffocate{def.s} on the knuckle sandwich!",
+          "on_dodge": "{def.name} avoid{def.s} the punch without any trouble.",
+          "on_armor_save": "Due to {def.owns} armor, the hit hurts {atk.name} more than it hurts {def.name}."
+        },
+
         "dmg" : 4,
         "crt": 1,
         "acc": 0,
@@ -115,7 +132,13 @@
     "attacks": {
       "attack1": {
         "name": "Paw Strike",
-        "text": "{atk.name} coquettishly slashes at {def.name} with {atk.poss_adjective} paw!",
+        "text": {
+          "wind_up": "{atk.name} watch{atk.es} {def.name}, waiting for an opportunity to strike.",
+          "on_hit": "{atk.name} coquettishly slashes at {def.name} with {atk.poss_adjective} paw.",
+          "on_kill": "{atk.name} scratches {def.name} too many times to count!",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 3,
         "crt": 1.0,
         "acc": 0,
@@ -145,7 +168,13 @@
     "attacks": {
       "attack1": {
         "name": "Hex: Weakness",
-        "text": "{atk.name} hex{atk.es} {def.name} with a devilish curse!",
+        "text": {
+          "wind_up": "{atk.name} call{atk.s} out to {atk.poss_adjective} father in hell for a curse most wicked!",
+          "on_hit": "{atk.name} hex{atk.es} {def.name} with a devilish curse.",
+          "on_kill": "{atk.name} hex{atk.es} {def.name} with a devilish curse, causing {def.poss_adjective} heart to stop!",
+          "on_dodge": "Through divine intervention, {atk.owns} curse is avoided!",
+          "on_armor_save": "{atk.owns} curse is stopped by {def.owns} armor!"
+        },
         "dmg" : 5,
         "crt": 1.0,
         "acc": 0,
