@@ -183,7 +183,13 @@
       },
       "fire_explode": {
         "name": "Rapid Combustion",
-        "text": "{atk.name} explode{atk.s} violently upon contact with fire",
+        "text": {
+          "wind_up": "{atk.name} explode{atk.s} violently upon contact with fire!",
+          "on_hit": "{def.name} is caught up in the explosion!",
+          "on_kill": "{def.name} is caught up in the explosion and burnt to a crisp!",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg": 15,
         "crt": 1.0,
         "acc": 9,
@@ -212,7 +218,13 @@
     "attacks": {
       "attack1": {
         "name": "Eye Peck",
-        "text": "{atk.name} swiftly swoop{atk.s} in and peck{atk.s} at {def.owns} eyes!",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} swiftly swoop{atk.s} in and peck{atk.s} at {def.owns} eyes!",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 3,
         "crt": 1.5,
         "acc": 3,
@@ -242,7 +254,13 @@
     "attacks": {
       "attack1": {
         "name": "Flail Bash",
-        "text": "{atk.name} attack{atk.s} {def.name} with {atk.poss_adjective} flail!",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} attack{atk.s} {def.name} with {atk.poss_adjective} flail!",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 4,
         "crt": 1.0,
         "acc": 0,
@@ -251,7 +269,13 @@
       },
       "attack2": {
         "name": "Sickle Strike",
-        "text": "{atk.name} slit{atk.s} {def.owns} throat with {atk.poss_adjective} sickle!",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} slashes at {def.name}, leaving a nasty cut!",
+          "on_kill": "{atk.name} slit{atk.s} {def.owns} throat with {atk.poss_adjective} sickle!",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 3,
         "crt": 1.0,
         "acc": 2,
@@ -279,7 +303,13 @@
     "attacks": {
       "attack1": {
         "name": "butter-up",
-        "text": "{atk.name} grab{atk.s} {def.owns} arm and saws at it with {atk.poss_adjective} butter knife!",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} grab{atk.s} {def.owns} arm and saws at it with {atk.poss_adjective} butter knife!",
+          "on_kill": "{atk.name} grab{atk.s} {def.owns} arm and saws at it with {atk.poss_adjective} butter knife! Finally, the arm comes off and {def.name} dies of {def.blood} loss!",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 6,
         "crt": 1.0,
         "acc": 1,
@@ -307,7 +337,13 @@
     "attacks": {
       "attack1": {
         "name": "Snake Bite",
-        "text": "{atk.name} bite{atk.s} {def.name} in the thigh! Luckily for {def.object}, {atk.name} {atk.are} poisonous, not venomous!",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} bite{atk.s} {def.name} in the thigh! Luckily for {def.object}, {atk.name} {atk.are} poisonous, not venomous!",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 4,
         "crt": 1.0,
         "acc": 0,
@@ -336,7 +372,13 @@
     "attacks": {
       "attack1": {
         "name": "Papercut",
-        "text": "{atk.name} attacks {def.name} with {atk.poss_adjective} razor-sharp paper arms!",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} attacks {def.name} with {atk.poss_adjective} razor-sharp paper arms!",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 6,
         "crt": 5.0,
         "acc": 1,
@@ -365,7 +407,13 @@
     "attacks": {
       "attack1": {
         "name": "Handbag Batter",
-        "text": "{atk.name} batter{atk.s} {def.name} over the head with {atk.poss_adjective} ton-heavy handbag!",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} batter{atk.s} {def.name} over the head with {atk.poss_adjective} ton-heavy handbag!",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 4,
         "crt": 0.9,
         "acc": 0,
@@ -394,7 +442,13 @@
     "attacks": {
       "attack1": {
         "name": "Salvo",
-        "text": "{atk.owns} hastily-shot bullet hits {def.name}",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.owns} hastily-shot bullet hits {def.name}",
+          "on_kill": "{atk.owns} hastily-shot bullet hits {def.name}, and hits a vital organ!",
+          "on_dodge": "{atk.owns} hastily-shot bullet misses, unsurprisingly.",
+          "on_armor_save": ""
+        },
         "dmg" : 5,
         "crt": 1.3,
         "acc": -3,
@@ -404,7 +458,13 @@
       },
       "attack2": {
         "name": "Crack Shot",
-        "text": "{atk.name} take{atk.s} time to land a well-placed shot on {def.name}!",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} take{atk.s} time to land a well-placed shot on {def.name}!",
+          "on_kill": "{atk.name} take{atk.s} time to land a well-placed shot on {def.name}, destroying a vital organ!",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 8,
         "crt": 1.3,
         "acc": 0,
@@ -436,7 +496,13 @@
     "attacks": {
       "attack1": {
         "name": "Fecal bite",
-        "text": "{atk.name} bite{atk.s} {def.name} with {atk.poss_adjective} putrid front teeth!",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} bite{atk.s} {def.name} with {atk.poss_adjective} putrid front teeth!",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 4,
         "crt": 1.0,
         "acc": 0,
@@ -468,7 +534,13 @@
     "attacks": {
       "attack1": {
         "name": "Nibble",
-        "text": "{}",
+        "text": {
+          "wind_up": "",
+          "on_hit": "",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 6,
         "crt": 1.0,
         "acc": 1,
@@ -477,7 +549,13 @@
       },
       "attack2": {
         "name": "Silver Scales",
-        "text": "{def.name} inhale{def.s} the scales that {atk.name} spread in the air!",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{def.name} inhale{def.s} the scales that {atk.name} spread in the air!",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 2,
         "crt": 1.0,
         "acc": 2,

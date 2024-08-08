@@ -14,8 +14,14 @@
     "attacks": {
       "attack1": {
         "name": "Bite",
-        "text": "{atk.name} bite{atk.s} a good chunk out of {def.name}!",
-        "dmg" : 15,
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} bite{atk.s} a good chunk out of {def.name}!",
+          "on_kill": "{atk.name} swallow{atk.s} {def.name} up in whole!",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
+        "dmg" : 30,
         "crt": 1.0,
         "acc": 2,
         "weight": 3,
@@ -23,7 +29,13 @@
       },
       "attack2": {
         "name": "Fire Breath",
-        "text": "{atk.name} grills {def.name} in a giant raging inferno!",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} grills {def.name} in a giant raging inferno!",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
         "dmg" : 20,
         "crt": 1.0,
         "acc": 5,
@@ -32,8 +44,14 @@
       },
       "attack3": {
         "name": "Double Claw Strike",
-        "text": "{atk.name} swipes {atk.poss_adjective} claws at {def.name} and leaves a bloody trail!",
-        "dmg": 8,
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} swipes {atk.poss_adjective} claws at {def.name} and leaves a bloody trail!",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
+        "dmg": 12,
         "crt": 1.2,
         "acc": 1,
         "weight": 1,

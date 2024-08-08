@@ -1,6 +1,6 @@
 from src.entities.entity import Entity
 from src.base.types import WeaknessSet, AttackType
-from src.combat.attack import Attack
+from src.combat.attack import Attack, ConditionalAttackText
 from src.localization.localized_entity import LocalizedEntity
 from src.localization.l_string import LString
 
@@ -9,9 +9,7 @@ class MonsterAttackStencil:
     def __init__(self, in_dict: dict) -> None:
         self.name = in_dict["name"]
 
-        self.text = LString(in_dict["text"])
-        if self.text == "":
-            self.text = LString("{atk.name} hits {def.name} with a vicious attack!")
+        self.text = ConditionalAttackText(in_dict["text"])
 
         self.dmg = in_dict["dmg"]
         self.acc = in_dict["acc"]

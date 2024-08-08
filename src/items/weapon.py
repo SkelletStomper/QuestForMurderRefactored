@@ -1,5 +1,6 @@
 from src.items.items import Item
-from src.combat.attack import Attack, AttackType
+from src.base.types import AttackType
+from src.combat.attack import Attack, ConditionalAttackText
 from src.localization.l_string import LString
 
 
@@ -7,7 +8,7 @@ class WeaponAttackStencil:
     def __init__(self, in_dict: dict) -> None:
         self.name: str = in_dict["name"]
         self.description: str = in_dict["description"]
-        self.text: LString = LString(in_dict["text"])
+        self.text: ConditionalAttackText = ConditionalAttackText(in_dict["text"])
 
         self.dmg: int = in_dict["dmg"]
         self.acc: int = in_dict["acc"]
