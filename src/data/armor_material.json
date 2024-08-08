@@ -30,7 +30,20 @@
       "LIGHT": 0.0,
       "DARKNESS": 0.0
     }
+  },
+  "armat_fur": {
+    "armor_efficiency": {
+      "PHYSICAL": 1.0,
+      "SLASHING": 0.3,
+      "BASHING": 0.6,
+      "PIERCING": 0.3,
+      "MAGICAL": 1.0,
+      "FIRE": 0.0,
+      "FROST": 2.0,
+      "CURSE": 0.0,
+      "HOLY": 0.0,
+      "LIGHT": 0.0,
+      "DARKNESS": 0.0
+    }
   }
-
-
 }

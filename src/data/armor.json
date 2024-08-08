@@ -26,7 +26,8 @@
     "description": "A fur-lined Cappy made from tanned leather. Keeps your head warm in the winter, boiling in the summer.",
     "weight": 3,
     "armor": {
-      "armat_leather": 1
+      "armat_leather": 1,
+      "armat_fur": 1
     }
   },
   "leather_pants": {
