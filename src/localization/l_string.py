@@ -6,8 +6,10 @@ from src.localization.localized_entity import LocalizedEntity
 import logging
 logger = logging.getLogger(__name__)
 
+
 def capitalize_first(str_in: str) -> str:
     return str_in[:1].capitalize() + str_in[1:]
+
 
 class LString:
     def __init__(self, lstr: str):

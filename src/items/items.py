@@ -1,4 +1,3 @@
-
 from src.combat.attack import AttackType
 
 
@@ -14,8 +13,8 @@ class Item:
 
 
 class Offhand(Item):
-    def __init__(self, in_dict: dict):
-        super().__init__(in_dict)
+    def __init__(self, item_id, in_dict: dict):
+        super().__init__(item_id, in_dict)
         self.damage: int = in_dict["damage"]
         self.armor: int = in_dict["armor"]
         self.heal: int = in_dict["heal"]
@@ -26,8 +25,8 @@ class Offhand(Item):
 
 
 class Ability(Item):
-    def __init__(self, in_dict):
-        super().__init__(in_dict["name"])
+    def __init__(self, item_id, in_dict):
+        super().__init__(item_id, in_dict)
         self.duration = in_dict["duration"]
         self.reload = in_dict["reload"]
         self.description = in_dict["description"]

@@ -1,4 +1,4 @@
-from src.flag import Flag
+from src.base.flag import Flag
 
 import logging
 logger = logging.getLogger(__name__)

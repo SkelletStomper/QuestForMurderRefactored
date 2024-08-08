@@ -1,5 +1,5 @@
 from src.localization.pronouns import PronounSet
-from src.flag import Flag
+from src.base.flag import Flag
 
 
 class LocalizedEntity:

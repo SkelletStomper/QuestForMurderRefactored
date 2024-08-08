@@ -1,9 +1,9 @@
-from src.combat.attack import Attack
 from src.items.items import Item
 
 from src.items.armor import Armor, ArmorSlotType
 from src.items.weapon import Weapon, WeaponAttackStencil
 from src.data_providers import item_provider as ip
+
 
 class EquipEffects:
     def __init__(self):

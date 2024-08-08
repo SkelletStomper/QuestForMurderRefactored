@@ -1,5 +1,6 @@
 from src.entities.entity import Entity
-from src.combat.attack import Attack, WeaknessSet, AttackType
+from src.base.types import WeaknessSet, AttackType
+from src.combat.attack import Attack
 from src.localization.localized_entity import LocalizedEntity
 from src.localization.l_string import LString
 

@@ -11,8 +11,11 @@ class ArmorSlotType(Enum):
     LEGS = "LEGS"
     FEET = "FEET"
 
+
 class ArmorMaterial:
-    def
+    def __init__(self):
+        pass
+
 
 class Armor(Item):
     def __init__(self, item_id, init_dict: dict) -> None:

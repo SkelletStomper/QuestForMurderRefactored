@@ -1,7 +1,6 @@
-from enum import Enum
 
 from src.localization.l_string import LString
-from src.base.types import AttackType, WeaknessSet
+from src.base.types import AttackType
 
 import logging
 logger = logging.getLogger(__name__)

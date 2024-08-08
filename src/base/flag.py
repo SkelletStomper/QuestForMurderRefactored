@@ -1,4 +1,4 @@
-from src.combat.attack import WeaknessSet
+from src.base.types import WeaknessSet
 
 from copy import copy
 

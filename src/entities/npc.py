@@ -55,8 +55,6 @@ class NPC(Entity):
             flags=self.flags
         )
 
-
-
     def __repr__(self) -> str:
         return f"NPC(name={self.name}, title={self.title}, pronouns={self.pronouns}, " \
                f" hp_max={self.hp_max}, dodge={self.dodge}, armor={self.armor}, " \

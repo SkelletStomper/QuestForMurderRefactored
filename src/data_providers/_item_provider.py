@@ -27,5 +27,6 @@ class ItemProvider:
 
     def __getitem__(self, item: str) -> Item:
         return self.items[item]
+
     def __repr__(self) -> str:
         return "ItemProvider"
