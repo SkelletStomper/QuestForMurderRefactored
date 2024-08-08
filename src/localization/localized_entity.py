@@ -64,5 +64,12 @@ class LocalizedEntity:
         else:
             return self._name + "'s"
 
+    @property
+    def blood(self) -> str:
+        if "insect" in self.flags:
+            return "hemolymph"
+
+        return "blood"
+
     def __repr__(self) -> str:
         return f"LocalizedEntity(name={self._name}, title={self._title}, plural={self._plural}, pronouns={self._pronouns})"
