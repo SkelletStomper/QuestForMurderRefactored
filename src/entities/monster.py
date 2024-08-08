@@ -89,6 +89,7 @@ class Monster(Entity):
             title=self.title,
             plural=plural,
             pronouns=self.pronouns,
+            flags=self.flags,
         )
 
     def __repr__(self) -> str:

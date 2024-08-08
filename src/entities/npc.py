@@ -52,6 +52,7 @@ class NPC(Entity):
             title=self.title,
             plural=plural,
             pronouns=self.pronouns,
+            flags=self.flags
         )
 
 

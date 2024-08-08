@@ -1,12 +1,14 @@
 from src.localization.pronouns import PronounSet
+from src.flag import Flag
 
 
 class LocalizedEntity:
-    def __init__(self, name: str, title: str, plural: bool, pronouns: PronounSet):
+    def __init__(self, name: str, title: str, plural: bool, pronouns: PronounSet, flags: list[Flag]):
         self._name = name
         self._title = title
         self._plural = plural
         self._pronouns = pronouns
+        self.flags = flags
 
     @property
     def subject(self) -> str:
