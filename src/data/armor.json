@@ -5,19 +5,8 @@
     "name": "",
     "description": "",
     "weight": 0,
-    "armor": 0,
-    "armor_efficiency": {
-      "PHYSICAL": 1.0,
-      "SLASHING": 1.0,
-      "BASHING": 1.0,
-      "PIERCING": 1.0,
-      "MAGICAL": 1.0,
-      "FIRE": 1.0,
-      "FROST": 1.0,
-      "CURSE": 1.0,
-      "HOLY": 1.0,
-      "LIGHT": 1.0,
-      "DARKNESS": 1.0
+    "armor": {
+      "armor_material": 0
     }
   },
   "leather_chest": {
@@ -26,20 +15,8 @@
     "name": "Leather Jacket",
     "description": "A large, thick leather jacket. Will provide some protection against minor injuries.",
     "weight": 10,
-    "armor": 3,
-    "armor_efficiency": {
-      "PHYSICAL": 1.0,
-      "SLASHING": 0.8,
-      "BASHING": 1.0,
-      "PIERCING": 0.5,
-
-      "MAGICAL": 1.0,
-      "FIRE": 0.8,
-      "FROST": 0.8,
-      "CURSE": 0.0,
-      "HOLY": 0.0,
-      "LIGHT": 0.0,
-      "DARKNESS": 0.0
+    "armor": {
+      "armat_leather": 3
     }
   },
   "leather_cap": {
@@ -48,20 +25,8 @@
     "name": "Leather Cappy",
     "description": "A fur-lined Cappy made from tanned leather. Keeps your head warm in the winter, boiling in the summer.",
     "weight": 3,
-    "armor": 1,
-    "armor_efficiency": {
-      "PHYSICAL": 1.0,
-      "SLASHING": 0.8,
-      "BASHING": 1.0,
-      "PIERCING": 0.5,
-
-      "MAGICAL": 1.0,
-      "FIRE": 0.8,
-      "FROST": 0.8,
-      "CURSE": 0.0,
-      "HOLY": 0.0,
-      "LIGHT": 0.0,
-      "DARKNESS": 0.0
+    "armor": {
+      "armat_leather": 1
     }
   },
   "leather_pants": {
@@ -70,20 +35,8 @@
     "name": "Leather Pants",
     "description": "A nice, adorned pair of leather pants. Somehow, they make you feel bavarian...",
     "weight": 7,
-    "armor": 2,
-    "armor_efficiency": {
-      "PHYSICAL": 1.0,
-      "SLASHING": 0.8,
-      "BASHING": 1.0,
-      "PIERCING": 0.5,
-
-      "MAGICAL": 1.0,
-      "FIRE": 0.8,
-      "FROST": 0.8,
-      "CURSE": 0.0,
-      "HOLY": 0.0,
-      "LIGHT": 0.0,
-      "DARKNESS": 0.0
+    "armor": {
+      "armat_leather": 2
     }
   },
   "leather_gloves": {
@@ -92,20 +45,8 @@
     "name": "fingerless leather gloves",
     "description": "These thin leather gloves are missing their fingertips, encumbering you less when doing tasks.",
     "weight": 2,
-    "armor": 1,
-    "armor_efficiency": {
-      "PHYSICAL": 1.0,
-      "SLASHING": 0.8,
-      "BASHING": 1.0,
-      "PIERCING": 0.5,
-
-      "MAGICAL": 1.0,
-      "FIRE": 0.8,
-      "FROST": 0.8,
-      "CURSE": 0.0,
-      "HOLY": 0.0,
-      "LIGHT": 0.0,
-      "DARKNESS": 0.0
+    "armor": {
+      "armat_leather": 1
     }
   },
   "leather_boots": {
@@ -114,20 +55,8 @@
     "name": "Leather Boots",
     "description": "A worn-out pair of leather boots. Even though they never touched your feet before, they fit you perfectly.",
     "weight": 4,
-    "armor": 1,
-    "armor_efficiency": {
-      "PHYSICAL": 1.0,
-      "SLASHING": 0.8,
-      "BASHING": 1.0,
-      "PIERCING": 0.5,
-
-      "MAGICAL": 1.0,
-      "FIRE": 0.8,
-      "FROST": 0.8,
-      "CURSE": 0.0,
-      "HOLY": 0.0,
-      "LIGHT": 0.0,
-      "DARKNESS": 0.0
+    "armor": {
+      "armat_leather": 1
     }
   }
 }
