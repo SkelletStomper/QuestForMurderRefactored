@@ -8,7 +8,13 @@
       "attack1": {
         "name": "",
         "description": "",
-        "text": "",
+        "text": {
+          "wind_up": "",
+          "on_hit": "",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
 
         "dmg": 0,
         "acc": 0,
@@ -36,8 +42,13 @@
       "attack1": {
         "name": "Quick Jab",
         "description": "Throw a light jab at your opponent. Not terribly effective, but quick and accurate.",
-        "text": "{atk.name} throw{atk.s} a light jab at {def.name}, and hit{atk.s} {def.object} in the chest.",
-
+        "text": {
+          "wind_up": "{atk.name} throw{atk.s} a light jab at {def.name}.",
+          "on_hit": "The jab lands and hits {def.object} in the chest.",
+          "on_kill": "Through a miracle, the jab pierces {def.owns} ribcage and {def.poss_adjective} heart!",
+          "on_dodge": "{def.name} twist{def.s} to the side, causing the jab to miss.",
+          "on_armor_save": "The jab lands, but {def.owns} armor is to thick for it to do any harm."
+        },
         "dmg": 2,
         "acc": 2,
         "crt": 1.0,
@@ -46,8 +57,12 @@
       "attack2": {
         "name": "Heavy Uppercut",
         "description": "This punch packs a serious punch! However, you have to be close to your opponent, which makes it hard to hit.",
-        "text": "{atk.owns} punch connects to {def.owns} chin, leaving {def.poss_adjective} ears ringing!",
-
+        "text": {
+          "wind_up": "{atk.name} attempt{atk.s} to hit {def.name} with a salted uppercut!",
+          "on_hit": "{atk.owns} punch connects to {def.owns} chin, leaving {def.poss_adjective} ears ringing!",
+          "on_kill": "{def.owns} neck snaps under the force of the uppercut!",
+          "on_dodge": "{def.name} bend{def.s} backwards, and the uppercut misses."
+        },
         "dmg": 5,
         "acc": -3,
         "crt": 1.3,
@@ -65,8 +80,13 @@
       "attack1": {
         "name": "Rapid Slash",
         "description": "Slash at your opponent. Will do good against weaker, unarmored targets.",
-        "text": "{atk.name} slash{atk.es} at {def.name}, flinging a trail of blood through the air!",
 
+        "text": {
+          "wind_up": "{atk.name} slash{atk.es} at {def.name} with {adj.poss_adjective} dagger.",
+          "on_hit": "The attack grazes {def.name}, flinging a trail of {def.poss_adjective} {def.blood} through the air!",
+          "on_kill": "The attack slashes a deep, fatal wound into {def.name}!",
+          "on_dodge": "The attack misses by a hairs breadth!"
+        },
         "dmg": 3,
         "acc": 1,
         "crt": 1.3,
@@ -75,8 +95,13 @@
       "attack2": {
         "name": "Stab the Weak Spot",
         "description": "Try to find a vulnerability in the opponents posture or armor, and stab right into it. Finicky to land, but deals good damage.",
-        "text": "{atk.name} find{atk.s} a way with {atk.poss_adjective} blade into {def.name}, hitting {def.object} where it really hurts!",
-
+        "text": {
+          "wind_up": "{atk.name} scan{atk.s} {def.name} for a possibility to pierce a weak spot!",
+          "on_hit": "{atk.name} find{atk.s} a way with {atk.poss_adjective} blade into {def.name}, hitting {def.object} where it really hurts!",
+          "on_kill": "{atk.name} nimbly find{atk.s} a way to pierce one of {def.owns} vital organs!",
+          "on_dodge": "{def.name} see{def.s} {atk.owns} attack coming, and dodge{atk.s} the attack.",
+          "on_armor_save": "{atk.name} cannot find a good vantage point through {def.owns} armor!"
+        },
         "dmg": 6,
         "acc": -4,
         "crt": 1.5,
@@ -93,20 +118,30 @@
       "attack1": {
         "name": "Smash",
         "description": "A simple strike at your opponent - perfect if simple is all you need. As maces tend to be, it is good at transferring damage through armor.",
-        "text": "{atk.name} hit{atk.s} {def.name} with {atk.poss_adjective} rusty mace!",
-
+        "text": {
+          "wind_up": "{atk.name} winds up an overhead swing!",
+          "on_hit": "{atk.name} hit{atk.s} {def.name} with {atk.poss_adjective} rusty mace!",
+          "on_kill": "{atk.name} crushes one of {def.owns} vital organs with {atk.poss_adjective} brutal strike!",
+          "on_dodge": "{def.name} move{def.s} aside, causing the strike to miss.",
+          "on_armor_save": "{def.name} harmlessly bounces of {def.owns} armor!"
+        },
         "dmg": 8,
-        "acc": -2,
+        "acc": -1,
         "crt": 0.6,
         "types": ["PHYSICAL", "BASHING"]
       },
       "attack2": {
         "name": "Another Smash",
         "description": "There is only so much you can do with this mace...",
-        "text": "{atk.name} clobber{atk.s} {def.name} with {atk.poss_adjective} rusty mace!",
-
+        "text": {
+          "wind_up": "{atk.name} winds up a horizontal swing!",
+          "on_hit": "{atk.name} clobber{atk.s} {def.name} with {atk.poss_adjective} rusty mace!",
+          "on_kill": "{atk.name} crushes one of {def.owns} vital organs with {atk.poss_adjective} brutal strike!",
+          "on_dodge": "{def.name} move{def.s} aside, causing the strike to miss.",
+          "on_armor_save": "{def.name} harmlessly bounces of {def.owns} armor!"
+        },
         "dmg": 8,
-        "acc": -2,
+        "acc": -1,
         "crt": 0.6,
         "types": ["PHYSICAL", "BASHING"]
       }
@@ -121,8 +156,13 @@
       "attack1": {
         "name": "Singeing Burst",
         "description": "Ignite the air in front of you. Extremely efficient at hitting your opponent, not so much at actually hurting them.",
-        "text": "The air in front of {atk.name} ignites, catching {def.name} inside and burning {def.poss_adjective} superficially.",
-
+        "text": {
+          "wind_up": "{atk.name} start{atk.s} chanting a spell from {atk.poss_adjective} spell book!",
+          "on_hit":  "The air in front of {atk.name} ignites, catching {def.name} inside and burning {def.poss_adjective} superficially.",
+          "on_kill":  "The air in front of {atk.name} ignites, catching {def.name} inside and burning {def.poss_adjective} to a crisp!.",
+          "on_dodge": "{def.name} leaps out of the way of the ensuing combustion!",
+          "on_armor_save": ""
+        },
         "dmg": 2,
         "acc": 5,
         "crt": 1.0,
@@ -131,8 +171,13 @@
       "attack2": {
         "name": "Fireball",
         "description": "Form a sphere of fire and hurl it at your opponent. A lot more condensed and potent than the burst.",
-        "text": "{def.name} receive{def.s} {atk.owns} fireball straight to the face!",
-
+        "text": {
+          "wind_up": "{atk.name} start{atk.s} chanting a spell from {atk.poss_adjective} spell book!",
+          "on_hit": "{def.name} receive{def.s} {atk.owns} fireball straight to the face!",
+          "on_kill": "{def.name} gets charred to a crisp by {atk.owns} fireball!",
+          "on_dodge": "{def.name} dodges the fireball!",
+          "on_armor_save": ""
+        },
         "dmg": 5,
         "acc": 0, 
         "crt": 1.0,
