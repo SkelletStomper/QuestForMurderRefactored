@@ -24,11 +24,15 @@ class AutoCombat:
 
         logger.info(f"Starting MonsterCombat between {le1.name} and {le2.name}")
 
-        while c1.is_alive and c2.is_alive:
+        while True:
             self.calculate_attacks(c1, c2)
+            if not c2.is_alive:
+                break
             print("")
 
             self.calculate_attacks(c2, c1)
+            if not c1.is_alive:
+                break
             print("")
 
     def calculate_attacks(self, attacker: AutoCombatant, defender: AutoCombatant) -> None:
