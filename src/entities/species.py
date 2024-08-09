@@ -1,0 +1,76 @@
+from src.base.types import WeaknessSet
+
+from enum import Enum
+
+class BodyPart(Enum):
+    HEAD = "HEAD"
+    CHEST = "CHEST"
+    LEG = "LEG"
+    FOOT = "FOOT"
+    ARM = "ARM"
+    HAND = "HAND"
+    EYE = "EYE"
+    WING = "WING"
+    HEART = "HEART"
+    BRAIN = "BRAIN"
+    TAIL = "TAIL"
+
+
+
+class Anatomy:
+    def __init__(self, in_dict: dict) -> None:
+        self.parts: dict[BodyPart, int] = {body_part: 0 for body_part in BodyPart}
+
+        for body_part, count in in_dict.items():
+            enum_part = BodyPart(body_part)
+            self.parts[enum_part] = count
+
+    def __repr__(self) -> str:
+        str_list = [f"{part.value}={count}" for part, count in self.parts.values() if part > 0]
+
+        return f"Anatomy({', '.join(str_list)})"
+
+
+class Species:
+    inherit_string = "inherit"
+
+    def __init__(self, species_id: str, in_dict: dict) -> None:
+        self.id = species_id
+        self.subspecies_of = in_dict["subspecies_of"]
+
+        self.description = in_dict["description"]
+
+        self.anatomy = in_dict["anatomy"]
+
+        self.vital_organs = in_dict["vital_organs"]
+
+        self.blood = in_dict["blood"]
+        self.skin = in_dict["skin"]
+
+        self.flags = in_dict["flags"]
+
+        self.weaknesses = in_dict["weaknesses"]
+
+    def _prepare_not_inherited(self) -> None:
+        from src.data_providers import flag_provider as fp
+
+        inherit = self.inherit_string
+
+        if self.anatomy != inherit and isinstance(self.anatomy, dict):
+            self.anatomy = Anatomy(self.anatomy)
+
+        if (self.flags != inherit and inherit not in self.flags
+                and str in [type(f) for f in self.flags]):
+            self.flags = [fp(flag_str) for flag_str in self.flags]
+
+        if self.weaknesses != inherit and isinstance(self.weaknesses, dict):
+            self.weaknesses = WeaknessSet(self.weaknesses)
+
+    def full_fledged(self) -> bool:
+        inherit = self.inherit_string
+        if self.anatomy == inherit:
+            return False
+
+        if
+
+        return True

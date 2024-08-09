@@ -1,0 +1,198 @@
+
+
+
+{
+  "species":
+  {
+    "json_type": "species",
+    "subspecies_of": "",
+    "description": "",
+    "anatomy": {
+      "HEAD": 1,
+      "CHEST": 1,
+      "LEG": 2,
+      "FOOT": 2,
+      "ARM": 2,
+      "HAND": 2,
+      "EYE": 2,
+      "WING": 0,
+      "HEART": 1,
+      "BRAIN": 1,
+      "TAIL": 0
+
+    },
+    "vital_organs": [],
+    "blood": "",
+    "skin": "",
+    "flags": [],
+    "weaknesses": {
+      "PHYSICAL": 1.0,
+      "SLASHING": 1.0,
+      "BASHING": 1.0,
+      "PIERCING": 1.0,
+      "MAGICAL": 1.0,
+      "FIRE": 1.0,
+      "FROST": 1.0,
+      "CURSE": 1.0,
+      "HOLY": 1.0,
+      "LIGHT": 1.0,
+      "DARKNESS": 1.0
+    }
+  },
+  "spec_humanoid":
+  {
+    "json_type": "species",
+    "subspecies_of": "",
+    "description": "Something with two legs, two arms, a head, and at least moderate intellect.",
+    "anatomy": {
+      "HEAD": 1,
+      "CHEST": 1,
+      "LEG": 2,
+      "FOOT": 2,
+      "ARM": 2,
+      "HAND": 2,
+      "EYE": 2,
+      "HEART": 1,
+      "BRAIN": 1
+    },
+    "vital_organs": ["heart", "brain"],
+
+    "blood": "blood",
+    "skin": "armat_skin_humanoid",
+    "flags": ["sees", "hears", "intelligent"],
+    "weaknesses": {}
+  },
+  "spec_humanoid_tall":
+  {
+    "json_type": "species",
+    "subspecies_of": "spec_humanoid",
+    "description": "A tall humanoid - a human, elf, or similar.",
+    "anatomy": "inherit",
+    "vital_organs": ["inherit"],
+    "blood": "inherit",
+    "skin": "armat_skin_humanoid",
+    "flags": ["inherit"],
+    "weaknesses": {
+      "CURSE": 1.1,
+      "HOLY": 0.9,
+      "LIGHT": 0.9,
+      "DARKNESS": 1.1
+    }
+  },
+  "spec_humanoid_small":
+  {
+    "json_type": "species",
+    "subspecies_of": "spec_humanoid",
+    "description": "A small humanoid - a goblin, dwarf, or similar.",
+    "anatomy": "inherit",
+    "vital_organs": ["inherit"],
+    "blood": "inherit",
+    "skin": "armat_skin_humanoid",
+    "flags": ["inherit"],
+    "weaknesses": {
+      "CURSE": 0.9,
+      "HOLY": 1.1,
+      "LIGHT": 1.1,
+      "DARKNESS": 0.9
+    }
+  },
+
+
+  "spec_animal": {
+    "json_type": "species",
+    "subspecies_of": "",
+    "description": "Some sort of non-Humanoid animal.",
+    "anatomy": {
+      "HEAD": 1,
+      "CHEST": 1,
+      "LEG": 4,
+      "FOOT": 4,
+      "EYE": 2,
+      "HEART": 1,
+      "BRAIN": 1
+
+    },
+    "vital_organs": ["heart", "brain"],
+    "blood": "blood",
+    "skin": "armat_fur",
+    "flags": ["sees", "hears"],
+    "weaknesses": {
+      "FIRE": 1.1,
+      "FROST": 0.9
+    }
+  },
+  "spec_canine":
+  {
+    "json_type": "species",
+    "subspecies_of": "spec_animal",
+    "description": "Man's best friend... once upon a time.",
+    "anatomy": "inherit",
+    "vital_organs": ["inherit"],
+    "blood": "inherit",
+    "skin": "inherit",
+    "flags": ["inherit"],
+    "weaknesses": "inherit"
+  },
+  "spec_feline":
+  {
+    "json_type": "species",
+    "subspecies_of": "animal",
+    "description": "Cats. These might be tempting, but not safe to cuddle.",
+    "anatomy": "inherit",
+    "vital_organs": ["inherit"],
+    "blood": "inherit",
+    "skin": "inherit",
+    "flags": ["inherit"],
+    "weaknesses": "inherit"
+  },
+  "spec_bird": {
+    "json_type": "species",
+    "subspecies_of": "spec_animal",
+    "description": "A bird.",
+    "anatomy": {
+      "HEAD": 1,
+      "CHEST": 1,
+      "LEG": 2,
+      "FOOT": 2,
+      "EYE": 2,
+      "WING": 2,
+      "HEART": 1,
+      "BRAIN": 1
+
+    },
+    "vital_organs": ["inherit"],
+    "blood": "inherit",
+    "skin": "armat_feather",
+    "flags": ["inherit", "flying"],
+    "weaknesses": {
+      "FIRE": 1.1,
+      "FROST": 0.9
+    }
+  },
+  "spec_reptilian":
+  {
+    "json_type": "species",
+    "subspecies_of": "spec_animal",
+    "description": "A reptilian specimen. Cold-blooded, but hot in temper.",
+    "anatomy": {
+      "HEAD": 1,
+      "CHEST": 1,
+      "LEG": 4,
+      "FOOT": 4,
+      "EYE": 2,
+      "HEART": 1,
+      "BRAIN": 1,
+      "TAIL": 1
+    },
+    "vital_organs": ["inherit"],
+
+    "blood": "inherit",
+    "skin": "armat_scales_reptile",
+    "flags": ["inherit"],
+    "weaknesses": {
+      "FIRE": 0.9,
+      "FROST": 1.1
+
+    }
+  }
+}

@@ -45,16 +45,7 @@
 
     }
   },
-  "humanoid": {
-    "json_type": "flag",
-    "description": "Either a human, or close enough to it.",
-    "weaknesses": {
-      "CURSE": 1.1,
-      "HOLY": 0.9,
-      "LIGHT": 0.9,
-      "DARKNESS": 1.1
-    }
-  },
+
   "goblin": {
     "json_type": "flag",
     "description": "Greedy little creatures who strive to defile the lands, and gather the spoils.",
@@ -65,22 +56,7 @@
       "DARKNESS": 0.9
     }
   },
-  "animal": {
-    "json_type": "flag",
-    "description": "Some sort of non-Humanoid animal.",
-    "weaknesses": {
-      "FIRE": 1.1,
-      "FROST": 0.9
-    }
-  },
-  "feline": {
-    "json_type": "flag",
-    "description": "Cats. These might be tempting, but not safe to cuddle."
-  },
-  "canine": {
-    "json_type": "flag",
-    "description": "Man's best friend... once upon a time."
-  },
+
   "insect": {
     "json_type": "flag",
     "description": "Insects, squirming bugs and various others. Naturally strong against forces of holy and evil.",
