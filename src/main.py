@@ -1,4 +1,4 @@
-from src.data_providers import monster_provider as mp
+from src.data_providers import monster_provider as mp, species_provider as sp
 
 from src.entities.npc import NPC
 from src.combat.auto_combat import AutoCombat, MonsterCombatant, NPCCombatant

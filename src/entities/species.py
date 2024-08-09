@@ -122,6 +122,19 @@ class Species:
         if self.weaknesses == inherit:
             self.weaknesses = parent.weaknesses
 
+    def is_subspecies(self, species_id: str) -> bool:
+        from src.data_providers import species_provider as sp
+
+        if self.id == species_id:
+            return True
+        parent = self.subspecies_of
+        while True:
+            if parent == "":
+                return False
+            if parent == species_id:
+                return True
+            parent = sp[parent].subspecies_of
+
     def __repr__(self) -> str:
         return (f"Species(id={self.id}, subspecies_of={self.subspecies_of}, description={self.description}, "
                 f"anatomy={self.anatomy}, vital_organs={self.vital_organs}, blood={self.blood}, skin={self.skin},"
