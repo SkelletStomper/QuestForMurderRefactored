@@ -1,5 +1,5 @@
 from enum import Enum
-
+from math import isclose
 
 import logging
 logger = logging.getLogger(__name__)
@@ -65,5 +65,9 @@ class WeaknessSet:
         return factor
 
     def __repr__(self) -> str:
-        return f"WeaknessSet({self.weaknesses})"
+
+        weakness_strings = [f"{attackType.value}: {value}"
+                            for attackType, value in self.weaknesses.items()
+                            if not isclose(value, 1.0)]
+        return f"WeaknessSet({', '.join(weakness_strings)})"
 

@@ -4,6 +4,12 @@ from copy import copy
 
 
 class Flag:
+    """
+    Entities can have flags to signify special properties.
+    By checking if an entity has a flag, it is possible to check this condition later in the code, and allows for special effects.
+    Flags are gotten from and instantiated in the Flag Provider.
+    Some Flags come with a WeaknessSet and/or a value.
+    """
     def __init__(self, name: str, init_dict: dict):
 
         self.name = name
