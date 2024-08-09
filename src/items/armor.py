@@ -14,11 +14,12 @@ class ArmorSlotType(Enum):
 
 
 class ArmorMaterial:
-    def __init__(self, in_dict: dict) -> None:
+    def __init__(self, armat_id, in_dict: dict) -> None:
+        self.id = armat_id
         self.efficiency = WeaknessSet(in_dict["armor_efficiency"])
 
     def __repr__(self):
-        return f"ArmorMaterial(efficiency={self.efficiency})"
+        return f"ArmorMaterial(id={self.id}, efficiency={self.efficiency})"
 
 
 class Armor(Item):
