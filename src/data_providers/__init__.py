@@ -4,6 +4,7 @@ from src.data_providers._pronoun_provider import PronounProvider
 from src.data_providers._flag_provider import FlagProvider
 from src.data_providers._item_provider import ItemProvider
 from src.data_providers._monster_provider import MonsterProvider
+from src.data_providers._armor_material_provider import ArmorMaterialProvider
 
 import logging
 logger = logging.getLogger(__name__)
@@ -47,3 +48,6 @@ monster_provider = MonsterProvider(_monster_data)
 
 _item_data = filter_json_type(_all_data, "item")
 item_provider = ItemProvider(_item_data)
+
+_armat_data = filter_json_type(_all_data, "armor_material")
+armat_provider = ArmorMaterialProvider(_armat_data)
