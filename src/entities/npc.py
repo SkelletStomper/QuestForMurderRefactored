@@ -13,7 +13,8 @@ class NPC(Entity):
                  dodge: int = 0,
                  accuracy: int = 0,
                  armor: int = 0,
-                 flags: list[str]|None = None,
+                 flags: list[str] | None = None,
+                 species: str = "spec_humanoid"
                  ) -> None:
         super().__init__(
             name=name,
@@ -24,6 +25,7 @@ class NPC(Entity):
             accuracy=accuracy,
             armor=armor,
             flags=flags,
+            species=species
         )
 
         self.hp = self.hp_max
@@ -34,12 +36,7 @@ class NPC(Entity):
         Calculate the damage factor of a given attack against this NPC.
         Takes into perspective the weaknesses of all Flags.
         """
-        dmg_factor = 1.0
-
-        for flag in self.flags:
-            dmg_factor *= flag.weaknesses.attack_factor(attack)
-
-        return dmg_factor
+        return super().calculate_dmg_factor(attack)
 
     def get_le(self) -> LocalizedEntity:
         """
