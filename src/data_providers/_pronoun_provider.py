@@ -16,4 +16,4 @@ class PronounProvider:
         return self.pronouns[item]
 
     def __repr__(self) -> str:
-        return "PronounProvider"
+        return f"PronounProvider({self.pronouns}) Pronouns )"

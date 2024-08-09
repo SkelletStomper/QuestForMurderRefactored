@@ -40,20 +40,27 @@ for filename in _filenames:
 
 _pronoun_data = filter_json_type(_all_data, "pronouns")
 pronoun_provider = PronounProvider(_pronoun_data)
+logger.info(pronoun_provider)
 
 _flag_data = filter_json_type(_all_data, "flag")
 flag_provider = FlagProvider(_flag_data)
+logger.info(flag_provider)
+
 
 _item_data = filter_json_type(_all_data, "item")
 item_provider = ItemProvider(_item_data)
+logger.info(item_provider)
 
 _armat_data = filter_json_type(_all_data, "armor_material")
 armat_provider = ArmorMaterialProvider(_armat_data)
+logger.info(armat_provider)
 
 _species_data = filter_json_type(_all_data, "species")
 species_provider = SpeciesProvider(_species_data)
+logger.info(species_provider)
 
 _monster_data = filter_json_type(_all_data, "monster")
 monster_provider = MonsterProvider(_monster_data)
+logger.info(monster_provider)
 
 

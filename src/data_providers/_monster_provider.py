@@ -15,4 +15,4 @@ class MonsterProvider:
         return self.monsters[value]
 
     def __repr__(self) -> str:
-        return "MonsterProvider"
+        return f"MonsterProvider({len(self.monsters)} Monsters)"

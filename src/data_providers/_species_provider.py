@@ -12,5 +12,5 @@ class SpeciesProvider:
         return self.species[item]
 
     def __repr__(self):
-        return "ArmorMaterialProvider"
+        return f"SpeciesProvider({len(self.species)} Species)"
 

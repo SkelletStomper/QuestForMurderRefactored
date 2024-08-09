@@ -24,4 +24,4 @@ class FlagProvider:
         return self[flag_name].get_copy(value)
 
     def __repr__(self) -> str:
-        return "FlagProvider"
+        return f"FlagProvider({len(self.flags)} Flags)"

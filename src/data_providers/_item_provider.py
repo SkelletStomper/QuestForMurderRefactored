@@ -29,4 +29,4 @@ class ItemProvider:
         return self.items[item]
 
     def __repr__(self) -> str:
-        return "ItemProvider"
+        return f"ItemProvider({len(self.items)} Items)"

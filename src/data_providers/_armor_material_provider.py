@@ -12,4 +12,4 @@ class ArmorMaterialProvider:
         return self.armats[item]
 
     def __repr__(self):
-        return "ArmorMaterialProvider"
+        return f"ArmorMaterialProvider({len(self.armats)} Armor Materials)"
