@@ -57,7 +57,6 @@ class WeaknessSet:
         """Calculates the damage factor of an Attack for this WeaknessSet.
         Iterates through all types of the attack and multiplies all weakness factors with themselves, returning the final weakness factor."""
         factor = 1.0
-
         for attack_type in attack.types:
             factor *= self.weaknesses[attack_type]
 
@@ -65,7 +64,6 @@ class WeaknessSet:
         return factor
 
     def __repr__(self) -> str:
-
         weakness_strings = [f"{attackType.value}: {value}"
                             for attackType, value in self.weaknesses.items()
                             if not isclose(value, 1.0)]
