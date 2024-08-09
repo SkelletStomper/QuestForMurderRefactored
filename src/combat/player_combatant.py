@@ -20,7 +20,20 @@ class PlayerCombatant(Combatant):
 
 
     def turn(self) -> tuple[PlayerCombatChoice, Any]:
-        print()
+
+
+        print("What do you want to do?")
+        print("(1): Attack")
+        print("(2): Inventory")
+        print("(3): Flee")
+        choice: str = input(">: ").to_lower()
+
+        if choice in ["1", "(1)", "atk", "attack"]:
+            pass
+        elif choice in ["2", "(2)", "inv", "inventory"]:
+            pass
+        elif choice in ["3", "{3}", "flee", "run"]:
+            return PlayerCombatChoice.FLEEING, None
 
 
 # TODO
