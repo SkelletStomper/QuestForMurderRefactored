@@ -17,6 +17,9 @@ class ArmorMaterial:
     def __init__(self, in_dict: dict) -> None:
         self.efficiency = WeaknessSet(in_dict["armor_efficiency"])
 
+    def __repr__(self):
+        return f"ArmorMaterial(efficiency={self.efficiency})"
+
 
 class Armor(Item):
     def __init__(self, item_id, init_dict: dict) -> None:
