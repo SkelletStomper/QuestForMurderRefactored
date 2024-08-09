@@ -297,5 +297,27 @@
       "CURSE": 0.7,
       "HOLY": 0.7
     }
+  },
+  "spec_unknown": {
+    "json_type": "species",
+    "subspecies_of": "",
+    "description": "A big pile of species not closer described. Placeholder species.",
+    "anatomy": {
+      "HEAD": 1,
+      "CHEST": 1,
+      "LEG": 2,
+      "FOOT": 2,
+      "ARM": 2,
+      "HAND": 2,
+      "EYE": 2,
+      "HEART": 1,
+      "BRAIN": 1
+
+    },
+    "vital_organs": ["heart", "brain"],
+    "blood": "string",
+    "skin": "armat_skin_humanoid",
+    "flags": [],
+    "weaknesses": {}
   }
 }
