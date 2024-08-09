@@ -48,5 +48,88 @@
       "LIGHT": 0.0,
       "DARKNESS": 0.0
     }
+  },
+  "armat_scales_dragon": {
+    "json_type": "armor_material",
+    "armor_efficiency": {
+      "BASHING": 0.8,
+      "PIERCING": 0.8,
+      "MAGICAL": 3.0,
+      "FIRE": 2.0
+    }
+  },
+  "armat_scales_reptile": {
+    "json_type": "armor_material",
+    "armor_efficiency": {
+      "PHYSICAL": 1.0,
+      "SLASHING": 1.0,
+      "BASHING": 0.8,
+      "PIERCING": 0.5
+
+    }
+  },
+  "armat_skin_humanoid": {
+    "json_type": "armor_material",
+    "armor_efficiency": {
+      "PHYSICAL": 0.0,
+      "SLASHING": 0.0,
+      "BASHING": 0.0,
+      "PIERCING": 0.0,
+      "MAGICAL": 0.0,
+      "FIRE": 0.0,
+      "FROST": 0.0,
+      "CURSE": 0.0,
+      "HOLY": 0.0,
+      "LIGHT": 0.0,
+      "DARKNESS": 0.0
+    }
+  },
+  "armat_fat": {
+    "json_type": "armor_material",
+    "armor_efficiency": {
+      "PHYSICAL": 1.0,
+      "SLASHING": 0.4,
+      "BASHING": 1.5,
+      "PIERCING": 0.2,
+      "MAGICAL": 1.0,
+      "FIRE": 0.5,
+      "FROST": 1.5,
+      "CURSE": 0.0,
+      "HOLY": 0.0,
+      "LIGHT": 0.5,
+      "DARKNESS": 0.5
+    }
+  },
+  "armat_feather": {
+    "json_type": "armor_material",
+    "armor_efficiency": {
+      "PHYSICAL": 1.0,
+      "SLASHING": 1.0,
+      "BASHING": 1.0,
+      "PIERCING": 1.0,
+      "MAGICAL": 1.0,
+      "FIRE": 1.0,
+      "FROST": 1.0,
+      "CURSE": 1.0,
+      "HOLY": 1.0,
+      "LIGHT": 1.0,
+      "DARKNESS": 1.0
+    }
+  },
+  "armat_chitin": {
+    "json_type": "armor_material",
+    "armor_efficiency": {
+      "PHYSICAL": 1.0,
+      "SLASHING": 1.0,
+      "BASHING": 1.0,
+      "PIERCING": 1.0,
+      "MAGICAL": 1.0,
+      "FIRE": 1.0,
+      "FROST": 1.0,
+      "CURSE": 1.0,
+      "HOLY": 1.0,
+      "LIGHT": 1.0,
+      "DARKNESS": 1.0
+    }
   }
 }

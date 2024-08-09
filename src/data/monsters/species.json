@@ -2,8 +2,7 @@
 
 
 {
-  "species":
-  {
+  "species": {
     "json_type": "species",
     "subspecies_of": "",
     "description": "",
@@ -39,6 +38,17 @@
       "DARKNESS": 1.0
     }
   },
+  "pure_subspecies": {
+    "json_type": "species",
+    "subspecies_of": "species",
+    "description": "",
+    "anatomy": "inherit",
+    "vital_organs": ["inherit"],
+    "blood": "inherit",
+    "skin": "inherit",
+    "flags": ["inherit"],
+    "weaknesses": "inherit"
+  },
   "spec_humanoid":
   {
     "json_type": "species",
@@ -70,14 +80,25 @@
     "anatomy": "inherit",
     "vital_organs": ["inherit"],
     "blood": "inherit",
-    "skin": "armat_skin_humanoid",
-    "flags": ["inherit"],
+    "skin": "inherit",
+    "flags": ["inherit", "intelligent"],
     "weaknesses": {
       "CURSE": 1.1,
       "HOLY": 0.9,
       "LIGHT": 0.9,
       "DARKNESS": 1.1
     }
+  },
+  "spec_human": {
+    "json_type": "species",
+    "subspecies_of": "spec_humanoid_tall",
+    "description": "One of the most successful humanoids out there, not lastly due to their ability to both betray AND cooperate when needed.",
+    "anatomy": "inherit",
+    "vital_organs": ["inherit"],
+    "blood": "inherit",
+    "skin": "inherit",
+    "flags": ["inherit"],
+    "weaknesses": "inherit"
   },
   "spec_humanoid_small":
   {
@@ -87,7 +108,7 @@
     "anatomy": "inherit",
     "vital_organs": ["inherit"],
     "blood": "inherit",
-    "skin": "armat_skin_humanoid",
+    "skin": "inherit",
     "flags": ["inherit"],
     "weaknesses": {
       "CURSE": 0.9,
@@ -95,6 +116,17 @@
       "LIGHT": 1.1,
       "DARKNESS": 0.9
     }
+  },
+  "spec_goblin": {
+    "json_type": "species",
+    "subspecies_of": "spec_goblin",
+    "description": "Greedy little creatures who strive to defile the lands, and gather the spoils. Interestingly, they seem to be immune to the curse of the blood.",
+    "anatomy": "inherit",
+    "vital_organs": ["inherit"],
+    "blood": "inherit",
+    "skin": "inherit",
+    "flags": ["inherit"],
+    "weaknesses": "inherit"
   },
 
 
@@ -136,7 +168,7 @@
   "spec_feline":
   {
     "json_type": "species",
-    "subspecies_of": "animal",
+    "subspecies_of": "spec_animal",
     "description": "Cats. These might be tempting, but not safe to cuddle.",
     "anatomy": "inherit",
     "vital_organs": ["inherit"],
@@ -193,6 +225,77 @@
       "FIRE": 0.9,
       "FROST": 1.1
 
+    }
+  },
+  "spec_snake": {
+    "json_type": "species",
+    "subspecies_of": "spec_reptilian",
+    "description": "All sorts of danger noodles!",
+    "anatomy": {
+      "HEAD": 1,
+      "CHEST": 1,
+      "EYE": 2,
+      "HEART": 1,
+      "TAIL": 1
+    },
+    "vital_organs": ["inherit"],
+    "blood": "inherit",
+    "skin": "inherit",
+    "flags": ["inherit"],
+    "weaknesses": "inherit"
+  },
+  "spec_dragon":
+  {
+    "json_type": "species",
+    "subspecies_of": "",
+    "description": "The mighty dragons, a frightening species with unrivaled power in battle.",
+    "anatomy": {
+      "HEAD": 1,
+      "CHEST": 1,
+      "LEG": 6,
+      "FOOT": 6,
+      "EYE": 3,
+      "WING": 2,
+      "HEART": 2,
+      "BRAIN": 1,
+      "TAIL": 3
+
+    },
+    "vital_organs": ["heart", "brain"],
+    "blood": "haemo-sludge",
+    "skin": "armat_scales_dragon",
+    "flags": ["sees", "hears", "intelligent"],
+    "weaknesses": {
+      "SLASHING": 0.8,
+      "MAGICAL": 2.0,
+      "FIRE": 0.5,
+      "FROST": 1.2,
+      "HOLY": 1.2
+    }
+  },
+
+  "spec_insects": {
+    "json_type": "species",
+    "subspecies_of": "spec_animal",
+    "description": "Insects, squirming bugs and various others. Naturally strong against forces of holy and evil.",
+    "anatomy": {
+      "HEAD": 1,
+      "CHEST": 1,
+      "LEG": 6,
+      "FOOT": 6,
+      "EYE": 2,
+      "WING": 4,
+      "HEART": 1,
+      "BRAIN": 1
+
+    },
+    "vital_organs": ["inherit"],
+    "blood": "haemolymph",
+    "skin": "armat_chitin",
+    "flags": ["inherit"],
+    "weaknesses": {
+      "CURSE": 0.7,
+      "HOLY": 0.7
     }
   }
 }

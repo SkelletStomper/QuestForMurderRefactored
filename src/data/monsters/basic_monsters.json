@@ -45,6 +45,7 @@
 
   "village_guardian": {
     "json_type": "monster",
+    "species": "spec_unknown",
     "title": "the",
     "name": "last guardian",
     "pronouns": "3rd_it",
@@ -84,6 +85,7 @@
 
   "goblin1": {
     "json_type": "monster",
+    "species": "spec_goblin",
     "title": "the",
     "name": "one-eyed goblin geezer",
     "pronouns": "3rd_he",
@@ -116,11 +118,12 @@
       "CURSE": 1.3
     },
 
-    "flags": ["goblin", "elder"]
+    "flags": ["elder"]
   },
 
   "fat_cat": {
     "json_type": "monster",
+    "species": "spec_feline",
     "title": "the",
     "name": "really fat cat",
     "pronouns": "3rd_she",
@@ -150,11 +153,12 @@
       "BASHING": 0.8,
       "FIRE": 1.5
     },
-    "flags": ["blood_possessed", "animal", "feline"]
+    "flags": ["blood_possessed"]
   },
 
   "demon_baby": {
     "json_type": "monster",
+    "species": "spec_demon",
     "title": "the",
     "name": "Devilish Suckling",
     "pronouns": "3rd_it",
@@ -200,11 +204,12 @@
     "weaknesses": {
       "FIRE": 50.0
     },
-    "flags": ["demon", "child", "fire_explode"]
+    "flags": ["child", "fire_explode"]
   },
 
   "pigeon": {
     "json_type": "monster",
+    "species": "spec_bird",
     "title": "the",
     "name": "pigeon of doom",
     "pronouns": "3rd_it",
@@ -235,13 +240,14 @@
     "weaknesses": {
 
     },
-    "flags": ["animal", "flying", "blood_possessed"]
+    "flags": ["blood_possessed"]
   },
 
   "villager": {
     "json_type": "monster",
+    "species": "spec_human",
     "title": "the",
-    "name": "blood-lusting village",
+    "name": "blood-lusting villager",
     "pronouns": "3rd_he",
     "information": "A villager, corrupted by the evening of bloodlust. He has a flail, along with a rusty sickle.",
     "death_messages": [
@@ -285,11 +291,12 @@
     },
     "weaknesses": {
     },
-    "flags": ["humanoid","blood_possessed"]
+    "flags": ["blood_possessed"]
   },
 
   "goblin2": {
     "json_type": "monster",
+    "species": "spec_goblin",
     "title": "the",
     "name": "two-eyed goblin",
     "pronouns": "3rd_he",
@@ -319,11 +326,12 @@
     },
     "weaknesses": {
     },
-    "flags": ["goblin"]
+    "flags": []
   },
 
   "snake1": {
     "json_type": "monster",
+    "species": "spec_snake",
     "title": "the",
     "name": "poisonous snake",
     "pronouns": "3rd_it",
@@ -353,11 +361,13 @@
     },
     "weaknesses": {
     },
-    "flags": ["animal", "poisonous", "blood_possessed"]
+    "flags": ["poisonous", "blood_possessed"]
   },
 
   "paperman!": {
     "json_type": "monster",
+    "species": "spec_unknown",
+
     "title": "",
     "name": "paper-man!",
     "pronouns": "3rd_they",
@@ -394,6 +404,7 @@
 
   "fat_lady": {
     "json_type": "monster",
+    "species": "spec_human",
     "title": "the",
     "name": "really fat old lady",
     "pronouns": "3rd_she",
@@ -424,11 +435,12 @@
     "weaknesses": {
       "FIRE": 1.2
     },
-    "flags": ["humanoid", "elder", "blood_possessed"]
+    "flags": ["elder", "blood_possessed"]
   },
 
   "child_soldier": {
     "json_type": "monster",
+    "species": "spec_human",
     "title": "the",
     "name": "Child Soldier",
     "pronouns": "3rd_it",
@@ -475,11 +487,12 @@
     "weaknesses": {
 
     },
-    "flags": ["humanoid", "child", "blood_possessed"]
+    "flags": ["child", "blood_possessed"]
   },
 
   "rat":  {
     "json_type": "monster",
+    "species": "spec_animal",
     "title": "the",
     "name": "giant rat",
     "pronouns": "3rd_it",
@@ -513,11 +526,12 @@
     "weaknesses": {
       "FIRE": 1.35
     },
-    "flags": ["animal", "poisonous", "blood_possessed"]
+    "flags": ["poisonous", "blood_possessed"]
   },
 
   "moth": {
     "json_type": "monster",
+    "species": "spec_insect",
     "title": "the",
     "name": "silvermoth",
     "pronouns": "3rd_it",
@@ -567,6 +581,6 @@
     "weaknesses": {
       "FIRE": 1.5
     },
-    "flags": ["animal","insect","blood_possessed"]
+    "flags": ["flying","blood_possessed"]
   }
 }

@@ -1,6 +1,7 @@
 {
   "dragon": {
     "json_type": "monster",
+    "species": "spec_dragon",
     "title": "the",
     "name": "red dragon",
     "pronouns": "3rd_it",
@@ -59,19 +60,7 @@
         "multi": 2
       }
     },
-    "weaknesses": {
-      "PHYSICAL": 1.0,
-      "SLASHING": 0.8,
-      "BASHING": 1.0,
-      "PIERCING": 1.0,
-      "MAGICAL": 1.0,
-      "FIRE": 0.5,
-      "FROST": 1.2,
-      "CURSE": 1.0,
-      "HOLY": 1.2,
-      "LIGHT": 1.0,
-      "DARKNESS": 1.0
-    },
-    "flags": ["blood_possessed", "flying"]
+    "weaknesses": {},
+    "flags": ["blood_possessed"]
   }
 }

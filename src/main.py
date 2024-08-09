@@ -5,6 +5,7 @@ from src.combat.auto_combat import AutoCombat, MonsterCombatant, NPCCombatant
 
 
 def main():
+	return
 	m1 = mp["goblin1"]
 
 	jane = NPC(name="Mary Jane", pronouns="3rd_she")

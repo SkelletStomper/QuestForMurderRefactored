@@ -46,28 +46,6 @@
     }
   },
 
-  "goblin": {
-    "json_type": "flag",
-    "description": "Greedy little creatures who strive to defile the lands, and gather the spoils.",
-    "weaknesses": {
-      "CURSE": 0.9,
-      "HOLY": 1.1,
-      "LIGHT": 1.1,
-      "DARKNESS": 0.9
-    }
-  },
-
-  "insect": {
-    "json_type": "flag",
-    "description": "Insects, squirming bugs and various others. Naturally strong against forces of holy and evil.",
-    "weaknesses": {
-      "CURSE": 0.7,
-      "HOLY": 0.7
-    }
-
-  },
-
-
   "child": {
     "json_type": "flag",
     "description": "A young specimen, not yet matured."
