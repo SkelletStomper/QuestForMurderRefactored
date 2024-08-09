@@ -37,6 +37,8 @@ class Species:
     def __init__(self, species_id: str, in_dict: dict) -> None:
         self.id = species_id
         self.subspecies_of = in_dict["subspecies_of"]
+        if self.subspecies_of == self.id:
+            raise ValueError(f"Identical species name and Subspecies of in {self.id}")
 
         self.description = in_dict["description"]
 
@@ -51,7 +53,8 @@ class Species:
 
         self.weaknesses = in_dict["weaknesses"]
 
-    def _prepare_not_inherited(self) -> None:
+    def prepare_incomplete(self) -> None:
+        print(self)
         from src.data_providers import flag_provider as fp, armat_provider as amp
         from src.items.armor import ArmorMaterial
 
@@ -69,7 +72,7 @@ class Species:
         if self.weaknesses != inherit and isinstance(self.weaknesses, dict):
             self.weaknesses = WeaknessSet(self.weaknesses)
 
-    def _full_fledged(self) -> bool:
+    def full_fledged(self) -> bool:
         inherit = self.inherit_string
         if self.anatomy == inherit:
             return False
@@ -91,10 +94,10 @@ class Species:
 
         return True
 
-    def _inherit(self, sp): #SP is the SpeciesProvider
+    def inherit(self, sp): #SP is the SpeciesProvider
         inherit = self.inherit_string
         parent: "Species" = sp[self.subspecies_of]
-        if not parent._full_fledged():
+        if not parent.full_fledged():
             raise RuntimeError("Can only inherit from Full-Fledged parent")
 
         if self.anatomy == inherit:
@@ -114,10 +117,10 @@ class Species:
         if inherit in self.flags:
             parent_flags = parent.flags
             self.flags.remove(inherit)
-            self.flags = parent_flags + self.vital_organs
+            self.flags = parent_flags + self.flags
 
         if self.weaknesses == inherit:
-            return False
+            self.weaknesses = parent.weaknesses
 
     def __repr__(self) -> str:
         return (f"Species(id={self.id}, subspecies_of={self.subspecies_of}, description={self.description}, "

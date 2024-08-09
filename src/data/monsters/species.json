@@ -21,8 +21,8 @@
 
     },
     "vital_organs": [],
-    "blood": "",
-    "skin": "",
+    "blood": "string",
+    "skin": "armor_material",
     "flags": [],
     "weaknesses": {
       "PHYSICAL": 1.0,
@@ -119,7 +119,7 @@
   },
   "spec_goblin": {
     "json_type": "species",
-    "subspecies_of": "spec_goblin",
+    "subspecies_of": "spec_humanoid_small",
     "description": "Greedy little creatures who strive to defile the lands, and gather the spoils. Interestingly, they seem to be immune to the curse of the blood.",
     "anatomy": "inherit",
     "vital_organs": ["inherit"],

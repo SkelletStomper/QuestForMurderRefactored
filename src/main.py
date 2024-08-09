@@ -3,7 +3,6 @@ from src.data_providers import monster_provider as mp
 from src.entities.npc import NPC
 from src.combat.auto_combat import AutoCombat, MonsterCombatant, NPCCombatant
 
-
 def main():
 	return
 	m1 = mp["goblin1"]

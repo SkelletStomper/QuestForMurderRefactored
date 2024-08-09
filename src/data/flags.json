@@ -70,5 +70,17 @@
     "json_type": "flag",
     "description": "This entity comes in multiples, be it physically or mentally. Affects combat and addressing.",
     "default_value": 1
+  },
+  "sees":{
+    "json_type": "flag",
+    "description": "This entity can see, be it with eyes or other means."
+  },
+  "hears":{
+    "json_type": "flag",
+    "description": "This entity can hear, be it with ears or other means."
+  },
+  "intelligent": {
+    "json_type": "flag",
+    "description": "This entity shows at least some signs of intelligence."
   }
 }
