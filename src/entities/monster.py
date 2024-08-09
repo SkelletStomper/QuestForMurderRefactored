@@ -67,11 +67,9 @@ class Monster(Entity):
         Calculate the damage factor of a given attack against this monster.
         Takes into perspective the own WeaknessSet as well as the weaknesses of all Flags.
         """
-        dmg_factor = 1.0
+        dmg_factor = super().calculate_dmg_factor(attack)
 
         dmg_factor *= self.weaknesses.attack_factor(attack)
-        for flag in self.flags:
-            dmg_factor *= flag.weaknesses.attack_factor(attack)
 
         return dmg_factor
 
