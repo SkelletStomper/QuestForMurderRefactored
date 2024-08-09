@@ -44,9 +44,6 @@ pronoun_provider = PronounProvider(_pronoun_data)
 _flag_data = filter_json_type(_all_data, "flag")
 flag_provider = FlagProvider(_flag_data)
 
-_monster_data = filter_json_type(_all_data, "monster")
-monster_provider = MonsterProvider(_monster_data)
-
 _item_data = filter_json_type(_all_data, "item")
 item_provider = ItemProvider(_item_data)
 
@@ -55,5 +52,8 @@ armat_provider = ArmorMaterialProvider(_armat_data)
 
 _species_data = filter_json_type(_all_data, "species")
 species_provider = SpeciesProvider(_species_data)
+
+_monster_data = filter_json_type(_all_data, "monster")
+monster_provider = MonsterProvider(_monster_data)
 
 
