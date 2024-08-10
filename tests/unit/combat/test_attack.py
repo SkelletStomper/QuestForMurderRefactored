@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import Mock
 from src.base.types import AttackType, WeaknessSet
-from src.combat.attack import Attack
+from src.combat.attack import Attack, ConditionalAttackText
 from src.localization.l_string import LString
 
 
@@ -54,13 +54,5 @@ class TestAttack:
         assert attack.acc == 75
         assert attack.crt == 1.5
         assert attack.types == [AttackType.FIRE, AttackType.PHYSICAL]
-        assert isinstance(attack.atk_str, LString)
-        assert attack.atk_str == LString("Unspecified attack landed.")
-
-    @staticmethod
-    def test_attack_with_custom_lstring():
-        custom_lstring = LString("Custom attack message.")
-        attack = Attack(dmg=50, atk_str=custom_lstring)
-
-        assert attack.atk_str == custom_lstring
+        assert isinstance(attack.atk_str, ConditionalAttackText)
 
