@@ -89,7 +89,7 @@
         "description": "Slash at your opponent. Will do good against weaker, unarmored targets.",
 
         "text": {
-          "wind_up": "{atk.name} slash{atk.es} at {def.name} with {adj.poss_adjective} dagger.",
+          "wind_up": "{atk.name} slash{atk.es} at {def.name} with {atk.poss_adjective} dagger.",
           "on_hit": "The attack grazes {def.name}, flinging a trail of {def.poss_adjective} {def.blood} through the air!",
           "on_kill": "The attack slashes a deep, fatal wound into {def.name}!",
           "on_dodge": "The attack misses by a hairs breadth!",

@@ -35,7 +35,7 @@ class LString:
         allowed_les = ["attacking", "defending", "player", ""]
         le_pattern = r"{[a-zA-Z0-9\.\_]*}"
         les_used = re.findall(le_pattern, self._lstr,)
-        
+
         les_used = set({le[1:-1].split(".")[0] for le in les_used})
 
         for le in les_used:
