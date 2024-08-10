@@ -19,7 +19,6 @@ class MonsterCombatant(Combatant):
         Randomly picks one of the monsters "attack"-attacks, and multiplies it in case of a multi-attack.
         """
         le = self.monster.get_le()
-        print(f"{le.name} attacks!".capitalize())
 
         attack_dict: {MonsterAttackStencil, int} = \
             {attack: attack.weight for atk_id, attack
