@@ -5,10 +5,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class Attack:
-    pass
-
-
 class AttackType(Enum):
     PHYSICAL = 'PHYSICAL'
     SLASHING = 'SLASHING'
@@ -53,14 +49,14 @@ class WeaknessSet:
             weakness = AttackType(weakness)
         return self.weaknesses[weakness]
 
-    def attack_factor(self, attack: "Attack") -> float:
-        """Calculates the damage factor of an Attack for this WeaknessSet.
+    def attack_factor(self, type_list: list[AttackType]) -> float:
+        """Calculates the damage factor of a list of AttackTypes for this WeaknessSet.
         Iterates through all types of the attack and multiplies all weakness factors with themselves, returning the final weakness factor."""
         factor = 1.0
-        for attack_type in attack.types:
+        for attack_type in type_list:
             factor *= self.weaknesses[attack_type]
 
-        logging.debug(f"Calculated factor {factor} for attack with types {attack.types} with WeaknessSet {self.weaknesses}")
+        logging.debug(f"Calculated factor {factor} for attack with types {type_list} with WeaknessSet {self.weaknesses}")
         return factor
 
     def __repr__(self) -> str:

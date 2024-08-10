@@ -69,7 +69,7 @@ class Monster(Entity):
         """
         dmg_factor = super().calculate_dmg_factor(attack)
 
-        dmg_factor *= self.weaknesses.attack_factor(attack)
+        dmg_factor *= self.weaknesses.attack_factor(attack.types)
 
         return dmg_factor
 

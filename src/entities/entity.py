@@ -47,8 +47,8 @@ class Entity:
         """
         dmg_factor = 1.0
 
-        dmg_factor *= self.species.weaknesses.attack_factor(attack)
+        dmg_factor *= self.species.weaknesses.attack_factor(attack.types)
         for flag in self.flags:
-            dmg_factor *= flag.weaknesses.attack_factor(attack)
+            dmg_factor *= flag.weaknesses.attack_factor(attack.types)
 
         return dmg_factor

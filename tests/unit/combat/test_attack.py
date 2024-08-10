@@ -39,7 +39,7 @@ class TestWeaknessSet:
         ws = WeaknessSet(weaknesses)
 
         attack = Attack(dmg=10, types=[AttackType.PHYSICAL, AttackType.FIRE])
-        factor = ws.attack_factor(attack)
+        factor = ws.attack_factor(attack.types)
         assert factor == (1.5 * 2.0)
 
 
