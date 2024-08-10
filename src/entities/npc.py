@@ -12,10 +12,14 @@ class NPC(Entity):
                  hp_max: int = 10,
                  dodge: int = 0,
                  accuracy: int = 0,
-                 armor: int = 0,
+                 armor: dict[str, int] = None,
                  flags: list[str] | None = None,
                  species: str = "spec_humanoid"
                  ) -> None:
+
+        if armor is None:
+            armor = {"skin": 0}
+        
         super().__init__(
             name=name,
             title=title,

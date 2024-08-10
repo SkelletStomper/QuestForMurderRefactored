@@ -1,4 +1,5 @@
 from src.base.types import WeaknessSet
+from src.items.armor import ArmorMaterial
 
 from enum import Enum
 
@@ -47,7 +48,7 @@ class Species:
         self.vital_organs: list[str] = in_dict["vital_organs"]
 
         self.blood: str = in_dict["blood"]
-        self.skin = in_dict["skin"]
+        self.skin: ArmorMaterial = in_dict["skin"]
 
         self.flags: list[str] = in_dict["flags"]
 
@@ -94,7 +95,7 @@ class Species:
 
         return True
 
-    def inherit(self, sp): #SP is the SpeciesProvider
+    def inherit(self, sp):  # SP is the SpeciesProvider
         inherit = self.inherit_string
         parent: "Species" = sp[self.subspecies_of]
         if not parent.full_fledged():

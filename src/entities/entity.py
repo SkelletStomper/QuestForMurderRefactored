@@ -11,7 +11,7 @@ class Entity:
                  hp_max: int = 10,
                  dodge: int = 0,
                  accuracy: int = 0,
-                 armor: int = 0,
+                 armor: dict[str, int] = None,
                  flags: list[str] = None,
                  species= "spec_unknown"
                  ) -> None:
@@ -27,12 +27,18 @@ class Entity:
 
         self.dodge = dodge
         self.accuracy = accuracy
-        self.armor = armor
 
         if flags is None:
             flags = []
         self.flags: list[Flag] = [fp(flag_name) for flag_name in flags]
         self.species = sp[species]
+
+        if armor is None:
+            armor = {"skin": 0}
+
+        self.armor = {self.species.skin: armor["skin"]}
+
+        self.armor = armor
 
     def calculate_dmg_factor(self, attack: Attack) -> float:
         """
