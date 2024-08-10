@@ -1,4 +1,5 @@
 from src.localization.pronouns import PronounSet
+from src.localization.localized_entity import LocalizedEntity
 from src.base.flag import Flag
 from src.combat.attack import Attack
 
@@ -52,3 +53,9 @@ class Entity:
             dmg_factor *= flag.weaknesses.attack_factor(attack.types)
 
         return dmg_factor
+
+    def get_le(self) -> LocalizedEntity:
+        """
+        Get a Localized Entity describing the entity grammatically.
+        """
+        return LocalizedEntity(self)

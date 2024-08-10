@@ -73,21 +73,7 @@ class Monster(Entity):
 
         return dmg_factor
 
-    def get_le(self) -> LocalizedEntity:
-        """
-        Get a Localized Entity describing the monster grammatically.
-        """
-        plural = False
-        if "plural" in self.flags:
-            plural = True
 
-        return LocalizedEntity(
-            name=self.name,
-            title=self.title,
-            plural=plural,
-            pronouns=self.pronouns,
-            flags=self.flags,
-        )
 
     def __repr__(self) -> str:
         return f"Monster(name={self.name}, title={self.title}, pronouns={self.pronouns}, info={self.info}, " \

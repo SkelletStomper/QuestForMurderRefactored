@@ -1,14 +1,14 @@
-from src.localization.pronouns import PronounSet
-from src.base.flag import Flag
+from src.entities.entity import Entity
 
 
 class LocalizedEntity:
-    def __init__(self, name: str, title: str, plural: bool, pronouns: PronounSet, flags: list[Flag]):
-        self._name = name
-        self._title = title
-        self._plural = plural
-        self._pronouns = pronouns
-        self.flags = flags
+    def __init__(self, entity: Entity):
+        self.entity = entity
+
+        self._name = entity.name
+        self._title = entity.title
+        self._plural = "plural" in entity.flags
+        self._pronouns = entity.pronouns
 
     @property
     def subject(self) -> str:
@@ -66,10 +66,7 @@ class LocalizedEntity:
 
     @property
     def blood(self) -> str:
-        if "insect" in self.flags:
-            return "hemolymph"
-
-        return "blood"
+        return self.entity.species.blood
 
     def __repr__(self) -> str:
         return f"LocalizedEntity(name={self._name}, title={self._title}, plural={self._plural}, pronouns={self._pronouns})"
