@@ -34,7 +34,8 @@ class LString:
 
         allowed_les = ["attacking", "defending", "player", ""]
         le_pattern = r"{[a-zA-Z0-9\.\_]*}"
-        les_used = re.findall(self._lstr, le_pattern)
+        les_used = re.findall(le_pattern, self._lstr,)
+        
         les_used = set({le[1:-1].split(".")[0] for le in les_used})
 
         for le in les_used:
@@ -50,8 +51,12 @@ class LString:
             attacking: LocalizedEntity | None = None,
             defending: LocalizedEntity | None = None,
             ) -> str:
-
-        result = self._lstr.format(**locals())
+        try:
+            result = self._lstr.format(**locals())
+        except KeyError:
+            logger.error(f"KeyError while parsing {self._lstr}")
+            print(f"KeyError while parsing {self._lstr}")
+            raise KeyError
         result = capitalize_first(result)
         logger.debug(f"Parsed {self._lstr} to {result}")
         return result
