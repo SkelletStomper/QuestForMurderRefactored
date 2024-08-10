@@ -2,12 +2,13 @@ from src.items.items import Item
 
 from src.items.armor import Armor, ArmorSlotType
 from src.items.weapon import Weapon, WeaponAttackStencil
+from src.items.armor import ArmorMaterial
 from src.data_providers import item_provider as ip
 
 
 class EquipEffects:
     def __init__(self):
-        self.armor = 0
+        self.armor: dict[ArmorMaterial, int] = {}
         self.granted_attacks: list[WeaponAttackStencil] = []
 
     def __repr__(self) -> str:
@@ -88,8 +89,10 @@ class ArmorSlot(EquipSlot):
             return equip_effects
 
         armor: Armor = self._item
-
-        equip_effects.armor += armor.armor
+        for armat, value in armor.armor.items():
+            if armat not in equip_effects.armor:
+                equip_effects.armor[armat] = 0
+            equip_effects.armor[armat] += value
 
         return equip_effects
 

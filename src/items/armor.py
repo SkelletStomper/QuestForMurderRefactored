@@ -25,12 +25,14 @@ class ArmorMaterial:
         return f"ArmorMaterial(id={self.id}, efficiency={self._efficiencies})"
 
 
-
 class Armor(Item):
     def __init__(self, item_id, init_dict: dict) -> None:
+        from src.data_providers import armat_provider as amp
         super().__init__(item_id, init_dict)
         self.type: ArmorSlotType = ArmorSlotType(init_dict["armor_type"])
-        self.armor: int = init_dict["armor"]
+        armats: dict[str, int] = init_dict["armor"]
+        self.armor: dict[ArmorMaterial, int] = \
+            {amp[armat]: value for armat, value in armats.items()}
 
     def __repr__(self) -> str:
         return f"Armor(id={self.id}, name={self.name}, description={self.description}, weight={self.weight}, " \
