@@ -1,5 +1,6 @@
-from src.entities.entity import Entity
 
+class Entity:
+    pass
 
 class LocalizedEntity:
     def __init__(self, entity: Entity):

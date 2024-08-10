@@ -14,7 +14,7 @@ class Entity:
                  accuracy: int = 0,
                  armor: dict[str, int] = None,
                  flags: list[str] = None,
-                 species= "spec_unknown"
+                 species="spec_unknown"
                  ) -> None:
         from src.data_providers import pronoun_provider as pp
         from src.data_providers import flag_provider as fp
