@@ -51,7 +51,7 @@ class NPC(Entity):
         armor_sum = super().calculate_effective_armor(attack)
 
         equip_effects = self.inventory.calculate_bonus()
-        for armor_type, armor_value in equip_effects.armor:
+        for armor_type, armor_value in equip_effects.armor.items():
             factor = armor_type.effective_factor(attack.types)
             armor_sum += armor_value*factor
 
