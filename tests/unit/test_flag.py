@@ -1,8 +1,8 @@
 import pytest
 from math import isclose
 
-from src.flag import Flag
-from src.combat.attack import WeaknessSet
+from src.base.flag import Flag
+from src.base.types import WeaknessSet
 
 
 # Test data for Flag class

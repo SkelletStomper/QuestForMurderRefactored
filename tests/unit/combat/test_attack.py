@@ -1,6 +1,7 @@
 import pytest
 from unittest.mock import Mock
-from src.combat.attack import AttackType, WeaknessSet, Attack
+from src.base.types import AttackType, WeaknessSet
+from src.combat.attack import Attack
 from src.localization.l_string import LString
 
 
