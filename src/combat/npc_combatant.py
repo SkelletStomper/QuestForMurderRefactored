@@ -35,13 +35,13 @@ class NPCCombatant(Combatant):
             logger.debug(f"Attack was dodged by {le.name}")
             return attack.atk_str.on_dodge
 
-        armor = self.npc.armor + equip_effects.armor
-
         dmg_factor = self.npc.calculate_dmg_factor(attack)
         dmg = round(attack.dmg*dmg_factor)
-        dmg -= armor
 
-        logger.debug(f"Received Damage Before Crit: round({attack.dmg}*{dmg_factor})- {armor} = {dmg}")
+        effective_armor = self.npc.calculate_effective_armor(attack)
+        dmg -= effective_armor
+
+        logger.debug(f"Received Damage Before Crit: round({attack.dmg}*{dmg_factor})- {effective_armor} = {dmg}")
 
         if dmg > 0:
             logger.debug(f"Crit-Adjusted damage: round({dmg}*{attack.crt}) = {dmg * attack.crt}")

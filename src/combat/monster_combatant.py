@@ -48,7 +48,8 @@ class MonsterCombatant(Combatant):
 
         dmg_factor = self.monster.calculate_dmg_factor(attack)
         dmg = round(attack.dmg*dmg_factor)
-        dmg -= self.monster.armor
+        effective_armor = self.monster.calculate_effective_armor(attack)
+        dmg -= effective_armor
 
         logger.debug(f"Received Damage Before Crit: round({attack.dmg}*{dmg_factor})- {self.monster.armor} = {dmg}")
 

@@ -73,8 +73,6 @@ class Monster(Entity):
 
         return dmg_factor
 
-
-
     def __repr__(self) -> str:
         return f"Monster(name={self.name}, title={self.title}, pronouns={self.pronouns}, info={self.info}, " \
                f"death_messages={self.death_messages}, hp_max={self.hp_max}, dodge={self.dodge}, armor={self.armor}, " \
