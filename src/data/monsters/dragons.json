@@ -11,7 +11,9 @@
     ],
     "hp_max": 100,
     "dodge": 0,
-    "armor": 7,
+    "armor": {
+      "skin": 7
+    },
     "attacks": {
       "attack1": {
         "name": "Bite",

@@ -316,8 +316,38 @@
     },
     "vital_organs": ["heart", "brain"],
     "blood": "string",
-    "skin": "armat_skin_humanoid",
+    "skin": "armat_unknown",
     "flags": [],
     "weaknesses": {}
+  },
+   "spec_demon": {
+    "json_type": "species",
+    "subspecies_of": "",
+    "description": "A creature from hell, blessed with the devils power.",
+    "anatomy": {
+      "HEAD": 1,
+      "CHEST": 1,
+      "LEG": 2,
+      "FOOT": 2,
+      "ARM": 2,
+      "HAND": 2,
+      "EYE": 2,
+      "WING": 2,
+      "BRAIN": 1,
+      "TAIL": 1
+
+    },
+    "vital_organs": ["brain"],
+    "blood": "string",
+    "skin": "armat_unknown",
+    "flags": ["sees", "hears", "intelligent"],
+    "weaknesses": {
+      "PHYSICAL": 0.8,
+      "FIRE": 0.5,
+      "CURSE": 0.8,
+      "HOLY": 2.0,
+      "LIGHT": 1.5,
+      "DARKNESS": 0.8
+    }
   }
 }

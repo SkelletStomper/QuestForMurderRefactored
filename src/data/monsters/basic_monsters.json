@@ -9,7 +9,9 @@
     "death_messages": [],
     "hp_max": 0,
     "dodge": 0,
-    "armor": 0,
+    "armor": {
+      "skin": 0
+    },
     "attacks": {
       "attack1": {
         "name": "",
@@ -55,7 +57,9 @@
     ],
     "hp_max": 250,
     "dodge": -3,
-    "armor": 4,
+    "armor": {
+      "skin": 4
+    },
 
     "attacks": {
       "attack1": {
@@ -95,7 +99,9 @@
     ],
     "hp_max": 12,
     "dodge": 0,
-    "armor": 0,
+    "armor": {
+      "skin": 0
+    },
     "attacks": {
       "attack1": {
         "name": "knuckle sandwich",
@@ -131,7 +137,10 @@
     "death_messages": ["The cat *mistakes* you for a sofa, and completely scratches your skin of. You are dead."],
     "hp_max": 16,
     "dodge": -2,
-    "armor": 2,
+    "armor": {
+      "skin": 1,
+      "armat_fat": 3
+    },
     "attacks": {
       "attack1": {
         "name": "Paw Strike",
@@ -168,7 +177,9 @@
     ],
     "hp_max": 11,
     "dodge": 0,
-    "armor": 0,
+    "armor": {
+      "skin": 0
+    },
     "attacks": {
       "attack1": {
         "name": "Hex: Weakness",
@@ -219,7 +230,9 @@
     ],
     "hp_max": 4,
     "dodge": 3,
-    "armor": 0,
+    "armor": {
+      "skin": 0
+    },
     "attacks": {
       "attack1": {
         "name": "Eye Peck",
@@ -256,7 +269,10 @@
     ],
     "hp_max": 10,
     "dodge": 0,
-    "armor": 1,
+    "armor": {
+      "skin": 0,
+      "armat_leather": 1
+    },
     "attacks": {
       "attack1": {
         "name": "Flail Bash",
@@ -306,7 +322,9 @@
     ],
     "hp_max": 15,
     "dodge": 1,
-    "armor": 2,
+    "armor": {
+      "skin": 2
+    },
     "attacks": {
       "attack1": {
         "name": "butter-up",
@@ -341,7 +359,9 @@
     ],
     "hp_max": 12,
     "dodge": 2,
-    "armor": 0,
+    "armor": {
+      "skin": 1
+    },
     "attacks": {
       "attack1": {
         "name": "Snake Bite",
@@ -378,7 +398,9 @@
     ],
     "hp_max": 16,
     "dodge": 3,
-    "armor": -2,
+    "armor": {
+      "skin": 0
+    },
     "attacks": {
       "attack1": {
         "name": "Papercut",
@@ -414,7 +436,10 @@
     ],
     "hp_max": 25,
     "dodge": -3,
-    "armor": 4,
+    "armor": {
+      "skin": 0,
+      "armat_fat": 4
+    },
     "attacks": {
       "attack1": {
         "name": "Handbag Batter",
@@ -450,7 +475,10 @@
     ],
     "hp_max": 10,
     "dodge": 2,
-    "armor": 3,
+    "armor": {
+      "skin": 0,
+      "armat_leather": 3
+    },
     "attacks": {
       "attack1": {
         "name": "Salvo",
@@ -501,11 +529,10 @@
       "Rats eat almost everything, and they also eat dead humans. If they are not dead, they usually not eat them. But at this size, it can just kill its prey. And so it did. You are dead."
     ],
     "hp_max": 21,
-    "dmg" : 4,
-    "crt": 1,
-    "acc": 0,
     "dodge": 2,
-    "armor": 0,
+    "armor": {
+      "skin": 0
+    },
     "attacks": {
       "attack1": {
         "name": "Fecal bite",
@@ -544,7 +571,9 @@
     "crt": 1,
     "acc": 1,
     "dodge": 3,
-    "armor": 0,
+    "armor": {
+      "skin": 0
+    },
     "attacks": {
       "attack1": {
         "name": "Nibble",
