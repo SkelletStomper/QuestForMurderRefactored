@@ -1,5 +1,5 @@
 from src.items.items import Item
-from src.base.types import WeaknessSet
+from src.base.types import WeaknessSet, AttackType
 
 from enum import Enum
 
@@ -16,10 +16,14 @@ class ArmorSlotType(Enum):
 class ArmorMaterial:
     def __init__(self, armat_id, in_dict: dict) -> None:
         self.id = armat_id
-        self.efficiency = WeaknessSet(in_dict["armor_efficiency"])
+        self._efficiencies = WeaknessSet(in_dict["armor_efficiency"])
+
+    def effective_factor(self, type_list: list[AttackType]):
+        return self._efficiencies.attack_factor(type_list)
 
     def __repr__(self):
-        return f"ArmorMaterial(id={self.id}, efficiency={self.efficiency})"
+        return f"ArmorMaterial(id={self.id}, efficiency={self._efficiencies})"
+
 
 
 class Armor(Item):

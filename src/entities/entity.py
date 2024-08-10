@@ -38,8 +38,9 @@ class Entity:
             armor = {"skin": 0}
 
         self.armor = {self.species.skin: armor["skin"]}
+        del armor["skin"]
 
-        self.armor = armor
+        self.armor.update({armor_type:armor_value for armor_type, armor_value in armor.items()})
 
     def calculate_dmg_factor(self, attack: Attack) -> float:
         """
@@ -53,6 +54,13 @@ class Entity:
             dmg_factor *= flag.weaknesses.attack_factor(attack.types)
 
         return dmg_factor
+
+    def calculate_effective_armor(self, attack: Attack) -> int:
+        armor_sum = 0
+        for armor_type, armor_value in self.armor.items():
+            factor = armor_type.effective_factor(attack.types)
+            armor_sum += armor_value*factor
+        return round(armor_sum)
 
     def get_le(self) -> LocalizedEntity:
         """
