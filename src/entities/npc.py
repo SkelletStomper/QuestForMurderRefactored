@@ -1,6 +1,6 @@
 from src.entities.entity import Entity
 from src.items.inventory import Inventory
-from src.localization.localized_entity import LocalizedEntity
+from src.items.weapon import WeaponAttackStencil
 from src.combat.combat_basics import Attack
 
 
@@ -41,6 +41,21 @@ class NPC(Entity):
         Takes into perspective the weaknesses of all Flags.
         """
         return super().calculate_dmg_factor(attack)
+
+    def get_attack_stencils(self) -> list[WeaponAttackStencil]:
+        equip_effects = self.inventory.calculate_bonus()
+        return equip_effects.granted_attacks
+
+    def calculate_effective_armor(self, attack: Attack) -> int:
+
+        armor_sum = super().calculate_effective_armor(attack)
+
+        equip_effects = self.inventory.calculate_bonus()
+        for armor_type, armor_value in equip_effects.armor:
+            factor = armor_type.effective_factor(attack.types)
+            armor_sum += armor_value*factor
+
+        return round(armor_sum)
 
     def __repr__(self) -> str:
         return f"NPC(name={self.name}, title={self.title}, pronouns={self.pronouns}, " \
