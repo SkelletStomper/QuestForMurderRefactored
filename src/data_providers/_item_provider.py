@@ -28,5 +28,8 @@ class ItemProvider:
     def __getitem__(self, item: str) -> Item:
         return self.items[item]
 
+    def all_ids(self) -> list[str]:
+        return list(self.items.keys())
+
     def __repr__(self) -> str:
         return f"ItemProvider({len(self.items)} Items)"

@@ -15,5 +15,8 @@ class PronounProvider:
     def __getitem__(self, item: str) -> PronounSet:
         return self.pronouns[item]
 
+    def all_ids(self) -> list[str]:
+        return list(self.pronouns.keys())
+
     def __repr__(self) -> str:
         return f"PronounProvider({self.pronouns}) Pronouns )"

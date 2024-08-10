@@ -22,10 +22,11 @@ class SpeciesProvider:
         for species in self.species.values():
             species.prepare_incomplete()
 
-
-
     def __getitem__(self, item: str):
         return self.species[item]
+
+    def all_ids(self) -> list[str]:
+        return list(self.species.keys())
 
     def __repr__(self):
         return f"SpeciesProvider({len(self.species)} Species)"

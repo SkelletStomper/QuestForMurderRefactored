@@ -23,5 +23,9 @@ class FlagProvider:
 
         return self[flag_name].get_copy(value)
 
+    def all_ids(self) -> list[str]:
+        return list(self.flags.keys())
+
+
     def __repr__(self) -> str:
         return f"FlagProvider({len(self.flags)} Flags)"

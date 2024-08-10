@@ -14,5 +14,8 @@ class MonsterProvider:
     def __getitem__(self, value: str) -> Monster:
         return self.monsters[value]
 
+    def all_ids(self) -> list[str]:
+        return list(self.monsters.keys())
+
     def __repr__(self) -> str:
         return f"MonsterProvider({len(self.monsters)} Monsters)"
