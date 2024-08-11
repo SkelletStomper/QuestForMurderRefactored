@@ -43,12 +43,14 @@ class MonsterTournament:
 
         brackets = [self.Bracket(fighting_monsters[i], fighting_monsters[i+1])
                     for i in range(0, len(fighting_monsters), 2)]
-        print(brackets)
         while len(brackets) > 1:
             brackets = [self.Bracket(brackets[i], brackets[i+1])
                         for i in range(0, len(brackets), 2)]
-            print(brackets)
 
+        self.brackets = brackets[0]
+
+    def run(self) -> None:
+        self.brackets.resolve()
 
 
 
