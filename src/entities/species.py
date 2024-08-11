@@ -55,7 +55,6 @@ class Species:
         self.weaknesses = in_dict["weaknesses"]
 
     def prepare_incomplete(self) -> None:
-        print(self)
         from src.data_providers import flag_provider as fp, armat_provider as amp
         from src.items.armor import ArmorMaterial
 

@@ -11,7 +11,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-
 def filter_json_type(all_data, json_type):
     right_data = {}
 
