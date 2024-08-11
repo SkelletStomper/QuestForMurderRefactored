@@ -41,6 +41,8 @@ class Species:
         if self.subspecies_of == self.id:
             raise ValueError(f"Identical species name and Subspecies of in {self.id}")
 
+
+        self.name = in_dict["name"]
         self.description = in_dict["description"]
 
         self.anatomy = in_dict["anatomy"]
