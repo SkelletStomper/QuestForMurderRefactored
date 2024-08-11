@@ -4,6 +4,9 @@ from src.entities.npc import NPC
 from src.combat.auto_combat import AutoCombat, MonsterCombatant, NPCCombatant
 
 from src.combat.monster_tournament import MonsterTournament
+from src.items.inventory_dialogue import InventoryDialogue
+
+
 def main():
 
 	m1 = mp["moth"]
@@ -17,10 +20,12 @@ def main():
 	head = ip["leather_cap"]
 	legs = ip["leather_pants"]
 
-	inv._try_equip(dagger)
-	inv._try_equip(chest)
-	inv._try_equip(head)
-	inv._try_equip(legs)
+	inv.add(dagger)
+	inv.add(chest)
+	inv.add(head)
+	inv.add(legs)
+
+	InventoryDialogue(inv).dialogue()
 
 	combat = AutoCombat(MonsterCombatant(m1), NPCCombatant(jane))
 	combat.combat()
