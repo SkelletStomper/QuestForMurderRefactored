@@ -198,7 +198,7 @@ class Inventory:
         return item
 
     def valid_index(self, index: int) -> bool:
-        return index < len(self.items)
+        return 0 <= index < len(self.items)
 
     def item_count(self) -> int:
         return len(self.items)
