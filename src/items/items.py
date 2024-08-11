@@ -9,10 +9,10 @@ class Item:
         self.weight = in_dict["weight"]
 
     def info_short(self) -> str:
-        pass
+        pass  # abstract
 
     def info_long(self) -> str:
-        pass
+        pass  # abstract
 
     def __repr__(self) -> str:
         return f"Item(id={self.id}, name={self.name}, description={self.description}, weight={self.weight})"

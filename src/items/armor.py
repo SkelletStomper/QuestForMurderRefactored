@@ -49,7 +49,8 @@ class Armor(Item):
     def info_long(self) -> str:
         armor_strings = [f"{armat.name}: {value}" for armat, value in self.armor.items()]
         armor_string = ", ".join(armor_strings)
-        return (f"{self.name}"
-                f"\"{self.description}\""
-                f"Provides the following armor Points:"
+        return (f"{self.name}\n"
+                f"\"{self.description}\"\n"
+                f"It is made for the species '{self.made_for.name}'\n"
+                f"Provides the following armor Points:\n"
                 f"{armor_string}")

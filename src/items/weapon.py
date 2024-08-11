@@ -52,9 +52,9 @@ class Weapon(Item):
         attack_list = [attack.info() for attack in self.attacks.values()]
         attack_string = "\n".join(attack_list)
 
-        return (f"{self.name}"
-                f"\"{self.description}\""
-                f"Grants the following Attacks:"
+        return (f"{self.name}\n"
+                f"\"{self.description}\"\n"
+                f"Grants the following Attacks:\n"
                 f"{attack_string}")
 
     def __repr__(self) -> str:
