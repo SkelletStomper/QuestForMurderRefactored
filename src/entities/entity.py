@@ -3,6 +3,8 @@ from src.localization.localized_entity import LocalizedEntity
 from src.base.flag import Flag
 from src.combat.attack import Attack
 
+import logging
+logger = logging.getLogger(__name__)
 
 class Entity:
     def __init__(self,
@@ -16,9 +18,11 @@ class Entity:
                  flags: list[str] = None,
                  species="spec_unknown"
                  ) -> None:
+
         from src.data_providers import pronoun_provider as pp
         from src.data_providers import flag_provider as fp
         from src.data_providers import species_provider as sp
+        from src.data_providers import armat_provider as amp
 
         self.name = name
         self.title = title
@@ -40,7 +44,7 @@ class Entity:
         self.armor = {self.species.skin: armor["skin"]}
         del armor["skin"]
 
-        self.armor.update({armor_type:armor_value for armor_type, armor_value in armor.items()})
+        self.armor.update({amp[armor_type]: armor_value for armor_type, armor_value in armor.items()})
 
     def calculate_dmg_factor(self, attack: Attack) -> float:
         """
@@ -58,8 +62,11 @@ class Entity:
     def calculate_effective_armor(self, attack: Attack) -> int:
         armor_sum = 0
         for armor_type, armor_value in self.armor.items():
-            factor = armor_type.effective_factor(attack.types)
-            armor_sum += armor_value*factor
+            try:
+                factor = armor_type.effective_factor(attack.types)
+                armor_sum += armor_value*factor
+            except AttributeError as ae:
+                logger.error(f"Tried using effective_factor on str: {armor_type} (Exception: {ae})")
         return round(armor_sum)
 
     def get_le(self) -> LocalizedEntity:
