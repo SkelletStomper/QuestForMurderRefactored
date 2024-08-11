@@ -107,7 +107,7 @@ class ArmorSlot(EquipSlot):
 
         if item.type != self.type:
             logger.debug(f"Armor {item.id} is not equipable because of it's type {item.type}, "
-                           f"which is not {self.type}")
+                         f"which is not {self.type}")
             return False
 
         equipper_species = equipped_by.species
@@ -160,6 +160,12 @@ class Inventory:
 
         return equip_effects
 
+    def is_equipable(self, item):
+        for equip_slot in self.equip_slots:
+            if equip_slot.is_equipable(item, self.owner):
+                return True
+        return False
+
     def _try_equip(self, item: Item) -> bool:
         """Try to equip the item into a fitting slot, and return success status as bool."""
         for equip_slot in self.equip_slots:
@@ -193,6 +199,9 @@ class Inventory:
 
     def valid_index(self, index: int) -> bool:
         return index < len(self.items)
+
+    def item_count(self) -> int:
+        return len(self.items)
 
     def __getitem__(self, index: int) -> Item:
         return self.items[index]
