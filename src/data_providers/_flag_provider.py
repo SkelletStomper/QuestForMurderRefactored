@@ -9,7 +9,6 @@ class FlagProvider:
         logger.info("Start parsing flag data")
         self.flags = {flag_name: Flag(flag_name, flag_data) for flag_name, flag_data in all_flag_data.items()}
         logger.info("Finished parsing flag data")
-        print(self.flags)
 
     def __getitem__(self, value) -> Flag:
         return self.flags[value]
