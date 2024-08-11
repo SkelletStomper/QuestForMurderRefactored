@@ -28,13 +28,16 @@ class ArmorMaterial:
 class Armor(Item):
     def __init__(self, item_id, init_dict: dict) -> None:
         from src.data_providers import armat_provider as amp
+        from src.data_providers import species_provider as sp
+
         super().__init__(item_id, init_dict)
         self.type: ArmorSlotType = ArmorSlotType(init_dict["armor_type"])
+        self.made_for = sp[init_dict["made_for"]]
         armats: dict[str, int] = init_dict["armor"]
         self.armor: dict[ArmorMaterial, int] = \
             {amp[armat]: value for armat, value in armats.items()}
 
     def __repr__(self) -> str:
         return f"Armor(id={self.id}, name={self.name}, description={self.description}, weight={self.weight}, " \
-               f"type={self.type}, armor={self.armor})"
+               f"type={self.type}, made_for={self.made_for.id}, armor={self.armor})"
 

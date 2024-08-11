@@ -3,7 +3,12 @@ from src.items.items import Item
 from src.items.armor import Armor, ArmorSlotType
 from src.items.weapon import Weapon, WeaponAttackStencil
 from src.items.armor import ArmorMaterial
+from src.entities.entity import Entity
+
 from src.data_providers import item_provider as ip
+
+import logging
+logger = logging.getLogger(__name__)
 
 
 class EquipEffects:
@@ -22,7 +27,7 @@ class EquipSlot:
     def free(self) -> bool:
         return self._item is None
 
-    def is_equipable(self, item: Item) -> bool:
+    def is_equipable(self, item: Item, equipped_by: Entity) -> bool:
         pass  # abstract
 
     def equip(self, item: Item) -> None:
@@ -44,10 +49,16 @@ class WeaponSlot(EquipSlot):
         super().__init__()
         self.default_weapon_id = default_weapon_id
 
-    def is_equipable(self, item: Item) -> bool:
+    def is_equipable(self, item: Item, equipped_by: Entity) -> bool:
         if self._item is not None:
+            logger.debug(f"Item {item.id} is not equipable because Item {self._item.id} is already equipped")
             return False
-        return isinstance(item, Weapon)
+        if not isinstance(item, Weapon):
+            logger.debug(f"Item {item.id} is not equipable because Item it is {type(item)}, not a Weapon")
+            return False
+
+        logger.debug(f"Item {item.id} is equipable into the WeaponSlot")
+        return True
 
     def apply_bonus(self, equip_effects: EquipEffects) -> EquipEffects:
         weapon: Weapon = self._item
@@ -65,13 +76,19 @@ class WeaponSlot(EquipSlot):
         return equip_effects
 
     def __repr__(self) -> str:
-        return f"WeaponSlot(item={self._item}, default_weapon_id={self.default_weapon_id})"
+        item_print = None
+        if self._item is not None:
+            item_print = self._item.id
+        return f"WeaponSlot(item={item_print})"
 
 
 class OffhandSlot(EquipSlot):
 
     def __repr__(self) -> str:
-        return f"OffhandSlot(item={self._item})"
+        item_print = None
+        if self._item is not None:
+            item_print = self._item.id
+        return f"OffhandSlot(item={item_print})"
 
 
 class ArmorSlot(EquipSlot):
@@ -79,10 +96,28 @@ class ArmorSlot(EquipSlot):
         super().__init__()
         self.type = armor_type
 
-    def is_equipable(self, item: Item) -> bool:
+    def is_equipable(self, item: Armor, equipped_by: Entity) -> bool:
         if self._item is not None:
+            logger.info(f"Item {item.id} is not equipable because Item {self._item.id} is already equipped")
             return False
-        return isinstance(item, Armor) and item.type == self.type
+
+        if not isinstance(item, Armor):
+            logger.debug(f"Item {item.id} is not equipable because it is {type(item)}, not an Armor")
+            return False
+
+        if item.type != self.type:
+            logger.debug(f"Armor {item.id} is not equipable because of it's type {item.type}, "
+                           f"which is not {self.type}")
+            return False
+
+        equipper_species = equipped_by.species
+        must_be_species = item.made_for
+        if not equipper_species.is_subspecies(must_be_species.id):
+            logger.debug(f"Armor {item.id} is not equipable because it is made for {must_be_species.id}, which  "
+                           f"the equipper {equipped_by.name} with species {equipper_species.id} is not a subspecies of.")
+            return False
+        logger.debug(f"Armor {item.id} is equipable into the ArmorSlot")
+        return True
 
     def apply_bonus(self, equip_effects: EquipEffects) -> EquipEffects:
         if self._item is None:
@@ -97,11 +132,15 @@ class ArmorSlot(EquipSlot):
         return equip_effects
 
     def __repr__(self) -> str:
-        return f"ArmorSlot(type={self.type}, item={self._item})"
+        item_print = None
+        if self._item is not None:
+            item_print = self._item.id
+        return f"ArmorSlot(type={self.type}, item={item_print})"
 
 
 class Inventory:
-    def __init__(self):
+    def __init__(self, owner: Entity):
+        self.owner = owner
         self.equip_slots = [
             WeaponSlot(default_weapon_id="fists"),
             ArmorSlot(ArmorSlotType.HEAD),
@@ -124,7 +163,7 @@ class Inventory:
     def try_equip(self, item: Item) -> bool:
         """Try to equip the item into a fitting slot, and return success status as bool."""
         for equip_slot in self.equip_slots:
-            if equip_slot.is_equipable(item):
+            if equip_slot.is_equipable(item, self.owner):
                 equip_slot.equip(item)
                 return True
         return False

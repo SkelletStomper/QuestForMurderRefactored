@@ -1,5 +1,5 @@
 from src.entities.entity import Entity
-from src.items.inventory import Inventory
+from src.items.inventory import Inventory, Item
 from src.items.weapon import WeaponAttackStencil
 from src.combat.combat_basics import Attack
 
@@ -14,7 +14,7 @@ class NPC(Entity):
                  accuracy: int = 0,
                  armor: dict[str, int] = None,
                  flags: list[str] | None = None,
-                 species: str = "spec_humanoid"
+                 species: str = "spec_human"
                  ) -> None:
 
         if armor is None:
@@ -33,7 +33,7 @@ class NPC(Entity):
         )
 
         self.hp = self.hp_max
-        self.inventory: Inventory = Inventory()
+        self.inventory: Inventory = Inventory(self)
 
     def calculate_dmg_factor(self, attack: Attack) -> float:
         """

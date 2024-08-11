@@ -6,9 +6,6 @@ from src.combat.auto_combat import AutoCombat, MonsterCombatant, NPCCombatant
 from src.combat.monster_tournament import MonsterTournament
 def main():
 
-	MonsterTournament(3).run()
-
-	return
 	m1 = mp["dragon"]
 
 	jane = NPC(name="Mary Sue", pronouns="3rd_she")
