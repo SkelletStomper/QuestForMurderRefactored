@@ -75,9 +75,12 @@ class MonsterCombatant(Combatant):
     def is_alive(self) -> bool:
         return self.hp > 0
 
-    def status_message(self):
+    def status_message(self) -> None:
         le = self.monster.get_le()
         print(f"{le.name} has {self.hp} hit points left!".capitalize())
+
+    def get_pilot(self) -> Monster:
+        return self.monster
 
     def __repr__(self) -> str:
         return f"MonsterCombatant(hp= {self.hp}, monster: {self.monster}"

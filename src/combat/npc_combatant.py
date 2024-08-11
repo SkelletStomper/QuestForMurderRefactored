@@ -70,6 +70,8 @@ class NPCCombatant(Combatant):
         le = self.npc.get_le()
         print(capitalize_first(f"{le.name} has {self.npc.hp} hit points left!"))
 
+    def get_pilot(self):
+        return self.npc
     def __repr__(self) -> str:
         return f"NPCCombatant(npc={self.npc}"
 

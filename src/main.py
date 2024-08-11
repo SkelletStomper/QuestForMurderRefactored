@@ -4,13 +4,13 @@ from src.entities.npc import NPC
 from src.combat.auto_combat import AutoCombat, MonsterCombatant, NPCCombatant
 
 def main():
-	m1 = mp["goblin1"]
+	m1 = mp["dragon"]
 
-	jane = NPC(name="Mary Jane", pronouns="3rd_she")
+	jane = NPC(name="Mary Sue", pronouns="3rd_she")
 
 	inv = jane.inventory
 
-	dagger = ip["default_dagger"]
+	dagger = ip["default_pyro_tome"]
 	chest = ip["leather_chest"]
 	head = ip["leather_cap"]
 	legs = ip["leather_pants"]

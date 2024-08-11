@@ -1,6 +1,7 @@
 from src.localization.l_string import LString
 from src.combat.monster_combatant import MonsterCombatant, Monster
 from src.combat.npc_combatant import NPCCombatant
+from src.entities.entity import Entity
 
 from typing import Union
 
@@ -15,7 +16,7 @@ class AutoCombat:
         self.combatant1 = combatant1
         self.combatant2 = combatant2
 
-    def combat(self) -> Monster:
+    def combat(self) -> Entity:
         c1 = self.combatant1
         c2 = self.combatant2
 
@@ -36,9 +37,9 @@ class AutoCombat:
             print("")
 
         if c1.is_alive:
-            return c1.monster
+            return c1.get_pilot()
         if c2.is_alive:
-            return c2.monster
+            return c2.get_pilot()
 
     def calculate_attacks(self, attacker: AutoCombatant, defender: AutoCombatant) -> None:
         lea = attacker.get_le()
