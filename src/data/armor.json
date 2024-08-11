@@ -2,6 +2,7 @@
   "armor": {
     "json_type": "item.armor",
     "armor_type": "ANY",
+    "made_for": "species",
     "name": "",
     "description": "",
     "weight": 0,
@@ -12,6 +13,7 @@
   "leather_chest": {
     "json_type": "item.armor",
     "armor_type": "CHEST",
+    "made_for": "spec_humanoid_tall",
     "name": "Leather Jacket",
     "description": "A large, thick leather jacket. Will provide some protection against minor injuries.",
     "weight": 10,
@@ -22,6 +24,7 @@
   "leather_cap": {
     "json_type": "item.armor",
     "armor_type": "HEAD",
+    "made_for": "spec_humanoid",
     "name": "Leather Cappy",
     "description": "A fur-lined Cappy made from tanned leather. Keeps your head warm in the winter, boiling in the summer.",
     "weight": 3,
@@ -33,6 +36,7 @@
   "leather_pants": {
     "json_type": "item.armor",
     "armor_type": "LEGS",
+    "made_for": "spec_humanoid_tall",
     "name": "Leather Pants",
     "description": "A nice, adorned pair of leather pants. Somehow, they make you feel bavarian...",
     "weight": 7,
@@ -43,6 +47,7 @@
   "leather_gloves": {
     "json_type": "item.armor",
     "armor_type": "HANDS",
+    "made_for": "spec_humanoid_tall",
     "name": "fingerless leather gloves",
     "description": "These thin leather gloves are missing their fingertips, encumbering you less when doing tasks.",
     "weight": 2,
@@ -53,6 +58,7 @@
   "leather_boots": {
     "json_type": "item.armor",
     "armor_type": "FEET",
+    "made_for": "spec_humanoid_tall",
     "name": "Leather Boots",
     "description": "A worn-out pair of leather boots. Even though they never touched your feet before, they fit you perfectly.",
     "weight": 4,
