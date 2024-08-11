@@ -9,6 +9,7 @@ from src.combat.monster_combatant import MonsterCombatant
 class MonsterTournament:
     class Bracket:
         def __init__(self, c1, c2):
+
             self.c1 = c1
             self.c2 = c2
 
@@ -25,16 +26,13 @@ class MonsterTournament:
             winner: Monster = AutoCombat(m1, m2).combat()  # type: ignore
             return winner
 
+        @property
+        def name(self):
+            return f"Bracket({self.c1.name}, {self.c2.name})"
+
         def __repr__(self) -> str:
-            if isinstance(self.c1, Monster):
-                print1 = self.c1.name
-            else:
-                print1 = self.c2
-            if isinstance(self.c2, Monster):
-                print2 = self.c2.name
-            else:
-                print2 = self.c2
-            return f"Bracket({print1}, {print2})"
+
+            return self.name
 
     def __init__(self, rounds=3):
         monster_count = 2**rounds
@@ -45,12 +43,11 @@ class MonsterTournament:
 
         brackets = [self.Bracket(fighting_monsters[i], fighting_monsters[i+1])
                     for i in range(0, len(fighting_monsters), 2)]
-
+        print(brackets)
         while len(brackets) > 1:
             brackets = [self.Bracket(brackets[i], brackets[i+1])
                         for i in range(0, len(brackets), 2)]
-
-        print(brackets)
+            print(brackets)
 
 
 
