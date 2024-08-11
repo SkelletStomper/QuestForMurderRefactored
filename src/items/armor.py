@@ -53,4 +53,3 @@ class Armor(Item):
                 f"\"{self.description}\""
                 f"Provides the following armor Points:"
                 f"{armor_string}")
-

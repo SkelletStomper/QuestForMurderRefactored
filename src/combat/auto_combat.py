@@ -1,5 +1,5 @@
 from src.localization.l_string import LString
-from src.combat.monster_combatant import MonsterCombatant, Monster
+from src.combat.monster_combatant import MonsterCombatant
 from src.combat.npc_combatant import NPCCombatant
 from src.entities.entity import Entity
 
@@ -64,4 +64,3 @@ class AutoCombat:
 
     def __repr__(self) -> str:
         return f"MonsterCombat(combatant1={self.combatant1}, combatant2={self.combatant2})"
-

@@ -51,12 +51,14 @@ class WeaknessSet:
 
     def attack_factor(self, type_list: list[AttackType]) -> float:
         """Calculates the damage factor of a list of AttackTypes for this WeaknessSet.
-        Iterates through all types of the attack and multiplies all weakness factors with themselves, returning the final weakness factor."""
+        Iterates through all types of the attack and multiplies all weakness factors with themselves,
+        returning the final weakness factor."""
         factor = 1.0
         for attack_type in type_list:
             factor *= self.weaknesses[attack_type]
 
-        logging.debug(f"Calculated factor {factor} for attack with types {type_list} with WeaknessSet {self.weaknesses}")
+        logging.debug(f"Calculated factor {factor} for attack with types {type_list} "
+                      f"with WeaknessSet {self.weaknesses}")
         return factor
 
     def __repr__(self) -> str:
@@ -64,4 +66,3 @@ class WeaknessSet:
                             for attackType, value in self.weaknesses.items()
                             if not isclose(value, 1.0)]
         return f"WeaknessSet({', '.join(weakness_strings)})"
-

@@ -20,7 +20,8 @@ def attack_dodged(accuracy: int, dodge: int) -> bool:
     total_dodge = dodge + dice_dodge - 1
     result = total_accuracy < total_dodge
 
-    logger.debug(f"Attack dodged: {result} (({accuracy} + {dice_accuracy} = {total_accuracy}) accuracy vs. ({dodge} + {dice_dodge} = {total_dodge}) dodge)")
+    logger.debug(f"Attack dodged: {result} (({accuracy} + {dice_accuracy} = {total_accuracy}) accuracy "
+                 f"vs. ({dodge} + {dice_dodge} = {total_dodge}) dodge)")
 
     return result
 

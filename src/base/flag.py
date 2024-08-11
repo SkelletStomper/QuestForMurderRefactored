@@ -6,7 +6,8 @@ from copy import copy
 class Flag:
     """
     Entities can have flags to signify special properties.
-    By checking if an entity has a flag, it is possible to check this condition later in the code, and allows for special effects.
+    By checking if an entity has a flag, it is possible to check this condition later in the code,
+    and allows for special effects. \n
     Flags are gotten from and instantiated in the Flag Provider.
     Some Flags come with a WeaknessSet and/or a value.
     """
@@ -37,5 +38,5 @@ class Flag:
         return self.name == value
 
     def __repr__(self) -> str:
-        return f"Flag(name={self.name}, value={self.value}, value_type={self.value_type}, description={self.description}, " \
-               f"weaknesses= {self.weaknesses})"
+        return (f"Flag(name={self.name}, value={self.value}, value_type={self.value_type},"
+                f" description={self.description}, weaknesses= {self.weaknesses})")
