@@ -16,6 +16,8 @@ class ArmorSlotType(Enum):
 class ArmorMaterial:
     def __init__(self, armat_id, in_dict: dict) -> None:
         self.id = armat_id
+        self.name = in_dict["name"]
+        self.description = in_dict["description"]
         self._efficiencies = WeaknessSet(in_dict["armor_efficiency"])
 
     def effective_factor(self, type_list: list[AttackType]):
@@ -40,4 +42,15 @@ class Armor(Item):
     def __repr__(self) -> str:
         return f"Armor(id={self.id}, name={self.name}, description={self.description}, weight={self.weight}, " \
                f"type={self.type}, made_for={self.made_for.id}, armor={self.armor})"
+
+    def info_short(self) -> str:
+        return f"{self.name} (Armor - {self.type.value.lower()})"
+
+    def info_long(self) -> str:
+        armor_strings = [f"{armat.name}: {value}" for armat, value in self.armor.items()]
+        armor_string = ", ".join(armor_strings)
+        return (f"{self.name}"
+                f"\"{self.description}\""
+                f"Provides the following armor Points:"
+                f"{armor_string}")
 
