@@ -160,13 +160,42 @@ class Inventory:
 
         return equip_effects
 
-    def try_equip(self, item: Item) -> bool:
+    def _try_equip(self, item: Item) -> bool:
         """Try to equip the item into a fitting slot, and return success status as bool."""
         for equip_slot in self.equip_slots:
             if equip_slot.is_equipable(item, self.owner):
                 equip_slot.equip(item)
                 return True
         return False
+
+    def try_equip(self, index: int) -> bool:
+        item = self[index]
+        success = self._try_equip(item)
+        if success:
+            self.remove(index)
+
+            return True
+        return False
+
+    def add(self, item: Item) -> None | Item:
+        if len(self.items) < self.item_capacity:
+            self.items.append(item)
+            return None
+        else:
+            return item
+
+    def remove(self, index: int) -> Item:
+        if not self.valid_index(index):
+            raise IndexError(f"Tried to remove item from nonexistent index {index}")
+        item = self[index]
+        self.items.remove(item)
+        return item
+
+    def valid_index(self, index: int) -> bool:
+        return index < len(self.items)
+
+    def __getitem__(self, index: int) -> Item:
+        return self.items[index]
 
     def __repr__(self) -> str:
         return f"Inventory(item_capacity={self.item_capacity}, equip_slots={self.equip_slots}, items={self.items})"
