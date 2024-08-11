@@ -2,6 +2,7 @@
 {
   "monster": {
     "json_type": "monster",
+    "species": "species",
     "title": "the",
     "name": "BlankMonster",
     "pronouns": "3rd_they",

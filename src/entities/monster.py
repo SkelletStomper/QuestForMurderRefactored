@@ -50,6 +50,7 @@ class Monster(Entity):
             accuracy=0,
             armor=in_dict["armor"],
             flags=in_dict["flags"],
+            species=in_dict["species"]
         )
 
         self.info: str = in_dict["information"]
