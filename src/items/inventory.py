@@ -55,6 +55,7 @@ class EquipSlot:
         return (f"Item Slot\n"
                 f"Equipped: {self._item.info_long}")
 
+
 class WeaponSlot(EquipSlot):
     def __init__(self, default_weapon_id: str | None = None) -> None:
         super().__init__()
@@ -155,14 +156,14 @@ class ArmorSlot(EquipSlot):
 
     def info_short(self) -> str:
         if self._item is None:
-            return "Armor Slot (Nothing)"
-        return f"Armor Slot ({self._item.name})"
+            return f"Armor Slot-({self.type.value.lower()}) (Nothing)"
+        return f"Armor Slot({self.type.value.lower()}) ({self._item.name})"
 
     def info_long(self) -> str:
         if self._item is None:
-            return f"Armor Slot- ({self.type.value.lower()}) (Nothing)"
-        return (f"Armor Slot ({self.type.value.lower()})\n"
-                f"Equipped: {self._item.info_long}")
+            return f"Armor Slot({self.type.value.lower()}) (Nothing)"
+        return (f"Armor Slot({self.type.value.lower()})\n"
+                f"Equipped: {self._item.info_long()}")
 
     def __repr__(self) -> str:
         item_print = None
