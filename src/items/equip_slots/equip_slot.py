@@ -1,6 +1,6 @@
 from src.items.items import Item
 from src.entities.entity import Entity
-from src.items.equip_slots._equip_effects import EquipEffects
+from src.items.equip_slots.equip_effects import EquipEffects
 
 from enum import Enum
 

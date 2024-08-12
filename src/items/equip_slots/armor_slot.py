@@ -1,4 +1,4 @@
-from src.items.equip_slots._equip_slot import EquipSlot, EquipEffects, Entity
+from src.items.equip_slots.equip_slot import EquipSlot, EquipEffects, Entity
 from src.items.armor import Armor, ArmorSlotType
 
 import logging

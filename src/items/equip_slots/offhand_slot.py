@@ -1,4 +1,4 @@
-from src.items.equip_slots._equip_slot import EquipSlot
+from src.items.equip_slots.equip_slot import EquipSlot
 
 
 class OffhandSlot(EquipSlot):
