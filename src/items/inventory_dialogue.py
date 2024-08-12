@@ -28,7 +28,7 @@ class InventoryDialogue:
                 print(f"({i}): {inv[i-1].info_short()}")
 
             print("\n(0): Back")
-            player_input = input("Select an item to interact with it, or '0' to go back.")
+            player_input = input(">: ")
             index = int(player_input)-1
             if inv.valid_index(index):
                 self.sub_dialogue_inventory(index)
@@ -67,7 +67,7 @@ class InventoryDialogue:
                 print(f"({i}): {equip_slots[i-1].info_short()}")
 
             print("(0): Back")
-            player_input = input("Select an Equip Slot to interact with, or type '0' to go back.")
+            player_input = input(">: ")
             index = int(player_input) - 1
             if 0 <= index <= len(equip_slots):
                 self.sub_dialogue_equip(index)
