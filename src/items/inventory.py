@@ -96,7 +96,7 @@ class WeaponSlot(EquipSlot):
         if self._item is None:
             return "Weapon Slot (Nothing)"
         return (f"Weapon Slot\n"
-                f"Equipped: {self._item.info_long}")
+                f"Equipped: {self._item.info_long()}")
 
     def __repr__(self) -> str:
         item_print = None
