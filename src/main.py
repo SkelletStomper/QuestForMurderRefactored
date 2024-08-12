@@ -15,12 +15,16 @@ def main():
 
 	inv = jane.inventory
 
-	dagger = ip["default_pyro_tome"]
+	dagger = ip["default_dagger"]
+	tome = ip["default_pyro_tome"]
+	mace = ip["default_mace"]
 	chest = ip["leather_chest"]
 	head = ip["leather_cap"]
 	legs = ip["leather_pants"]
 
 	inv.add(dagger)
+	inv.add(tome)
+	inv.add(mace)
 	inv.add(chest)
 	inv.add(head)
 	inv.add(legs)
