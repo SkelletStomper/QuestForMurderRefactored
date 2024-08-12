@@ -5,7 +5,20 @@ class InventoryDialogue:
     def __init__(self, inventory: Inventory):
         self.inventory = inventory
 
-    def dialogue(self):
+    def dialogue(self) -> None:
+        player_input = ""
+        while player_input != "0":
+            print("What do you want to do?")
+            print("(1): Inspect equipped Items")
+            print("(2): Inspect Inventory")
+            print("(0): Back")
+            player_input = input(">: ")
+            if player_input == "1":
+                self.dialogue_equip()
+            if player_input == "2":
+                self.dialogue_inventory()
+
+    def dialogue_inventory(self) -> None:
         inv = self.inventory
         player_input = ""
 
@@ -17,9 +30,9 @@ class InventoryDialogue:
             player_input = input("Select an item to interact with it, or 0 to go back.")
             index = int(player_input)-1
             if inv.valid_index(index):
-                self.sub_dialogue(index)
+                self.sub_dialogue_inventory(index)
 
-    def sub_dialogue(self, index: int) -> None:
+    def sub_dialogue_inventory(self, index: int) -> None:
         inv = self.inventory
 
         item = inv[index]
@@ -44,3 +57,5 @@ class InventoryDialogue:
                 inv.remove(index)
                 return
 
+    def dialogue_equip(self) -> None:
+        pass
