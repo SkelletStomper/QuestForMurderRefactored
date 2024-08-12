@@ -54,6 +54,7 @@ class Weapon(Item):
 
         return (f"{self.name}\n"
                 f"\"{self.description}\"\n"
+                f"Weight: {self.weight}\n"
                 f"Grants the following Attacks:\n"
                 f"{attack_string}")
 

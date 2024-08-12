@@ -53,4 +53,5 @@ class Armor(Item):
                 f"\"{self.description}\"\n"
                 f"It is made for the species '{self.made_for.name}'\n"
                 f"Provides the following armor Points:\n"
-                f"{armor_string}")
+                f"{armor_string}\n"
+                f"Weight: {self.weight}")
