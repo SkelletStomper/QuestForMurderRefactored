@@ -1,4 +1,5 @@
 from src.items.inventory import Inventory
+from src.items.equip_slots import NoEquipReason
 
 
 class InventoryDialogue:

@@ -1,7 +1,7 @@
 from src.items.items import Item
 from src.items.armor import ArmorSlotType
 
-from src.items.equip_slots import WeaponSlot, ArmorSlot, EquipEffects
+from src.items.equip_slots import WeaponSlot, ArmorSlot, EquipEffects, NoEquipReason
 
 from src.entities.entity import Entity
 
@@ -38,9 +38,15 @@ class Inventory:
         return False
 
     def _try_equip(self, item: Item) -> bool:
-        """Try to equip the item into a fitting slot, and return success status as bool."""
+        """Try to equip the item into a fitting slot, and return success status as bool.
+        Will directly try to equip an item without taking it from the inventory."""
         for equip_slot in self.equip_slots:
-            if equip_slot.is_equipable(item, self.owner): # type: ignore
+            no_equip_reason = equip_slot.is_equipable(item, self.owner)  # type: ignore
+            if no_equip_reason == NoEquipReason.NONE:
+                equip_slot.equip(item)
+                return True
+            elif no_equip_reason == NoEquipReason.FULL:
+                self.add(equip_slot.unequip())
                 equip_slot.equip(item)
                 return True
         return False

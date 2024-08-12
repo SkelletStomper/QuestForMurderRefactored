@@ -1,4 +1,4 @@
-from src.items.equip_slots.equip_slot import EquipSlot, EquipEffects, Entity
+from src.items.equip_slots.equip_slot import EquipSlot, EquipEffects, Entity, NoEquipReason
 
 from src.items.weapon import Weapon
 
@@ -13,16 +13,17 @@ class WeaponSlot(EquipSlot):
         super().__init__()
         self.default_weapon_id = default_weapon_id
 
-    def is_equipable(self, item: Weapon, equipped_by: Entity) -> bool:
-        if self._item is not None:
-            logger.debug(f"Item {item.id} is not equipable because Item {self._item.id} is already equipped")
-            return False
+    def is_equipable(self, item: Weapon, equipped_by: Entity) -> NoEquipReason:
         if not isinstance(item, Weapon):
             logger.debug(f"Item {item.id} is not equipable because Item it is {type(item)}, not a Weapon")
-            return False
+            return NoEquipReason.ITEM_TYPE
+
+        if self._item is not None:
+            logger.debug(f"Weapon {item.id} is not equipable because Weapon {self._item.id} is already equipped")
+            return NoEquipReason.FULL
 
         logger.debug(f"Item {item.id} is equipable into the WeaponSlot")
-        return True
+        return NoEquipReason.NONE
 
     def apply_bonus(self, equip_effects: EquipEffects) -> EquipEffects:
         weapon: Weapon = self._item

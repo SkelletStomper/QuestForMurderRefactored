@@ -9,11 +9,12 @@ logger = logging.getLogger(__name__)
 
 
 class NoEquipReason(Enum):
-    NONE = -1
-    FULL = 0
-    ITEM_TYPE = 1
-    SLOT_TYPE = 2
-    SPECIES = 3
+    NONE = -1  # No Reason
+    FULL = 0  # There is already an Item equipped
+    ITEM_TYPE = 1  # Item, Armor, Weapon, etc
+    SLOT_TYPE = 2  # ArmorSlotType mismatched
+    SPECIES = 3  # Species cannot wear that
+    CURSED = 4  # Item currently equipped is cursed and cannot be unequipped
 
 
 class EquipSlot:
@@ -23,7 +24,7 @@ class EquipSlot:
     def free(self) -> bool:
         return self._item is None
 
-    def is_equipable(self, item: Item, equipped_by: Entity) -> bool:
+    def is_equipable(self, item: Item, equipped_by: Entity) -> NoEquipReason:
         pass  # abstract
 
     def equip(self, item: Item) -> None:

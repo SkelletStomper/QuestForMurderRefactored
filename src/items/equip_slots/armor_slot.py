@@ -1,4 +1,4 @@
-from src.items.equip_slots.equip_slot import EquipSlot, EquipEffects, Entity
+from src.items.equip_slots.equip_slot import EquipSlot, EquipEffects, Entity, NoEquipReason
 from src.items.armor import Armor, ArmorSlotType
 
 import logging
@@ -10,28 +10,28 @@ class ArmorSlot(EquipSlot):
         super().__init__()
         self.type = armor_type
 
-    def is_equipable(self, item: Armor, equipped_by: Entity) -> bool:
-        if self._item is not None:
-            logger.info(f"Item {item.id} is not equipable because Item {self._item.id} is already equipped")
-            return False
-
+    def is_equipable(self, item: Armor, equipped_by: Entity) -> NoEquipReason:
         if not isinstance(item, Armor):
             logger.debug(f"Item {item.id} is not equipable because it is {type(item)}, not an Armor")
-            return False
+            return NoEquipReason.ITEM_TYPE
 
+        if self._item is not None:
+            logger.info(f"Item {item.id} is not equipable because Item {self._item.id} is already equipped")
+            return NoEquipReason.FULL
+        
         if item.type != self.type:
             logger.debug(f"Armor {item.id} is not equipable because of it's type {item.type}, "
                          f"which is not {self.type}")
-            return False
+            return NoEquipReason.SLOT_TYPE
 
         equipper_species = equipped_by.species
         must_be_species = item.made_for
         if not equipper_species.is_subspecies(must_be_species.id):
             logger.debug(f"Armor {item.id} is not equipable because it is made for {must_be_species.id}, which  "
                          f"the equipper {equipped_by.name} with species {equipper_species.id} is not a subspecies of.")
-            return False
+            return NoEquipReason.SPECIES
         logger.debug(f"Armor {item.id} is equipable into the ArmorSlot")
-        return True
+        return NoEquipReason.NONE
 
     def apply_bonus(self, equip_effects: EquipEffects) -> EquipEffects:
         if self._item is None:
