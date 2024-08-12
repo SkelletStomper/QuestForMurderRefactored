@@ -28,11 +28,11 @@ class WeaponAttackStencil:
         type_list = [attack_type.value for attack_type in self.types]
         type_string = ", ".join(type_list)
 
-        return (f"Attack: {self.name}"
-                f"\"{self.description}\""
-                f"Damage: {self.dmg}"
-                f"Accuracy: {self.acc}"
-                f"Critical modifier: {self.crt}"
+        return (f"Attack: {self.name}\n"
+                f"\"{self.description}\"\n"
+                f"Damage: {self.dmg}\n"
+                f"Accuracy: {self.acc}\n"
+                f"Critical modifier: {self.crt}\n"
                 f"Types: {type_string}")
 
     def __repr__(self) -> str:
@@ -50,7 +50,7 @@ class Weapon(Item):
 
     def info_long(self) -> str:
         attack_list = [attack.info() for attack in self.attacks.values()]
-        attack_string = "\n".join(attack_list)
+        attack_string = "\n\n".join(attack_list)
 
         return (f"{self.name}\n"
                 f"\"{self.description}\"\n"
