@@ -29,8 +29,6 @@ class NPCCombatant(Combatant):
         accuracy = attack.acc
         dodge = self.npc.dodge
 
-        equip_effects = self.npc.inventory.calculate_bonus()
-
         if attack_dodged(accuracy, dodge):
             logger.debug(f"Attack was dodged by {le.name}")
             return attack.atk_str.on_dodge
@@ -72,6 +70,6 @@ class NPCCombatant(Combatant):
 
     def get_pilot(self):
         return self.npc
+
     def __repr__(self) -> str:
         return f"NPCCombatant(npc={self.npc}"
-

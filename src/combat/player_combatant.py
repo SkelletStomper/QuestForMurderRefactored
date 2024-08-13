@@ -18,11 +18,9 @@ class PlayerCombatChoice(Enum):
 
 class PlayerCombatant(NPCCombatant):
     def __init__(self, npc: NPC):
-        self.npc = npc
+        super().__init__(npc)
 
     def turn(self) -> tuple[PlayerCombatChoice, Any]:
-
-
         while True:
             print("What do you want to do?")
             print("(1): Attack")
@@ -42,8 +40,6 @@ class PlayerCombatant(NPCCombatant):
             else:
                 print("Please make a valid choice.")
 
-
-
     def attack_dialogue(self) -> list[Attack] | None:
         equip_effects = self.npc.inventory.calculate_bonus()
         stencils = equip_effects.granted_attacks
@@ -60,6 +56,3 @@ class PlayerCombatant(NPCCombatant):
                 return [stencils[index].generate_attack()]
 
         return None
-
-
-# TODO
