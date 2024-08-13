@@ -14,10 +14,6 @@ class ArmorSlot(EquipSlot):
         if not isinstance(item, Armor):
             logger.debug(f"Item {item.id} is not equipable because it is {type(item)}, not an Armor")
             return NoEquipReason.ITEM_TYPE
-
-        if self._item is not None:
-            logger.info(f"Item {item.id} is not equipable because Item {self._item.id} is already equipped")
-            return NoEquipReason.FULL
         
         if item.type != self.type:
             logger.debug(f"Armor {item.id} is not equipable because of it's type {item.type}, "
@@ -30,6 +26,11 @@ class ArmorSlot(EquipSlot):
             logger.debug(f"Armor {item.id} is not equipable because it is made for {must_be_species.id}, which  "
                          f"the equipper {equipped_by.name} with species {equipper_species.id} is not a subspecies of.")
             return NoEquipReason.SPECIES
+
+        if self._item is not None:
+            logger.info(f"Item {item.id} is not equipable because Item {self._item.id} is already equipped")
+            return NoEquipReason.FULL
+
         logger.debug(f"Armor {item.id} is equipable into the ArmorSlot")
         return NoEquipReason.NONE
 
