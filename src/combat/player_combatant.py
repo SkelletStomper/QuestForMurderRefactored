@@ -1,4 +1,4 @@
-from src.combat.combat_basics import Combatant
+from src.combat.combat_basics import Combatant, Attack
 from src.items.inventory_dialogue import InventoryDialogue
 from src.entities.npc import NPC
 
@@ -26,11 +26,29 @@ class PlayerCombatant(Combatant):
         choice: str = input(">: ").lower()
 
         if choice in ["1", "(1)", "atk", "attack"]:
-            pass
+            attacks = self.attack_dialogue()
+            if attacks is not None:
+                return PlayerCombatChoice.ATTACKING, attacks
         elif choice in ["2", "(2)", "inv", "inventory"]:
             InventoryDialogue(self.npc.inventory).dialogue()
         elif choice in ["3", "{3}", "flee", "run"]:
             return PlayerCombatChoice.FLEEING, None
+
+    def attack_dialogue(self) -> list[Attack]|None:
+        equip_effects = self.npc.inventory.calculate_bonus()
+        stencils = equip_effects.granted_attacks
+        player_input = ""
+        while player_input != "0":
+            for i in range(0, len(stencils)):
+                print(f"({i+1}): {stencils[i].name}")
+
+            print("(0): Back")
+            player_input = input(">:")
+            index = int(player_input)-1
+            if 0 >= index < len(stencils):
+                return [stencils[index].generate_attack()]
+
+        return None
 
 
 # TODO
