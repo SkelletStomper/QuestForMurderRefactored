@@ -1,15 +1,13 @@
 from src.data_providers import monster_provider as mp
 from src.data_providers import item_provider as ip
 from src.entities.npc import NPC
-from src.combat.auto_combat import AutoCombat, MonsterCombatant, NPCCombatant
-
-from src.combat.monster_tournament import MonsterTournament
-from src.items.inventory_dialogue import InventoryDialogue
+from src.combat.auto_combat import MonsterCombatant
+from src.combat.player_combat import PlayerCombatant, PlayerCombat
 
 
 def main():
 
-	m1 = mp["moth"]
+	m1 = mp["goblin1"]
 
 	jane = NPC(name="Mary Sue", pronouns="3rd_she")
 
@@ -29,13 +27,12 @@ def main():
 	inv.add(head)
 	inv.add(legs)
 
-	InventoryDialogue(inv).dialogue()
+	# InventoryDialogue(inv).dialogue()
 
-	combat = AutoCombat(MonsterCombatant(m1), NPCCombatant(jane))
+	combat = PlayerCombat(PlayerCombatant(jane), MonsterCombatant(m1))
 	combat.combat()
 
 
 if __name__ == '__main__':
 	main()
-
-	input()
+	print("Combat Finished")

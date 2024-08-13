@@ -1,6 +1,8 @@
-from src.combat.combat_basics import Combatant, Attack
+from src.combat.combat_basics import Attack
+from src.combat.npc_combatant import NPCCombatant
 from src.items.inventory_dialogue import InventoryDialogue
 from src.entities.npc import NPC
+
 
 from enum import Enum
 from typing import Any
@@ -14,7 +16,7 @@ class PlayerCombatChoice(Enum):
     INT_ACTION = "INT_ACTION"
 
 
-class PlayerCombatant(Combatant):
+class PlayerCombatant(NPCCombatant):
     def __init__(self, npc: NPC):
         self.npc = npc
 
@@ -33,7 +35,6 @@ class PlayerCombatant(Combatant):
             took_turn = InventoryDialogue(self.npc.inventory, timed=True).dialogue()
             if took_turn:
                 return PlayerCombatChoice.INT_ACTION, None
-            
         elif choice in ["3", "{3}", "flee", "run"]:
             return PlayerCombatChoice.FLEEING, None
 

@@ -1,4 +1,5 @@
 from src.localization.l_string import LString
+from src.combat.combat_basics import Combatant
 from src.combat.monster_combatant import MonsterCombatant
 from src.combat.npc_combatant import NPCCombatant
 from src.entities.entity import Entity
@@ -23,7 +24,7 @@ class AutoCombat:
         le1 = c1.get_le()
         le2 = c2.get_le()
 
-        logger.info(f"Starting MonsterCombat between {le1.name} and {le2.name}")
+        logger.info(f"Starting AutoCombat between {le1.name} and {le2.name}")
 
         while True:
             self.calculate_attacks(c1, c2)
@@ -55,7 +56,7 @@ class AutoCombat:
         defender.status_message()
 
     @staticmethod
-    def print_attack(message: LString, attacker: MonsterCombatant, defender: MonsterCombatant) -> None:
+    def print_attack(message: LString, attacker: Combatant, defender: Combatant) -> None:
         atk_str = message.parse(
             attacking=attacker.get_le(),
             defending=defender.get_le()
@@ -63,4 +64,4 @@ class AutoCombat:
         print(atk_str)
 
     def __repr__(self) -> str:
-        return f"MonsterCombat(combatant1={self.combatant1}, combatant2={self.combatant2})"
+        return f"AutoCombat(combatant1={self.combatant1}, combatant2={self.combatant2})"

@@ -1,4 +1,5 @@
 from src.combat.attack import Attack
+from src.localization.localized_entity import LocalizedEntity
 
 import logging
 logger = logging.getLogger(__name__)
@@ -38,3 +39,6 @@ class Combatant:
     def is_alive(self) -> bool:
         # Abstract Method
         pass
+
+    def get_le(self) -> LocalizedEntity:
+        pass  # abstract
