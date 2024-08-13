@@ -1,12 +1,12 @@
 from src.items.inventory import Inventory
-from src.items.equip_slots import NoEquipReason
 
 
 class InventoryDialogue:
-    def __init__(self, inventory: Inventory):
+    def __init__(self, inventory: Inventory, timed: bool = False):
         self.inventory = inventory
+        self.timed = timed
 
-    def dialogue(self) -> None:
+    def dialogue(self) -> bool:
         player_input = ""
         while player_input != "0":
             print("What do you want to do?")
@@ -14,12 +14,18 @@ class InventoryDialogue:
             print("(2): Inspect Inventory")
             print("(0): Back")
             player_input = input(">: ")
-            if player_input == "1":
-                self.dialogue_equip()
-            if player_input == "2":
-                self.dialogue_inventory()
 
-    def dialogue_inventory(self) -> None:
+            took_turn = False
+            if player_input == "1":
+                took_turn = self.dialogue_equip()
+            if player_input == "2":
+                took_turn = self.dialogue_inventory()
+            if self.timed and took_turn:
+                return True
+
+        return False
+
+    def dialogue_inventory(self) -> bool:
         inv = self.inventory
         player_input = ""
 
@@ -32,9 +38,15 @@ class InventoryDialogue:
             player_input = input(">: ")
             index = int(player_input)-1
             if inv.valid_index(index):
-                self.sub_dialogue_inventory(index)
+                took_turn = self.sub_dialogue_inventory(index)
+                if self.timed and took_turn:
+                    return True
 
-    def sub_dialogue_inventory(self, index: int) -> None:
+        return False
+
+    def sub_dialogue_inventory(self, index: int) -> bool:
+        """Dialogue to inspect and equip/drop an item in the inventory at a specified index.\n
+        Returns True if an action was taken that takes up a turn."""
         inv = self.inventory
 
         item = inv[index]
@@ -52,14 +64,15 @@ class InventoryDialogue:
 
             player_input = input(">: ")
 
-            if player_input == "1":
+            if player_input == "1" and equipable:
                 inv.try_equip(index)
-                return
+                return True
             if player_input == "2":
                 inv.remove(index)
-                return
+                return False
+        return False
 
-    def dialogue_equip(self) -> None:
+    def dialogue_equip(self) -> bool:
         equip_slots = self.inventory.equip_slots
         player_input = ""
 
@@ -71,9 +84,17 @@ class InventoryDialogue:
             player_input = input(">: ")
             index = int(player_input) - 1
             if 0 <= index <= len(equip_slots):
-                self.sub_dialogue_equip(index)
+                took_turn = self.sub_dialogue_equip(index)
 
-    def sub_dialogue_equip(self, index: int) -> None:
+                if self.timed and took_turn:
+                    return True
+
+        return False
+
+    def sub_dialogue_equip(self, index: int) -> bool:
+        """Opens the Item Dialogue for an equipped item at a specified index.\n
+        Returns True if an action was taken that takes up a turn.
+        """
         equip_slots = self.inventory.equip_slots
 
         slot = equip_slots[index]
@@ -93,4 +114,6 @@ class InventoryDialogue:
 
             if player_input == "1" and not slot.free():
                 self.inventory.add(slot.unequip())
-                return
+                return True
+
+        return False

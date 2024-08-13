@@ -30,7 +30,10 @@ class PlayerCombatant(Combatant):
             if attacks is not None:
                 return PlayerCombatChoice.ATTACKING, attacks
         elif choice in ["2", "(2)", "inv", "inventory"]:
-            InventoryDialogue(self.npc.inventory).dialogue()
+            took_turn = InventoryDialogue(self.npc.inventory, timed=True).dialogue()
+            if took_turn:
+                return PlayerCombatChoice.INT_ACTION, None
+            
         elif choice in ["3", "{3}", "flee", "run"]:
             return PlayerCombatChoice.FLEEING, None
 
