@@ -51,7 +51,6 @@ class PlayerCombatant(NPCCombatant):
             print("(0): Back")
             player_input = input(">:")
             index = int(player_input)-1
-            print(f"index: {index}")
             if 0 <= index < len(stencils):
                 return [stencils[index].generate_attack()]
 
