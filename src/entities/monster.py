@@ -1,8 +1,6 @@
 from src.entities.entity import Entity
 from src.base.types import WeaknessSet, AttackType
 from src.combat.attack import Attack, ConditionalAttackText
-from src.localization.localized_entity import LocalizedEntity
-from src.localization.l_string import LString
 
 
 class MonsterAttackStencil:
@@ -22,17 +20,17 @@ class MonsterAttackStencil:
         else:
             self.multi = 1
 
-    def generate_attacks(self) -> [Attack]:
+    def generate_attacks(self) -> [tuple[Attack, int]]:
         """
         Return a list of Attacks fitted after the Attack Stencil.
         """
-        return [Attack(
+        return [(Attack(
             dmg=self.dmg,
             acc=self.acc,
             crt=self.crt,
             types=self.types,
             atk_str=self.text,
-        )]*self.multi
+        ), self.multi)]
 
     def __repr__(self) -> str:
         return f"MonsterAttackStencil(name={self.name}, text={self.text}, dmg={self.dmg}, acc={self.acc}, " \

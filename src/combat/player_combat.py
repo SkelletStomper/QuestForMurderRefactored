@@ -1,4 +1,4 @@
-from src.combat.combat_basics import attack_dodged
+
 from src.combat.auto_combat import AutoCombat, AutoCombatant
 from src.combat.player_combatant import PlayerCombatant, PlayerCombatChoice
 from src.entities.npc import Entity

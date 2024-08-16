@@ -568,9 +568,6 @@
       "It bites you very often, and while one bite does just hurt, many bites kill you. You are dead."
     ],
     "hp_max": 10,
-    "dmg" : 6,
-    "crt": 1,
-    "acc": 1,
     "dodge": 3,
     "armor": {
       "skin": 0
