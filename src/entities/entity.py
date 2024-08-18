@@ -2,6 +2,7 @@ from src.localization.pronouns import PronounSet
 from src.localization.localized_entity import LocalizedEntity
 from src.base.flag import Flag
 from src.combat.attack import Attack
+from src.items.armor import ArmorMaterial
 
 import logging
 logger = logging.getLogger(__name__)
@@ -59,6 +60,9 @@ class Entity:
             dmg_factor *= flag.weaknesses.attack_factor(attack.types)
 
         return dmg_factor
+
+    def armor_layers(self) -> dict[ArmorMaterial, int]:
+        return self.armor
 
     def calculate_effective_armor(self, attack: Attack) -> int:
         armor_sum = 0

@@ -1,3 +1,4 @@
+from items.armor import ArmorMaterial
 from src.entities.entity import Entity
 from src.items.inventory import Inventory, Item
 from src.items.weapon import WeaponAttackStencil
@@ -46,16 +47,27 @@ class NPC(Entity):
         equip_effects = self.inventory.calculate_bonus()
         return equip_effects.granted_attacks
 
-    def calculate_effective_armor(self, attack: Attack) -> int:
-
-        armor_sum = super().calculate_effective_armor(attack)
-
+    def armor_layers(self) -> dict[ArmorMaterial, int]:
+        armor = super().armor_layers()
         equip_effects = self.inventory.calculate_bonus()
         for armor_type, armor_value in equip_effects.armor.items():
+            if not armor_type in armor.keys():
+                armor[armor_type] = 0
+            armor[armor_type] += armor_value
+
+        return armor
+
+
+    def calculate_effective_armor(self, attack: Attack) -> int:
+
+        armor_sum = 0
+
+        for armor_type, armor_value in self.armor_layers():
             factor = armor_type.effective_factor(attack.types)
             armor_sum += armor_value*factor
 
         return round(armor_sum)
+
 
     def __repr__(self) -> str:
         return f"NPC(name={self.name}, title={self.title}, pronouns={self.pronouns}, " \
