@@ -15,7 +15,8 @@ class NPC(Entity):
                  accuracy: int = 0,
                  armor: dict[str, int] = None,
                  flags: list[str] | None = None,
-                 species: str = "spec_human"
+                 species: str = "spec_human",
+                 inventoryCopy: Inventory|None = None,
                  ) -> None:
 
         if armor is None:
@@ -34,7 +35,10 @@ class NPC(Entity):
         )
 
         self.hp = self.hp_max
-        self.inventory: Inventory = Inventory(self)
+        if inventoryCopy is None:
+            self.inventory: Inventory = Inventory(self)
+        else:
+            self.inventory = inventoryCopy
 
     def calculate_dmg_factor(self, attack: Attack) -> float:
         """
@@ -54,7 +58,6 @@ class NPC(Entity):
             if not armor_type in armor.keys():
                 armor[armor_type] = 0
             armor[armor_type] += armor_value
-
         return armor
 
 

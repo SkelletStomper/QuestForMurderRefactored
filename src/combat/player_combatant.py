@@ -3,7 +3,7 @@ from src.combat.combat_basics import Attack
 from src.combat.npc_combatant import NPCCombatant
 from src.localization.localized_entity import LocalizedEntity
 from src.items.inventory_dialogue import InventoryDialogue
-from src.entities.npc import NPC, Entity
+from src.entities.npc import NPC
 
 
 from enum import Enum
@@ -61,11 +61,12 @@ class PlayerCombatant(NPCCombatant):
     def get_le(self) -> LocalizedEntity:
 
         return LocalizedEntity(
-            entity=Entity(name="you",
-                          pronouns="2nd_singular",
-                          flags=[flag.name for flag in self.npc.flags],
-                          species=self.npc.species.id,
-                          )
+            entity=NPC(name="you",  # type: ignore
+                       pronouns="2nd_singular",
+                       flags=[flag.name for flag in self.npc.flags],
+                       species=self.npc.species.id,
+                       inventoryCopy=self.npc.inventory
+                       )
         )
 
     def status_message(self):

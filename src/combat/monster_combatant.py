@@ -83,4 +83,4 @@ class MonsterCombatant(Combatant):
         return self.monster
 
     def __repr__(self) -> str:
-        return f"MonsterCombatant(hp= {self.hp}, monster= {self.monster}"
+        return f"MonsterCombatant(hp={self.hp}, monster={self.monster})"
