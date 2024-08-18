@@ -14,15 +14,15 @@ class WeaponAttackStencil:
         self.crt: float = in_dict["crt"]
         self.types: list[AttackType] = [AttackType(attack_type) for attack_type in in_dict["types"]]
 
-    def generate_attack(self) -> Attack:
+    def generate_attack(self) -> list[tuple[Attack, int]]:
         """Generate an attack from this stencil."""
-        return Attack(
+        return [(Attack(
             dmg=self.dmg,
             acc=self.acc,
             crt=self.crt,
             types=self.types,
             atk_str=self.text,
-        )
+        ), 1)]
 
     def info(self) -> str:
         type_list = [attack_type.value for attack_type in self.types]

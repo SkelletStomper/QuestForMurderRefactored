@@ -20,7 +20,7 @@ class MonsterAttackStencil:
         else:
             self.multi = 1
 
-    def generate_attacks(self) -> [tuple[Attack, int]]:
+    def generate_attacks(self) -> list[tuple[Attack, int]]:
         """
         Return a list of Attacks fitted after the Attack Stencil.
         """

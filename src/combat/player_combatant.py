@@ -40,7 +40,7 @@ class PlayerCombatant(NPCCombatant):
             else:
                 print("Please make a valid choice.")
 
-    def attack_dialogue(self) -> list[Attack] | None:
+    def attack_dialogue(self) -> list[tuple[Attack, int]] | None:
         equip_effects = self.npc.inventory.calculate_bonus()
         stencils = equip_effects.granted_attacks
         player_input = ""
@@ -52,6 +52,6 @@ class PlayerCombatant(NPCCombatant):
             player_input = input(">:")
             index = int(player_input)-1
             if 0 <= index < len(stencils):
-                return [stencils[index].generate_attack()]
+                return stencils[index].generate_attack()
 
         return None

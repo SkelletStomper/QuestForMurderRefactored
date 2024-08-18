@@ -7,9 +7,9 @@ from src.combat.player_combat import PlayerCombatant, PlayerCombat
 
 def main():
 
-	m1 = mp["goblin1"]
+	m1 = mp["moth"]
 
-	jane = NPC(name="Mary Sue", pronouns="3rd_she")
+	jane = NPC(name="Mary Sue", pronouns="3rd_she", hp_max=30)
 
 	inv = jane.inventory
 
