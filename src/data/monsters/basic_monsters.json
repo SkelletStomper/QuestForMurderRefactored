@@ -278,11 +278,11 @@
       "attack1": {
         "name": "Flail Bash",
         "text": {
-          "wind_up": "",
-          "on_hit": "{atk.name} attack{atk.s} {def.name} with {atk.poss_adjective} flail!",
-          "on_kill": "",
-          "on_dodge": "",
-          "on_armor_save": ""
+          "wind_up": "{atk.name} hold{atk.s} {atk.poss_adjective} flail high above {atk.poss_adjective} head in preparation for a vicious strike.",
+          "on_hit": "{atk.name} strike{atk.s} {def.name} with {atk.poss_adjective} wooden flail.",
+          "on_kill": "{atk.name} strikes{atk.s} {def.name}, and bash{atk.es} in {def.poss_adjective} head!",
+          "on_dodge": "{def.name} avoids {atk.owns} flail strike.",
+          "on_armor_save": "{atk.owns} flail strike falls flat against {def.owns} armor."
         },
         "dmg" : 4,
         "crt": 1.0,
@@ -293,11 +293,11 @@
       "attack2": {
         "name": "Sickle Strike",
         "text": {
-          "wind_up": "",
+          "wind_up": "{atk.name} hold{atk.s} in front of {atk.object}, ready to strike.",
           "on_hit": "{atk.name} slashes at {def.name}, leaving a nasty cut!",
           "on_kill": "{atk.name} slit{atk.s} {def.owns} throat with {atk.poss_adjective} sickle!",
-          "on_dodge": "",
-          "on_armor_save": ""
+          "on_dodge": "{atk.name} miss{atk.es} {def.name} in blind rage.",
+          "on_armor_save": "{def.name} deflect{def.s} the sickle strike."
         },
         "dmg" : 3,
         "crt": 1.0,
@@ -330,11 +330,11 @@
       "attack1": {
         "name": "butter-up",
         "text": {
-          "wind_up": "",
+          "wind_up": "{atk.name} grit{atk.s} {atk.poss_adjective} teeth and tighten{atk.s} {atk.poss_adjective} grip around the butter knife.",
           "on_hit": "{atk.name} grab{atk.s} {def.owns} arm and saws at it with {atk.poss_adjective} butter knife!",
           "on_kill": "{atk.name} grab{atk.s} {def.owns} arm and saws at it with {atk.poss_adjective} butter knife! Finally, the arm comes off and {def.name} dies of {def.blood} loss!",
-          "on_dodge": "",
-          "on_armor_save": ""
+          "on_dodge": "The butter on {atk.owns} knife causes the attack to slip away.",
+          "on_armor_save": "Since {def.name} is not made of butter, the butter knife doesn't do any damage."
         },
         "dmg" : 6,
         "crt": 1.0,
@@ -367,11 +367,11 @@
       "attack1": {
         "name": "Snake Bite",
         "text": {
-          "wind_up": "",
+          "wind_up": "{atk.name} coil{atk.s} up, ready to fling {atk.reflexive} out and bite.",
           "on_hit": "{atk.name} bite{atk.s} {def.name} in the thigh! Luckily for {def.object}, {atk.name} {atk.are} poisonous, not venomous!",
-          "on_kill": "",
-          "on_dodge": "",
-          "on_armor_save": ""
+          "on_kill": "{atk.name} bite{atk.s} {def.name} in the neck, and severe{atk.s} {def.poss_adjective} jugular!",
+          "on_dodge": "{def.name} swat{def.s} {atk.owns} attack away.",
+          "on_armor_save": "{atk.owns} teeth fail to penetrate {def.owns} {def.top_armor}"
         },
         "dmg" : 4,
         "crt": 1.0,
