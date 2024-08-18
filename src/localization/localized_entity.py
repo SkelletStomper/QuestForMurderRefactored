@@ -69,5 +69,11 @@ class LocalizedEntity:
     def blood(self) -> str:
         return self.entity.species.blood
 
+    @property
+    def top_armor(self) -> str:
+        armors = self.entity.armor_layers()
+        best = max(armors, key=armors.get)
+        return best.name
+
     def __repr__(self) -> str:
         return f"LocalizedEntity(name={self._name}, title={self._title}, plural={self._plural}, pronouns={self._pronouns})"
