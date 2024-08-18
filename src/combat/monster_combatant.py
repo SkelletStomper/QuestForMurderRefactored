@@ -37,7 +37,7 @@ class MonsterCombatant(Combatant):
         """Let the monster defend against the Attack, giving it chance to dodge and applying damage if it.
         Returns true if the attack does damage, false if not."""
 
-        le = self.monster.get_le()
+        le = self.get_le()
         accuracy = attack.acc
         dodge = self.monster.dodge
 
@@ -76,11 +76,11 @@ class MonsterCombatant(Combatant):
         return self.hp > 0
 
     def status_message(self) -> None:
-        le = self.monster.get_le()
+        le = self.get_le()
         print(f"{le.name} has {self.hp} hit points left!".capitalize())
 
     def get_pilot(self) -> Monster:
         return self.monster
 
     def __repr__(self) -> str:
-        return f"MonsterCombatant(hp= {self.hp}, monster: {self.monster}"
+        return f"MonsterCombatant(hp= {self.hp}, monster= {self.monster}"

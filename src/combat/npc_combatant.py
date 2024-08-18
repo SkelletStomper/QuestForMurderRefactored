@@ -25,7 +25,7 @@ class NPCCombatant(Combatant):
         """Let the NPC defend against the Attack, giving it chance to dodge and applying damage if it.
         Returns true if the attack does damage, false if not."""
 
-        le = self.npc.get_le()
+        le = self.get_le()
         accuracy = attack.acc
         dodge = self.npc.dodge
 
@@ -65,7 +65,7 @@ class NPCCombatant(Combatant):
         return self.npc.hp > 0
 
     def status_message(self):
-        le = self.npc.get_le()
+        le = self.get_le()
         print(capitalize_first(f"{le.name} has {self.npc.hp} hit points left!"))
 
     def get_pilot(self):

@@ -6,11 +6,12 @@ from src.combat.attack import Attack
 import logging
 logger = logging.getLogger(__name__)
 
+
 class Entity:
     def __init__(self,
                  name: str,
-                 title: str,
-                 pronouns: str,
+                 title: str = "",
+                 pronouns: str = "3rd_they",
                  hp_max: int = 10,
                  dodge: int = 0,
                  accuracy: int = 0,
