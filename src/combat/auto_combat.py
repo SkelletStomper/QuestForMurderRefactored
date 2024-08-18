@@ -47,12 +47,13 @@ class AutoCombat:
         led = defender.get_le()
 
         logger.info(f"Starting attack sequence with {lea.name} attacking {led.name}")
-        for attack in attacker.get_attacks():
+        for attack, attack_count in attacker.get_attacks():
             self.print_attack(attack.atk_str.wind_up, attacker, defender)
-            message = defender.defense(attack)
-            self.print_attack(message, attacker, defender)
-            if not defender.is_alive:
-                continue
+            for _ in range(attack_count):
+                message = defender.defense(attack)
+                self.print_attack(message, attacker, defender)
+                if not defender.is_alive:
+                    continue
         defender.status_message()
 
     @staticmethod

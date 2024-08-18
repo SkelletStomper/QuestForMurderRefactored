@@ -27,12 +27,13 @@ class PlayerCombat(AutoCombat):
             if do == PlayerCombatChoice.INT_ACTION:
                 logger.info("Turn was spent without attacking")
             elif do == PlayerCombatChoice.ATTACKING:
-                for attack in extra:
+                for attack, attack_count in extra:
                     self.print_attack(attack.atk_str.wind_up, pl, op)
-                    message = op.defense(attack)
-                    self.print_attack(message, pl, op)
-                    if not op.is_alive:
-                        continue
+                    for _ in range(attack_count):
+                        message = op.defense(attack)
+                        self.print_attack(message, pl, op)
+                        if not op.is_alive:
+                            continue
                 op.status_message()
 
             elif do == PlayerCombatChoice.FLEEING:
