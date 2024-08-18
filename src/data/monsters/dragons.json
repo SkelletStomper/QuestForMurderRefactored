@@ -18,11 +18,11 @@
       "attack1": {
         "name": "Bite",
         "text": {
-          "wind_up": "",
+          "wind_up": "{atk.name} tries to eat {def.name}!",
           "on_hit": "{atk.name} bite{atk.s} a good chunk out of {def.name}!",
           "on_kill": "{atk.name} swallow{atk.s} {def.name} up in whole!",
-          "on_dodge": "",
-          "on_armor_save": ""
+          "on_dodge": "{def.name} escape{def.s} {atk.owns} maw!",
+          "on_armor_save": "{atk.name} spit{atk.s} {def.name} out after deciding {def.object} too hard to chew."
         },
         "dmg" : 30,
         "crt": 1.0,
@@ -33,11 +33,11 @@
       "attack2": {
         "name": "Fire Breath",
         "text": {
-          "wind_up": "",
+          "wind_up": "Flames start playing around {atk.owns} maw.",
           "on_hit": "{atk.name} grills {def.name} in a giant raging inferno!",
-          "on_kill": "",
-          "on_dodge": "",
-          "on_armor_save": ""
+          "on_kill": "{atk.name} grills {def.name} in a giant raging inferno, leaving only a charred corpse!",
+          "on_dodge": "{def.name} barely manage{def.s} to jump out of the fire's way!",
+          "on_armor_save": "The raging inferno does not bother {def.name} at all."
         },
         "dmg" : 20,
         "crt": 1.0,
@@ -48,11 +48,11 @@
       "attack3": {
         "name": "Double Claw Strike",
         "text": {
-          "wind_up": "",
+          "wind_up": "{atk.name} raise{atk.s} two of {atk.poss_adjective} front paws, ready to strike.",
           "on_hit": "{atk.name} swipes {atk.poss_adjective} claws at {def.name} and leaves a bloody trail!",
-          "on_kill": "",
-          "on_dodge": "",
-          "on_armor_save": ""
+          "on_kill": "{atk.name} slice{atk.s} and dice{atk.s} {def.name} into cubes!",
+          "on_dodge": "{atk.name} strike{atk.s} at the ground, rather then {def.name}.",
+          "on_armor_save": "{def.name} takes the full brunt of the attack, fully unfazed!"
         },
         "dmg": 12,
         "crt": 1.2,
