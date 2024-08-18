@@ -371,7 +371,7 @@
           "on_hit": "{atk.name} bite{atk.s} {def.name} in the thigh! Luckily for {def.object}, {atk.name} {atk.are} poisonous, not venomous!",
           "on_kill": "{atk.name} bite{atk.s} {def.name} in the neck, and severe{atk.s} {def.poss_adjective} jugular!",
           "on_dodge": "{def.name} swat{def.s} {atk.owns} attack away.",
-          "on_armor_save": "{atk.owns} teeth fail to penetrate {def.owns} {def.top_armor}"
+          "on_armor_save": "{atk.owns} teeth fail to penetrate {def.owns} {def.top_armor}."
         },
         "dmg" : 4,
         "crt": 1.0,

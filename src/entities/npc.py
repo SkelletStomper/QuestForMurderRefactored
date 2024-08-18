@@ -62,7 +62,7 @@ class NPC(Entity):
 
         armor_sum = 0
 
-        for armor_type, armor_value in self.armor_layers():
+        for armor_type, armor_value in self.armor_layers().items():
             factor = armor_type.effective_factor(attack.types)
             armor_sum += armor_value*factor
 
