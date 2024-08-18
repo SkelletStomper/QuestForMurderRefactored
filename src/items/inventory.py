@@ -1,7 +1,7 @@
 from src.items.items import Item
 from src.items.armor import ArmorSlotType
 
-from src.items.equip_slots import WeaponSlot, ArmorSlot, EquipEffects, NoEquipReason
+from src.items.equip_slots import EquipSlot,slots_from_anatomy,EquipEffects, NoEquipReason
 
 from src.entities.entity import Entity
 
@@ -10,19 +10,16 @@ logger = logging.getLogger(__name__)
 
 
 class Inventory:
-    def __init__(self, owner: Entity):
+    def __init__(self, owner: Entity, slots: list[EquipSlot]|None = None):
         self.owner = owner
-        self.equip_slots = [
-            WeaponSlot(default_weapon_id="fists"),
-            ArmorSlot(ArmorSlotType.HEAD),
-            ArmorSlot(ArmorSlotType.CHEST),
-            ArmorSlot(ArmorSlotType.LEGS),
-            ArmorSlot(ArmorSlotType.HANDS),
-            ArmorSlot(ArmorSlotType.FEET),
-        ]
+        if slots is None:
+            self.equip_slots = slots_from_anatomy(owner.species.anatomy)
+        else:
+            self.slots = slots
 
         self.item_capacity = 20
         self.items: list[Item] = []
+
 
     def calculate_bonus(self) -> EquipEffects:
         equip_effects = EquipEffects()

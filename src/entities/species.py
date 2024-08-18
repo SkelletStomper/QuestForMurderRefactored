@@ -26,6 +26,9 @@ class Anatomy:
             enum_part = BodyPart(body_part)
             self.parts[enum_part] = count
 
+    def __getitem__(self, part: BodyPart) -> int:
+        return self.parts[part]
+
     def __repr__(self) -> str:
         str_list = [f"{part.value}={count}" for part, count in self.parts.values() if part > 0]
 
