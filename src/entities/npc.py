@@ -16,7 +16,7 @@ class NPC(Entity):
                  armor: dict[str, int] = None,
                  flags: list[str] | None = None,
                  species: str = "spec_human",
-                 inventoryCopy: Inventory|None = None,
+                 inventoryCopy: Inventory | None = None,
                  ) -> None:
 
         if armor is None:

@@ -2,6 +2,7 @@
 class Entity:
     pass
 
+
 class LocalizedEntity:
     def __init__(self, entity: Entity):
         self.entity = entity
