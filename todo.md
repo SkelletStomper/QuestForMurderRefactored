@@ -1,6 +1,5 @@
 # TODO
 
-
 ## NPCs
 - Stats (Str, Dex, Int, etc)
 
@@ -17,6 +16,10 @@
 ## Special effects
 - custom "scripting" language for attack effects
 - Effects on equipment, on attack, on attack for enemy, etc
+
+
+## Dialogue
+- JSON type for: dialogue
 
 ## Travel
 - JSON types for: Locations, Encounters, Loot
