@@ -1,0 +1,42 @@
+{
+  "dialogue_choice": {
+    "json_type": "dialogue",
+    "dialogue_type" : "choice",
+    "entry": false,
+    "text": [],
+    "choices": {
+      "choice_name": {
+        "text": "",
+        "response": [],
+        "follow_up": "",
+        "requirements": [],
+        "effects": []
+      }
+    }
+  },
+  "dialogue_conditional": {
+    "json_type": "dialogue",
+    "dialogue_type" : "conditional",
+    "entry": false,
+    "text": [],
+    "input": {
+      "save_to": "query text"
+    },
+    "path": {
+      "path_name": {
+        "text": [],
+        "follow_up": "",
+        "conditions": [],
+        "effects": []
+      }
+    }
+  },
+  "dialogue_oneway": {
+    "json_type": "dialogue",
+    "dialogue_type": "oneway",
+    "entry": false,
+    "text": [],
+    "follow_up": "",
+    "effects": []
+  }
+}

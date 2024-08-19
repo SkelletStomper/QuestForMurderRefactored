@@ -1,0 +1,96 @@
+{
+  "dialogue_bar_intro1": {
+    "json_type": "dialogue",
+    "dialogue_type": "conditional",
+    "entry": true,
+    "text": [
+      "You find yourself in a dark bar. You don't remember a thing, and are *slightly* confused.",
+      "Your head lays in a puddle of vomit, which reeks of strong spirits.",
+      "The Barkeeper, the only other person in this room, nods to you.",
+      "He says: \"Well, finally awake, are you? Let me introduce myself. I am Deuhtsh, the owner of this nasty little bar. So what is your name?\""
+    ],
+    "input": {
+      "given_name": "Enter a name for yourself. You can change this later, if need be."
+    },
+    "paths": {
+      "nameCopy": {
+        "text": [
+          "\"Are you mocking me? Get out of here!\"",
+          "You quickly leave the room."
+        ],
+        "follow_up": "EXIT",
+        "conditions": [
+          "local.given_name==Deuhtsh,deuhtsh"
+        ]
+      },
+      "nameBlank": {
+        "text": [
+          "\"You say you do not have a name? Well, I got to respect that.\n"
+        ],
+        "follow_up": "dialogue_bar_intro2",
+        "conditions": [
+          "local.given_name==,nameless"
+        ]
+      },
+      "nameStandard": {
+        "text": "\"{local.given_name}, you say? Well, it does not really matter to me.\n",
+        "follow_up": "dialogue_bar_intro2",
+        "conditions": []
+      }
+    }
+  },
+  "dialogue_bar_intro2": {
+    "json_type": "dialogue",
+    "dialogue_type": "choice",
+    "entry": false,
+    "text": [
+      "But I have some good advice for you.",
+      "You have chosen a bad time to wake up from your slumber- Its the evening of bloodlust!",
+      "You have to be very careful, lest you want the monsters to take you...",
+      "What monsters, you ask?"
+    ],
+    "choices": {
+      "yeah": {
+        "text": "Sure! Hit me...",
+        "response": [
+          "\"You know, goblins, animals, and even worse, humans, infested with the bloodlust. The usual stuff.\n",
+          "He looks proud, as if everything was said with that."
+        ],
+        "follow_up": "dialogue_bar_intro3"
+      },
+      "nope": {
+        "text": "Not really...",
+        "response": [
+          "\"As you want... have it your way.\n"
+        ],
+        "follow_up": "dialogue_bar_intro3",
+        "requirements": []
+      }
+    }
+  },
+  "dialogue_bar_intro3": {
+    "json_type": "dialogue",
+    "dialogue_type": "oneway",
+    "entry": false,
+    "text": [
+      "\"So this is my EPIC quest for you. End the evening of bloodlust by killing monsters.",
+      "For this, I will give you the quest log. With this tool you will be able to quickly remind yourself of your actions.\""
+    ],
+    "follow_up": "dialogue_bar_intro4",
+    "effects": ["quest_add->mainQuest"]
+  },
+  "dialogue_bar_intro4": {
+    "json_type": "dialogue",
+    "dialogue_type": "oneway",
+    "entry": false,
+    "text": [
+      "Once you are finished with this, make sure to return to me.",
+      "I will open a bottle of my really good stuff for you.\"",
+      "After Deuhtsh said this, he takes a huge bottle of whiskey, and drinks it faster than you can look.",
+      "His eyes twist, and he falls backwards. You decide to go."
+    ],
+    "follow_up": "EXIT",
+    "effects": []
+  }
+
+}

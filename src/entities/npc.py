@@ -1,6 +1,6 @@
 from items.armor import ArmorMaterial
 from src.entities.entity import Entity
-from src.items.inventory import Inventory, Item
+from src.items.inventory import Inventory
 from src.items.weapon import WeaponAttackStencil
 from src.combat.combat_basics import Attack
 

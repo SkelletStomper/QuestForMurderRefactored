@@ -21,6 +21,9 @@
 ## Dialogue
 - JSON type for: dialogue
 
+## Quest Log
+- Add viewable Quest log, option to start and finish quests.
+
 ## Travel
 - JSON types for: Locations, Encounters, Loot
 
