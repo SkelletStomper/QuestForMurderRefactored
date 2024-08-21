@@ -6,6 +6,7 @@ from src.data_providers._item_provider import ItemProvider
 from src.data_providers._monster_provider import MonsterProvider
 from src.data_providers._armor_material_provider import ArmorMaterialProvider
 from src.data_providers._species_provider import SpeciesProvider
+from src.data_providers._dialogue_provider import DialogueProvider
 
 import logging
 logger = logging.getLogger(__name__)
@@ -61,5 +62,9 @@ logger.info(item_provider)
 _monster_data = filter_json_type(_all_data, "monster")
 monster_provider = MonsterProvider(_monster_data)
 logger.info(monster_provider)
+
+_dialogue_data = filter_json_type(_all_data, "dialogue")
+dialogue_provider = DialogueProvider(_dialogue_data)
+logger.info(dialogue_provider)
 
 
