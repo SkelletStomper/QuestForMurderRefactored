@@ -8,8 +8,16 @@ class DialogueChoice(Dialogue):
             self.text: str = in_dict["text"]
             self.response: list[str] = in_dict["response"]
             self.follow_up: str = in_dict["follow_up"]
-            self.requirements: list[str] = in_dict["requirements"]
-            self.effects: list[str] = in_dict[""]
+
+            if "requirements" in in_dict:
+                self.requirements: list[str] = in_dict["requirements"]
+            else:
+                self.requirements = []
+
+            if "effects" in in_dict:
+                self.effects: list[str] = in_dict["effects"]
+            else:
+                self.effects = []
 
     def __init__(self, dialogue_id: str, in_dict: dict) -> None:
         super().__init__(dialogue_id, in_dict)
@@ -27,8 +35,8 @@ class DialogueChoice(Dialogue):
             chosen = input(">: ")
 
             index = -1
-            if chosen.isdigit():
-                index = int(chosen)
+            if chosen.isdigit() and 0 <= int(chosen)-1 < len(self.choices):
+                index = int(chosen)-1
             else:
                 dc.print("That is not a valid choice!")
                 continue
