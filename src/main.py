@@ -4,9 +4,12 @@ from src.entities.npc import NPC
 from src.combat.auto_combat import MonsterCombatant
 from src.combat.player_combat import PlayerCombatant, PlayerCombat
 
-
+from src.dialogue import DialogueContext
 def main():
+	dc = DialogueContext()
+	dc.start_dialogue("dialogue_bar_intro1")
 
+	return
 	m1 = mp["snake1"]
 
 	jane = NPC(name="Mary Sue", pronouns="3rd_she", hp_max=30)
