@@ -19,7 +19,7 @@
     "dialogue_type" : "conditional",
     "entry": false,
     "text": [],
-    "path": {
+    "paths": {
       "path_name": {
         "text": [],
         "follow_up": "",
@@ -43,6 +43,7 @@
     "entry": false,
     "text": [],
     "input": "str",
+    "query_prompt": ">: ",
     "follow_up": ""
   }
 }
