@@ -19,9 +19,6 @@
     "dialogue_type" : "conditional",
     "entry": false,
     "text": [],
-    "input": {
-      "save_to": "query text"
-    },
     "path": {
       "path_name": {
         "text": [],
@@ -38,5 +35,12 @@
     "text": [],
     "follow_up": "",
     "effects": []
+  },
+  "dialogue_query": {
+    "json_type" : "dialogue",
+    "dialogue_type": "query",
+    "entry": false,
+    "text": [],
+    "follow_up": ""
   }
 }

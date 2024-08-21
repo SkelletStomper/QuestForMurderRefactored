@@ -20,7 +20,7 @@
         ],
         "follow_up": "EXIT",
         "conditions": [
-          "local[given_name]==Deuhtsh,deuhtsh"
+          "context[given_name]==Deuhtsh||deuhtsh"
         ]
       },
       "nameBlank": {
@@ -29,11 +29,11 @@
         ],
         "follow_up": "dialogue_bar_intro2",
         "conditions": [
-          "local[given_name]==,nameless"
+          "context[given_name]==||nameless"
         ]
       },
       "nameStandard": {
-        "text": "\"{local[given_name]}, you say? Well, it does not really matter to me.\n",
+        "text": "\"{context[given_name]}, you say? Well, it does not really matter to me.\n",
         "follow_up": "dialogue_bar_intro2",
         "conditions": []
       }
