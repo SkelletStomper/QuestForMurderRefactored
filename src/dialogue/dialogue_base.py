@@ -101,10 +101,10 @@ class DialogueChoice(Dialogue):
 class Condition:
     def __init__(self, condition_str: str) -> None:
         """Condition Structure: """
-        self.condition = condition_str
+        self.condition_str = condition_str
 
     def resolve(self, dc: DialogueContext):
-        key, value = self.condition.split("==")
+        key, value = self.condition_str.split("==")
         if "context[" in key:
             key = key[8:-1]
 
@@ -151,5 +151,21 @@ class DialogueConditional(Dialogue):
                 return path.follow_up
 
         raise RuntimeError("None of the paths in DialogueConditional '{self.id}' has its conditions fulfilled!")
+
+
+class DialogueQuery(Dialogue):
+    def __init__(self, dialogue_id: str, in_dict: dict):
+        super().__init__(dialogue_id, in_dict)
+        self.input_query: str = in_dict["input"]
+        self.follow_up: str = in_dict["follow_up"]
+
+    def play(self, dc: DialogueContext) -> str:
+        super().play(dc)
+
+        player_input = input(">: s")
+
+        dc.add_context_variable(self.input_query, player_input)
+
+        return self.follow_up
 
 
