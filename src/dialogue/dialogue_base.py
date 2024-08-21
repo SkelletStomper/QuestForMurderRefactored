@@ -1,10 +1,15 @@
 
+import logging
+logger = logging.getLogger(__name__)
+
+
 class DialogueContext:
     def __init__(self):
         self.context_variables: dict[str, str] = {}
 
     def print(self, text: str):
-        print(text)
+        context = self
+        print(text.format(**locals()))
 
     def add_context_variable(self, key, value):
         self.context_variables[key] = value
@@ -15,8 +20,44 @@ class DialogueContext:
     def has_context_variable(self, key) -> bool:
         return key in self.context_variables
 
+    def start_dialogue(self, dialogue_id: str):
+        from src.data_providers import dialogue_provider as dp
+        dialogue = dp[dialogue_id]
+        if not dialogue.entry:
+            logger.warning(f"Dialogue '{dialogue.id}' is not an entrypoint!")
+        next_dialogue = ""
+        while True:
+            next_dialogue = dialogue.play(self)
+            if next_dialogue == "EXIT":
+                break
+            dialogue = dp[next_dialogue]
+
+
 
 class Dialogue:
+
+    @staticmethod
+    def new_dialogue(dialogue_id: str, dialogue_data: dict):
+        from src.dialogue.dialogue_oneway import DialogueOneWay
+        from src.dialogue.dialogue_choice import DialogueChoice
+        from src.dialogue.dialogue_conditional import DialogueConditional
+        from src.dialogue.dialogue_query import DialogueQuery
+
+        dialogue_type = dialogue_data["dialogue_type"]
+
+        if dialogue_type == "query":
+            dialogue_class = DialogueQuery
+        elif dialogue_type == "oneway":
+            dialogue_class = DialogueOneWay
+        elif dialogue_type == "conditional":
+            dialogue_class = DialogueConditional
+        elif dialogue_type == "choice":
+            dialogue_class = DialogueChoice
+        else:
+            raise ValueError(f"Unknown Dialogue Type: {dialogue_type}")
+
+        return dialogue_class(dialogue_id, dialogue_data)
+
     def __init__(self, dialogue_id: str, in_dict: dict):
         self.id = dialogue_id
         self.entry: bool = in_dict["entry"]
@@ -40,7 +81,9 @@ class Dialogue:
 
     @staticmethod
     def print_text_list(text_list: list[str], dc: DialogueContext):
-        dc.print(text_list[0])
+        if text_list:
+            dc.print(text_list[0])
+
         for line in text_list[1:]:
             input()
             dc.print(line)
