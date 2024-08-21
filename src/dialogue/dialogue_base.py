@@ -75,7 +75,6 @@ class DialogueChoice(Dialogue):
             [self.SingleChoice(choice_name, choice_data)
              for choice_name, choice_data in in_dict["choices"].items()]
 
-
     def play(self, dc: DialogueContext) -> str:
         super().play(dc)
         while True:
@@ -162,7 +161,7 @@ class DialogueQuery(Dialogue):
     def play(self, dc: DialogueContext) -> str:
         super().play(dc)
 
-        player_input = input(">: s")
+        player_input = input(">: ")
 
         dc.add_context_variable(self.input_query, player_input)
 

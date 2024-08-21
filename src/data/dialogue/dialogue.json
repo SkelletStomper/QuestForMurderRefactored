@@ -36,11 +36,13 @@
     "follow_up": "",
     "effects": []
   },
+
   "dialogue_query": {
     "json_type" : "dialogue",
     "dialogue_type": "query",
     "entry": false,
     "text": [],
+    "input": "str",
     "follow_up": ""
   }
 }

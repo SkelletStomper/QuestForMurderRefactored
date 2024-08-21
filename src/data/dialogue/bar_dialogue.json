@@ -1,17 +1,34 @@
 {
   "dialogue_bar_intro1": {
     "json_type": "dialogue",
-    "dialogue_type": "conditional",
+    "dialogue_type": "oneway",
     "entry": true,
     "text": [
       "You find yourself in a dark bar. You don't remember a thing, and are *slightly* confused.",
       "Your head lays in a puddle of vomit, which reeks of strong spirits.",
       "The Barkeeper, the only other person in this room, nods to you.",
       "He says: \"Well, finally awake, are you? Let me introduce myself. I am Deuhtsh, the owner of this nasty little bar. So what is your name?\""
+
     ],
-    "input": {
-      "given_name": "Enter a name for yourself. You can change this later, if need be."
-    },
+    "follow_up": "dialogue_bar_intro2"
+  },
+
+  "dialogue_bar_intro2":{
+    "json_type" : "dialogue",
+    "dialogue_type": "query",
+    "entry": false,
+    "text": [],
+    "input": "given_name",
+    "query_prompt": "Enter a name for yourself. You can change this later, if need be.",
+    "follow_up": "dialogue_bar_intro3"
+  },
+
+  "dialogue_bar_intro3": {
+    "json_type": "dialogue",
+    "dialogue_type": "conditional",
+    "entry": false,
+    "text": [],
+
     "paths": {
       "nameCopy": {
         "text": [
@@ -27,19 +44,20 @@
         "text": [
           "\"You say you do not have a name? Well, I got to respect that.\n"
         ],
-        "follow_up": "dialogue_bar_intro2",
+        "follow_up": "dialogue_bar_intro4",
         "conditions": [
           "context[given_name]==||nameless"
         ]
       },
       "nameStandard": {
         "text": "\"{context[given_name]}, you say? Well, it does not really matter to me.\n",
-        "follow_up": "dialogue_bar_intro2",
+        "follow_up": "dialogue_bar_intro4",
         "conditions": []
       }
     }
   },
-  "dialogue_bar_intro2": {
+
+  "dialogue_bar_intro4": {
     "json_type": "dialogue",
     "dialogue_type": "choice",
     "entry": false,
@@ -56,19 +74,19 @@
           "\"You know, goblins, animals, and even worse, humans, infested with the bloodlust. The usual stuff.\n",
           "He looks proud, as if everything was said with that."
         ],
-        "follow_up": "dialogue_bar_intro3"
+        "follow_up": "dialogue_bar_intro5"
       },
       "nope": {
         "text": "Not really...",
         "response": [
           "\"As you want... have it your way.\n"
         ],
-        "follow_up": "dialogue_bar_intro3",
+        "follow_up": "dialogue_bar_intro5",
         "requirements": []
       }
     }
   },
-  "dialogue_bar_intro3": {
+  "dialogue_bar_intro5": {
     "json_type": "dialogue",
     "dialogue_type": "oneway",
     "entry": false,
@@ -76,10 +94,10 @@
       "\"So this is my EPIC quest for you. End the evening of bloodlust by killing monsters.",
       "For this, I will give you the quest log. With this tool you will be able to quickly remind yourself of your actions.\""
     ],
-    "follow_up": "dialogue_bar_intro4",
+    "follow_up": "dialogue_bar_intro6",
     "effects": ["quest_add->mainQuest"]
   },
-  "dialogue_bar_intro4": {
+  "dialogue_bar_intro6": {
     "json_type": "dialogue",
     "dialogue_type": "oneway",
     "entry": false,
