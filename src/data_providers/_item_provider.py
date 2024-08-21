@@ -18,8 +18,10 @@ class ItemProvider:
             add_item = None
             if item_type == "armor":
                 add_item = Armor(item_id, item)
-            if item_type == "weapon":
+            elif item_type == "weapon":
                 add_item = Weapon(item_id, item)
+            else:
+                raise ValueError(f"Unknown Item Type: {item_type}")
 
             self.items[item_id] = add_item
 
