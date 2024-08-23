@@ -8,8 +8,11 @@ class DialogueContext:
         self.context_variables: dict[str, str] = {}
 
     def print(self, text: str):
-        context = self
-        print(text.format(**locals()))
+        context = self.context_variables
+        try:
+            print(text.format(**locals()))
+        except ValueError as ve:
+            logger.critical(f"Encountered ValueError when parsing following text: {text}")
 
     def add_context_variable(self, key, value):
         self.context_variables[key] = value
@@ -33,9 +36,7 @@ class DialogueContext:
             dialogue = dp[next_dialogue]
 
 
-
 class Dialogue:
-
     @staticmethod
     def new_dialogue(dialogue_id: str, dialogue_data: dict):
         from src.dialogue.dialogue_oneway import DialogueOneWay
@@ -70,6 +71,7 @@ class Dialogue:
         """
         Executes a dialogue part in a given context. Returns the next dialogue ID, or EXIT if the dialogue is over.
         """
+        logger.debug(f"Started dialogue: {self.id}")
         # must return string in subclasses
         self.print_text_list(self.text, dc)
 

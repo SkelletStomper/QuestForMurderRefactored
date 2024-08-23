@@ -5,6 +5,11 @@ from src.combat.auto_combat import MonsterCombatant
 from src.combat.player_combat import PlayerCombatant, PlayerCombat
 
 from src.dialogue import DialogueContext
+
+import logging
+logging.basicConfig(level=logging.WARNING)
+
+
 def main():
 	dc = DialogueContext()
 	dc.start_dialogue("dialogue_bar_intro1")
