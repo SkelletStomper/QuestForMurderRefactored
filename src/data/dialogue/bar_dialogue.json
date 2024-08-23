@@ -50,7 +50,9 @@
         ]
       },
       "nameStandard": {
-        "text": "\"{context[given_name]}, you say? Well, it does not really matter to me.\n",
+        "text": [
+          "\"{context[given_name]}, you say? Well, it does not really matter to me.\n"
+        ],
         "follow_up": "dialogue_bar_intro4",
         "conditions": []
       }
