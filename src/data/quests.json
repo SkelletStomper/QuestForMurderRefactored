@@ -5,7 +5,7 @@
     "stages": {
       "name": "",
       "description": "",
-      "quest_status": "IN_PROGRESS|SUCCESS|FAILURE",
+      "quest_status": "NOT_STARTED",
       "following": []
     }
   },
@@ -43,8 +43,6 @@
         "description": "After defeating the foul beast in front of the bar, nothing is stopping {pl.object} from going into the bar.",
         "quest_status": "IN_PROGRESS",
         "following": ["end_drunk_reward", "kill_barkeep"]
-
-
       },
       "end_drunk_reward": {
         "name": "Drunk the 'really good stuff'",
