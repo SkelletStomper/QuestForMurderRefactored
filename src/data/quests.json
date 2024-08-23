@@ -1,0 +1,27 @@
+{
+  "quest": {
+    "name": "",
+    "description": "",
+    "stages": {
+      "name": "",
+      "description": "",
+      "quest_status": "IN_PROGRESS|SUCCESS|FAILURE"
+    }
+  },
+  "quest_barkeep_main": {
+    "name": "End the evening of bloodlust",
+    "description": "Deuhtsh requested that {pl.subject} end the evening of bloodlust.",
+    "stages": {
+      "start": {
+        "name": "Seek out monsters to kill.",
+        "description": "When {pl.subject} woke up in that bar, the barkeep had a strange request for {pl.object}. {pl.subject} should roam the world and kill and blood-infested monsters that we come across. However, he didn't give {pl.object} any directions...",
+        "quest_status": "IN_PROGRESS"
+      },
+      "return": {
+        "name": "Return to Deuhtsh's bar in the starting village.",
+        "description": "That should have been enough monsters/various other poor creatures of questionable morality. {pl.subject} should return to the bar now, to claim {subject.poss_adjective} promised bottle of 'The really good stuff'.",
+        "quest_status": "IN_PROGRESS"
+      }
+    }
+  }
+}
