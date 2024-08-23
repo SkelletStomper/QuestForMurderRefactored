@@ -18,8 +18,9 @@
 - Effects on equipment, on attack, on attack for enemy, etc
 
 
-## Dialogue
-- JSON type for: dialogue
+## Dialogue (Done)
+- JSON type for: dialogue (Done)
+- Dialogue System - Conditionals, Queries, Choices (Done)
 
 ## Quest Log
 - Add viewable Quest log, option to start and finish quests.
