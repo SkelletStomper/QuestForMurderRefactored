@@ -5,7 +5,8 @@
     "stages": {
       "name": "",
       "description": "",
-      "quest_status": "IN_PROGRESS|SUCCESS|FAILURE"
+      "quest_status": "IN_PROGRESS|SUCCESS|FAILURE",
+      "following": []
     }
   },
   "quest_barkeep_main": {
@@ -15,13 +16,54 @@
       "start": {
         "name": "Seek out monsters to kill.",
         "description": "When {pl.subject} woke up in that bar, the barkeep had a strange request for {pl.object}. {pl.subject} should roam the world and kill and blood-infested monsters that we come across. However, he didn't give {pl.object} any directions...",
-        "quest_status": "IN_PROGRESS"
+        "quest_status": "IN_PROGRESS",
+        "following": ["return"]
       },
       "return": {
         "name": "Return to Deuhtsh's bar in the starting village.",
         "description": "That should have been enough monsters/various other poor creatures of questionable morality. {pl.subject} should return to the bar now, to claim {subject.poss_adjective} promised bottle of 'The really good stuff'.",
-        "quest_status": "IN_PROGRESS"
+        "quest_status": "IN_PROGRESS",
+        "following": ["find_other_way", "kill_guardian"]
+      },
+      "find_other_way": {
+        "name": "Find a different Way into the bar.",
+        "description": "The tunnel leading to the bar's cellar seems to have collapsed. {pl.subject} have to find another way in.",
+        "quest_status": "IN_PROGRESS",
+        "following": ["kill_guardian"]
+      },
+
+      "kill_guardian": {
+        "name": "Kill the massive beast guarding the bar.",
+        "description": "A massive beast appeared, which seems to be guarding the bar. Guess this drink Deuhtsh offered is more popular than {pl.subject} thought... There is no way around killing it.",
+        "quest_status": "IN_PROGRESS",
+        "following": ["claim_reward"]
+      },
+      "claim_reward": {
+        "name": "Claim the promised bottle of 'the really good stuff'.",
+        "description": "After defeating the foul beast in front of the bar, nothing is stopping {pl.object} from going into the bar.",
+        "quest_status": "IN_PROGRESS",
+        "following": ["end_drunk_reward", "kill_barkeep"]
+
+
+      },
+      "end_drunk_reward": {
+        "name": "Drunk the 'really good stuff'",
+        "description": "As {pl.poss_adjective} lips touched the glass, {pl.poss_adjective} vision blurred and {pl.object} got sleepy... Perfect time for a nap.",
+        "quest_status": "SUCCESS"
+      },
+      "kill_barkeep": {
+        "name": "Kill the perpetrator behind the evening of bloodlust - Blood-Drunk Deuhtsh.",
+        "description": "As it turned out, Deuhtsh was the one responsible for the evening of bloodlust all along. Knowing that, {pl.poss_adjective} final target for completing the quest should be obvious.",
+        "quest_status": "IN_PROGRESS",
+        "following": ["end_killed_barkeep"]
+      },
+
+      "end_killed_barkeep" : {
+        "name": "Killed Blood-Drunk Deuhtsh and put an end to the evening of bloodlust.",
+        "description": "{pl.subject} killed Deuhtsh, who was responsible for the evening of Bloodlust. With that, the lands are free from the curse!",
+        "quest_status": "SUCCESS"
       }
+
     }
   }
 }
