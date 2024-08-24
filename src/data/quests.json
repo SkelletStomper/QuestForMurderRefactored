@@ -4,10 +4,12 @@
     "name": "",
     "description": "",
     "stages": {
-      "name": "",
-      "description": "",
-      "quest_status": "NOT_STARTED",
-      "following": []
+      "stage_id": {
+        "name": "",
+        "description": "",
+        "quest_status": "NOT_STARTED",
+        "following": []
+      }
     }
   },
   "quest_barkeep_main": {
