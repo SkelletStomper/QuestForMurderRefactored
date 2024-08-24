@@ -54,6 +54,8 @@ class Monster(Entity):
         self.info: str = in_dict["information"]
         self.death_messages: list[str] = in_dict["death_messages"]
 
+        self.speed = in_dict["speed"]
+
         self.attacks: dict[str, MonsterAttackStencil] = \
             {attack_name: MonsterAttackStencil(attack_data)
              for attack_name, attack_data

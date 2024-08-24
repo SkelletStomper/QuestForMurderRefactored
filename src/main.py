@@ -20,8 +20,7 @@ def main():
 	ql.set_quest_stage("quest_barkeep_main", "start")
 	ql.quest_dialogue()
 
-	return
-	m1 = mp["snake1"]
+	m1 = mp["silvermoth"]
 
 	jane = NPC(name="Mary Sue", pronouns="3rd_she", hp_max=30)
 

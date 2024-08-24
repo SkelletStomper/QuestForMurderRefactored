@@ -10,6 +10,7 @@
     "death_messages": [],
     "hp_max": 0,
     "dodge": 0,
+    "speed": 0,
     "armor": {
       "skin": 0
     },
@@ -58,6 +59,7 @@
     ],
     "hp_max": 250,
     "dodge": -3,
+    "speed": 4,
     "armor": {
       "skin": 4
     },
@@ -100,6 +102,7 @@
     ],
     "hp_max": 12,
     "dodge": 0,
+    "speed": 1,
     "armor": {
       "skin": 0
     },
@@ -138,6 +141,7 @@
     "death_messages": ["The cat *mistakes* you for a sofa, and completely scratches your skin of. You are dead."],
     "hp_max": 16,
     "dodge": -2,
+    "speed": -1,
     "armor": {
       "skin": 1,
       "armat_fat": 3
@@ -178,6 +182,7 @@
     ],
     "hp_max": 11,
     "dodge": 0,
+    "speed": 0,
     "armor": {
       "skin": 0
     },
@@ -231,6 +236,7 @@
     ],
     "hp_max": 4,
     "dodge": 3,
+    "speed": 5,
     "armor": {
       "skin": 0
     },
@@ -270,6 +276,7 @@
     ],
     "hp_max": 10,
     "dodge": 0,
+    "speed": 2,
     "armor": {
       "skin": 0,
       "armat_leather": 1
@@ -323,6 +330,7 @@
     ],
     "hp_max": 15,
     "dodge": 1,
+    "speed": 2,
     "armor": {
       "skin": 2
     },
@@ -360,6 +368,7 @@
     ],
     "hp_max": 12,
     "dodge": 2,
+    "speed": 1,
     "armor": {
       "skin": 1
     },
@@ -399,6 +408,7 @@
     ],
     "hp_max": 16,
     "dodge": 3,
+    "speed": 3,
     "armor": {
       "skin": 0
     },
@@ -437,6 +447,7 @@
     ],
     "hp_max": 25,
     "dodge": -3,
+    "speed": 0,
     "armor": {
       "skin": 0,
       "armat_fat": 4
@@ -476,6 +487,7 @@
     ],
     "hp_max": 10,
     "dodge": 2,
+    "speed": 1,
     "armor": {
       "skin": 0,
       "armat_leather": 3
@@ -531,6 +543,7 @@
     ],
     "hp_max": 21,
     "dodge": 2,
+    "speed": 3,
     "armor": {
       "skin": 0
     },
@@ -557,7 +570,7 @@
     "flags": ["poisonous", "blood_possessed"]
   },
 
-  "moth": {
+  "silvermoth": {
     "json_type": "monster",
     "species": "spec_insect",
     "title": "the",
@@ -569,6 +582,7 @@
     ],
     "hp_max": 10,
     "dodge": 3,
+    "speed": 2,
     "armor": {
       "skin": 0
     },
@@ -591,11 +605,11 @@
       "attack2": {
         "name": "Silver Scales",
         "text": {
-          "wind_up": "",
-          "on_hit": "{def.name} inhale{def.s} the scales that {atk.name} spread in the air!",
-          "on_kill": "",
-          "on_dodge": "",
-          "on_armor_save": ""
+          "wind_up": "{atk.name} spread{atk.s} tons of {atk.poss_adjective} silvery scales in the air!",
+          "on_hit": "{def.name} inhale{def.s} the scales that {atk.name} spread in the air.",
+          "on_kill": "{def.name} suffocates on the scales that {atk.name} spread in the air!",
+          "on_dodge": "{def.name} hold{def.s} {def.poss_adjective} breath and goes through the scales unharmed.",
+          "on_armor_save": "{def.owns} iron lung makes short process of the inhaled scales."
         },
         "dmg" : 2,
         "crt": 1.0,

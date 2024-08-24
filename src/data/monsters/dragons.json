@@ -11,6 +11,7 @@
     ],
     "hp_max": 100,
     "dodge": 0,
+    "speed": 5,
     "armor": {
       "skin": 7
     },
