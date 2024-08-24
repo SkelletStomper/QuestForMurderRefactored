@@ -22,11 +22,17 @@ class QuestLog:
 
         self.quest_stages[quest_id] = stage_id
 
+    def quest_counts(self) -> dict[QuestStatus, int]:
+        return {
+            QuestStatus.IN_PROGRESS: len(qp.get_by_status(QuestStatus.IN_PROGRESS, self.quest_stages)),
+            QuestStatus.SUCCESS: len(qp.get_by_status(QuestStatus.SUCCESS, self.quest_stages)),
+            QuestStatus.FAILURE: len(qp.get_by_status(QuestStatus.FAILURE, self.quest_stages)),
+            QuestStatus.NOT_STARTED: len(qp.get_by_status(QuestStatus.NOT_STARTED, self.quest_stages)),
+        }
+
     def quest_dialogue(self) -> None:
 
-        count_p = len(qp.get_by_status(QuestStatus.IN_PROGRESS, self.quest_stages))
-        count_s = len(qp.get_by_status(QuestStatus.SUCCESS, self.quest_stages))
-        count_f = len(qp.get_by_status(QuestStatus.FAILURE, self.quest_stages))
+        counts = self.quest_counts()
 
         currently_viewing = QuestStatus.IN_PROGRESS
         old_viewing = None
@@ -36,7 +42,9 @@ class QuestLog:
                 quests = qp.get_by_status(currently_viewing, self.quest_stages)
             old_viewing = currently_viewing
 
-            print(f"In (P)rogress - {count_p} | (S)uccess - {count_s} | (F)ailure - {count_f} \n")
+            print(f"In (P)rogress - {counts[QuestStatus.IN_PROGRESS]} "
+                  f"| (S)uccess - {counts[QuestStatus.SUCCESS]} "
+                  f"| (F)ailure - {counts[QuestStatus.FAILURE]} \n")
             if len(quests) > 0:
                 for i, quest in enumerate(quests):
                     print(f"({i+1}): {quest.name}")
@@ -56,7 +64,7 @@ class QuestLog:
             elif player_input == "0":
                 return
 
-            if player_input.isdigit() and 0 <= int(player_input)-1 < len(quests):
+            elif player_input.isdigit() and 0 <= int(player_input)-1 < len(quests):
                 index = int(player_input)-1
                 quest: Quest = quests[index]
                 print(quest.name)
@@ -66,3 +74,8 @@ class QuestLog:
                 print(f"Current Stage: {stage.name}")
                 print(stage.description)
                 print(f"Status: {stage.quest_status.value} \n")
+
+            else:
+                print("Invalid answer, please try again!")
+
+
