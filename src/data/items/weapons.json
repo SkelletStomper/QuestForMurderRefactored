@@ -167,9 +167,9 @@
         "text": {
           "wind_up": "{atk.name} start{atk.s} chanting a spell from {atk.poss_adjective} spell book!",
           "on_hit":  "The air in front of {atk.name} ignites, catching {def.name} inside and burning {def.object} superficially.",
-          "on_kill":  "The air in front of {atk.name} ignites, catching {def.name} inside and burning {def.object} to a crisp!.",
+          "on_kill":  "The air in front of {atk.name} ignites, catching {def.name} inside and burning {def.object} to a crisp!",
           "on_dodge": "{def.name} leaps out of the way of the ensuing combustion!",
-          "on_armor_save": ""
+          "on_armor_save": "{def.owns} {def.top_armor} is too thick for {def.object} to be bothered by the flames."
         },
         "dmg": 2,
         "acc": 5,
