@@ -23,6 +23,11 @@ class QuestLog:
         self.quest_stages[quest_id] = stage_id
 
     def quest_dialogue(self) -> None:
+
+        count_p = len(qp.get_by_status(QuestStatus.IN_PROGRESS, self.quest_stages))
+        count_s = len(qp.get_by_status(QuestStatus.SUCCESS, self.quest_stages))
+        count_f = len(qp.get_by_status(QuestStatus.FAILURE, self.quest_stages))
+
         currently_viewing = QuestStatus.IN_PROGRESS
         old_viewing = None
         quests = []
@@ -31,7 +36,7 @@ class QuestLog:
                 quests = qp.get_by_status(currently_viewing, self.quest_stages)
             old_viewing = currently_viewing
 
-            print("In (P)rogress | (S)uccess | (F)ailure \n")
+            print(f"In (P)rogress - {count_p} | (S)uccess - {count_s} | (F)ailure - {count_f} \n")
             if len(quests) > 0:
                 for i, quest in enumerate(quests):
                     print(f"({i+1}): {quest.name}")
