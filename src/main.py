@@ -6,13 +6,19 @@ from src.combat.player_combat import PlayerCombatant, PlayerCombat
 
 from src.dialogue import DialogueContext
 
+from src.quests.quest_log import QuestLog
+
 import logging
 logging.basicConfig(level=logging.WARNING)
 
 
 def main():
-	dc = DialogueContext()
-	dc.start_dialogue("dialogue_bar_intro1")
+	#dc = DialogueContext()
+	#dc.start_dialogue("dialogue_bar_intro1")
+
+	ql = QuestLog()
+	ql.set_quest_stage("quest_barkeep_main", "start")
+	ql.quest_dialogue()
 
 	return
 	m1 = mp["snake1"]

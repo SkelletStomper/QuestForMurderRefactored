@@ -32,8 +32,12 @@ class QuestLog:
             old_viewing = currently_viewing
 
             print("In (P)rogress | (S)uccess | (F)ailure \n")
-            for i, quest in enumerate(quests):
-                print(f"({i+1}): {quest.name}")
+            if len(quests) > 0:
+                for i, quest in enumerate(quests):
+                    print(f"({i+1}): {quest.name}")
+            else:
+                print("Currently no quests in this Status.")
+
             print("(0): Back")
 
             player_input = input(">:").upper()
