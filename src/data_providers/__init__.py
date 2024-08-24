@@ -31,6 +31,12 @@ for filename in _filenames:
         _all_data[key] = value
 
 
+def load_quests():
+    from src.data_providers._quest_provider import QuestProvider
+    _quest_data = filter_json_type(_all_data, "quest")
+    new_quest_provider = QuestProvider(_quest_data)
+    logger.info(new_quest_provider)
+    return new_quest_provider
 
 
 def load_pronouns():

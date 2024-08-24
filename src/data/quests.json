@@ -1,5 +1,6 @@
 {
   "quest": {
+    "json_type": "quest",
     "name": "",
     "description": "",
     "stages": {
@@ -10,6 +11,7 @@
     }
   },
   "quest_barkeep_main": {
+    "json_type": "quest",
     "name": "End the evening of bloodlust",
     "description": "Deuhtsh requested that {pl.subject} end the evening of bloodlust.",
     "stages": {
