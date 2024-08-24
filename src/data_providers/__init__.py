@@ -1,13 +1,5 @@
 from src.util.read_data import get_all_filenames, read_json_data
 
-from src.data_providers._pronoun_provider import PronounProvider
-from src.data_providers._flag_provider import FlagProvider
-from src.data_providers._item_provider import ItemProvider
-from src.data_providers._monster_provider import MonsterProvider
-from src.data_providers._armor_material_provider import ArmorMaterialProvider
-from src.data_providers._species_provider import SpeciesProvider
-from src.data_providers._dialogue_provider import DialogueProvider
-
 import logging
 logger = logging.getLogger(__name__)
 
@@ -39,32 +31,78 @@ for filename in _filenames:
         _all_data[key] = value
 
 
-_pronoun_data = filter_json_type(_all_data, "pronouns")
-pronoun_provider = PronounProvider(_pronoun_data)
-logger.info(pronoun_provider)
 
-_flag_data = filter_json_type(_all_data, "flag")
-flag_provider = FlagProvider(_flag_data)
-logger.info(flag_provider)
 
-_armat_data = filter_json_type(_all_data, "armor_material")
-armat_provider = ArmorMaterialProvider(_armat_data)
-logger.info(armat_provider)
+def load_pronouns():
+    from src.data_providers._pronoun_provider import PronounProvider
+    _pronoun_data = filter_json_type(_all_data, "pronouns")
+    new_pronoun_provider = PronounProvider(_pronoun_data)
+    logger.info(new_pronoun_provider)
+    return new_pronoun_provider
 
-_species_data = filter_json_type(_all_data, "species")
-species_provider = SpeciesProvider(_species_data)
-logger.info(species_provider)
 
-_item_data = filter_json_type(_all_data, "item")
-item_provider = ItemProvider(_item_data)
-logger.info(item_provider)
+def load_flags():
+    from src.data_providers._flag_provider import FlagProvider
+    _flag_data = filter_json_type(_all_data, "flag")
+    new_flag_provider = FlagProvider(_flag_data)
+    logger.info(new_flag_provider)
+    return new_flag_provider
 
-_monster_data = filter_json_type(_all_data, "monster")
-monster_provider = MonsterProvider(_monster_data)
-logger.info(monster_provider)
 
-_dialogue_data = filter_json_type(_all_data, "dialogue")
-dialogue_provider = DialogueProvider(_dialogue_data)
-logger.info(dialogue_provider)
+def load_armats():
+    from src.data_providers._armor_material_provider import ArmorMaterialProvider
+    _armat_data = filter_json_type(_all_data, "armor_material")
+    new_armat_provider = ArmorMaterialProvider(_armat_data)
+    logger.info(new_armat_provider)
+    return new_armat_provider
+
+
+def load_species():
+    from src.data_providers._species_provider import SpeciesProvider
+    _species_data = filter_json_type(_all_data, "species")
+    new_species_provider = SpeciesProvider(_species_data)
+    logger.info(new_species_provider)
+    return new_species_provider
+
+
+def load_items():
+    from src.data_providers._item_provider import ItemProvider
+    _item_data = filter_json_type(_all_data, "item")
+    new_item_provider = ItemProvider(_item_data)
+    logger.info(new_item_provider)
+    return new_item_provider
+
+
+def load_monsters():
+    from src.data_providers._monster_provider import MonsterProvider
+    _monster_data = filter_json_type(_all_data, "monster")
+    new_monster_provider = MonsterProvider(_monster_data)
+    logger.info(new_monster_provider)
+    return new_monster_provider
+
+
+def load_dialogue():
+    from src.data_providers._dialogue_provider import DialogueProvider
+    _dialogue_data = filter_json_type(_all_data, "dialogue")
+    new_dialogue_provider = DialogueProvider(_dialogue_data)
+    logger.info(new_dialogue_provider)
+    return new_dialogue_provider
+
+
+quest_provider = load_quests()
+
+pronoun_provider = load_pronouns()
+
+flag_provider = load_flags()
+
+armat_provider = load_armats()
+
+species_provider = load_species()
+
+item_provider = load_items()
+
+monster_provider = load_monsters()
+
+dialogue_provider = load_dialogue()
 
 
