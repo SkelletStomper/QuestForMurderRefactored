@@ -19,6 +19,3 @@ class EffectHandler:
         keyword = split[0]
         parameters = split[1].split(",")
         return keyword, parameters
-
-
-

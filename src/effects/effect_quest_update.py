@@ -12,6 +12,3 @@ class EffectQuestUpdate(Effect):
         stage_id = self.parameters[1]
 
         quest_log.set_quest_stage(quest_id, stage_id)
-
-
-

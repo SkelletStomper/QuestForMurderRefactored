@@ -89,5 +89,3 @@ class Dialogue:
         for line in text_list[1:]:
             input()
             dc.print(line)
-
-
