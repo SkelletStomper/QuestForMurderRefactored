@@ -13,19 +13,12 @@ logging.basicConfig(level=logging.WARNING)
 
 
 def main():
-	#dc = DialogueContext()
-	#dc.start_dialogue("dialogue_bar_intro1")
-
-	ql = gs.get_quest_log()
-	ql.set_quest_stage("quest_barkeep_main", "start")
-	#ql.quest_dialogue()
+	dc = DialogueContext()
+	dc.start_dialogue("dialogue_bar_intro1")
 
 	m1 = mp["silvermoth"]
 
 	jane = gs.get_player()
-
-
-	# InventoryDialogue(inv).dialogue()
 
 	combat = PlayerCombat(PlayerCombatant(jane), MonsterCombatant(m1))
 	combat.combat()

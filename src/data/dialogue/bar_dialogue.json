@@ -97,7 +97,7 @@
       "For this, I will give you the quest log. With this tool you will be able to quickly remind yourself of your actions.\""
     ],
     "follow_up": "dialogue_bar_intro6",
-    "effects": ["quest_set->quest_barkeep_main,start"]
+    "effects": ["quest_update->quest_barkeep_main,start"]
   },
   "dialogue_bar_intro6": {
     "json_type": "dialogue",
