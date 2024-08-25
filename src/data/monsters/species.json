@@ -72,7 +72,7 @@
 
     "blood": "blood",
     "skin": "armat_skin_humanoid",
-    "flags": ["sees", "hears", "intelligent"],
+    "flags": ["sees", "hears"],
     "weaknesses": {}
   },
   "spec_humanoid_tall":
