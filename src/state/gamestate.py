@@ -37,3 +37,12 @@ class GameState:
         inv.add(legs)
 
         return player
+
+    def get_quest_log(self) -> QuestLog:
+        return self.quest_log
+
+    def get_player(self) -> NPC:
+        return self.player
+
+
+global_state = GameState()
