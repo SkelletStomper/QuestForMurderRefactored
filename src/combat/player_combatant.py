@@ -5,6 +5,8 @@ from src.localization.localized_entity import LocalizedEntity
 from src.items.inventory_dialogue import InventoryDialogue
 from src.entities.npc import NPC
 
+from src.state.gamestate import global_state as gs
+
 
 from enum import Enum
 from typing import Any
@@ -27,7 +29,8 @@ class PlayerCombatant(NPCCombatant):
             print("What do you want to do?")
             print("(1): Attack")
             print("(2): Inventory")
-            print("(3): Flee")
+            print("(3): Other")
+            print("(4): Flee")
             choice: str = input(">: ").lower()
             if choice in ["1", "(1)", "atk", "attack"]:
                 attacks = self.attack_dialogue()
@@ -37,7 +40,9 @@ class PlayerCombatant(NPCCombatant):
                 took_turn = InventoryDialogue(self.npc.inventory, timed=True).dialogue()
                 if took_turn:
                     return PlayerCombatChoice.INT_ACTION, None
-            elif choice in ["3", "{3}", "flee", "run"]:
+            elif choice in ["3", "(3)", "other", "more"]:
+                self.other_dialogue()
+            elif choice in ["4", "(4)", "flee", "run"]:
                 return PlayerCombatChoice.FLEEING, None
             else:
                 print("Please make a valid choice.")
@@ -58,6 +63,20 @@ class PlayerCombatant(NPCCombatant):
                     return stencils[index].generate_attack()
 
         return None
+
+    @staticmethod
+    def other_dialogue():
+        while True:
+            print("There are more options!")
+            print("(1): View Quest log")
+            print("(0): Back")
+            player_input = input(">: ").lower()
+            if player_input in ["1", "(1)", "quest"]:
+                gs.get_quest_log().quest_dialogue()
+            elif player_input in ["0", "(0)", "back", "return"]:
+                return
+            else:
+                print("That is not a valid answer.")
 
     def get_le(self) -> LocalizedEntity:
 
