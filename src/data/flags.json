@@ -31,20 +31,6 @@
       "DARKNESS": 0.9
     }
   },
-  "demon": {
-    "json_type": "flag",
-    "description": "Related to hell-dwellers.",
-    "weaknesses": {
-      "PHYSICAL": 0.9,
-      "FIRE": 0.9,
-      "FROST": 0.9,
-      "CURSE": 0.5,
-      "HOLY": 1.5,
-      "LIGHT": 1.3,
-      "DARKNESS": 0.1
-
-    }
-  },
 
   "child": {
     "json_type": "flag",
