@@ -1,3 +1,4 @@
+from src.effects import EffectHandler
 
 import logging
 logger = logging.getLogger(__name__)
@@ -78,8 +79,10 @@ class Dialogue:
         if self.effects:
             self.apply_affects(self.effects)
 
-    def apply_affects(self, effects: list[str]):
-        pass  # not yet implemented
+    @staticmethod
+    def apply_affects(effects: list[str]):
+        for effect in effects:
+            EffectHandler.handle(effect)
 
     @staticmethod
     def print_text_list(text_list: list[str], dc: DialogueContext):

@@ -7,10 +7,11 @@ class EffectHandler:
         EffectQuestUpdate.keyword: EffectQuestUpdate
     }
 
-    def handle(self, effect_str: str):
-        keyword, parameters = self.parse(effect_str)
+    @staticmethod
+    def handle(effect_str: str):
+        keyword, parameters = EffectHandler.parse(effect_str)
 
-        to_execute = self.registered_effects[keyword]
+        to_execute = EffectHandler.registered_effects[keyword]
         to_execute(parameters).execute()
 
     @staticmethod
