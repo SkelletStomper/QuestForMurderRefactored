@@ -7,7 +7,7 @@
       "You find yourself in a dark bar. You don't remember a thing, and are *slightly* confused.",
       "Your head lays in a puddle of vomit, which reeks of strong spirits.",
       "The Barkeeper, the only other person in this room, nods to you.",
-      "He says: \"Well, finally awake, are you? Let me introduce myself. I am Deuhtsh, the owner of this nasty little bar. So what is your name?\""
+      "He says: \"Hey, you're finally awake. Let me introduce myself. I am Deuhtsh, the owner of this nasty little bar. So what is your name?\""
 
     ],
     "follow_up": "dialogue_bar_intro2"
@@ -97,7 +97,7 @@
       "For this, I will give you the quest log. With this tool you will be able to quickly remind yourself of your actions.\""
     ],
     "follow_up": "dialogue_bar_intro6",
-    "effects": ["quest_add->mainQuest"]
+    "effects": ["quest_set->quest_barkeep_main,start"]
   },
   "dialogue_bar_intro6": {
     "json_type": "dialogue",
