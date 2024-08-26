@@ -21,6 +21,20 @@ class AttackType(Enum):
     LIGHT = 'LIGHT'
     DARKNESS = 'DARKNESS'
 
+    HEALING = 'HEALING'
+
+
+def init_default_armor_effectiveness():
+    _default_armor_effectiveness = {
+        attack_type: 1.0 for attack_type in AttackType
+    }
+    _default_armor_effectiveness[AttackType.HEALING] = 0.0
+
+    return _default_armor_effectiveness
+
+
+default_armor_effectiveness = init_default_armor_effectiveness()
+
 
 class WeaknessSet:
     """
