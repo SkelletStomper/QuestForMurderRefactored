@@ -61,7 +61,7 @@ class Combatant:
                 self.heal(dmg)
                 logger.debug(f"HP of {le.name} increased by {dmg}, from {self.hp+dmg} to {self.hp}")
 
-            print(capitalize_first("{le.name} got hit for {dmg} damage!"))
+            print(capitalize_first(f"{le.name} got hit for {dmg} damage!"))
             if self.hp > 0:
                 return attack.atk_str.on_hit
             else:
@@ -84,7 +84,6 @@ class Combatant:
         self.hp = min(self.hp + amount, self.get_pilot().hp_max)
 
     def damage(self, amount: int):
-
         self.hp -= amount
 
     def is_alive(self) -> bool:
@@ -98,9 +97,9 @@ class Combatant:
         pass  # abstract
 
     @property
-    def hp(self):
+    def hp(self) -> int:
         pass  # abstract
 
     @hp.setter
-    def hp(self, value):
+    def hp(self, value) -> None:
         pass  # abstract
