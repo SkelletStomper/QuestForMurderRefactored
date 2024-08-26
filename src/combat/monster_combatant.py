@@ -1,4 +1,4 @@
-from src.combat.combat_basics import Combatant, attack_dodged
+from src.combat.combat_basics import Combatant
 from src.combat.attack import Attack
 from src.entities.monster import Monster, MonsterAttackStencil
 from src.localization.l_string import LString
@@ -11,9 +11,17 @@ logger = logging.getLogger(__name__)
 class MonsterCombatant(Combatant):
     def __init__(self, monster: Monster) -> None:
         self.monster = monster
-        self.hp = self.monster.hp_max
+        self._hp = self.monster.hp_max
 
-    def get_attacks(self) -> list[Attack]:
+    @property
+    def hp(self):
+        return self._hp
+
+    @hp.setter
+    def hp(self, value: int):
+        self._hp = value
+
+    def get_attacks(self) -> list[tuple[Attack, int]]:
         """
         Receive a list of Attacks from the Monster that can be used by a different combatant to defend against.
         Randomly picks one of the monsters "attack"-attacks, and multiplies it in case of a multi-attack.
@@ -32,41 +40,6 @@ class MonsterCombatant(Combatant):
         attacks = attack_stencil.generate_attacks()
         logger.debug(f"Chose following attacks for {le.name}: {attacks}")
         return attacks
-
-    def defense(self, attack: Attack) -> LString:
-        """Let the monster defend against the Attack, giving it chance to dodge and applying damage if it.
-        Returns true if the attack does damage, false if not."""
-
-        le = self.get_le()
-        accuracy = attack.acc
-        dodge = self.monster.dodge
-
-        if attack_dodged(accuracy, dodge):
-            logger.debug(f"Attack was dodged by {le.name}")
-            return attack.atk_str.on_dodge
-
-        dmg_factor = self.monster.calculate_dmg_factor(attack)
-        dmg = round(attack.dmg*dmg_factor)
-        effective_armor = self.monster.calculate_effective_armor(attack)
-        dmg -= effective_armor
-
-        logger.debug(f"Received Damage Before Crit: round({attack.dmg}*{dmg_factor})- {self.monster.armor} = {dmg}")
-
-        if dmg > 0:
-            logger.debug(f"Crit-Adjusted damage: round({dmg}*{attack.crt}) = {dmg * attack.crt}")
-            dmg = round(dmg*attack.crt)
-
-            self.hp -= dmg
-            logger.debug(f"HP of {le.name} reduced by {dmg}, from {self.hp+dmg} to {self.hp}")
-
-            print(f"{le.name} got hit for {dmg} damage!".capitalize())
-            if self.hp > 0:
-                return attack.atk_str.on_hit
-            else:
-                return attack.atk_str.on_kill
-        else:
-            logger.debug(f"Damage <= 0, no damage taken by {le.name}")
-            return attack.atk_str.on_armor_save
 
     def get_le(self):
         return self.monster.get_le()
