@@ -42,8 +42,14 @@ class WeaknessSet:
     For each Attack type, a float factor is defined with a default of 1.0.
     """
 
-    def __init__(self, str_dict: dict[str, float]) -> None:
-        weaknesses = {attack_type: 1.0 for attack_type in AttackType}
+    def __init__(self, str_dict: dict[str, float], armor = False) -> None:
+        if not armor:
+            weaknesses = {attack_type: 1.0 for attack_type in AttackType}
+        else:
+            weaknesses = {
+                attack_type: value for attack_type, value
+                in default_armor_effectiveness.items()
+            }
 
         for weakness, factor in str_dict.items():
             if isinstance(factor, int):

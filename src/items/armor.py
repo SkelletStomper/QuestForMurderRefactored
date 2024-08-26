@@ -18,7 +18,7 @@ class ArmorMaterial:
         self.id = armat_id
         self.name = in_dict["name"]
         self.description = in_dict["description"]
-        self._efficiencies = WeaknessSet(in_dict["armor_efficiency"])
+        self._efficiencies = WeaknessSet(in_dict["armor_efficiency"], armor = True)
 
     def effective_factor(self, type_list: list[AttackType]):
         return self._efficiencies.attack_factor(type_list)
