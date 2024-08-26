@@ -1,5 +1,11 @@
 from src.entities.npc import NPC
 from src.quests.quest_log import QuestLog
+from enum import Enum
+
+
+class CurrentActivity(Enum):
+    FIGHTING = "FIGHTING"
+    TALKING = "TALKING"
 
 
 class GameState:
@@ -18,7 +24,7 @@ class GameState:
     def init_player(self) -> NPC:
         from src.data_providers import item_provider as ip
 
-        player = NPC(name="Mary Sue", pronouns="3rd_she", hp_max=30, species="spec_feline")
+        player = NPC(name="Mary Sue", pronouns="3rd_she", hp_max=30, species="spec_human")
 
         inv = player.inventory
 
