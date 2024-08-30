@@ -1,0 +1,103 @@
+{
+  "location": {
+    "json_type": "location",
+    "name": "",
+    "description": "",
+    "monster_pool": "monsterpool_nothing",
+    "interactive": {
+      "": {
+        "name": "",
+        "description": "",
+        "conditions": [],
+        "effects": []
+      }
+    },
+    "exits": {
+      "": {
+        "name": "",
+        "description": "",
+        "conditions": [],
+        "leads_to": "location"
+      }
+    }
+  },
+  "location_bar": {
+    "json_type": "location",
+    "name": "Deuhtsh's Bar",
+    "description": "An old, run-down bar and the only building still intact in midst of a village reduces to rubble.",
+    "monster_pool": "monsterpool_nothing",
+    "interactive": {
+      "talk_barkeep": {
+        "name": "Talk to Deuhtsh",
+        "description": "Talk to Deuhtsh standing behind the counter.",
+        "conditions": [],
+        "effects": ["dialogue_start->dialogue_bar_entrypoint"]
+      },
+      "enter_class_room": {
+        "name": "Enter the equipment room",
+        "description": "",
+        "conditions": [],
+        "effects": ["dialogue_start->dialogue_bar_equipment"]
+      }
+    },
+    "exits": {
+      "village_exit": {
+        "name": "Front Door",
+        "description": "The front door of the bar. Peeking through the tiny peep hole, some devastated buildings can be seen.",
+        "conditions": [],
+        "leads_to": "location_village"
+      },
+      "cellar_exit": {
+        "name": "Dusty Hatch",
+        "description": "An old, dusty hatch. The padlock keeping it shut can be opened with Deuhtsh's key.",
+        "conditions": ["global[hatch_key_acquired]==True"],
+        "leads_to": "location_cellar"
+      }
+    }
+  },
+  "location_village": {
+    "json_type": "location",
+    "name": "Village Ruins",
+    "description": "This village has been destroyed by a gigantic beast, it's footprints carved deep into the soil. The beast itself, however, is nowhere to be seen.",
+    "monster_pool": "monsterpool_village",
+    "interactive": {},
+    "exits": {
+      "bar_exit": {
+        "name": "Door to the Bar",
+        "description": "The bar's front door is littered with claw marks and slashes, but held strong against the assaults of the blood-possessed masses.",
+        "conditions": ["global[guardian_lock]==False"],
+        "leads_to": "location_bar"
+      },
+      "grassland_exit": {
+        "name": "Path to the great grasslands",
+        "description": "A trampled path leads out of the village, and into the great grasslands.",
+        "conditions": [],
+        "leads_to": "location_grasslands"
+      }
+    }
+  },
+  "location_cellar": {
+    "json_type": "location",
+    "name": "Cellar",
+    "description": "A dusty cellar Deuhtsh once used to store food and booze. He hasn't cleaned here in ages...",
+    "monster_pool": "monsterpool_cellar",
+    "interactive": {
+      "": {
+        "name": "",
+        "description": "",
+        "conditions": [],
+        "effects": []
+      }
+    },
+    "exits": {
+      "": {
+        "name": "",
+        "description": "",
+        "conditions": [],
+        "leads_to": "location"
+      }
+    }
+  }
+}
+
+
