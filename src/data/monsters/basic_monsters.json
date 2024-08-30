@@ -47,7 +47,7 @@
     "flags": ["blood_possessed"]
   },
 
-  "village_guardian": {
+  "monster_village_guardian": {
     "json_type": "monster",
     "species": "spec_unknown",
     "title": "the",
@@ -90,7 +90,7 @@
     "flags": ["blood_possessed"]
   },
 
-  "goblin1": {
+  "monster_goblin1": {
     "json_type": "monster",
     "species": "spec_goblin",
     "title": "the",
@@ -131,7 +131,7 @@
     "flags": ["elder"]
   },
 
-  "fat_cat": {
+  "monster_fat_cat": {
     "json_type": "monster",
     "species": "spec_feline",
     "title": "the",
@@ -170,7 +170,7 @@
     "flags": ["blood_possessed"]
   },
 
-  "demon_baby": {
+  "monster_demon_baby": {
     "json_type": "monster",
     "species": "spec_demon",
     "title": "the",
@@ -224,7 +224,7 @@
     "flags": ["child", "fire_explode"]
   },
 
-  "pigeon": {
+  "monster_pigeon": {
     "json_type": "monster",
     "species": "spec_bird",
     "title": "the",
@@ -263,7 +263,7 @@
     "flags": ["blood_possessed"]
   },
 
-  "villager": {
+  "monster_villager": {
     "json_type": "monster",
     "species": "spec_human",
     "title": "the",
@@ -318,7 +318,7 @@
     "flags": ["blood_possessed"]
   },
 
-  "goblin2": {
+  "monster_goblin2": {
     "json_type": "monster",
     "species": "spec_goblin",
     "title": "the",
@@ -356,7 +356,7 @@
     "flags": []
   },
 
-  "snake1": {
+  "monster_snake1": {
     "json_type": "monster",
     "species": "spec_snake",
     "title": "the",
@@ -394,7 +394,7 @@
     "flags": ["poisonous", "blood_possessed"]
   },
 
-  "paperman!": {
+  "monster_paperman!": {
     "json_type": "monster",
     "species": "spec_unknown",
 
@@ -435,7 +435,7 @@
     "flags": []
   },
 
-  "fat_lady": {
+  "monster_fat_lady": {
     "json_type": "monster",
     "species": "spec_human",
     "title": "the",
@@ -475,7 +475,7 @@
     "flags": ["elder", "blood_possessed"]
   },
 
-  "child_soldier": {
+  "monster_child_soldier": {
     "json_type": "monster",
     "species": "spec_human",
     "title": "the",
@@ -531,7 +531,7 @@
     "flags": ["child", "blood_possessed"]
   },
 
-  "rat":  {
+  "monster_rat":  {
     "json_type": "monster",
     "species": "spec_animal",
     "title": "the",
@@ -570,7 +570,7 @@
     "flags": ["poisonous", "blood_possessed"]
   },
 
-  "silvermoth": {
+  "monster_silvermoth": {
     "json_type": "monster",
     "species": "spec_insect",
     "title": "the",

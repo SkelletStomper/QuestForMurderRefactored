@@ -1,5 +1,5 @@
 {
-  "dragon": {
+  "monster_dragon": {
     "json_type": "monster",
     "species": "spec_dragon",
     "title": "the",
