@@ -14,7 +14,7 @@ class ItemProvider:
         logger.info("Start parsing item data")
 
         for item_id, item in item_data.items():
-            item_type = item["json_type"].split(".")[1]
+            item_type = item["item_type"]
             add_item = None
             if item_type == "armor":
                 add_item = Armor(item_id, item)

@@ -1,6 +1,7 @@
 {
   "armor": {
-    "json_type": "item.armor",
+    "json_type": "item",
+    "item_type": "armor",
     "armor_type": "ANY",
     "made_for": "species",
     "name": "",
@@ -11,7 +12,8 @@
     }
   },
   "leather_chest": {
-    "json_type": "item.armor",
+    "json_type": "item",
+    "item_type": "armor",
     "armor_type": "CHEST",
     "made_for": "spec_humanoid_tall",
     "name": "Leather Jacket",
@@ -22,7 +24,8 @@
     }
   },
   "leather_cap": {
-    "json_type": "item.armor",
+    "json_type": "item",
+    "item_type": "armor",
     "armor_type": "HEAD",
     "made_for": "spec_humanoid",
     "name": "Leather Cappy",
@@ -34,7 +37,8 @@
     }
   },
   "leather_pants": {
-    "json_type": "item.armor",
+    "json_type": "item",
+    "item_type": "armor",
     "armor_type": "LEGS",
     "made_for": "spec_humanoid_tall",
     "name": "Leather Pants",
@@ -45,7 +49,8 @@
     }
   },
   "leather_gloves": {
-    "json_type": "item.armor",
+    "json_type": "item",
+    "item_type": "armor",
     "armor_type": "HANDS",
     "made_for": "spec_humanoid_tall",
     "name": "fingerless leather gloves",
@@ -56,7 +61,8 @@
     }
   },
   "leather_boots": {
-    "json_type": "item.armor",
+    "json_type": "item",
+    "item_type": "armor",
     "armor_type": "FEET",
     "made_for": "spec_humanoid_tall",
     "name": "Leather Boots",

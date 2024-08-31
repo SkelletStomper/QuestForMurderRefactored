@@ -14,7 +14,7 @@ def main():
 	dc = DialogueContext()
 	dc.start_dialogue("dialogue_bar_intro1")
 
-	m1 = mp["silvermoth"]
+	m1 = mp["monster_silvermoth"]
 
 	jane = gs.get_player()
 
