@@ -10,7 +10,7 @@ def filter_json_type(all_data, json_type):
     for _key, _value in all_data.items():
         if isinstance(_value, str):
             raise ValueError(f"{_key}: {_value} does not have a dict as value!")
-        if _value["json_type"].startswith(json_type):
+        if _value["json_type"] == json_type:
             right_data[_key] = _value
 
     return right_data
