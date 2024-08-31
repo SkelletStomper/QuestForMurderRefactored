@@ -82,12 +82,13 @@ class InventoryDialogue:
 
             print("(0): Back")
             player_input = input(">: ")
-            index = int(player_input) - 1
-            if 0 <= index <= len(equip_slots):
-                took_turn = self.sub_dialogue_equip(index)
+            if player_input.isdigit():
+                index = int(player_input) - 1
+                if 0 <= index <= len(equip_slots):
+                    took_turn = self.sub_dialogue_equip(index)
 
-                if self.timed and took_turn:
-                    return True
+                    if self.timed and took_turn:
+                        return True
 
         return False
 
