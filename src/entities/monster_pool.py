@@ -4,8 +4,8 @@ import random
 
 class MonsterPool:
     def __init__(self, monster_pool_id: str, init_dict: dict):
-        self.monster_pool_id = monster_pool_id
-        self.monsters = init_dict["monsters"]
+        self.monster_pool_id: str = monster_pool_id
+        self.monsters: list[str] = init_dict["monsters"]
 
 
     def random_monster(self) -> Monster:

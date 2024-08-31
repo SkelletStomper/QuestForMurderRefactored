@@ -94,6 +94,14 @@ def load_dialogue():
     logger.info(new_dialogue_provider)
     return new_dialogue_provider
 
+def load_monster_pools():
+    from src.data_providers._monster_pool_provider import MonsterPoolProvider
+    _monster_pool_data = filter_json_type(_all_data, "monsterpool")
+    new_monster_pool_provider = MonsterPoolProvider(_monster_pool_data)
+    logger.info(new_monster_pool_provider)
+    return new_monster_pool_provider
+
+
 
 quest_provider = load_quests()
 
@@ -110,5 +118,7 @@ item_provider = load_items()
 monster_provider = load_monsters()
 
 dialogue_provider = load_dialogue()
+
+monster_pool_provider = load_monster_pools()
 
 
