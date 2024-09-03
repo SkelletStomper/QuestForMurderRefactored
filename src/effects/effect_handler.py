@@ -1,10 +1,12 @@
 from src.effects.effect_base import Effect
 from src.effects.effect_quest_update import EffectQuestUpdate
+from src.effects.effect_location_change import EffectLocationChange
 
 
 class EffectHandler:
     registered_effects: dict[str, type[Effect]] = {
-        EffectQuestUpdate.keyword: EffectQuestUpdate
+        EffectQuestUpdate.keyword: EffectQuestUpdate,
+        EffectLocationChange.keyword: EffectLocationChange,
     }
 
     @staticmethod
@@ -20,3 +22,7 @@ class EffectHandler:
         keyword = split[0]
         parameters = split[1].split(",")
         return keyword, parameters
+
+def apply_effects(effects: list[str]) -> None:
+    for effect in effects:
+        EffectHandler.handle(effect)
