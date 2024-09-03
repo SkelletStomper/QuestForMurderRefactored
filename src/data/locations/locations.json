@@ -17,7 +17,7 @@
         "name": "",
         "description": "",
         "conditions": [],
-        "leads_to": "location"
+        "effects": ["location_change->location"]
       }
     }
   },
@@ -45,13 +45,13 @@
         "name": "Front Door",
         "description": "The front door of the bar. Peeking through the tiny peep hole, some devastated buildings can be seen.",
         "conditions": [],
-        "leads_to": "location_village"
+        "effects": ["location_change->location_village"]
       },
       "cellar_exit": {
         "name": "Dusty Hatch",
         "description": "An old, dusty hatch. The padlock keeping it shut can be opened with Deuhtsh's key.",
         "conditions": ["global[hatch_key_acquired]==True"],
-        "leads_to": "location_cellar"
+        "effects": ["location_change->location_cellar"]
       }
     }
   },
@@ -66,13 +66,13 @@
         "name": "Door to the Bar",
         "description": "The bar's front door is littered with claw marks and slashes, but held strong against the assaults of the blood-possessed masses.",
         "conditions": ["global[guardian_lock]==False"],
-        "leads_to": "location_bar"
+        "effects": ["location_change->location_bar"]
       },
       "grassland_exit": {
         "name": "Path to the great grasslands",
         "description": "A trampled path leads out of the village, and into the great grasslands.",
         "conditions": [],
-        "leads_to": "location_grasslands"
+        "effects": ["location_change->location_grasslands"]
       }
     }
   },
@@ -82,19 +82,19 @@
     "description": "A dusty cellar Deuhtsh once used to store food and booze. He hasn't cleaned here in ages...",
     "monster_pool": "monsterpool_cellar",
     "interactions": {
-      "": {
-        "name": "",
-        "description": "",
-        "conditions": [],
-        "effects": []
+      "collapsed_exit": {
+        "name": "Collapsed Corridor",
+        "description": "This Corridor leads to the Ladder leading into the bar. However, it collapsed, barring you passage",
+        "conditions": ["global[cellar_exit_collapsed]==True"],
+        "effects": ["dialogue_start->dialogue_clear_collapsed_corridor"]
       }
     },
     "exits": {
-      "": {
-        "name": "",
-        "description": "",
-        "conditions": [],
-        "leads_to": "location"
+      "bar_exit": {
+        "name": "Ladder to the Bar",
+        "description": "This Ladder leads to the hatch in the back of the bar.",
+        "conditions": ["global[cellar_exit_collapsed]==False"],
+        "effects": ["location_change->location_bar"]
       }
     }
   }
