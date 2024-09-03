@@ -101,6 +101,13 @@ def load_monster_pools():
     logger.info(new_monster_pool_provider)
     return new_monster_pool_provider
 
+def load_locations():
+    from src.data_providers._location_provider import LocationProvider
+    _location_data = filter_json_type(_all_data, "location")
+    new_location_provider = LocationProvider(_location_data)
+    logger.info(new_location_provider)
+    return new_location_provider
+
 
 
 quest_provider = load_quests()
@@ -120,5 +127,7 @@ monster_provider = load_monsters()
 dialogue_provider = load_dialogue()
 
 monster_pool_provider = load_monster_pools()
+
+location_provider = load_locations()
 
 

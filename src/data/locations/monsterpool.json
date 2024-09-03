@@ -3,6 +3,12 @@
     "json_type": "monsterpool",
     "monsters": []
   },
+  "monsterpool_nothing": {
+    "json_type": "monsterpool",
+    "monsters": [],
+    "_comment": "This is meant to be a monster pool for locations that have no regular encounters (e.g. the bar)"
+  },
+
   "monsterpool_village": {
     "json_type": "monsterpool",
     "monsters": [
