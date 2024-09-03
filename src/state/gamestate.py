@@ -1,5 +1,6 @@
 from src.entities.npc import NPC
 from src.quests.quest_log import QuestLog
+from src.travel.location import Location
 from enum import Enum
 
 
@@ -15,11 +16,13 @@ class GameState:
 
         self.quest_log: QuestLog = self.init_quest_log()
 
+        self.current_location: Location = None  # type: ignore
+        self.set_location("location_bar")
+
     def init_quest_log(self) -> QuestLog:
         quest_log = QuestLog()
 
         return quest_log
-
 
     def init_player(self) -> NPC:
         from src.data_providers import item_provider as ip
@@ -49,6 +52,10 @@ class GameState:
 
     def get_player(self) -> NPC:
         return self.player
+
+    def set_location(self, location_id: str):
+        from src.data_providers import location_provider as lp
+        self.current_location = lp[location_id]
 
 
 global_state = GameState()
