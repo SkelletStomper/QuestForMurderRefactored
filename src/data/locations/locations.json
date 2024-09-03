@@ -4,7 +4,7 @@
     "name": "",
     "description": "",
     "monster_pool": "monsterpool_nothing",
-    "interactive": {
+    "interactions": {
       "": {
         "name": "",
         "description": "",
@@ -26,7 +26,7 @@
     "name": "Deuhtsh's Bar",
     "description": "An old, run-down bar and the only building still intact in midst of a village reduces to rubble.",
     "monster_pool": "monsterpool_nothing",
-    "interactive": {
+    "interactions": {
       "talk_barkeep": {
         "name": "Talk to Deuhtsh",
         "description": "Talk to Deuhtsh standing behind the counter.",
@@ -60,7 +60,7 @@
     "name": "Village Ruins",
     "description": "This village has been destroyed by a gigantic beast, it's footprints carved deep into the soil. The beast itself, however, is nowhere to be seen.",
     "monster_pool": "monsterpool_village",
-    "interactive": {},
+    "interactions": {},
     "exits": {
       "bar_exit": {
         "name": "Door to the Bar",
@@ -81,7 +81,7 @@
     "name": "Cellar",
     "description": "A dusty cellar Deuhtsh once used to store food and booze. He hasn't cleaned here in ages...",
     "monster_pool": "monsterpool_cellar",
-    "interactive": {
+    "interactions": {
       "": {
         "name": "",
         "description": "",
