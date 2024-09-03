@@ -14,4 +14,7 @@ class MonsterPool:
 
         return mp[monster_id]
 
+    def __repr__(self):
+        return f"MonsterPool({self.monster_pool_id} with {len(self.monsters)} monsters)"
+
 
