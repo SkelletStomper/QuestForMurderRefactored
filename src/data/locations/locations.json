@@ -31,7 +31,7 @@
         "name": "Talk to Deuhtsh",
         "description": "Talk to Deuhtsh standing behind the counter.",
         "conditions": [],
-        "effects": ["dialogue_start->dialogue_bar_entrypoint"]
+        "effects": ["dialogue_start->dialogue_bar_intro1"]
       },
       "enter_class_room": {
         "name": "Enter the equipment room",
