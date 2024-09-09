@@ -1,4 +1,4 @@
-
+from src.effects import apply_effects
 
 
 class Location:
@@ -10,14 +10,11 @@ class Location:
             self.conditions: list[str] = in_dict['conditions']
             self.effects: list[str] = in_dict['effects']
 
-    class Exit:
-        def __init__(self, exit_id: str, in_dict: dict):
-            self.exit_id = exit_id
-            self.name: str = in_dict['name']
-            self.description: str = in_dict['description']
-            self.conditions: list[str] = in_dict['conditions']
-            self.leads_to: str = in_dict['leads_to']
+        def is_availaible(self) -> bool:
+            return True
 
+        def apply_effects(self):
+            apply_effects(self.effects)
 
 
     def __init__(self, location_id: str, in_dict: dict):
@@ -34,9 +31,12 @@ class Location:
             for interactive_id, interactive_data in in_dict["interactions"].items()
         ]
 
-        self.exits: list[Location.Exit] = [
-            Location.Exit(exit_id, exit_data) for exit_id, exit_data in in_dict["exits"].items()
+        self.exits: list[Location.Interactive] = [
+            Location.Interactive(exit_id, exit_data) for exit_id, exit_data in in_dict["exits"].items()
         ]
+
+    def get_monster_id(self):
+        return self.monster_pool.random_monster_id()
 
 
     def __repr__(self):
