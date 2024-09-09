@@ -1,12 +1,14 @@
 from src.effects.effect_base import Effect
 from src.effects.effect_quest_update import EffectQuestUpdate
 from src.effects.effect_location_change import EffectLocationChange
-
+from src.effects.effect_dialogue_start import EffectDialogueStart
 
 class EffectHandler:
     registered_effects: dict[str, type[Effect]] = {
         EffectQuestUpdate.keyword: EffectQuestUpdate,
+
         EffectLocationChange.keyword: EffectLocationChange,
+        EffectDialogueStart.keyword: EffectDialogueStart,
     }
 
     @staticmethod
