@@ -14,7 +14,7 @@ class CurrentActivity(Enum):
 
 class GameState:
     def __init__(self):
-        self.activity = CurrentActivity.IDLE
+        self.activity = CurrentActivity.TRAVELLING
 
         self.player: NPC = self.init_player()
 
