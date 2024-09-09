@@ -14,6 +14,15 @@ class MonsterPool:
 
         return mp[monster_id]
 
+    def random_monster_id(self) -> str:
+
+        monster_id = random.choice(self.monsters)
+
+        return monster_id
+
+    def empty(self):
+        return len(self.monsters) == 0
+
     def __repr__(self):
         return f"MonsterPool({self.monster_pool_id} with {len(self.monsters)} monsters)"
 
