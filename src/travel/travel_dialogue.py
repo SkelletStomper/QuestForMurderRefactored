@@ -28,8 +28,10 @@ class TravelDialogue:
                     gs.start_monster_fight(location.get_monster_id())
             elif player_input in ["2", "(2)", "interact"]:
                 self.interact_dialogue(location.interactions, item_name="Interactions")
+                return
             elif player_input in ["3", "(3)", "leave"]:
                 self.interact_dialogue(location.exits, item_name="Exits")
+                return
             elif player_input in ["0", "(0)", "back"]:
                 return
             else:
