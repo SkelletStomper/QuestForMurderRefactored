@@ -7,34 +7,5 @@
     "json_type": "monsterpool",
     "monsters": [],
     "_comment": "This is meant to be a monster pool for locations that have no regular encounters (e.g. the bar)"
-  },
-
-  "monsterpool_village": {
-    "json_type": "monsterpool",
-    "monsters": [
-      "monster_goblin1",
-      "monster_fat_cat",
-      "monster_demon_baby",
-      "monster_pigeon",
-      "monster_villager"
-    ]
-  },
-  "monsterpool_grasslands": {
-    "json_type": "monsterpool",
-    "monsters": [
-      "monster_goblin2",
-      "monster_snake1",
-      "monster_paperman",
-      "monster_fat_lady",
-      "monster_child_soldier"
-    ]
-  },
-  "monsterpool_cellar": {
-    "json_type": "monsterpool",
-    "monsters": [
-      "monster_rat",
-      "monster_silvermoth"
-    ]
   }
-
 }

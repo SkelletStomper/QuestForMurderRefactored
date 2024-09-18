@@ -1,0 +1,315 @@
+{
+  "monsterpool_village": {
+    "json_type": "monsterpool",
+    "monsters": [
+      "monster_goblin1",
+      "monster_fat_cat",
+      "monster_demon_baby",
+      "monster_pigeon",
+      "monster_villager"
+    ]
+  },
+  "monster_village_guardian": {
+    "json_type": "monster",
+    "species": "spec_unknown",
+    "title": "the",
+    "name": "last guardian",
+    "pronouns": "3rd_it",
+    "information": "This gigantic beast seems to protect the bar. It is really, really big, and has a huge health pool. You want to really kill this one quick.",
+    "death_messages": [
+      "You found an unsurprising end against the village guardian."
+    ],
+    "hp_max": 250,
+    "dodge": -3,
+    "speed": 4,
+    "armor": {
+      "skin": 4
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Leg Smash",
+        "text": {
+          "wind_up": "{atk.name} flex{atk.es} {atk.poss_adjective} leg in preparation of a nasty kick!",
+          "on_hit": "{atk.name} kicks {def.name} with {atk.poss_adjective} massive foreleg!",
+          "on_kill": "{atk.name} kicks {def.name} with {atk.poss_adjective} massive foreleg, and reduces {def.subject} to a pile of flesh and {def.blood}!",
+          "on_dodge": "{def.name} manage{def.s} to narrowly avoid the kick with a desperate leap!",
+          "on_armor_save": "{def.name} simply tank{def.s} the kick with {def.poss_adjective} massive armor!"
+        },
+        "dmg": 35,
+        "crt": 1,
+        "acc": 5,
+        "weight": 1,
+        "types": [
+          "PHYSICAL",
+          "BASHING"
+        ]
+      }
+    },
+    "weaknesses": {
+      "FIRE": 0.7,
+      "PHYSICAL": 0.8
+    },
+    "flags": [
+      "blood_possessed"
+    ]
+  },
+
+  "monster_goblin1": {
+    "json_type": "monster",
+    "species": "spec_goblin",
+    "title": "the",
+    "name": "one-eyed goblin geezer",
+    "pronouns": "3rd_he",
+    "information": "This old, one-eyed Goblin has his best days behind him. Killing him should be no problem. But just think of his remaining family... Do you really want to kill the grandpa of 23 goblin children?",
+    "death_messages": [
+      "You somehow did it. You got defeated by an old cripple of goblin. I would give you an medal, but unfortunately you got eaten by 23 hungry goblin children. You are dead."
+    ],
+    "hp_max": 12,
+    "dodge": 0,
+    "speed": 1,
+    "armor": {
+      "skin": 0
+    },
+    "attacks": {
+      "attack1": {
+        "name": "knuckle sandwich",
+        "text": {
+          "wind_up": "{atk.name} collect{atk.s} {atk.poss_adjective} powers for a punch!",
+          "on_hit": "With what little power is left in {atk.poss_adjective} old bones, {atk.name} hit{atk.s} {def.name} in the face!",
+          "on_kill": "{atk.name} hit{atk.s} {def.name} in the mouth, and {def.name} choke{def.s} and suffocate{def.s} on the knuckle sandwich!",
+          "on_dodge": "{def.name} avoid{def.s} the punch without any trouble.",
+          "on_armor_save": "Due to {def.owns} armor, the hit hurts {atk.name} more than it hurts {def.name}."
+        },
+        "dmg": 4,
+        "crt": 1,
+        "acc": 0,
+        "weight": 1,
+        "types": [
+          "PHYSICAL",
+          "BASHING"
+        ]
+      }
+    },
+    "weaknesses": {
+      "CURSE": 1.3
+    },
+    "flags": [
+      "elder"
+    ]
+  },
+
+  "monster_fat_cat": {
+    "json_type": "monster",
+    "species": "spec_feline",
+    "title": "the",
+    "name": "really fat cat",
+    "pronouns": "3rd_she",
+    "information": "Wow, this cat is REALLY fat. Shes slow, but quite tanky because of her fat belly . Maybe you should try fire?",
+    "death_messages": [
+      "The cat *mistakes* you for a sofa, and completely scratches your skin of. You are dead."
+    ],
+    "hp_max": 16,
+    "dodge": -2,
+    "speed": -1,
+    "armor": {
+      "skin": 1,
+      "armat_fat": 3
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Paw Strike",
+        "text": {
+          "wind_up": "{atk.name} watch{atk.es} {def.name}, waiting for an opportunity to strike.",
+          "on_hit": "{atk.name} coquettishly slashes at {def.name} with {atk.poss_adjective} paw.",
+          "on_kill": "{atk.name} scratches {def.name} too many times to count!",
+          "on_dodge": "{atk.owns} scratch tears up the air, but not much else.",
+          "on_armor_save": "{atk.owns} attack fails to put a scratch into {def.owns} armor."
+        },
+        "dmg": 3,
+        "crt": 1.0,
+        "acc": 0,
+        "weight": 1,
+        "types": [
+          "PHYSICAL",
+          "SLASHING"
+        ]
+      }
+    },
+    "weaknesses": {
+      "BASHING": 0.8,
+      "FIRE": 1.5
+    },
+    "flags": [
+      "blood_possessed"
+    ]
+  },
+
+  "monster_demon_baby": {
+    "json_type": "monster",
+    "species": "spec_demon",
+    "title": "the",
+    "name": "Devilish Suckling",
+    "pronouns": "3rd_it",
+    "information": "This is a baby, possessed by the devil. It doesnt have much health, but explodes when you bring it in contact with fire. So be careful!",
+    "death_messages": [
+      "It thinks you are its Mother! How cute! Except it killed all 243 mothers before. And so you. You are dead."
+    ],
+    "hp_max": 11,
+    "dodge": 0,
+    "speed": 0,
+    "armor": {
+      "skin": 0
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Hex: Weakness",
+        "text": {
+          "wind_up": "{atk.name} call{atk.s} out to {atk.poss_adjective} father in hell for a curse most wicked!",
+          "on_hit": "{atk.name} hex{atk.es} {def.name} with a devilish curse.",
+          "on_kill": "{atk.name} hex{atk.es} {def.name} with a devilish curse, causing {def.poss_adjective} heart to stop!",
+          "on_dodge": "Through divine intervention, {atk.owns} curse is avoided!",
+          "on_armor_save": "{atk.owns} curse is stopped by {def.owns} armor!"
+        },
+        "dmg": 5,
+        "crt": 1.0,
+        "acc": 0,
+        "weight": 1,
+        "types": [
+          "MAGICAL",
+          "CURSE"
+        ]
+      },
+      "fire_explode": {
+        "name": "Rapid Combustion",
+        "text": {
+          "wind_up": "{atk.name} explode{atk.s} violently upon contact with fire!",
+          "on_hit": "{def.name} is caught up in the explosion!",
+          "on_kill": "{def.name} is caught up in the explosion and burnt to a crisp!",
+          "on_dodge": "{def.name} barely manage{def.s} to duck behind a piece of rubble right in time before the explosion!",
+          "on_armor_save": "{def.name} stand{def.s} unfazed, {def.poss_adjective} armor protecting {def.object} from the blast!"
+        },
+        "dmg": 15,
+        "crt": 1.0,
+        "acc": 9,
+        "weight": 0,
+        "types": [
+          "MAGICAL",
+          "FIRE"
+        ]
+      }
+    },
+    "weaknesses": {
+      "FIRE": 50.0
+    },
+    "flags": [
+      "child",
+      "fire_explode"
+    ]
+  },
+
+  "monster_pigeon": {
+    "json_type": "monster",
+    "species": "spec_bird",
+    "title": "the",
+    "name": "pigeon of doom",
+    "pronouns": "3rd_it",
+    "information": "This pigeon is really annoying. In fact, it is so annoying that you just want to kill it. Which is pretty easy, because its an goddamn pigeon.",
+    "death_messages": [
+      "It picks out your eyes, and while stumbling around blindly, you fall with your head into your weapon. You are dead."
+    ],
+    "hp_max": 4,
+    "dodge": 3,
+    "speed": 5,
+    "armor": {
+      "skin": 0
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Eye Peck",
+        "text": {
+          "wind_up": "{atk.name} circle{atk.s} {def.name}, waiting for an opportunity to strike!",
+          "on_hit": "{atk.name} swiftly swoop{atk.s} in and peck{atk.s} at {def.owns} eyes!",
+          "on_kill": "{atk.name} swiftly swoop{atk.s} in, and blinds {def.name}! This leaves {def.object}",
+          "on_dodge": "{atk.name} flies to fast to react when {def.name} move{def.s}, and misses.",
+          "on_armor_save": "{atk.owns} beak does nothing against"
+        },
+        "dmg": 3,
+        "crt": 1.5,
+        "acc": 3,
+        "weight": 1,
+        "types": [
+          "PHYSICAL",
+          "PIERCING"
+        ]
+      }
+    },
+    "weaknesses": {
+    },
+    "flags": [
+      "blood_possessed"
+    ]
+  },
+
+  "monster_villager": {
+    "json_type": "monster",
+    "species": "spec_human",
+    "title": "the",
+    "name": "blood-lusting villager",
+    "pronouns": "3rd_he",
+    "information": "A villager, corrupted by the evening of bloodlust. He has a flail, along with a rusty sickle.",
+    "death_messages": [
+      "He flails your bones to dust. While they are still in your body. You are dead.",
+      "He cuts your throat with his sickle, and lustfully drinks your blood directly out of you carotid artery. You are dead."
+    ],
+    "hp_max": 10,
+    "dodge": 0,
+    "speed": 2,
+    "armor": {
+      "skin": 0,
+      "armat_leather": 1
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Flail Bash",
+        "text": {
+          "wind_up": "{atk.name} hold{atk.s} {atk.poss_adjective} flail high above {atk.poss_adjective} head in preparation for a vicious strike.",
+          "on_hit": "{atk.name} strike{atk.s} {def.name} with {atk.poss_adjective} wooden flail.",
+          "on_kill": "{atk.name} strikes{atk.s} {def.name}, and bash{atk.es} in {def.poss_adjective} head!",
+          "on_dodge": "{def.name} avoids {atk.owns} flail strike.",
+          "on_armor_save": "{atk.owns} flail strike falls flat against {def.owns} armor."
+        },
+        "dmg": 4,
+        "crt": 1.0,
+        "acc": 0,
+        "weight": 2,
+        "types": [
+          "PHYSICAL",
+          "BASHING"
+        ]
+      },
+      "attack2": {
+        "name": "Sickle Strike",
+        "text": {
+          "wind_up": "{atk.name} hold{atk.s} in front of {atk.object}, ready to strike.",
+          "on_hit": "{atk.name} slashes at {def.name}, leaving a nasty cut!",
+          "on_kill": "{atk.name} slit{atk.s} {def.owns} throat with {atk.poss_adjective} sickle!",
+          "on_dodge": "{atk.name} miss{atk.es} {def.name} in blind rage.",
+          "on_armor_save": "{def.name} deflect{def.s} the sickle strike."
+        },
+        "dmg": 3,
+        "crt": 1.0,
+        "acc": 2,
+        "weight": 1,
+        "types": [
+          "PHYSICAL",
+          "SLASHING"
+        ]
+      }
+    },
+    "weaknesses": {
+    },
+    "flags": [
+      "blood_possessed"
+    ]
+  }
+}

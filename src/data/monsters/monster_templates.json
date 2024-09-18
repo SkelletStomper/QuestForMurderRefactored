@@ -1,0 +1,49 @@
+
+{
+  "monster": {
+    "json_type": "monster",
+    "species": "species",
+    "title": "the",
+    "name": "BlankMonster",
+    "pronouns": "3rd_they",
+    "information": "",
+    "death_messages": [],
+    "hp_max": 0,
+    "dodge": 0,
+    "speed": 0,
+    "armor": {
+      "skin": 0
+    },
+    "attacks": {
+      "attack1": {
+        "name": "",
+        "text": {
+          "wind_up": "",
+          "on_hit": "",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
+        "dmg" : 0,
+        "crt": 1.0,
+        "acc": 0,
+        "weight": 1,
+        "types": []
+      }
+    },
+    "weaknesses": {
+      "PHYSICAL": 1.0,
+      "SLASHING": 1.0,
+      "BASHING": 1.0,
+      "PIERCING": 1.0,
+      "MAGICAL": 1.0,
+      "FIRE": 1.0,
+      "FROST": 1.0,
+      "CURSE": 1.0,
+      "HOLY": 1.0,
+      "LIGHT": 1.0,
+      "DARKNESS": 1.0
+    },
+    "flags": ["blood_possessed"]
+  }
+}

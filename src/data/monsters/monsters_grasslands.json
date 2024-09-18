@@ -1,0 +1,225 @@
+{
+  "monsterpool_grasslands": {
+    "json_type": "monsterpool",
+    "monsters": [
+      "monster_goblin2",
+      "monster_snake1",
+      "monster_paperman",
+      "monster_fat_lady",
+      "monster_child_soldier"
+    ]
+  },
+
+  "monster_goblin2": {
+    "json_type": "monster",
+    "species": "spec_goblin",
+    "title": "the",
+    "name": "two-eyed goblin",
+    "pronouns": "3rd_he",
+    "information": "This goblin is a bit tougher than the last one. He will maybe not be that that easy to kill. He also has a butter knife and leather armor!",
+    "death_messages": [
+      "He cuts your head off. You will may ask how he does that with a butter knife? Well, it takes lots of time and is a lot of Pain, but this doesn't matter to you. You are dead."
+    ],
+    "hp_max": 15,
+    "dodge": 1,
+    "speed": 2,
+    "armor": {
+      "skin": 2
+    },
+    "attacks": {
+      "attack1": {
+        "name": "butter-up",
+        "text": {
+          "wind_up": "{atk.name} grit{atk.s} {atk.poss_adjective} teeth and tighten{atk.s} {atk.poss_adjective} grip around the butter knife.",
+          "on_hit": "{atk.name} grab{atk.s} {def.owns} arm and saws at it with {atk.poss_adjective} butter knife!",
+          "on_kill": "{atk.name} grab{atk.s} {def.owns} arm and saws at it with {atk.poss_adjective} butter knife! Finally, the arm comes off and {def.name} dies of {def.blood} loss!",
+          "on_dodge": "The butter on {atk.owns} knife causes the attack to slip away.",
+          "on_armor_save": "Since {def.name} is not made of butter, the butter knife doesn't do any damage."
+        },
+        "dmg" : 6,
+        "crt": 1.0,
+        "acc": 1,
+        "weight": 1,
+        "types": ["PHYSICAL", "SLASHING"]
+      }
+    },
+    "weaknesses": {
+    },
+    "flags": []
+  },
+
+  "monster_snake1": {
+    "json_type": "monster",
+    "species": "spec_snake",
+    "title": "the",
+    "name": "poisonous snake",
+    "pronouns": "3rd_it",
+    "information": "This is an poisonous snake. I think that's nuff said.",
+    "death_messages": [
+      "It tries to strangle you, and you try to bite it. It is poisonous, so you die. You are dead."
+    ],
+    "hp_max": 12,
+    "dodge": 2,
+    "speed": 1,
+    "armor": {
+      "skin": 1
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Snake Bite",
+        "text": {
+          "wind_up": "{atk.name} coil{atk.s} up, ready to fling {atk.reflexive} out and bite.",
+          "on_hit": "{atk.name} bite{atk.s} {def.name} in the thigh! Luckily for {def.object}, {atk.name} {atk.are} poisonous, not venomous!",
+          "on_kill": "{atk.name} bite{atk.s} {def.name} in the neck, and severe{atk.s} {def.poss_adjective} jugular!",
+          "on_dodge": "{def.name} swat{def.s} {atk.owns} attack away.",
+          "on_armor_save": "{atk.owns} teeth fail to penetrate {def.owns} {def.top_armor}."
+        },
+        "dmg" : 4,
+        "crt": 1.0,
+        "acc": 2,
+        "weight": 1,
+        "types": ["PHYSICAL", "PIERCING"]
+      }
+    },
+    "weaknesses": {
+    },
+    "flags": ["poisonous", "blood_possessed"]
+  },
+
+  "monster_paperman!": {
+    "json_type": "monster",
+    "species": "spec_unknown",
+
+    "title": "",
+    "name": "paper-man!",
+    "pronouns": "3rd_they",
+    "information": "This is a superhero, completely out of paper. Their arms are really sharp, so watch out you dont get hit! What can I say except fire?",
+    "death_messages": [
+      "They cut you several times, till you die of wound infection. You are dead.",
+      "Paper cuts are nasty, and hurt like hell. The pain kills you. You are dead."
+    ],
+    "hp_max": 16,
+    "dodge": 3,
+    "speed": 3,
+    "armor": {
+      "skin": 0
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Papercut",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} attacks {def.name} with {atk.poss_adjective} razor-sharp paper arms!",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
+        "dmg" : 6,
+        "crt": 5.0,
+        "acc": 1,
+        "weight": 1,
+        "types": ["PHYSICAL", "SLASHING"]
+      }
+    },
+    "weaknesses": {
+      "FIRE": 420.0
+    },
+    "flags": []
+  },
+
+  "monster_fat_lady": {
+    "json_type": "monster",
+    "species": "spec_human",
+    "title": "the",
+    "name": "really fat old lady",
+    "pronouns": "3rd_she",
+    "information": "Now this is probably the owner of the really fat cat. I think they are fitting very well. So same as the cat. Her name is Agnes, btw.",
+    "death_messages": [
+      "She sits down on you, and you get squished. Yeah, she is REALLY fat. You are dead."
+    ],
+    "hp_max": 25,
+    "dodge": -3,
+    "speed": 0,
+    "armor": {
+      "skin": 0,
+      "armat_fat": 4
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Handbag Batter",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} batter{atk.s} {def.name} over the head with {atk.poss_adjective} ton-heavy handbag!",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
+        "dmg" : 4,
+        "crt": 0.9,
+        "acc": 0,
+        "weight": 1,
+        "types": ["PHYSICAL", "BASHING"]
+      }
+    },
+    "weaknesses": {
+      "FIRE": 1.2
+    },
+    "flags": ["elder", "blood_possessed"]
+  },
+
+  "monster_child_soldier": {
+    "json_type": "monster",
+    "species": "spec_human",
+    "title": "the",
+    "name": "Child Soldier",
+    "pronouns": "3rd_it",
+    "information": "Well, it is a Child. With an AK-47. Its heavy-armored with kevlar, but has a terrible precision. That should be easy, right?",
+    "death_messages": [
+      "It finally manages to shot you in the head. You are dead."
+    ],
+    "hp_max": 10,
+    "dodge": 2,
+    "speed": 1,
+    "armor": {
+      "skin": 0,
+      "armat_leather": 3
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Salvo",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.owns} hastily-shot bullet hits {def.name}",
+          "on_kill": "{atk.owns} hastily-shot bullet hits {def.name}, and hits a vital organ!",
+          "on_dodge": "{atk.owns} hastily-shot bullet misses, unsurprisingly.",
+          "on_armor_save": ""
+        },
+        "dmg" : 5,
+        "crt": 1.3,
+        "acc": -3,
+        "weight": 2,
+        "types": ["PHYSICAL", "PIERCING"],
+        "multi": 3
+      },
+      "attack2": {
+        "name": "Crack Shot",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} take{atk.s} time to land a well-placed shot on {def.name}!",
+          "on_kill": "{atk.name} take{atk.s} time to land a well-placed shot on {def.name}, destroying a vital organ!",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
+        "dmg" : 8,
+        "crt": 1.3,
+        "acc": 0,
+        "weight": 1,
+        "types": ["PHYSICAL", "PIERCING"]
+      }
+    },
+    "weaknesses": {
+
+    },
+    "flags": ["child", "blood_possessed"]
+  }
+}

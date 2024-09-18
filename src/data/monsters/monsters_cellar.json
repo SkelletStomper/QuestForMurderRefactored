@@ -1,0 +1,151 @@
+{
+  "monsterpool_cellar": {
+    "json_type": "monsterpool",
+    "monsters": [
+      "monster_rat",
+      "monster_silvermoth"
+    ]
+  },
+  "monster_rat":  {
+    "json_type": "monster",
+    "species": "spec_animal",
+    "title": "the",
+    "name": "giant rat",
+    "pronouns": "3rd_it",
+    "information": "This is a rat. It is bigger than other rats. Way bigger. Also it is venomous from disease, so beware.",
+    "death_messages": [
+      "Rats eat almost everything, and they also eat dead humans. If they are not dead, they usually not eat them. But at this size, it can just kill its prey. And so it did. You are dead."
+    ],
+    "hp_max": 21,
+    "dodge": 2,
+    "speed": 3,
+    "armor": {
+      "skin": 0
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Fecal bite",
+        "text": {
+          "wind_up": "",
+          "on_hit": "{atk.name} bite{atk.s} {def.name} with {atk.poss_adjective} putrid front teeth!",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
+        "dmg" : 4,
+        "crt": 1.0,
+        "acc": 0,
+        "weight": 1,
+        "types": ["PHYSICAL", "PIERCING"]
+      }
+    },
+    "weaknesses": {
+      "FIRE": 1.35
+    },
+    "flags": ["poisonous", "blood_possessed"]
+  },
+
+  "monster_silvermoth": {
+    "json_type": "monster",
+    "species": "spec_insect",
+    "title": "the",
+    "name": "silvermoth",
+    "pronouns": "3rd_it",
+    "information": "A large moth, as big as your head. Fragile, but hard to hit. It is drawn to the flame like a moth is drawn to the flame. The silvermoth is considered a holy creature by the ",
+    "death_messages": [
+      "It bites you very often, and while one bite does just hurt, many bites kill you. You are dead."
+    ],
+    "hp_max": 10,
+    "dodge": 3,
+    "speed": 2,
+    "armor": {
+      "skin": 0
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Nibble",
+        "text": {
+          "wind_up": "",
+          "on_hit": "",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
+        "dmg" : 6,
+        "crt": 1.0,
+        "acc": 1,
+        "weight": 3,
+        "types": ["PHYSICAL", "PIERCING"]
+      },
+      "attack2": {
+        "name": "Silver Scales",
+        "text": {
+          "wind_up": "{atk.name} spread{atk.s} tons of {atk.poss_adjective} silvery scales in the air!",
+          "on_hit": "{def.name} inhale{def.s} the scales that {atk.name} spread in the air.",
+          "on_kill": "{def.name} suffocates on the scales that {atk.name} spread in the air!",
+          "on_dodge": "{def.name} hold{def.s} {def.poss_adjective} breath and goes through the scales unharmed.",
+          "on_armor_save": "{def.owns} iron lung makes short process of the inhaled scales."
+        },
+        "dmg" : 2,
+        "crt": 1.0,
+        "acc": 2,
+        "weight": 1,
+        "types": ["MAGICAL", "HOLY"],
+        "multi": 4
+      }
+    },
+    "weaknesses": {
+      "FIRE": 1.5
+    },
+    "flags": ["flying","blood_possessed"]
+  },
+
+  "monster": {
+    "json_type": "monster",
+    "species": "species",
+    "title": "the",
+    "name": "beggar",
+    "pronouns": "3rd_she",
+    "information": "Why is there a beggar locked in this cellar? She fights you with a long staff, nothing more than a long stick.",
+    "death_messages": [
+      "She beats you to death with her stick. You are dead."
+    ],
+    "hp_max": 18,
+    "dodge": 0,
+    "speed": 0,
+    "armor": {
+      "skin": 0
+    },
+    "attacks": {
+      "attack1": {
+        "name": "",
+        "text": {
+          "wind_up": "",
+          "on_hit": "",
+          "on_kill": "",
+          "on_dodge": "",
+          "on_armor_save": ""
+        },
+        "dmg" : 0,
+        "crt": 1.0,
+        "acc": 0,
+        "weight": 1,
+        "types": []
+      }
+    },
+    "weaknesses": {
+      "PHYSICAL": 1.0,
+      "SLASHING": 1.0,
+      "BASHING": 1.0,
+      "PIERCING": 1.0,
+      "MAGICAL": 1.0,
+      "FIRE": 1.0,
+      "FROST": 1.0,
+      "CURSE": 1.0,
+      "HOLY": 1.0,
+      "LIGHT": 1.0,
+      "DARKNESS": 1.0
+    },
+    "flags": ["blood_possessed"]
+  }
+}
