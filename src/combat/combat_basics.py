@@ -6,18 +6,27 @@ from src.entities.entity import Entity
 import logging
 logger = logging.getLogger(__name__)
 
+ACCURACY_RANGE = 16
+
+CRITICAL_RANGE = 2
 
 def dodge_dice_roll(accuracy: int, dodge: int) -> bool:
     from src.util.dice import d
-    dice_dodge = d(8)
-    if dice_dodge == 1:
+
+    ar = ACCURACY_RANGE
+    cr = CRITICAL_RANGE
+
+    highest = ar + 2*cr
+
+    dice_dodge = d(highest)
+    if dice_dodge <= cr:
         logger.debug("Attack hit on critical dodge blunder")
         return False
-    if dice_dodge == 8:
+    if dice_dodge >= highest-cr:
         logger.debug("Attack missed on critical dodge success")
         return True
 
-    dice_accuracy = d(6)
+    dice_accuracy = d(ar)
 
     total_accuracy = accuracy + dice_accuracy
     total_dodge = dodge + dice_dodge - 1
