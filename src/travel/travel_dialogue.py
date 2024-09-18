@@ -39,8 +39,6 @@ class TravelDialogue:
 
     @staticmethod
     def interact_dialogue(interactive_list: list[Location.Interactive], item_name):
-
-
         while True:
             filtered_interactive_list = [interactive for interactive in interactive_list if interactive.is_availaible()]
 
