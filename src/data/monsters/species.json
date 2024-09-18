@@ -39,6 +39,7 @@
       "DARKNESS": 1.0
     }
   },
+
   "pure_subspecies": {
     "json_type": "species",
     "subspecies_of": "species",
@@ -51,8 +52,8 @@
     "flags": ["inherit"],
     "weaknesses": "inherit"
   },
-  "spec_humanoid":
-  {
+
+  "spec_humanoid": {
     "json_type": "species",
     "subspecies_of": "",
     "name": "Humanoid",
@@ -75,8 +76,8 @@
     "flags": ["sees", "hears"],
     "weaknesses": {}
   },
-  "spec_humanoid_tall":
-  {
+
+  "spec_humanoid_tall": {
     "json_type": "species",
     "subspecies_of": "spec_humanoid",
     "name": "Tall Humanoid",
@@ -93,6 +94,7 @@
       "DARKNESS": 1.1
     }
   },
+
   "spec_human": {
     "json_type": "species",
     "name": "Human",
@@ -105,8 +107,8 @@
     "flags": ["inherit"],
     "weaknesses": "inherit"
   },
-  "spec_humanoid_small":
-  {
+
+  "spec_humanoid_small": {
     "json_type": "species",
     "subspecies_of": "spec_humanoid",
     "name": "Small Humanoid",
@@ -123,6 +125,7 @@
       "DARKNESS": 0.9
     }
   },
+
   "spec_goblin": {
     "json_type": "species",
     "name": "Goblin",
@@ -135,7 +138,6 @@
     "flags": ["inherit"],
     "weaknesses": "inherit"
   },
-
 
   "spec_animal": {
     "json_type": "species",
@@ -161,8 +163,8 @@
       "FROST": 0.9
     }
   },
-  "spec_canine":
-  {
+
+  "spec_canine": {
     "json_type": "species",
     "subspecies_of": "spec_animal",
     "name": "Dog",
@@ -174,8 +176,8 @@
     "flags": ["inherit"],
     "weaknesses": "inherit"
   },
-  "spec_feline":
-  {
+
+  "spec_feline": {
     "json_type": "species",
     "subspecies_of": "spec_animal",
     "name": "Cat",
@@ -187,6 +189,7 @@
     "flags": ["inherit"],
     "weaknesses": "inherit"
   },
+
   "spec_bird": {
     "json_type": "species",
     "name": "Bird",
@@ -212,8 +215,8 @@
       "FROST": 0.9
     }
   },
-  "spec_reptilian":
-  {
+
+  "spec_reptilian": {
     "json_type": "species",
     "name": "reptile",
     "subspecies_of": "spec_animal",
@@ -239,6 +242,7 @@
 
     }
   },
+
   "spec_snake": {
     "json_type": "species",
     "name": "Snake",
@@ -257,8 +261,8 @@
     "flags": ["inherit"],
     "weaknesses": "inherit"
   },
-  "spec_dragon":
-  {
+
+  "spec_dragon": {
     "json_type": "species",
     "subspecies_of": "",
     "name": "Dragon",
@@ -313,6 +317,7 @@
       "HOLY": 0.7
     }
   },
+
   "spec_unknown": {
     "json_type": "species",
     "subspecies_of": "",
@@ -336,7 +341,8 @@
     "flags": [],
     "weaknesses": {}
   },
-   "spec_demon": {
+
+  "spec_demon": {
     "json_type": "species",
     "subspecies_of": "",
      "name": "Demon",
