@@ -14,21 +14,24 @@ class AttackType(Enum):
     MAGICAL = 'MAGICAL'
     FIRE = 'FIRE'
     FROST = 'FROST'
-    CURSE = 'CURSE'
 
+    CURSE = 'CURSE'
     HOLY = 'HOLY'
 
     LIGHT = 'LIGHT'
     DARKNESS = 'DARKNESS'
 
-    HEALING = 'HEALING'
+    TOXIC = 'TOXIC'
 
+    HEALING = 'HEALING'
+    ARMOR_IGNORE = 'ARMOR_IGNORE'
 
 def init_default_armor_effectiveness():
     _default_armor_effectiveness = {
         attack_type: 1.0 for attack_type in AttackType
     }
     _default_armor_effectiveness[AttackType.HEALING] = 0.0
+    _default_armor_effectiveness[AttackType.ARMOR_IGNORE] = 0.0
 
     return _default_armor_effectiveness
 
