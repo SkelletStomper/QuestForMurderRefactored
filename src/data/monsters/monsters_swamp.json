@@ -1,0 +1,109 @@
+{
+  "monsterpool_swamp": {
+    "json_type": "monsterpool",
+    "monsters": [
+      "monster_goblin3",
+      "monster_imp"
+    ]
+  },
+  "monster_goblin3": {
+    "json_type": "monster",
+    "species": "spec_goblin",
+    "title": "the",
+    "name": "three-eyed hobgoblin",
+    "pronouns": "3rd_he",
+    "information": "Bulging, putrid muscles and a distinctly too-many-eyed face. What the chernobyl type of fuck is this??",
+    "death_messages": [
+      "He tears out his third eyeball, and shoves it in your throat. You suffocate painfully. You are dead.",
+      "He crushes your head with his bulging muscles. You are dead."
+    ],
+    "hp_max": 24,
+    "dodge": 3,
+    "speed": 2,
+    "armor": {
+      "skin": 0
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Eyeball Throw",
+        "targets": ["ENEMY", "SINGLE"],
+        "text": {
+          "wind_up": "{atk.name} rip{atk.s} out {atk.poss_adjective} third eye, which regrows instantly. Then, {atk.subject} throws it at {def.name}!",
+          "on_hit": "The eye hits {def.name}, and splatters into heaps of toxic gunk and goo!",
+          "on_kill": "The eye hits square, and {def.name} succumbs to the toxeyene!",
+          "on_dodge": "{def.name} avoid{def.s} the projecteyele!",
+          "on_armor_save": "The eye leaves a stain on {def.owns} armor, but not much more."
+        },
+        "dmg": 8,
+        "crt": 1.0,
+        "acc": 1,
+        "weight": 1,
+        "types": [
+          "PHYSICAL",
+          "TOXIC"
+        ]
+      },
+      "attack2": {
+        "name": "Hulking Smash",
+        "targets": ["ENEMY", "SINGLE"],
+        "text": {
+          "wind_up": "{atk.name} flex{atk.es} {atk.poss_adjective} muscles, popping several cysts on the biceps.",
+          "on_hit": "{atk.name} punch{atk.es} {def.name} right in the face!",
+          "on_kill": "{atk.name} smash{atk.es} {def.owns} skull...",
+          "on_dodge": "{atk.name} misses {def.name}, leaving only some light pus splatters on {def.object}",
+          "on_armor_save": "{atk.name} break{atk.s} a few fingers as {atk.object} hit{atk.s} {def.owns} armor... They snap back right after."
+        },
+        "dmg": 4,
+        "crt": 1.0,
+        "acc": 4,
+        "weight": 3,
+        "types": [
+          "PHYSICAL",
+          "BASHING"
+        ]
+      }
+    },
+    "weaknesses": {
+      "TOXIC": 0.5
+    },
+    "flags": []
+  },
+  "monster_imp": {
+    "json_type": "monster",
+    "species": "spec_demon",
+    "title": "the",
+    "name": "imp",
+    "pronouns": "3rd_it",
+    "information": "A nasty flying fucker who pokes you with its Pitchfork. It's a creature straight out of Hell!",
+    "death_messages": [
+      "It pokes you into the gut, and uses its pitchfork to twirl your colon like spaghetti! You are dead."
+    ],
+    "hp_max": 21,
+    "dodge": 4,
+    "speed": 3,
+    "armor": {
+      "skin": 2
+    },
+    "attacks": {
+      "attack1": {
+        "name": "Triple Poke",
+        "targets": ["ENEMY", "SINGLE"],
+        "text": {
+          "wind_up": "{atk.name} twirl{atk.s} {atk.poss_adjective} pitchfork around, ready to get stabbing.",
+          "on_hit": "{atk.name} poke{atk.s} three holes into {def.name}.",
+          "on_kill": "{atk.name} poke{atk.s} a hole into something important, and {def.name} collapse{def.s}!",
+          "on_dodge": "{atk.name} stab{atk.s} the air.",
+          "on_armor_save": "{atk.name} fail{atk.s} to get through {def.owns} armor."
+        },
+        "dmg" : 4,
+        "crt": 1.0,
+        "acc": 3,
+        "weight": 1,
+        "types": ["PHYSICAL", "PIERCING"],
+        "multi": 3
+      }
+    },
+    "weaknesses": {},
+    "flags": ["flying"]
+  }
+}
