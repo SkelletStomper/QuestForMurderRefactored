@@ -202,7 +202,7 @@
       "attack1": {
         "name": "Accursed claw",
         "text": {
-          "wind_up": "{atk.name} stares at {atk.poss_adjective} claw, dark energy crackling at {poss_adjective} claw-tips.",
+          "wind_up": "{atk.name} stares at {atk.poss_adjective} claw, dark energy crackling at {atk.poss_adjective} claw-tips.",
           "on_hit": "{atk.owns} claws leave nasty agonising marks on {def.owns} skin.",
           "on_kill": "{def.owns} collapse{def.s} from the pain of the claw wounds!",
           "on_dodge": "{def.name} manage{def.s} to avoid the accursed claws.",
