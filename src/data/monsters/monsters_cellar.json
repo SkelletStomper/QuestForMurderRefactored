@@ -28,6 +28,7 @@
     "attacks": {
       "attack1": {
         "name": "Fecal bite",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "",
           "on_hit": "{atk.name} bite{atk.s} {def.name} with {atk.poss_adjective} putrid front teeth!",
@@ -67,14 +68,15 @@
     "attacks": {
       "attack1": {
         "name": "Nibble",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
-          "wind_up": "",
-          "on_hit": "",
+          "wind_up": "{atk.s} approach{atk.es} {def.name}, wanting to sneak a bite.",
+          "on_hit": "{atk.name} nibble{atk.s} on {def.name}!",
           "on_kill": "",
-          "on_dodge": "",
-          "on_armor_save": ""
+          "on_dodge": "{def.name} avoid{def.s} {atk.owns} approach.",
+          "on_armor_save": "{atk.name} can't take a bite, stopped by {def.owns} {def.armor}!"
         },
-        "dmg" : 6,
+        "dmg" : 5,
         "crt": 1.0,
         "acc": 1,
         "weight": 3,
@@ -82,6 +84,7 @@
       },
       "attack2": {
         "name": "Silver Scales",
+        "targets": ["OTHER", "ALL"],
         "text": {
           "wind_up": "{atk.name} spread{atk.s} tons of {atk.poss_adjective} silvery scales in the air!",
           "on_hit": "{def.name} inhale{def.s} the scales that {atk.name} spread in the air.",
@@ -123,6 +126,7 @@
     "attacks": {
       "attack1": {
         "name": "Gut Poke",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} prepares a vicious poke with {atk.poss_adjective} staff!",
           "on_hit": "{atk.name} rams {atk.poss_adjective} staff in {def.owns} gut, forcing the air out of {def.poss_adjective} lungs.",
@@ -160,6 +164,7 @@
     "attacks": {
       "attack1": {
         "name": "Guilt Trip",
+        "targets": ["ENEMY", "ALL"],
         "text": {
           "wind_up": "{atk.name} looks extra pitiful...",
           "on_hit": "{def.name} feels bad from looking at {atk.name}",
@@ -200,6 +205,7 @@
     },
     "attacks": {
       "attack1": {
+        "targets": ["ENEMY", "SINGLE"],
         "name": "Accursed claw",
         "text": {
           "wind_up": "{atk.name} stares at {atk.poss_adjective} claw, dark energy crackling at {atk.poss_adjective} claw-tips.",
@@ -216,18 +222,19 @@
       },
       "attack2": {
         "name": "Spontaneous Combustion",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
-          "wind_up": "{atk.name} mutters words in demonic language, telling of sulfur and brimstone...",
+          "wind_up": "{atk.name} mutters words in demonic language, telling of burnt hair and brimstone...",
           "on_hit": "{def.name} howl{def.s} in pain as a part of {def.poss_adjective} spontaneously catches blue fire!",
           "on_kill": "{def.name} drops dead as a vital organ incinerates and turns to ash.",
           "on_dodge": "{def.name} disrupt{def.s} {atk.owns} concentration with {def.poss_adjective} acrobatic dodging maneuvers!",
-          "on_armor_save": ""
+          "on_armor_save": "{def.name} is immune to fire."
         },
         "dmg" : 8,
-        "crt": 1.3,
+        "crt": 1.0,
         "acc": 8,
         "weight": 1,
-        "types": ["MAGICAL", "FIRE"]
+        "types": ["MAGICAL", "FIRE", "ARMOR_IGNORE"]
       }
     },
     "weaknesses": {

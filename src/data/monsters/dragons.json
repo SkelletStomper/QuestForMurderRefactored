@@ -18,6 +18,7 @@
     "attacks": {
       "attack1": {
         "name": "Bite",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} tries to eat {def.name}!",
           "on_hit": "{atk.name} bite{atk.s} a good chunk out of {def.name}!",
@@ -33,6 +34,7 @@
       },
       "attack2": {
         "name": "Fire Breath",
+        "targets": ["ENEMY", "ALL"],
         "text": {
           "wind_up": "Flames start playing around {atk.owns} maw.",
           "on_hit": "{atk.name} grills {def.name} in a giant raging inferno!",
@@ -48,6 +50,7 @@
       },
       "attack3": {
         "name": "Double Claw Strike",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} raise{atk.s} two of {atk.poss_adjective} front paws, ready to strike.",
           "on_hit": "{atk.name} swipes {atk.poss_adjective} claws at {def.name} and leaves a bloody trail!",

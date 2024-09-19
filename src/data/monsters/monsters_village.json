@@ -28,6 +28,7 @@
     "attacks": {
       "attack1": {
         "name": "Leg Smash",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} flex{atk.es} {atk.poss_adjective} leg in preparation of a nasty kick!",
           "on_hit": "{atk.name} kicks {def.name} with {atk.poss_adjective} massive foreleg!",
@@ -73,6 +74,7 @@
     "attacks": {
       "attack1": {
         "name": "knuckle sandwich",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} collect{atk.s} {atk.poss_adjective} powers for a punch!",
           "on_hit": "With what little power is left in {atk.poss_adjective} old bones, {atk.name} hit{atk.s} {def.name} in the face!",
@@ -118,6 +120,7 @@
     "attacks": {
       "attack1": {
         "name": "Paw Strike",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} watch{atk.es} {def.name}, waiting for an opportunity to strike.",
           "on_hit": "{atk.name} coquettishly slashes at {def.name} with {atk.poss_adjective} paw.",
@@ -163,6 +166,7 @@
     "attacks": {
       "attack1": {
         "name": "Hex: Weakness",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} call{atk.s} out to {atk.poss_adjective} father in hell for a curse most wicked!",
           "on_hit": "{atk.name} hex{atk.es} {def.name} with a devilish curse.",
@@ -181,6 +185,7 @@
       },
       "fire_explode": {
         "name": "Rapid Combustion",
+        "targets": ["OTHER", "ALL"],
         "text": {
           "wind_up": "{atk.name} explode{atk.s} violently upon contact with fire!",
           "on_hit": "{def.name} is caught up in the explosion!",
@@ -226,6 +231,7 @@
     "attacks": {
       "attack1": {
         "name": "Eye Peck",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} circle{atk.s} {def.name}, waiting for an opportunity to strike!",
           "on_hit": "{atk.name} swiftly swoop{atk.s} in and peck{atk.s} at {def.owns} eyes!",
@@ -271,6 +277,7 @@
     "attacks": {
       "attack1": {
         "name": "Flail Bash",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} hold{atk.s} {atk.poss_adjective} flail high above {atk.poss_adjective} head in preparation for a vicious strike.",
           "on_hit": "{atk.name} strike{atk.s} {def.name} with {atk.poss_adjective} wooden flail.",
@@ -289,6 +296,7 @@
       },
       "attack2": {
         "name": "Sickle Strike",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} hold{atk.s} in front of {atk.object}, ready to strike.",
           "on_hit": "{atk.name} slashes at {def.name}, leaving a nasty cut!",

@@ -29,6 +29,7 @@
     "attacks": {
       "attack1": {
         "name": "butter-up",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} grit{atk.s} {atk.poss_adjective} teeth and tighten{atk.s} {atk.poss_adjective} grip around the butter knife.",
           "on_hit": "{atk.name} grab{atk.s} {def.owns} arm and saws at it with {atk.poss_adjective} butter knife!",
@@ -51,6 +52,7 @@
   "monster_snake1": {
     "json_type": "monster",
     "species": "spec_snake",
+    "targets": ["ENEMY", "SINGLE"],
     "title": "the",
     "name": "poisonous snake",
     "pronouns": "3rd_it",
@@ -89,7 +91,6 @@
   "monster_paperman!": {
     "json_type": "monster",
     "species": "spec_unknown",
-
     "title": "",
     "name": "paper-man!",
     "pronouns": "3rd_they",
@@ -107,6 +108,7 @@
     "attacks": {
       "attack1": {
         "name": "Papercut",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "",
           "on_hit": "{atk.name} attacks {def.name} with {atk.poss_adjective} razor-sharp paper arms!",
@@ -147,6 +149,7 @@
     "attacks": {
       "attack1": {
         "name": "Handbag Batter",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "",
           "on_hit": "{atk.name} batter{atk.s} {def.name} over the head with {atk.poss_adjective} ton-heavy handbag!",
@@ -187,6 +190,7 @@
     "attacks": {
       "attack1": {
         "name": "Salvo",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "",
           "on_hit": "{atk.owns} hastily-shot bullet hits {def.name}",
@@ -203,6 +207,7 @@
       },
       "attack2": {
         "name": "Crack Shot",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "",
           "on_hit": "{atk.name} take{atk.s} time to land a well-placed shot on {def.name}!",
