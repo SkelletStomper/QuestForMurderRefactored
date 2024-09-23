@@ -13,34 +13,19 @@ AutoCombatant = Union[MonsterCombatant, NPCCombatant]
 
 
 class AutoCombat:
-    def __init__(self, combatant1: AutoCombatant, combatant2: AutoCombatant) -> None:
-        self.combatant1 = combatant1
-        self.combatant2 = combatant2
+    def __init__(self, combatants: list[AutoCombatant]) -> None:
+        self.combatants = combatants
 
     def combat(self) -> Entity:
-        c1 = self.combatant1
-        c2 = self.combatant2
 
-        le1 = c1.get_le()
-        le2 = c2.get_le()
 
-        logger.info(f"Starting AutoCombat between {le1.name} and {le2.name}")
 
         while True:
-            self.calculate_attacks(c1, c2)
-            if not c2.is_alive:
-                break
-            print("")
+            for combatant in self.combatants:
+                combatant.get_attacks()
 
-            self.calculate_attacks(c2, c1)
-            if not c1.is_alive:
-                break
-            print("")
-
-        if c1.is_alive:
-            return c1.get_pilot()
-        if c2.is_alive:
-            return c2.get_pilot()
+    def sort_after_combat_speed(self):
+        self.combatants = sorted(self.combatants, key=lambda combatant: combatant.speed)
 
     def calculate_attacks(self, attacker: AutoCombatant, defender: AutoCombatant) -> None:
         lea = attacker.get_le()
@@ -65,4 +50,4 @@ class AutoCombat:
         print(atk_str)
 
     def __repr__(self) -> str:
-        return f"AutoCombat(combatant1={self.combatant1}, combatant2={self.combatant2})"
+        return f"AutoCombat(combatants: {", ".join([combatant.__repr__() for combatant in self.combatants])})"

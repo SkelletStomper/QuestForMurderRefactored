@@ -10,6 +10,8 @@ logger = logging.getLogger(__name__)
 
 class NPCCombatant(Combatant):
     def __init__(self, npc: NPC) -> None:
+        super().__init__()
+        self.faction = "npc"
         self.npc = npc
 
     @property
@@ -43,4 +45,4 @@ class NPCCombatant(Combatant):
         return self.npc
 
     def __repr__(self) -> str:
-        return f"NPCCombatant(npc={self.npc}"
+        return f"NPCCombatant(npc={self.npc.name}"

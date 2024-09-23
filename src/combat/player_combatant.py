@@ -23,6 +23,7 @@ class PlayerCombatChoice(Enum):
 class PlayerCombatant(NPCCombatant):
     def __init__(self, npc: NPC):
         super().__init__(npc)
+        self.faction = "player"
 
     def turn(self) -> tuple[PlayerCombatChoice, Any]:
         while True:

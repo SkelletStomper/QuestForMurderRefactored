@@ -39,6 +39,9 @@ def dodge_dice_roll(accuracy: int, dodge: int) -> bool:
 
 
 class Combatant:
+    def __init__(self):
+        self.faction = "monster"
+
     def get_attacks(self) -> list[Attack]:
         # Abstract Method
         pass
