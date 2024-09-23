@@ -2,6 +2,8 @@
 from src.localization.l_string import LString
 from src.base.types import AttackType
 
+from enum import Enum
+
 import logging
 logger = logging.getLogger(__name__)
 
@@ -51,6 +53,25 @@ default_text = ConditionalAttackText({
     "on_armor_save": ""
 })
 
+class Targeting(Enum):
+    ALL = 'ALL'
+    SINGLE = 'SINGLE'
+
+    ALLY = 'ALLY'
+    ENEMY = 'ENEMY'
+    EVERYONE = 'EVERYONE'
+    SELF = 'SELF'
+    OTHER = 'OTHER'
+
+class TargetOptions:
+    def __init__(self, option_strings: list[str]) -> None:
+        self.options: list[Targeting] = [Targeting(option_string) for option_string in option_strings]
+
+
+    def __contains__(self, targeting: Targeting) -> bool:
+        return targeting in self.options
+
+
 
 class Attack:
     """
@@ -62,7 +83,8 @@ class Attack:
                  acc: int = 0,
                  crt: float = 1.0,
                  types: list[AttackType] = None,
-                 atk_str: ConditionalAttackText = default_text
+                 atk_str: ConditionalAttackText = default_text,
+                 targets: TargetOptions = None,
                  ) -> None:
 
         if types is None:
@@ -75,6 +97,8 @@ class Attack:
         self.types = types
 
         self.atk_str = atk_str
+
+        self.targets = targets if targets is not None else ["ENEMY", "SINGLE"]
 
     def __repr__(self) -> str:
         return f"Attack(dmg={self.dmg}, acc={self.acc}, crt={self.crt}, types={self.types}, atk_str={self.atk_str})"

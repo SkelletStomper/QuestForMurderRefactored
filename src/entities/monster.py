@@ -1,12 +1,12 @@
 from src.entities.entity import Entity
 from src.base.types import WeaknessSet, AttackType
-from src.combat.attack import Attack, ConditionalAttackText
+from src.combat.attack import Attack, ConditionalAttackText, TargetOptions
 
 
 class MonsterAttackStencil:
     def __init__(self, in_dict: dict) -> None:
         self.name = in_dict["name"]
-
+        self.target_options = TargetOptions(in_dict["targets"])
         self.text = ConditionalAttackText(in_dict["text"])
 
         self.dmg = in_dict["dmg"]
@@ -30,6 +30,7 @@ class MonsterAttackStencil:
             crt=self.crt,
             types=self.types,
             atk_str=self.text,
+            targets=self.target_options
         ), self.multi)]
 
     def __repr__(self) -> str:

@@ -1,11 +1,12 @@
 from src.items.items import Item
 from src.base.types import AttackType
-from src.combat.attack import Attack, ConditionalAttackText
+from src.combat.attack import Attack, ConditionalAttackText, TargetOptions
 
 
 class WeaponAttackStencil:
     def __init__(self, in_dict: dict) -> None:
         self.name: str = in_dict["name"]
+        self.target_options = TargetOptions(in_dict["targets"])
         self.description: str = in_dict["description"]
         self.text: ConditionalAttackText = ConditionalAttackText(in_dict["text"])
 
@@ -22,6 +23,7 @@ class WeaponAttackStencil:
             crt=self.crt,
             types=self.types,
             atk_str=self.text,
+            targets=self.target_options,
         ), 1)]
 
     def info(self) -> str:
