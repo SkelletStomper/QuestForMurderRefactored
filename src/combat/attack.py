@@ -56,6 +56,7 @@ default_text = ConditionalAttackText({
 class Targeting(Enum):
     ALL = 'ALL'
     SINGLE = 'SINGLE'
+    RANDOM = 'RANDOM'
 
     ALLY = 'ALLY'
     ENEMY = 'ENEMY'
