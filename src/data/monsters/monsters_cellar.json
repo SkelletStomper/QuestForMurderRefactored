@@ -205,8 +205,8 @@
     },
     "attacks": {
       "attack1": {
-        "targets": ["ENEMY", "SINGLE"],
         "name": "Accursed claw",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} stares at {atk.poss_adjective} claw, dark energy crackling at {atk.poss_adjective} claw-tips.",
           "on_hit": "{atk.owns} claws leave nasty agonising marks on {def.owns} skin.",

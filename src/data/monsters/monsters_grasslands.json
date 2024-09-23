@@ -52,7 +52,6 @@
   "monster_snake1": {
     "json_type": "monster",
     "species": "spec_snake",
-    "targets": ["ENEMY", "SINGLE"],
     "title": "the",
     "name": "poisonous snake",
     "pronouns": "3rd_it",
@@ -69,6 +68,7 @@
     "attacks": {
       "attack1": {
         "name": "Snake Bite",
+        "targets": ["ENEMY", "SINGLE"],
         "text": {
           "wind_up": "{atk.name} coil{atk.s} up, ready to fling {atk.reflexive} out and bite.",
           "on_hit": "{atk.name} bite{atk.s} {def.name} in the thigh! Luckily for {def.object}, {atk.name} {atk.are} poisonous, not venomous!",

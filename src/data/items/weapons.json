@@ -8,6 +8,7 @@
     "attacks": {
       "attack1": {
         "name": "",
+        "targets": ["ENEMY", "SINGLE"],
         "description": "",
         "text": {
           "wind_up": "",
@@ -24,6 +25,7 @@
       },
       "attack2": {
         "name": "",
+        "targets": ["ENEMY", "SINGLE"],
         "description": "",
         "text": {
           "wind_up": "",
@@ -49,6 +51,7 @@
     "attacks": {
       "attack1": {
         "name": "Quick Jab",
+        "targets": ["ENEMY", "SINGLE"],
         "description": "Throw a light jab at your opponent. Not terribly effective, but quick and accurate.",
         "text": {
           "wind_up": "{atk.name} throw{atk.s} a light jab at {def.name}.",
@@ -64,6 +67,7 @@
       },
       "attack2": {
         "name": "Heavy Uppercut",
+        "targets": ["ENEMY", "SINGLE"],
         "description": "This punch packs a serious punch! However, you have to be close to your opponent, which makes it hard to hit.",
         "text": {
           "wind_up": "{atk.name} attempt{atk.s} to hit {def.name} with a salted uppercut!",
@@ -89,8 +93,8 @@
     "attacks": {
       "attack1": {
         "name": "Rapid Slash",
+        "targets": ["ENEMY", "SINGLE"],
         "description": "Slash at your opponent. Will do good against weaker, unarmored targets.",
-
         "text": {
           "wind_up": "{atk.name} slash{atk.es} at {def.name} with {atk.poss_adjective} dagger.",
           "on_hit": "The attack grazes {def.name}, flinging a trail of {def.poss_adjective} {def.blood} through the air!",
@@ -105,6 +109,7 @@
       },
       "attack2": {
         "name": "Stab the Weak Spot",
+        "targets": ["ENEMY", "SINGLE"],
         "description": "Try to find a vulnerability in the opponents posture or armor, and stab right into it. Finicky to land, but deals good damage.",
         "text": {
           "wind_up": "{atk.name} scan{atk.s} {def.name} for a possibility to pierce a weak spot!",
@@ -129,6 +134,7 @@
     "attacks": {
       "attack1": {
         "name": "Smash",
+        "targets": ["ENEMY", "SINGLE"],
         "description": "A simple strike at your opponent - perfect if simple is all you need. As maces tend to be, it is good at transferring damage through armor.",
         "text": {
           "wind_up": "{atk.name} winds up an overhead swing!",
@@ -144,6 +150,7 @@
       },
       "attack2": {
         "name": "Another Smash",
+        "targets": ["ENEMY", "SINGLE"],
         "description": "There is only so much you can do with this mace...",
         "text": {
           "wind_up": "{atk.name} winds up a horizontal swing!",
@@ -168,6 +175,7 @@
     "attacks": {
       "attack1": {
         "name": "Singeing Burst",
+        "targets": ["ENEMY", "ALL"],
         "description": "Ignite the air in front of you. Extremely efficient at hitting your opponent, not so much at actually hurting them.",
         "text": {
           "wind_up": "{atk.name} start{atk.s} chanting a spell from {atk.poss_adjective} spell book!",
@@ -183,6 +191,7 @@
       },
       "attack2": {
         "name": "Fireball",
+        "targets": ["ENEMY", "SINGLE"],
         "description": "Form a sphere of fire and hurl it at your opponent. A lot more condensed and potent than the burst.",
         "text": {
           "wind_up": "{atk.name} start{atk.s} chanting a spell from {atk.poss_adjective} spell book!",
