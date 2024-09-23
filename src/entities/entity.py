@@ -35,6 +35,8 @@ class Entity:
         self.dodge = dodge
         self.accuracy = accuracy
 
+        self.speed = 0
+
         if flags is None:
             flags = []
         self.flags: list[Flag] = [fp(flag_name) for flag_name in flags]
