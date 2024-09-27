@@ -30,11 +30,11 @@
         "name": "Fecal bite",
         "targets": ["ENEMY", "SINGLE"],
         "text": {
-          "wind_up": "",
-          "on_hit": "{atk.name} bite{atk.s} {def.name} with {atk.poss_adjective} putrid front teeth!",
-          "on_kill": "",
-          "on_dodge": "",
-          "on_armor_save": ""
+          "wind_up": "{atk.name} bare{atk.s} {atk.poss_adjective} rotten front teeth.",
+          "on_hit": "{atk.name} bite{atk.s} {def.name} with {atk.poss_adjective} putrid front teeth.",
+          "on_kill": "{atk.owns} bite proves fatal for {def.name}!",
+          "on_dodge": "{def.name} avoid{def.s} {atk.owns} attack.",
+          "on_armor_save": "{atk.owns} sharp teeth fail to penetrate {def.owns} {def.armor}."
         },
         "dmg" : 4,
         "crt": 1.0,
